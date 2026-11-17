@@ -61,6 +61,18 @@ python3 find-skill/scripts/find.py build
 
 Being listed does not mean a Skill is safe. Neither official nor community sources are a safety guarantee. Before installing a Skill you found, read and verify its files yourself. `find-skill` never installs, downloads, or runs a Skill.
 
+### Suggested check before you install
+
+1. **Look at the whole Skill folder, not just `SKILL.md`.** Bundled scripts, hooks, and files that `SKILL.md` tells the agent to read all run with your permissions.
+2. **Run a scanner such as [NVIDIA/SkillSpector](https://github.com/NVIDIA/SkillSpector).** It statically checks a Skill for prompt injection, data exfiltration, credential access, and similar risks. Run it in a throwaway container or VM with no API keys and no host folders mounted.
+3. **Read the findings, not the score.** One public run of SkillSpector on popular Skill repos found that a single coverage gap (a referenced file the scanner did not finish reading) or a quoted attack string in a warning was enough to push a Skill to the maximum score. The findings that matched what the files actually do were:
+   - access to agent config directories, such as `~/.claude/settings.json`
+   - reading credential files, such as tokens or `client_secrets.json`
+   - bundled scripts and hooks
+4. **Decide for yourself.** Some Skills need these capabilities by design. The question is whether you would let an agent do that on your machine.
+
+A scanner is an aid, not a guarantee. This repo does not run one; the suggestion above is for you to apply before installing.
+
 ## Skills
 
 This section is generated from `catalog/skills.json`. Do not edit it by hand.

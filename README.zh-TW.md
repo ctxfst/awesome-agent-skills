@@ -61,6 +61,18 @@ python3 find-skill/scripts/find.py build
 
 收錄不代表安全，官方或社群來源都不是安全保證。找到 Skill 後，安裝前必須自己讀過並驗證該 Skill 的檔案。`find-skill` 不會自動安裝、下載或執行 Skill。
 
+### 安裝前的建議檢查
+
+1. **看整個 Skill 資料夾，不只看 `SKILL.md`。**附帶的腳本、hook，以及 `SKILL.md` 要 agent 去讀的檔案，都會以你的權限執行或讀取。
+2. **用掃描工具檢查，例如 [NVIDIA/SkillSpector](https://github.com/NVIDIA/SkillSpector)。**它會靜態檢查 Skill 是否有 prompt injection、資料外洩、讀取憑證等風險。請在沒有 API key、沒有掛載主機資料夾的拋棄式容器或虛擬機裡執行。
+3. **看具體發現，不要只看分數。**有人公開用 SkillSpector 掃過幾個熱門 Skill repo，發現只要一個覆蓋缺口（掃描器沒讀完被引用的檔案），或警告文字裡引用了攻擊字串，就足以讓分數衝到最高。真正對得上檔案實際行為的，是這三類發現：
+   - 存取 agent 設定目錄，例如 `~/.claude/settings.json`
+   - 讀取憑證檔，例如 token 或 `client_secrets.json`
+   - 附帶的腳本與 hook
+4. **由你自己決定。**有些 Skill 本來就需要這些能力，問題是你願不願意讓 agent 在你的電腦上這樣做。
+
+掃描工具是輔助，不是保證。本 repo 不會替你執行掃描，以上是建議你在安裝前自己做的檢查。
+
 ## Skill 清單
 
 以下區塊由 `catalog/skills.json` 產生，請勿手改。Description 取自上游，維持原文。
