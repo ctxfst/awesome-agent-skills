@@ -1,53 +1,55 @@
 # Awesome Agent Skills
 
-這是一份固定來源 commit 的 Agent Skill 清單，附上讓 AI 搜尋 Skill 的 `find-skill`。Repo 只收錄名稱、description、來源與安全相關中繼資料，不複製上游 Skill 檔案。
+English | [繁體中文](README.zh-TW.md)
 
-## 和其他 awesome 清單的差別
+A catalog of Agent Skills pinned to source commits, plus `find-skill`, a Skill that lets an AI agent search the catalog. This repo stores only each Skill's name, description, source link, and a few metadata fields. It does not copy upstream Skill files.
 
-`find-skill` 不是只回傳排名：AI 會讀前八個候選的 description；只有一個明顯合適時才直接推薦，否則只問一題，把回答接回原需求後再搜一次。第二次仍無法判斷時，列出最接近的兩到三個與差別，不再追問。
+## How it differs from other awesome lists
 
-實驗中，20 條模糊需求直接搜尋的第一名命中率為 0.45，看候選後反問一次為 0.70；只看原始 description 和看工作線卡的反問結果相同。數字、對照與限制見 [experiment/RESULTS.md](experiment/RESULTS.md)。
+`find-skill` does more than return a ranking. The agent reads the descriptions of the top eight candidates. It recommends one directly only when one candidate clearly fits. Otherwise it asks the user one question, appends the answer to the original request, and searches again. If that still does not settle it, the agent lists the two or three closest Skills and how they differ, and stops asking.
 
-## 安裝與使用
+In our experiment, 20 vague requests found the right Skill in first place 0.45 of the time when searched directly, and 0.70 after one clarifying question asked from the candidates. Questions written from the raw descriptions did as well as questions written from hand-made job-line cards. Numbers, controls, and limitations are in [experiment/RESULTS.md](experiment/RESULTS.md).
 
-Clone 此 repo，安裝 Python 依賴，並把 `find-skill/` 連結到 agent 使用的 Skill 目錄。以 Claude Code 為例：
+## Install and use
+
+Clone this repo, install the Python dependencies, and link `find-skill/` into your agent's Skill directory. For Claude Code:
 
 ```bash
 python3 -m pip install -r requirements.txt
 ln -s /absolute/path/to/awesome-agent-skills/find-skill ~/.claude/skills/find-skill
 ```
 
-其他 agent 使用它自己的 Skill 安裝位置。從 repo 根目錄執行搜尋：
+Other agents use their own Skill locations. To search from the repo root:
 
 ```bash
-python3 find-skill/scripts/find.py search "你的需求" --top 8 --json
+python3 find-skill/scripts/find.py search "what you need" --top 8 --json
 ```
 
-預設索引使用 Voyage `voyage-3.5`。設定查詢用的 API key：
+The default index uses Voyage `voyage-3.5`. Set an API key for embedding queries:
 
 ```bash
-export VOYAGE_API_KEY="你的 key"
-python3 find-skill/scripts/find.py search "你的需求" --top 8 --json
+export VOYAGE_API_KEY="your key"
+python3 find-skill/scripts/find.py search "what you need" --top 8 --json
 ```
 
-也可把 key 放在自管的 KEY=VALUE 檔案，透過 `--env /path/to/file` 載入；不要把 key 提交進 repo。
+You can also keep the key in your own KEY=VALUE file and load it with `--env /path/to/file`. Do not commit keys to the repo.
 
-### 改用本機模型
+### Use a local model
 
-`SKILL_FINDER_EMBED_URL` 與 `SKILL_FINDER_EMBED_MODEL` 支援任何 OpenAI 相容的 embeddings 端點。查詢與索引必須使用同一端點和模型；切換後自行重建索引：
+`SKILL_FINDER_EMBED_URL` and `SKILL_FINDER_EMBED_MODEL` accept any OpenAI-compatible embeddings endpoint. Queries and the index must use the same endpoint and model, so rebuild the index after switching:
 
 ```bash
 export SKILL_FINDER_EMBED_URL="http://localhost:11434/v1/embeddings"
-export SKILL_FINDER_EMBED_MODEL="你的模型名稱"
+export SKILL_FINDER_EMBED_MODEL="your model name"
 python3 find-skill/scripts/find.py build catalog/skills.json \
   --out ~/.cache/awesome-agent-skills/index
-python3 find-skill/scripts/find.py search "你的需求" \
+python3 find-skill/scripts/find.py search "what you need" \
   --index ~/.cache/awesome-agent-skills/index --top 8 --json
 ```
 
-## 重建清單與索引
+## Rebuild the catalog and index
 
-`sources.yaml` 固定每個來源的 commit。收集器會把來源抓到 repo 外的 `~/.cache/awesome-agent-skills/src`，略過沒有 description 的 Skill：
+`sources.yaml` pins each source to a commit. The harvester fetches sources into `~/.cache/awesome-agent-skills/src`, outside the repo, and skips Skills without a description:
 
 ```bash
 python3 find-skill/scripts/harvest.py
@@ -55,13 +57,13 @@ python3 find-skill/scripts/render_readme.py
 python3 find-skill/scripts/find.py build
 ```
 
-## 安全聲明
+## Safety
 
-收錄不代表安全，官方或社群來源都不是安全保證。找到 Skill 後，安裝前必須自己讀過並驗證該 Skill 的檔案。`find-skill` 不會自動安裝、下載或執行 Skill。
+Being listed does not mean a Skill is safe. Neither official nor community sources are a safety guarantee. Before installing a Skill you found, read and verify its files yourself. `find-skill` never installs, downloads, or runs a Skill.
 
-## Skill 清單
+## Skills
 
-以下區塊由 `catalog/skills.json` 產生，請勿手改。
+This section is generated from `catalog/skills.json`. Do not edit it by hand.
 
 <!-- CATALOG:START -->
 ### anthropics/skills

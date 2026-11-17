@@ -20,15 +20,15 @@ def main():
             description = " ".join(record["description"].splitlines()).strip()
             lines.append(f"- **{record['name']}** — {description} ([source]({record['url']}))")
         lines.append("")
-    readme = ROOT / "README.md"
-    text = readme.read_text(encoding="utf-8")
-    if START not in text or END not in text:
-        raise ValueError("README catalog markers are missing")
-    before, remainder = text.split(START, 1)
-    _, after = remainder.split(END, 1)
-    updated = before + START + "\n" + "\n".join(lines) + END + after
-    readme.write_text(updated, encoding="utf-8")
-    print(f"Rendered {len(records)} Skills from {len(groups)} sources into {readme}")
+    for readme in (ROOT / "README.md", ROOT / "README.zh-TW.md"):
+        text = readme.read_text(encoding="utf-8")
+        if START not in text or END not in text:
+            raise ValueError(f"{readme.name}: catalog markers are missing")
+        before, remainder = text.split(START, 1)
+        _, after = remainder.split(END, 1)
+        updated = before + START + "\n" + "\n".join(lines) + END + after
+        readme.write_text(updated, encoding="utf-8")
+        print(f"Rendered {len(records)} Skills from {len(groups)} sources into {readme.name}")
 
 
 if __name__ == "__main__":
