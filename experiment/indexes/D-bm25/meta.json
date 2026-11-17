@@ -1,0 +1,8 @@
+{
+  "condition": "D",
+  "method": "bm25",
+  "text_source": "full-skill-md",
+  "tokenizer": "latin-number-underscore words and CJK unigrams",
+  "card_count": 100,
+  "created_at": "2026-11-17T12:32:38.403109+00:00"
+}

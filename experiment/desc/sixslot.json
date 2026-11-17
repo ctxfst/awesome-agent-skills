@@ -1,0 +1,411 @@
+[
+  {
+    "sid": "s001",
+    "description": "Use when writing Java unit or integration tests with JUnit 5, including parameterized tests, lifecycle hooks, Mockito mocks, and nested tests. Start with the Java behavior and test scenarios to cover. Produce JUnit 5 test code using assertions, appropriate test organization, and descriptive names, with integration patterns for Spring when needed. The documented setup uses Java with JUnit Jupiter and Mockito dependencies and runs through Maven or Gradle. Test behavior through public APIs rather than testing private methods directly."
+  },
+  {
+    "sid": "s002",
+    "description": "Use when an agent should run a product's recurring SEO work inside its repository on a daily schedule. Provide the site, product and buyers, conversion action, competitors, ship mode, repository access, and any connected search, analytics, or SEO data sources. Ship actual site changes and maintain persistent state, backlog, logs, keyword maps, competitor snapshots, and dated reports under seo/. Runs require repository access and its lint, type-check, build, and page-inspection workflow. Do not use it for advice-only deliverables, writing test files, sending outreach, submitting directories, creating accounts, or posting to social media."
+  },
+  {
+    "sid": "s003",
+    "description": "Use when running Postman collections with Newman locally or in CI/CD, including shell automation, Jenkins pipelines, and HTML or JUnit reports. Supply the collection as a file, URL, or Postman API UID, plus environment data, reporter choice, failure behavior, iterations, and execution target. Produce a runnable Newman command, reusable shell script, Jenkinsfile, setup notes, and report locations as requested. The documented setup requires Node.js 14 or later and Newman, with optional HTML reporter packages and Jenkins credentials where applicable."
+  },
+  {
+    "sid": "s004",
+    "description": "Use when publishing a video to Baijiahao through social-auto-upload or checking a Baijiahao login session. Provide a local account alias, video file, title, description, and tags, with an optional thumbnail and existing collection. Produce a CLI submission and report success only from command or platform evidence, checking the platform first when status is uncertain. The workflow requires the existing sau baijiahao command and a saved Baidu account session; show the QR code to the user when login presents one. It currently supports videos only, not image-text posts or scheduled publishing."
+  },
+  {
+    "sid": "s005",
+    "description": "Use for a focused 30-day SEO sprint on one high-value page targeting one money keyword, or at most three, especially when a revenue-linked page ranks around positions 5–20. Supply product and audience context, candidate keywords, current rankings, the target page, and available internal-link, backlink, and social resources. Produce a target recommendation, page-specific rewrite checklist, 30-day calendar, and tracking log. The workflow uses project context when present plus SERP and Search Console checks. Do not use it for a brand-new domain with zero authority or keywords with no revenue connection."
+  },
+  {
+    "sid": "s006",
+    "description": "Use when seeking product mentions in Reddit threads that already rank for buyer keywords or appear as AI answer sources. Supply the product, audience and honest weaknesses, 10–30 bottom-of-funnel keywords, competitors, and available AI SEO Tracker, DataForSEO, Ahrefs, or web-search access. Produce seo/reddit-serp-queue.md with qualified ranked threads, subreddit rules, ready-to-post replies, a dropped-thread table, and a summary. Discovery requires live search or connected data and Reddit thread and rule checks. Do not use it to post, vote, create accounts, draft new promotional threads, or queue archived, locked, or prohibited threads."
+  },
+  {
+    "sid": "s007",
+    "description": "Use when existing UI code needs a focused cleanup of spacing, hierarchy, typography, or small layout issues. Work from a UI file or apply the baseline to UI work in the current conversation, preserving the project's existing stack and primitives. For a file review, return violations with exact snippets, a short rationale, and concrete code-level fixes. The documented stack uses Tailwind defaults, the cn utility, accessible component primitives, and motion/react only when JavaScript animation is required. Do not introduce unrequested animation or gradients, mix primitive systems on one interaction surface, or rebuild established keyboard and focus behavior by hand."
+  },
+  {
+    "sid": "s008",
+    "description": "Use when creating, scheduling, managing, or analyzing social media and chat posts through Postiz across its supported channels. Supply post content, target integration IDs, an ISO 8601 schedule, platform settings, and media paths returned by Postiz's upload step. Produce drafts or scheduled posts and retrieve platform or post analytics, resolving missing provider IDs before analytics when necessary. The CLI requires prior OAuth2 or API-key authentication and an integration-settings check before scheduling. Do not pass raw local media paths or external media URLs to publishing fields, and do not use TikTok's UPLOAD mode when the user expects direct publication."
+  },
+  {
+    "sid": "s009",
+    "description": "Use when creating reusable client SDKs or API wrapper libraries for a REST API, including typed request and response models and language-specific usage examples. Supply the API's endpoints or OpenAPI definition, base URL, authentication approach, and target language. Produce a client with resources mirroring the API, typed models and errors, retry with backoff for 429 and 5xx responses, pagination helpers, a User-Agent, and usage examples for generated classes. Documented targets are JavaScript, TypeScript, Python, Java, C#, Ruby, and Go."
+  },
+  {
+    "sid": "s010",
+    "description": "Use when someone wants a concise AI search visibility brief, weekly recap, or the equivalent of the AI SEO Tracker in-app Report page. Supply the named project and live MCP data for its scan, prompts, sources, competitors, and brand snippets. Produce a synthesized, linked brief covering the latest valid scans, model visibility, prompt status, competitors, sources, and supported next actions. The workflow requires the AI SEO Tracker MCP connection using OAuth and a project scan; if no data exists, request a scan instead. Do not invent ranks, URLs, trend deltas, domain ratings, traffic, or dollar values, add prompts, or paste raw tool JSON as the brief."
+  }
+,
+  {
+    "sid": "s011",
+    "description": "Use when analyzing a Newman run to understand failures, request-level errors, slow requests, variable chaining, and next fixes. Accept pasted terminal output, JSON exports, JUnit XML, or key HTMLextra report sections. Return a run summary, failures grouped by likely cause, non-assertion warnings, requests exceeding the latency threshold, and prioritized next steps. Distinguish assertions from requests that never completed and ask for a JSON export when the available output lacks needed detail."
+  },
+  {
+    "sid": "s012",
+    "description": "Use when creating or maintaining a repository's first-hand proof knowledge base, upgrading commercial pages with verifiable evidence, or routing a new benchmark, customer outcome, price, or release to affected pages. Start with repository sources, raw benchmarks, analytics, case studies, incident notes, founder recordings, or bounded interview answers. Produce atomic sourced facts under seo/kb/, a brand source of truth, page index, proof-backed outlines and edits, and explicit open questions for missing evidence. Do not invent benchmarks, customer outcomes, quotations, prices, or incidents, use AI-generated interface images as proof, or ship a long-form page with fewer than four documented proof categories."
+  },
+  {
+    "sid": "s013",
+    "description": "Use for a domain rebrand, site merge, subdomain-to-subfolder move, or bulk URL consolidation that must preserve search visibility and backlinks. Build the input inventory from sitemaps, repository routes, Search Console, backlink data, and analytics. Deliver URL inventory and one-to-one redirect CSVs, host-specific redirect configuration, a verification script reporting zero failures, canonical and schema edits, and unsent backlink-outreach drafts. Verification requires staging or production HTTP access and a supported host configuration. Do not redirect unrelated inner pages to the homepage, ship multi-hop chains, block the old domain after cutover, remove its redirects or HTTPS, or send outreach on the user's behalf."
+  },
+  {
+    "sid": "s014",
+    "description": "Use when designing Apple-platform menus, context menus, dock or edit menus, menu bars, toolbars, action buttons, pop-up or pull-down buttons, disclosure controls, or standard buttons. Start with the target platforms, whether actions are primary or secondary, the number of actions, and any existing .claude/apple-design-context.md. Return a component recommendation with rationale, visual hierarchy and grouping, platform-specific behavior, and macOS keyboard shortcuts where relevant. Use existing project context before asking questions and follow the bundled HIG references for the selected component."
+  },
+  {
+    "sid": "s015",
+    "description": "Use when writing Python tests with pytest, including fixtures, parameterized cases, markers, mocking, exceptions, and shared conftest.py configuration. Start with the Python behavior, inputs, expected outcomes, and setup or cleanup needs. Produce focused pytest test code using plain assertions, appropriate fixtures, parametrize, markers, and mocking patterns. The documented setup uses Python and pytest, with pyproject.toml configuration and optional plugins for coverage, asynchronous tests, or parallel execution. Avoid unittest-style self.assertEqual calls, __init__ setup, global state, and large unfocused test functions."
+  },
+  {
+    "sid": "s016",
+    "description": "Use when writing Java tests with TestNG, including groups, data providers, lifecycle hooks, XML suites, parallel execution, soft assertions, and listeners. Start with the Java behavior, test data, grouping, dependencies, and desired suite organization. Produce TestNG test classes and testng.xml configuration, with Maven execution and test-output reporting as documented. Avoid pervasive method dependencies and priority ordering where tests should remain independent, and use data providers instead of hard-coded repeated test data."
+  },
+  {
+    "sid": "s017",
+    "description": "Use when integrating with a named platform or designing an API in a familiar domain and a concrete real-world endpoint pattern would help. Start with the platform or domain and the user's specific use case, such as payments, logistics, communications, test execution, geolocation, or identity. Return the matching endpoint pattern first, adapt it to the requested system, link known official documentation, and identify differences from the standard pattern. Use the skill's relevant domain section and references rather than treating an example as an exact specification for every provider."
+  },
+  {
+    "sid": "s018",
+    "description": "Use when writing Cucumber behavior-driven tests with Gherkin feature files and step definitions in Java, JavaScript, TypeScript, or Ruby. Start with business scenarios, shared setup, examples, tags, and the application steps to exercise. Produce declarative feature files, step definitions, hooks, and tag-based execution commands, with failure screenshots where the documented hooks apply. Local runs use the corresponding Cucumber tooling; documented cloud runs additionally use LT_USERNAME and LT_ACCESS_KEY. Keep UI implementation details and line-by-line imperative actions out of Gherkin business scenarios."
+  },
+  {
+    "sid": "s019",
+    "description": "Use when designing API rate limits, quotas, throttling, retry and backoff behavior, concurrency controls, or circuit breakers. Work from the API's traffic pattern, burst needs, account tiers, and client or server responsibilities. Produce an algorithm choice, standard rate-limit headers and 429 response, tiered quotas and usage endpoints, retry rules, circuit-breaker behavior, and idempotency-key handling for state-changing retries. Do not automatically retry requests that require a corrected payload, URL, or permissions; refresh authentication once where documented and otherwise respect Retry-After or exponential backoff."
+  },
+  {
+    "sid": "s020",
+    "description": "Use when publishing or scheduling Dayuhao videos or articles through social-auto-upload and verifying the resulting work. Supply the local account, required media or UTF-8 HTML, Markdown, or TXT article file, title, source classification, and platform-specific metadata; schedules use Asia/Shanghai and must be explicit. Produce a submission or prepare-only preview, retain the result file and work ID, and verify uncertain results without re-uploading. The workflow requires sau dayu and browser login, with Node.js 22+ for first-time Markdown setup. Do not claim support for standalone drafts, document import, in-body videos, media-library covers, or other features the CLI says are unavailable."
+  }
+,
+  {
+    "sid": "s021",
+    "description": "Use when organizing an Apple app's layout or navigation, choosing sidebars, split views, tabs, lists, tables, windows, panels, or scroll views, or adapting a layout across screen sizes. Supply the information architecture, top-level sections, target platforms, multitasking needs, SwiftUI or UIKit choice, and any existing project context. Return a navigation recommendation, root-to-detail layout hierarchy, platform adaptations, and size-class behavior at transitions. Check .claude/apple-design-context.md before asking for missing information and use the relevant bundled HIG component references."
+  },
+  {
+    "sid": "s022",
+    "description": "Use when turning an API into readable reference documentation. Accept OpenAPI or Swagger YAML/JSON, endpoint or route lists, controller code, informal descriptions, Postman collections, gRPC protos, or GraphQL schemas. Produce a logical API overview, authentication, endpoint parameters and responses, reusable models, errors, applicable limits and versioning notes, and curl examples, in Markdown by default or requested HTML, OpenAPI, or Postman formats. Preserve exact input names and mark inferred or unknown content rather than presenting it as verified. For substantial undocumented requests, ask which output format is needed."
+  },
+  {
+    "sid": "s023",
+    "description": "Use when a site's traffic or signups are weak and the user wants an SEO teardown that ends in code fixes rather than only a checklist. Supply the domain, repository, one to three revenue pages, the main conversion, and any available Search Console, Ahrefs, or DataForSEO access. Ship a fix PR for fatal and fast revenue blockers, a revenue-ordered seo/roast-roadmap.md with owners, and verification commands, plus an optional client deck. The workflow requires codebase and live-site inspection and passes the documented verification before completion. Do not prioritize minor metadata or formatting cleanup while fatal or revenue issues remain, or deliver an audit without the required fixes and roadmap."
+  },
+  {
+    "sid": "s024",
+    "description": "Use when redesigning an existing screen, section, or component from real-app references, either as targeted fixes or up to three explored directions. Provide the source as renderable code, an image, design file, or live page, plus the user job, complaints, constraints, and any Mobbin references or collections. Deliver a source-appropriate render, before-and-after image when capture is available, and a report linking each visible change to inspected evidence. The workflow requires the product's own design system and connected Mobbin search or collection tools; stop if references cannot be read. Do not copy a reference's brand, copy, theme, or features, claim unmeasured outcomes, or change anything outside the selected target."
+  },
+  {
+    "sid": "s025",
+    "description": "Use when writing Jasmine tests in JavaScript or TypeScript, including behavior-driven specs, matchers, spies, asynchronous behavior, and clock control. Start with the behavior, expected values, dependencies to spy on, and asynchronous cases. Produce Jasmine describe/it specs with setup, matchers, spies, and async assertions as needed. The documented setup installs Jasmine as a development dependency, initializes its configuration, and runs specs through npx; browser and CI patterns are covered in the bundled reference."
+  },
+  {
+    "sid": "s026",
+    "description": "Use when logging into Xiaohongshu, validating its cookie, or publishing videos and image-text notes through social-auto-upload. Supply the local account alias and the appropriate media, title, description or note text, and tags, using headless, headed, or schedule options only when requested. Run the matching sau xiaohongshu command and show any generated login QR image directly to the user. The environment must already provide social-auto-upload and a callable sau command; consult the bundled runtime and CLI contracts before execution. Do not start by reading uploader source code or assume repository source is available."
+  },
+  {
+    "sid": "s027",
+    "description": "Use when answering Apple design questions about color, typography, SF Symbols, dark mode, accessibility, icons, layout, materials, motion, privacy, localization, branding, images, spatial layout, or interface writing. Start with target platforms, existing brand guidelines, accessibility goals, color approach, and any .claude/apple-design-context.md. Return cited HIG foundations, platform differences, concrete SwiftUI, UIKit, or AppKit patterns, and the accessibility impact. Use the relevant bundled foundation references and existing project context before asking for missing details."
+  },
+  {
+    "sid": "s028",
+    "description": "Use when designing a GraphQL schema or resolvers, choosing between REST, GraphQL, and gRPC, or defining protobuf services for gRPC. Supply the domain types, operations, querying and streaming needs, client environment, and target implementation language. Produce GraphQL types, queries, mutations, subscriptions, resolver patterns with DataLoader and structured errors, or proto3 service and message definitions, with a documented decision matrix for protocol selection. Documented implementation languages are JavaScript, TypeScript, Python, Java, and Go; browser-native gRPC requires a proxy."
+  },
+  {
+    "sid": "s029",
+    "description": "Use when logging into Instagram or immediately publishing Reels, single images, or carousels through social-auto-upload, then verifying or deleting the resulting work. Supply the account alias, supported media, caption and tags, optional video thumbnail, and result path; media is published in input order. Produce platform-confirmed work IDs and links, processing or unknown status when applicable, and verified deletion to Recently Deleted. The workflow requires the existing Patchright Chrome CLI session and user-completed login. It does not support scheduling, bulk or permanent deletion, or the listed unconnected publishing options; never retry an unknown submission or commit account and page evidence to Git."
+  },
+  {
+    "sid": "s030",
+    "description": "Use when logging into Bilibili, checking an account session, or uploading a video through social-auto-upload. Supply the local account name and video plus the metadata required by the current sau CLI contract. Run the matching sau bilibili command and consult the bundled runtime requirements before use. The environment needs a callable sau command or the repository's sau_cli.py; biliup is checked, downloaded, and updated automatically. Login must be performed by the user in a local interactive terminal, not forced through a non-interactive agent session, and the user should open qrcode.png if the terminal QR code is incomplete."
+  }
+,
+  {
+    "sid": "s031",
+    "description": "Use when designing API patterns for GDPR, PCI-DSS, HIPAA, SOC 2, or related privacy, residency, retention, consent, and audit requirements. Start with the API's regulated data, user rights, retention rules, and compliance obligations. Produce data-subject and consent endpoints, field-masking rules, health-data access controls, immutable audit-log schemas, retention endpoints, compliance headers, and a checklist. The documented designs require encryption, data maps, appropriate authentication, and auditable state changes. Never store or return CVV/CVC, log sensitive payment fields, expose more PHI than necessary, or permit modification of immutable audit records."
+  },
+  {
+    "sid": "s032",
+    "description": "Use when uploading or scheduling a YouTube video through social-auto-upload or checking a Google/YouTube login session. Supply a local account alias, video, title of at most 100 characters, description, tags, visibility, and optionally a thumbnail, existing playlist, or explicit schedule. Produce the requested immediate or scheduled submission and verify the displayed schedule when used. The workflow requires the existing sau youtube CLI and browser-based Google login without QR codes. Do not equate upload success with review completion or public playback, and inspect YouTube Studio before retrying when a timeout leaves the result uncertain."
+  },
+  {
+    "sid": "s033",
+    "description": "Use when protecting website or API dataset routes from AI agents, CLI scrapers, and headless browsers while preserving verified Googlebot indexing. Identify protected routes, the destination product URL, indexing requirements, and the edge or server stack. Implement and verify layered gates that return no dataset rows, verify Googlebot by network evidence rather than User-Agent alone, constrain sitemap and API access, avoid expensive uncached work, and publish explicit scraping policy notices. Return a report covering blocked probes, verified crawler and browser access, and agent red-team results. Do not rely on User-Agent allow-listing or a bare 403/429 response as the documented gate."
+  },
+  {
+    "sid": "s034",
+    "description": "Use when shipping competitor comparison, alternative, or persona-specific listicle pages backed by current public evidence. Supply the product and pricing model, competitors confirmed by the user, repository framework and content structure, existing comparison routes, and current review, pricing, documentation, and migration evidence. Produce sourced competitor trigger files, approved MDX and route files, navigation and sitemap edits, and a route summary. Each comparison requires current sources, pricing calculations, migration steps, and situations where the competitor is better. Do not publish unsourced or stale claims, competitor logos or UI screenshots, a plan without routes, or a top ranking for a persona the product does not serve."
+  },
+  {
+    "sid": "s035",
+    "description": "Use when scanning, reviewing, or remediating interface source in a defined repository or directory for HIG-aligned interface and accessibility concerns. Provide the target source and whether remediation, a gate, or a baseline is authorized. Run the versioned HIG Doctor JSON audit and return detected frameworks, severity counts, rule IDs and locations, confirmed findings, judgment-dependent warnings, preserved exceptions, checks, and missing evidence. The command requires a supported Node.js runtime, npx, and package-registry access. Do not use it for general design advice without source, treat a scan as proof of compliance, or weaken suppressions, configuration, or baselines to obtain a clean result."
+  },
+  {
+    "sid": "s036",
+    "description": "Use when writing WebdriverIO browser automation tests in JavaScript or TypeScript with Mocha, Jasmine, or Cucumber. Start with the application flow, runner choice, local or cloud execution target, and existing project structure. Produce WDIO tests, selectors, waits, page objects, and wdio.conf configuration, with setup and run commands. Local setup uses npm and npx; documented cloud execution uses the LambdaTest WDIO service with LT_USERNAME and LT_ACCESS_KEY. Use the bundled cloud and advanced-pattern references for service, reporting, mocking, mobile, and CI needs."
+  },
+  {
+    "sid": "s037",
+    "description": "Use when designing or documenting API authentication, authorization, and security controls, including OAuth 2.0, JWT, API keys, RBAC, ABAC, webhooks, CORS, transport security, validation, and tenant isolation. Start with the client type, trust boundaries, resources, permissions, and token or key lifecycle. Produce an auth-pattern choice, OAuth endpoints, JWT claims and validation rules, permission matrices, OWASP mitigations, security headers, and hashed, scoped, rotatable API-key design. Do not accept alg: none tokens, store API keys in plaintext, omit ownership or route authorization checks, or allow unrestricted outbound URLs where SSRF is a concern."
+  },
+  {
+    "sid": "s038",
+    "description": "Use when configuring Karma for browser-based JavaScript or TypeScript tests with Jasmine, Mocha, QUnit, or Angular. Supply the source and spec layout, framework, target browsers, coverage needs, and local or cloud execution choice. Produce karma.conf.js with files, preprocessors, reporters, launchers, coverage, watch or single-run behavior, and Angular integration where needed. The documented setup uses Karma packages installed with npm and runs through npx; cloud launchers additionally use LT_USERNAME and LT_ACCESS_KEY."
+  },
+  {
+    "sid": "s039",
+    "description": "Use when logging into Zhihu or publishing and verifying articles or videos through social-auto-upload. Supply a local session alias, an HTML, Markdown, or TXT article with positioned images, or a video with title, description, originality, category, and content declaration. Produce a platform-confirmed work URL or an explicitly non-published prepared state and verify uncertain submissions from existing results. The workflow requires sau zhihu and local credentials, with article setup before first Markdown use. Do not overwrite a recovered draft, claim prepared means published, rely on the experimental schedule as guaranteed, or use unsupported custom covers, themes, columns, topics, and document import."
+  },
+  {
+    "sid": "s040",
+    "description": "Use when publishing a video to Weibo through social-auto-upload or checking a Weibo account session. Supply a local account alias, video, title of at most 30 characters, description, tags, and an optional cover image, preferably below 5 MB. Run the existing sau weibo workflow and report only the platform's actual result, checking the original work in Weibo before any retry after uncertain status. Show the QR image to the user when login presents one. The current scope supports videos only, not image-text posts or scheduled publishing."
+  }
+,
+  {
+    "sid": "s041",
+    "description": "Use when publishing a long-form article on Xueqiu through social-auto-upload or verifying an existing submission. Supply a local account alias, nonempty single-line title, UTF-8 HTML, Markdown, or TXT content, accurate creation declaration, visibility, and local positioned images with an optional cover. Produce a prepared draft or a published result with a retained JSON record and verify uncertain submissions without uploading again. The workflow requires sau xueqiu and Chrome login, with article setup before first Markdown use. It does not support scheduling, video, Word input, custom cropping, or stock/topic/@ associations; do not overwrite an editor's existing content or place credentials in commands or source."
+  },
+  {
+    "sid": "s042",
+    "description": "Use when exposing an API to an LLM or agent through tool or function definitions, MCP tool schemas, natural-language intent mapping, or an agentic workflow. Supply the API actions, input fields, constraints, authentication, and intended user intents. Produce Anthropic tool-use or OpenAI function-calling definitions, MCP schemas, an intent-to-endpoint mapping, and a workflow that synthesizes API results. Keep each tool to one action, mark only truly necessary fields as required, use enums for fixed choices, and prefer read operations during exploration. Require user confirmation before destructive calls."
+  },
+  {
+    "sid": "s043",
+    "description": "Use when writing or debugging Selenium WebDriver browser tests locally or on a remote grid, including cross-browser execution. Start with the application flow, target language, local or cloud environment, and whether the task is a single test, project setup, or repair. Produce Selenium scripts or a page-object project with stable locators, explicit waits, assertions, and driver cleanup. Documented languages are Java, Python, JavaScript, C#, Ruby, and PHP; cloud execution additionally uses LT_USERNAME and LT_ACCESS_KEY. Do not use absolute positional XPath, Thread.sleep, or mixed implicit and explicit waits."
+  },
+  {
+    "sid": "s044",
+    "description": "Use when rewriting or auditing SEO page titles, title tags, MDX frontmatter titles, H1 alignment, or titles across many pages. Start with each page's content, slug, primary query, search intent, and available top-ranking SERP title evidence. Produce three to five options for a single page or a concise before-and-after table for bulk work, selecting accurate, unique titles with important words visible before truncation. Use 40–55 characters when practical and align title, metadata, H1, and slug around the same topic. Do not write from guesswork alone, stuff keywords, mix incompatible title patterns, use unsupported hype, or change slugs merely for temporary numbers or years."
+  },
+  {
+    "sid": "s045",
+    "description": "Use when designing Apple-platform search fields, search scopes, page controls, breadcrumbs, or path controls. Supply the content type, dataset size, target platforms, whether search is the primary interaction, and any existing project context. Return a component recommendation, interaction and behavior specification, and platform differences for iOS, iPadOS, macOS, or visionOS. Check .claude/apple-design-context.md before asking for missing details and use the relevant bundled references. Page controls are limited to flat, linear sequences, not hierarchical navigation."
+  },
+  {
+    "sid": "s046",
+    "description": "Use when writing Flutter unit, widget, integration, or golden tests in Dart. Start with the test type, user-facing behavior, UI keys, dependencies to mock, and target local or real-device environment. Produce Dart tests with appropriate finders, interactions, pump or pumpAndSettle calls, mocks, and golden comparisons, placed in test/ or integration_test/ as documented. The setup uses Flutter SDK test packages and optional Mockito and build_runner; real-device integration uses the documented app upload and Appium Flutter driver path. Avoid testing implementation details or relying on dynamic display text when stable keys are available."
+  },
+  {
+    "sid": "s047",
+    "description": "Use when writing Ruby tests with RSpec, including describe/context/it structure, matchers, lazy setup, hooks, mocks, stubs, and shared examples. Start with the Ruby behavior, scenarios, expected values, and collaborators to isolate. Produce RSpec specs using expect().to syntax, appropriate matchers, let blocks, hooks, and verified doubles. The documented setup installs RSpec with gem, initializes its configuration, and runs through rspec or bundle exec. Avoid legacy should syntax, unnecessary instance variables, and heavy eager setup where lazy let blocks suffice."
+  },
+  {
+    "sid": "s048",
+    "description": "Use when planning and writing repository content for missing AI search prompts using live AI SEO Tracker evidence. Supply the named project, a writable Markdown or MDX repository, and connected MCP scan, prompt, source, competitor, and snippet data. Produce an approved batch of at most five new, rewritten, or consolidated posts with a manifest, verified sources, valid frontmatter and internal links, followed by a post-publication visibility recheck. The workflow requires OAuth-connected AI SEO Tracker MCP and approval before writing. Do not invent evidence, scrape live AI answers, write before approval, promise rankings or full coverage, deploy, send outreach, or add tracked prompts unless explicitly requested."
+  },
+  {
+    "sid": "s049",
+    "description": "Use when clustering keywords by live SERP overlap, selecting free tools by traffic value, extracting AI citation gaps, or locking a page's format before drafting. Supply seed keywords or buyer prompts, target market, repository routes, and a spending budget. Produce raw SERP records, keyword-clusters.json, content-map.md, tool-specs.md and a scaffolded top route, citation-gaps.md, or per-page intent locks as applicable. Use DataForSEO MCP or REST credentials, with manual web search only for fewer than ten queries and no CPC filters. Validate response status and suspicious SERPs, record costs, and stop at the stated budget; do not draft a page without its intent lock or cluster by wording alone."
+  },
+  {
+    "sid": "s050",
+    "description": "Use when writing JavaScript or TypeScript unit and integration tests with Jest, including mocking, snapshots, asynchronous behavior, fake timers, and React component tests. Start with the behavior, expected outcomes, modules or functions to mock, and any component interactions. Produce Jest tests using direct matchers, module mocks or spies, async assertions, and Testing Library patterns where relevant. The documented workflow runs through npx with options for watch, coverage, individual files, and snapshot updates. Await asynchronous assertions, assert logic directly instead of comparing booleans, and use snapshots for UI rather than snapshotting everything."
+  }
+,
+  {
+    "sid": "s051",
+    "description": "Use when designing or repairing Apple-app interaction flows such as onboarding, launch, loading, data entry, search, settings, notifications, modality, multitasking, sharing, feedback, undo, media, printing, or account management. Supply where the pattern occurs, surrounding steps, target platforms, whether the flow is new or existing, and any sensitive actions. Return a cited pattern recommendation, step-by-step implementation across screens or states, platform variations, and common pitfalls. Check existing project context before asking questions. Avoid unnecessary modality, long mandatory onboarding, premature sign-in or permission requests, destructive flows without undo where possible, and marketing notifications."
+  },
+  {
+    "sid": "s052",
+    "description": "Use when auditing one existing product surface against its governing design evidence, identifying supported visual or interface-copy problems, and preparing self-contained implementation plans for another agent. Supply the selected surface, its source and design documentation, and rendered evidence when the user provides it or requests visual inspection. Return up to three evidence-backed findings and, only for user-selected changes, standalone plans under design-plans/. The product source remains read-only; no dependencies, formatters, commits, pushes, or design-document updates are allowed. Do not report functional behavior, unsupported aesthetic judgments, or corrections that require inventing product intent."
+  },
+  {
+    "sid": "s053",
+    "description": "Use when choosing or designing Apple-platform alerts, action sheets, popovers, sheets, digit-entry views, confirmations, or other overlay presentations. Supply the information or action, whether it must block, target platforms, frequency, and any existing project context. Return a presentation recommendation with alternatives, concise title and button guidance, dismissal and save/discard/cancel behavior, and non-modal options where suitable. Use the bundled component references and existing context before asking questions. Minimize interruptions and avoid modal presentation when inline feedback, progressive disclosure, or undo can handle the situation."
+  },
+  {
+    "sid": "s054",
+    "description": "Use when checking or debugging a specific HTTP API request, including pasted curl commands or partial endpoint details. Supply the method, URL, headers, body, authentication, and query parameters as available. Return a one-line verdict, or two lines at most, stating the error and one-line fix; ask one targeted question only when missing information could change correctness. Check method-body compatibility, URL and path parameters, content type, required fields, encoding, and credential format. Do not add preamble, unrelated environment questions, or extended explanations."
+  },
+  {
+    "sid": "s055",
+    "description": "Use when creating or updating a DESIGN.md that records one product's governing design language from a source repository or a public website. Use repository guidance, tokens, shared primitives, and rendered consumers, or rendered DOM and loaded CSS at desktop and mobile widths for URL reconstruction. Produce a schema-valid DESIGN.md with only evidence-backed tokens and implementation guidance, then report sources, omissions, and successful lint and export checks. URL mode requires rendered browser access. Do not change product source or other files, infer intent from repetition, invent tokens or brand character, expose an invalid draft, or retain generated export files."
+  },
+  {
+    "sid": "s056",
+    "description": "Use when writing Cypress end-to-end, component, or API tests in JavaScript or TypeScript, locally or on a cloud grid. Start with the application flow or component, test type, execution target, and network behavior to intercept. Produce Cypress specs with chained cy commands, stable selectors, should assertions, intercept-based waits, and isolated authentication with cy.session where needed. Local execution uses npx; documented cloud execution uses the Cypress cloud plugin with LT_USERNAME and LT_ACCESS_KEY. Do not use async/await with cy commands, assign cy.get results for later use, use arbitrary timed waits, or test third-party sites when stubs are appropriate."
+  },
+  {
+    "sid": "s057",
+    "description": "Use when logging into a Facebook personal profile or immediately publishing, verifying, moving to trash, or permanently deleting its videos and image-text posts through sau. Supply the account alias, media and caption fields, and for management the original URL, numeric owner ID, and exact expected text. Produce platform-confirmed publishing or verification results and the requested deletion state after identity and content checks. The workflow requires the existing CLI and visible-Chrome login. Personal-profile scheduling and Facebook Pages are outside this command's scope; absence from trash does not prove permanent deletion, and uncertain submissions or deletions must be checked rather than repeated."
+  },
+  {
+    "sid": "s058",
+    "description": "Use when publishing a TikTok video with the repository's existing Patchright/Playwright Chrome uploader. Supply one video path, title, tags, and an explicit immediate or scheduled datetime choice, then confirm the target account and publishing intent. Produce a platform-confirmed submission or stop with the unexpected page or login state, checking TikTok Studio before any retry when the result is uncertain. The environment needs repository dependencies, the Chrome settings in conf.py, and a user-created local session; never read, copy, or commit cookie files. There is no sau tiktok command or separate description parameter, so do not invent CLI flags or run the batch example's automatic scheduling behavior without an explicit request."
+  },
+  {
+    "sid": "s059",
+    "description": "Use when automating Android or iOS apps with Appium on local emulators, simulators, or real devices. Supply the app package, platform, device, local or cloud target, and implementation language. Produce platform-specific capabilities and tests using accessibility-first locators, explicit waits, W3C gestures, and driver cleanup. Documented languages are Java, Python, JavaScript, Ruby, and C#; cloud runs require app upload, LT_USERNAME, and LT_ACCESS_KEY. Use separate Android and iOS capabilities, avoid Thread.sleep, pervasive XPath, hard-coded coordinates, deprecated TouchAction, and unnecessary app resets between tests."
+  },
+  {
+    "sid": "s060",
+    "description": "Use when submitting a software product to Awesome Tools through its JSON API, MCP, or browser WebMCP flow. Supply the authorized product name, public custom-domain URL, requester name and contact email, plus any known budget, goals, and listing instructions. Validate with a dry run, submit once after authorization, return the listing and status URLs, and complete the authorized free backlink check or paid-option review. No API key is required. A saved or draft request is not immediate publication; never invent brief answers, repeat a successful submission, publish a backlink, subscribe someone, or make a payment without explicit authorization."
+  }
+,
+  {
+    "sid": "s061",
+    "description": "Use when connecting services through webhooks, API chaining, event streams, ETL pipelines, Pub/Sub, Kafka, sagas, or an outbox pattern. Supply the services, triggering events, data flow, failure and ordering requirements, and state-changing operations. Produce webhook contracts and registration endpoints, composition steps, CloudEvents schemas, topic and queue designs, compensating actions, and an outbox schema as relevant. Include idempotency, bounded retry with jitter, circuit breaking, dead-letter handling, delivery logs and replay, event schema versions, and correlation IDs where the documented checklist applies."
+  },
+  {
+    "sid": "s062",
+    "description": "Use when writing Python tests with the built-in unittest framework rather than pytest. Start with the Python behavior, expected values, fixtures, and dependencies to mock. Produce TestCase classes with setUp and tearDown, unittest assertion methods, subTest parameterization, exception and warning checks, and unittest.mock patches as needed. The workflow runs with python -m unittest, including discovery or a fully qualified individual test. Use unittest-specific lifecycle methods and assertion patterns rather than pytest fixtures or plain assert conventions."
+  },
+  {
+    "sid": "s063",
+    "description": "Use when writing Python behavior-driven tests with Behave and Gherkin. Start with business scenarios, feature files, shared background steps, tags, and browser or API setup. Produce .feature files, Python step implementations, environment hooks, and optional JSON reports, using scenario outlines and tags where appropriate. The documented local setup installs behave and selenium with pip; cloud browser execution additionally uses LT_USERNAME and LT_ACCESS_KEY. Keep feature scenarios in business language and place browser creation, cleanup, and failure screenshots in the documented hooks."
+  },
+  {
+    "sid": "s064",
+    "description": "Use when publishing a video to Alipay Life Services through social-auto-upload or checking the creator account session. Supply a local account alias, video, title, description, tags, and optionally a thumbnail or existing collection. Run the existing sau alipay command and report only the platform-supported result, checking the Alipay backend before retrying an uncertain submission. The account must be logged into the content-creation backend and have Life Services publishing permission; show the QR image when login requires scanning. The current scope supports videos only, not image-text posts or scheduling, and submission does not imply review approval or public visibility."
+  },
+  {
+    "sid": "s065",
+    "description": "Use when creating a mock server, API sandbox, stubs, test doubles, fixture data, or record-and-replay setup for development or testing. Supply the API contract or endpoints, expected responses, state transitions, error cases, and development or test environment. Produce the appropriate WireMock, Prism, MSW, Pact, Postman, in-process, VCR, or nock definitions and realistic fixture data, including 401, 429, and 500 stubs for every endpoint as documented. Prism's local mock workflow requires its CLI and an OpenAPI specification; other approaches use their corresponding runtime."
+  },
+  {
+    "sid": "s066",
+    "description": "Use when routing existing informational-page traffic and link equity to product, pricing, comparison, use-case, integration, or tool pages through internal links. Supply the repository structure, production origin, confirmed money pages, and Search Console or Ahrefs traffic data when available. Produce before-and-after link graphs, edited source posts with contextual links and callouts, required hub and breadcrumb changes, and seo/internal-links-report.md with remaining orphans. Run the bundled graph script and repository build or link checker. Do not return suggestions without edits, count navigation or footer links as contextual, add unrelated or nofollow links, repeat one anchor excessively, or rely only on a bottom-of-post related-links block."
+  },
+  {
+    "sid": "s067",
+    "description": "Use when designing an integration with an Apple framework or service such as Siri, Apple Pay, HealthKit, HomeKit, ARKit, iCloud, Sign in with Apple, SharePlay, CarPlay, Game Center, NFC, Wallet, Maps, or related technologies. Identify the technology, use case, platforms, entitlements, data, and permissions, using existing project context when present. Return an implementation checklist, required and optional features, privacy and permission requirements, the user-facing flow, and edge-case testing guidance from the bundled references. Respect platform-specific scope, including permitted CarPlay app types, data minimization, accessible interactions, and transparent AI-generated content."
+  },
+  {
+    "sid": "s068",
+    "description": "Use when inferring a concise REST endpoint list from backend file names, directory trees, or pasted project structure. Accept flat or mixed file lists from any backend language, with or without extensions, including route, controller, service, model, auth, upload, search, settings, health, and webhook names. Return one method, path, and short description per inferred endpoint, grouped by resource and deduplicated, with detected version prefixes or nesting. Skip middleware, utilities, tests, and non-REST files; when no backend signal exists, request relevant file names. Do not produce schemas, request bodies, examples, documentation blocks, or explanatory reasoning unless asked."
+  },
+  {
+    "sid": "s069",
+    "description": "Use when planning API versions, classifying breaking changes, deprecating or sunsetting a version, or writing a client migration guide. Supply the existing contract, proposed field or endpoint changes, client compatibility needs, and current version lifecycle. Produce a versioning-strategy recommendation, breaking-change classification, deprecation and sunset responses, negotiation or routing patterns, migration guidance, and a lifecycle checklist. The documented approach recommends URI versions for public APIs and date-based versions for pinned SDKs, with at least six months of sunset notice. Do not duplicate business logic across version implementations or leave clients on an implicit latest version."
+  },
+  {
+    "sid": "s070",
+    "description": "Use when writing, running, or debugging Playwright browser and end-to-end tests, including local or cloud execution, mobile browser coverage, API mocking, and visual regression. Supply the application flow, language, local or cloud target, test scope, and existing project conventions. Produce Playwright scripts or suites with role-based selectors, web-first assertions, appropriate configuration, fixtures or page objects, and validation through configuration checks and test runs. Documented languages are TypeScript, JavaScript, Python, Java, and C#; cloud execution uses LT_USERNAME and LT_ACCESS_KEY. Avoid raw CSS or XPath unless required by a third-party widget, hard waits, shared state, and swallowed assertion failures."
+  }
+,
+  {
+    "sid": "s071",
+    "description": "Use when setting up AI SEO Tracker or answering from live data about a brand's mentions, rankings, citations, competitors, and scan state in supported AI answer systems. Identify the brand or project and connect the documented MCP server through browser OAuth, then read projects, scan state, prompts, sources, snippets, competitors, or source history as needed. Produce answers grounded in returned JSON and draft next actions without sending or publishing them. Do not invent project slugs, ranks, URLs, tools, or coverage, treat no_data as an authentication failure, scrape the public site for missing data, add prompts the user did not request, or promise rankings or a complete SEO strategy."
+  },
+  {
+    "sid": "s072",
+    "description": "Use when choosing or designing Apple-platform selection and input controls such as pickers, toggles, sliders, steppers, segmented controls, combo boxes, text fields or views, labels, token fields, virtual keyboards, rating indicators, and gauges. Supply the data type, number of options, target platform, settings or form context, and any existing project context. Return a control recommendation, state and commit behavior, validation approach, and VoiceOver accessibility guidance. Use the bundled control references and check project context before asking questions. Combo boxes and token fields are documented for macOS; gauges and rating indicators are display-only unless an interactive variant is explicitly used."
+  },
+  {
+    "sid": "s073",
+    "description": "Use when logging into WeChat Channels or publishing, scheduling, or saving a video draft through social-auto-upload. Supply the local account alias, video, title, description, tags, and intended immediate, scheduled, or draft outcome, with optional existing collection, category, short title, and landscape or portrait covers. Run the existing sau tencent workflow and report only CLI or platform-confirmed results. The process depends on a browser session; show any QR image to the user and use headed mode when manual page work is needed. It supports videos only, scheduling requires an explicit time, and saving a draft does not mean it was published."
+  },
+  {
+    "sid": "s074",
+    "description": "Use when logging into Kuaishou, validating its cookie, or publishing videos and image-text notes through social-auto-upload. Supply the local account alias, appropriate media, title, description or note text, and tags, using headless, headed, or schedule options only when requested. Run the matching sau kuaishou command and display any generated QR image directly to the user. The environment must already provide social-auto-upload and a callable sau command; consult the bundled runtime and CLI contracts before execution. Do not assume repository source is readable or start by inspecting uploader source code instead of using the CLI."
+  },
+  {
+    "sid": "s075",
+    "description": "Use when adding JavaScript pre-request logic or post-response assertions to Postman requests, including dynamic variables, response validation, and token chaining. Start with an existing collection JSON or a plain description of the endpoints, expected status and fields, timing limits, and values shared between requests. Produce pm-based prerequest and test scripts with short explanatory comments, either embedded as line arrays in the full updated collection or labeled by endpoint with placement instructions. Scripts run in Postman's sandboxed JavaScript environment without Node.js built-ins. Preserve the collection structure and put shared logic at collection level when needed."
+  },
+  {
+    "sid": "s076",
+    "description": "Use when selecting Apple-platform components to display charts, image collections, single images, web content, color or image pickers, sharing interfaces, or image-and-text lockups. Supply the content type, quantity, static or dynamic behavior, target platforms, and existing project context. Return a cited component recommendation, configuration and setup guidance, accessibility requirements, and platform-specific notes. Use the bundled content references and existing context before asking questions. Prefer system components before custom implementations and include accessible descriptions, navigation order, empty states, and performance measures for large content sets where applicable."
+  },
+  {
+    "sid": "s077",
+    "description": "Use when uploading, scheduling, managing, or analyzing social content through Upload-Post across its documented platforms, including media processing, comments, direct messages, webhooks, and account-specific management. Supply the connected profile name, target platforms, content and media, optional schedule or queue settings, and the operation-specific identifiers. Produce the corresponding API request or workflow, status and history checks, analytics, or management result, reading uncertain writes back before retrying. The API requires an Upload-Post account, connected social accounts, and an API key. Respect platform capability limits, required confirmation for destructive actions, and keep secrets such as YouTube stream keys out of output."
+  },
+  {
+    "sid": "s078",
+    "description": "Use when designing API health checks, service-level measures, metrics, alerts, logs, dashboards, or distributed tracing. Supply the API's dependencies, availability and latency targets, error budget, business metrics, and observability environment. Produce liveness, readiness and deep-health endpoints, SLI/SLO/SLA definitions, Prometheus metrics, alert rules, structured JSON logs, Grafana panel specifications, and tracing headers. The documented patterns cover request and business metrics, dependency health, slow endpoints, and W3C trace correlation. Distinguish process liveness from readiness to serve traffic and separate measured indicators, internal objectives, and externally committed agreements."
+  },
+  {
+    "sid": "s079",
+    "description": "Use when routing a video, article, or image-text publishing request to social-auto-upload's platform-specific workflow, including distribution to several explicitly selected platforms. First identify the target platforms, content type, local account aliases, and immediate, scheduled, or draft intent. Select and read each matching platform Skill, verify current CLI parameters, account state, files, copy, tags, visibility, and timing, then report publication only with command or platform evidence. Do not choose an unstated platform, invent parameters, claim TikTok has a sau command, request or store passwords, or blindly repeat submissions when the result is unknown."
+  },
+  {
+    "sid": "s080",
+    "description": "Use when generating or extending an OpenAPI 3.x or Swagger 2.0 specification from natural language, endpoint lists, route or controller code, models, or a partial spec. Supply the API purpose, specification version, YAML or JSON format, endpoints, authentication, shared models, and existing spec content; extract endpoints already present in code rather than asking again. Produce a complete, lintable YAML or JSON specification plus an endpoint summary, with reusable schemas, examples, required fields, security schemes, operation IDs, and standard responses. Merge rather than overwrite an existing partial spec and verify every reference and required operation before delivery; do not leave placeholder TODO sections."
+  }
+,
+  {
+    "sid": "s081",
+    "description": "Use when preparing a reviewed backlink outreach batch for partners, customers, or editorial authors, or auditing prospects for weak targets. Supply verified product facts and integrations, prospect domains, ranking content URLs, contact evidence, and the intended link placement. Produce seo/outreach-batch-YYYY-MM-DD.md with SEND/CUT decisions, exact target URLs and sections, relationship and contact classifications, and structurally varied plain-text drafts with an explicit ask and appropriate reward. Use Ahrefs or web search to qualify ranking pages. Do not target unrelated or non-editorial pages, invent integrations or customers, hide unverified contact guesses, use direct reciprocal link swaps, clone email structures, or send the drafts on the user's behalf."
+  },
+  {
+    "sid": "s082",
+    "description": "Use when turning Ahrefs competitor, content-gap, backlink, Reddit, or link-insertion research into repository artifacts and scaffolded routes. Supply target and competitor domains, the relevant workflow, market, and either MCP access, AHREFS_API_KEY, or an exported UTF-8 CSV. Produce cached raw data plus the applicable competitor-gaps.md, link-targets.csv, reddit-topics.md, or insertion-targets.md, and build the selected routes. Limit paid fields and row counts, cache responses for seven days, and keep within the user's unit budget. Do not stop at findings without files, duplicate existing topics, target navigational or irrelevant pages, or treat inflated domain rating alone as evidence of valuable links."
+  },
+  {
+    "sid": "s083",
+    "description": "Use when logging into Douyin, validating its cookie, or publishing videos and image-text notes through social-auto-upload. Supply the local account alias, appropriate media, title, description or note text, and tags, using headless, headed, or schedule options only when requested. Run the matching sau douyin command and display any generated QR image directly to the user. The environment must already provide social-auto-upload and a callable sau command; consult the bundled runtime and CLI contracts before execution. Do not assume repository source is readable or start by inspecting uploader source code instead of using the CLI."
+  },
+  {
+    "sid": "s084",
+    "description": "Use when designing Apple system experiences outside the main app, including widgets, Live Activities, notifications, watch complications, Home Screen quick actions, tvOS Top Shelf, App Clips, and App Shortcuts. Supply the information or action to surface, target platform, update frequency, and primary glanceable need. Return a surface recommendation, content priorities and omissions, update cadence and budget, supported size or family variants, and deep-link behavior. Use the relevant bundled references and existing project context. Keep content focused and timely, provide useful notification context and actions, end completed Live Activities, and avoid promotional or low-value notifications."
+  },
+  {
+    "sid": "s085",
+    "description": "Use when writing JavaScript or TypeScript tests with Vitest, including Vite-native configuration, ESM, mocking, timers, snapshots, in-source tests, and React components. Start with the behavior, test location, dependencies to mock, and desired environment or coverage. Produce Vitest tests and vitest.config.ts using the vi namespace for mocks, spies, and fake timers, with Testing Library for component behavior where needed. Run once, watch, filter, or collect coverage through the documented npx commands. Use vi.fn and vi.mock rather than Jest's namespace and preserve TypeScript type safety."
+  },
+  {
+    "sid": "s086",
+    "description": "Use when preparing and submitting a startup, SaaS product, AI tool, MCP server, or Agent Skill to software directories, launchpads, registries, or curated Awesome lists. Inspect the product repository, metadata, and public assets to build one factual submission-manifest.json, then execute the selected directory sequence and maintain an idempotent submissions-log.json with receipts. Prepare the required copy, taxonomy, logos, screenshots, registry files, and contact details before submitting. Use free paths unless paid work is explicitly approved, avoid private contact data and hidden honeypot fields, follow each repository's contribution rules, and never invent facts, use promotional filler, repeat submissions, or spend without authorization."
+  },
+  {
+    "sid": "s087",
+    "description": "Use when designing Apple-platform progress indicators, loading states, status bars, or activity rings. Supply whether duration is known, typical operation time, target platforms, system-level or in-app placement, and existing project context. Return a determinate or indeterminate indicator recommendation, timing and animation guidance, VoiceOver announcements and live-region behavior, and platform-specific notes. Use the bundled status references and existing context before asking questions. Prefer measurable progress bars when possible, avoid stacked indicators, preserve status-bar contrast and safe areas, and do not repurpose Move, Exercise, and Stand ring conventions for unrelated data."
+  },
+  {
+    "sid": "s088",
+    "description": "Use when designing REST endpoints for a described system, from a partial domain description or existing resources, with either endpoints only or detailed request and response contracts. Supply the domain, resources, desired detail level, authentication approach, and any required operations. Produce resource-grouped endpoints with methods, paths, one-line meanings, headers, bodies, success responses, relevant errors, pagination, and a base-URL and authentication summary as requested. Follow REST resource conventions and the bundled domain references. The documented default path prefix is /api/v1/ unless specified otherwise. Do not use this card's scope for full API documentation; its output is endpoint design and concise meanings."
+  },
+  {
+    "sid": "s089",
+    "description": "Use when converting an API definition into a runnable test suite for happy paths, validation, authentication, boundaries, integration flows, load, mocking, or contracts. Accept OpenAPI or Swagger, Postman collections, curl commands, plain endpoint descriptions, raw HTTP examples, or route-handler code, plus the desired framework and environment. Produce a coverage summary, complete test files, setup and run instructions, and explicit coverage gaps. Documented outputs include pytest, Jest, Mocha, JUnit, Newman, k6, Pact, and plain HTTP scripts. Ask for missing critical authentication, environment, side-effect, or framework details, keep tests independent, and cover every documented status and required-field failure."
+  },
+  {
+    "sid": "s090",
+    "description": "Use when designing Apple-platform input behavior for touch gestures, Apple Pencil, keyboards, game controllers, pointers, Digital Crown, eye tracking, focus, remotes, spatial interaction, motion sensors, or nearby interactions. Supply target platforms and devices, app type, custom gesture plans, controller needs, and existing project context. Return platform-specific input recommendations, a standard and custom gesture behavior table, keyboard shortcuts, and accessibility alternatives. Use the bundled input references and existing context before asking questions. Preserve standard system gestures, provide feedback and non-controller alternatives, avoid overriding system actions, and do not make gyroscope, accelerometer, or UWB input essential to a task."
+  }
+,
+  {
+    "sid": "s091",
+    "description": "Use when writing Detox end-to-end tests for React Native apps in JavaScript or TypeScript on local simulators, emulators, or documented real-device infrastructure. Supply the app flow, stable testID values, target devices, build configurations, and local or cloud execution choice. Produce Detox tests, element matchers and actions, device controls, and .detoxrc.js configuration with automatic synchronization and reloads between tests. Local setup uses Detox with Jest and native app builds; cloud runs require built app and test artifacts plus LT_USERNAME and LT_ACCESS_KEY. Avoid manual delays, repeated launchApp calls where reload suffices, unstable selectors, and pervasive waitFor timeouts."
+  },
+  {
+    "sid": "s092",
+    "description": "Use when publishing, scheduling, verifying, or deleting videos and image-text posts on a Facebook Page through sau facebook-page. Supply the exact Page name, local account alias, media and caption fields, an explicit Asia/Shanghai schedule when needed, and result path; management also needs Page and content IDs and exact text. Produce a published, scheduled, processing, or deleted result as supported, retaining result JSON for verification. The workflow requires the existing CLI and browser session. Do not treat processing as publicly playable, use a changed published-work ID from the schedule record, repeat uncertain writes or deletions, or claim support for Instagram, personal profiles, or permanent early trash deletion."
+  },
+  {
+    "sid": "s093",
+    "description": "Use when writing keyword-driven Robot Framework tests in .robot files for web UI or API behavior, including custom keywords and data-driven cases. Supply the scenarios, application URL or API endpoints, variables, reusable steps, and local or remote browser needs. Produce Robot Framework suites using SeleniumLibrary or RequestsLibrary, custom Python-backed keywords, templates, setup and teardown, and report.html and log.html output. The documented setup installs Robot Framework and its libraries with pip; cloud browser execution uses LT_USERNAME and LT_ACCESS_KEY. Use the bundled cloud reference for remote capabilities and execution."
+  },
+  {
+    "sid": "s094",
+    "description": "Use when writing JavaScript or TypeScript tests with Mocha, Chai assertions, and Sinon mocking rather than Jest. Start with the behavior, expected values, asynchronous style, lifecycle hooks, and collaborators to stub or spy on. Produce describe/it suites with Chai assertions, async/await or callback completion, and Sinon sandbox setup and restoration. The documented setup installs mocha, chai, and sinon as development dependencies and supports npx execution, watch, grep, recursion, and timeout options. Call done for callback-style tests, restore sandboxes, and use regular functions when Mocha's this context is required."
+  },
+  {
+    "sid": "s095",
+    "description": "Use when adding or reviewing interactive HTML controls, forms, dialogs, keyboard behavior, focus management, icon-only buttons, or WCAG-related accessibility. Work from a UI file or the current UI task and its existing component primitives. Return exact violating snippets, a short explanation, and minimal code-level fixes covering accessible names, keyboard access, focus and dialogs, semantics, forms, announcements, contrast, media, and motion. Prefer native HTML and established accessible primitives. Do not broadly rewrite the UI, refactor unrelated code, migrate libraries, add redundant ARIA where native semantics already work, remove visible focus, or use hover or color alone for essential states."
+  },
+  {
+    "sid": "s096",
+    "description": "Use when designing for iOS, iPadOS, macOS, tvOS, visionOS, watchOS, or multiple Apple platforms, especially when adapting an existing app or comparing navigation, input, layout, and conventions. Supply target and base platforms, new or existing app status, UI framework, minimum OS versions, primary use context, and existing project context. Return cited platform-specific recommendations, a platform differences table, and implementation notes with APIs and adaptation strategies. Translate the product's intent to each platform's interaction model rather than replicating one platform's implementation everywhere, while preserving brand consistency and system accessibility conventions."
+  },
+  {
+    "sid": "s097",
+    "description": "Use when updating an existing blog post that has fallen behind competing results or needs a content and SERP-gap refresh. Supply the post and URL, primary keyword, available ranking or traffic data, and live web search or SERP and page-fetching tools. Produce a current-state audit, comparison with five selected top competitors, prioritized gaps, a proposed outline, and, after user approval, refreshed content preserving the original voice and URL plus a publisher summary. Do not rely on memory for current rankings or competitor claims, write before the approval checkpoint, promise ranking or traffic gains, stuff keywords, or discard sections and anchors that still work."
+  },
+  {
+    "sid": "s098",
+    "description": "Use when creating or updating shared Apple project design context for other HIG skills, starting an Apple-platform project, or filling missing context needed to tailor guidance. Auto-discover evidence from README, Swift package or Xcode files, Info.plist, code imports, assets, and accessibility patterns, then ask the user to confirm and supply remaining product, platform, technology, design-system, accessibility, user, and asset details. Produce or update .claude/apple-design-context.md using the documented sections so later skills need not repeat questions. When updating, read the existing document and change only affected sections, preserving all unchanged information."
+  },
+  {
+    "sid": "s099",
+    "description": "Use when planning a managed LinkDR backlink order with human review and payment, selecting one target page, anchor strategy, link-tier mix, content type, approval mode, and one-time or monthly billing. Inspect available repository or research context to propose a specific production URL and rationale, then provide a campaign draft and one checkout URL after the user confirms. Load the current upstream document before quoting prices or workflow details. The user reviews and pays in the browser; there is no MCP checkout or agent payment API. Do not guarantee publishers, rankings, or AI citations, replace the user's broader SEO strategy, collect a project slug, walk an onboarding wizard, or treat an unspecified budget period as monthly."
+  },
+  {
+    "sid": "s100",
+    "description": "Use when publishing a video to Hupu through social-auto-upload or checking a Hupu account session. Supply a local account alias, video, title of 4–40 characters, description, tags, and an optional thumbnail. Run the existing sau hupu workflow, verify the account and submission details, and check the original work in the Hupu backend before retrying an uncertain result. Login may require the user to complete QQ or phone verification in a browser, so retain headed mode when the page must be visible. The current scope supports videos only, not image-text posts or scheduled publishing."
+  }
+]

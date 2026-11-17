@@ -1,0 +1,9 @@
+{
+  "format_version": 2,
+  "embed_url": "https://api.voyageai.com/v1/embeddings",
+  "embed_model": "voyage-3.5",
+  "dimension": 1024,
+  "created_at": "2026-11-17T13:55:46.912508+00:00",
+  "skill_count": 444,
+  "text_source": "name+description"
+}

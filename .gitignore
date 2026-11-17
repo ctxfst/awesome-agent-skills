@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+.review/
+
+# Upstream Skill clones: not ours to redistribute; recreate with harvest.py or the experiment scripts
+experiment/sources/
+
+# Embedding caches: regenerated on build
+index/cache/
+experiment/indexes/*/cache/
+experiment/indexes/query-cache.json
+index/cards.json

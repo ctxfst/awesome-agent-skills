@@ -1,0 +1,102 @@
+[
+  {
+    "id": "vq-01",
+    "question": "What do you want to deliver to your partners: an OpenAPI/Swagger spec, readable API documentation, client SDKs, API tests, or something else?",
+    "reason": "“Getting them ready” could map to several candidate skills with very different outputs."
+  },
+  {
+    "id": "vq-02",
+    "question": "What is the main problem you want to solve first: unclear endpoint inventory or design, documentation, versioning and breaking changes, service integrations, or test coverage?",
+    "reason": "The general sense of messiness does not identify which API improvement skill is appropriate."
+  },
+  {
+    "id": "vq-03",
+    "question": "這次調整對外 API 規格，你最想先處理哪一項：版本與向下相容、重新設計端點、產生 OpenAPI 規格或文件、檢查請求，還是合規要求？",
+    "reason": "調整規格可能涉及多個候選方向，需先確認主要目標才能選對 Skill。"
+  },
+  {
+    "id": "vq-04",
+    "question": "你希望優先產出什麼給前端和維運：完整的 OpenAPI 規格、API 文件、前端 SDK、測試案例，還是健康檢查與監控設計？",
+    "reason": "不同等待中的交付物會對應不同 Skill，現有描述無法判定優先需求。"
+  },
+  {
+    "id": "vq-05",
+    "question": "Are you looking for a quick visual cleanup, a read-only design audit and implementation plan, or a fuller screen redesign with before-and-after concepts?",
+    "reason": "The request could reasonably mean any of three distinct frontend-improvement workflows."
+  },
+  {
+    "id": "vq-06",
+    "question": "Is this an Apple-platform app, and do you want help mainly with shared visual foundations, platform conventions, layout and navigation, or content components?",
+    "reason": "Most candidates are specific to Apple platforms and different design layers, so platform and focus are needed."
+  },
+  {
+    "id": "vq-07",
+    "question": null,
+    "reason": "直接調整既有網站在手機與暗黑模式下的版面問題，最符合快速修正間距、層級與排版的 Skill。"
+  },
+  {
+    "id": "vq-08",
+    "question": "你想優先處理哪一類問題：整體版面與導覽、選單與按鈕、內容展示、搜尋導覽、輸入控制，還是彈窗與對話框？",
+    "reason": "版面與元件問題涵蓋多個互不重疊的候選 Skill，需要指定主要元件類型。"
+  },
+  {
+    "id": "vq-09",
+    "question": null,
+    "reason": "使用者明確要求檢查搜尋流量下滑與整站 SEO，直接對應完整的 SEO 診斷與修正 Skill。"
+  },
+  {
+    "id": "vq-10",
+    "question": null,
+    "reason": "在尚未指定單一頁面或狹窄任務時，先進行完整網站 SEO 診斷最符合詢問起點的需求。"
+  },
+  {
+    "id": "vq-11",
+    "question": null,
+    "reason": "調整網站架構與網址且要避免排名流失，明確對應網站遷移與重新導向規劃 Skill。"
+  },
+  {
+    "id": "vq-12",
+    "question": "你想先從哪個方向著手：分析競爭對手缺口、整理關鍵字與內容地圖、更新既有文章、製作競品比較頁，還是調整站內連結？",
+    "reason": "同時提到內容與連結且已有兩類資料，仍不足以判定應優先採用哪個 SEO 工作流程。"
+  },
+  {
+    "id": "vq-13",
+    "question": null,
+    "reason": "使用者要發布已備妥的公告與媒體但未指定單一平台，總入口 Skill 可直接依平台與內容類型分流。"
+  },
+  {
+    "id": "vq-14",
+    "question": "Which channels are you posting to, and do you need a full publishing and scheduling workflow or just a lightweight scheduler?",
+    "reason": "The best choice depends on channel support and whether the team needs broader publishing capabilities or primarily scheduling."
+  },
+  {
+    "id": "vq-15",
+    "question": null,
+    "reason": "多平台發布且內容形式包含圖片與影片，使用可依平台及內容類型分流的總入口即可。"
+  },
+  {
+    "id": "vq-16",
+    "question": "你主要使用哪些社群平台與內容類型，需要我先處理哪個平台的排程、帳號或權限檢查流程？",
+    "reason": "候選 Skill 多為特定平台流程，平台不明會無法選擇適合的發布與帳號處理方式。"
+  },
+  {
+    "id": "vq-17",
+    "question": "What test stack is failing in CI—Newman/Postman, Playwright, Cypress, pytest, or unittest—and do you have failure logs or reports to analyze?",
+    "reason": "The appropriate debugging or automation skill depends on the test framework and available failure output."
+  },
+  {
+    "id": "vq-18",
+    "question": "Is the mobile coverage for native Android/iOS apps, React Native, Flutter, or mobile browsers, and do you have any preferred browser-test framework?",
+    "reason": "Browser coverage alone is insufficient to choose among Playwright, Appium, Detox, Flutter, and other framework-specific skills."
+  },
+  {
+    "id": "vq-19",
+    "question": "你們舊測試目前使用哪個框架或平台（例如 Robot Framework、Playwright、Detox、TestNG 或 Newman），關鍵流程是網頁、行動 App 還是 API？",
+    "reason": "補齊測試保護必須沿用或明確選定技術棧，現有資訊無法在候選框架間做選擇。"
+  },
+  {
+    "id": "vq-20",
+    "question": "你們目前的測試使用哪個框架（例如 Newman、Karma、Vitest、pytest、Playwright、TestNG 或 Flutter），主要測試對象是 API、網頁還是行動 App？",
+    "reason": "重構方向與對應 Skill 取決於既有測試框架和測試對象，單憑緩慢與不穩定無法判斷。"
+  }
+]

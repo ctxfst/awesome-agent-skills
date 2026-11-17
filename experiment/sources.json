@@ -1,0 +1,57 @@
+[
+  {
+    "role": "community-list",
+    "source": "VoltAgent/awesome-agent-skills",
+    "commit": "20c57162c790d59d35e47c1538dc534c5c59e60d"
+  },
+  {
+    "role": "community-list",
+    "source": "ComposioHQ/awesome-claude-skills",
+    "commit": "be2a406907dbc61b73e6827ded415c96139d13a2"
+  },
+  {
+    "role": "community-list",
+    "source": "BehiSecc/awesome-claude-skills",
+    "commit": "adf99015a0ad4dac11711c261f0f9b433e4215e7"
+  },
+  {
+    "role": "skill-source",
+    "source": "LambdaTest/agent-skills",
+    "commit": "375e466d6efd77436075e39ffba9623433740e18"
+  },
+  {
+    "role": "skill-source",
+    "source": "raintree-technology/hig-doctor",
+    "commit": "a0f1e4ec3c5ada82e538710b54a344db63189d8b"
+  },
+  {
+    "role": "skill-source",
+    "source": "mobbin/skills",
+    "commit": "cac338357d596415773874f06a6c16e862c195e4"
+  },
+  {
+    "role": "skill-source",
+    "source": "ibelick/ui-skills",
+    "commit": "65cc0edb4f64fe8bfe7e9c59466074de25bece76"
+  },
+  {
+    "role": "skill-source",
+    "source": "Illyism/seo-skills",
+    "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4"
+  },
+  {
+    "role": "skill-source",
+    "source": "dreammis/social-auto-upload",
+    "commit": "3847fff01f5434a8a32829833163cd6723cabc59"
+  },
+  {
+    "role": "skill-source",
+    "source": "gitroomhq/postiz-agent",
+    "commit": "01ab1fe17efa30d12de7758b961e8776d34dba4e"
+  },
+  {
+    "role": "skill-source",
+    "source": "Upload-Post/upload-post-skill",
+    "commit": "6cebb4bb0b42e609e28a9d5564ad4ac5c2f9d400"
+  }
+]

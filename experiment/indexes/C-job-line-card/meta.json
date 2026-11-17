@@ -1,0 +1,9 @@
+{
+  "condition": "C",
+  "method": "job-line-card",
+  "embed_url": "https://api.voyageai.com/v1/embeddings",
+  "embed_model": "voyage-3.5",
+  "dimension": 1024,
+  "card_count": 100,
+  "created_at": "2026-11-17T12:32:51.411833+00:00"
+}

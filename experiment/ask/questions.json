@@ -1,0 +1,122 @@
+[
+  {
+    "id": "vq-01",
+    "case": "C",
+    "question": "Which result do you need for your partners: (1) an endpoint list inferred from the files, (2) a detailed API design, (3) partner-facing documentation, (4) a client SDK, or (5) API test cases?",
+    "reason": "api-inferrer-from-files, api-designer, api-documentation, api-sdk-generator, and api-to-testcase-generator have different Done slots: endpoint lists, designs, documentation, SDKs, and tests."
+  },
+  {
+    "id": "vq-02",
+    "case": "C",
+    "question": "Which kind of cleanup do you mean: (1) inventory and redesign the endpoints, (2) plan versions and deprecation, (3) produce documentation, or (4) design integrations between services?",
+    "reason": "api-inferrer-from-files and api-designer organize endpoint output, while api-versioning-helper and api-integration have Done slots for migration guidance and integration work."
+  },
+  {
+    "id": "vq-03",
+    "case": "C",
+    "question": "你希望這次調整交出哪種成果：(1) 版本與相容性策略及遷移指南，(2) 重新設計端點規格，(3) 完整的 API 文件，還是 (4) 監控與告警設計？",
+    "reason": "api-versioning-helper、api-designer、api-documentation 與 api-health-monitoring 的 Done 分別是遷移指南、端點設計、文件與監控設計。"
+  },
+  {
+    "id": "vq-04",
+    "case": "C",
+    "question": "前端跟維運等待的交付物是哪一種：(1) 可驗證的 OpenAPI 規格，(2) 可讀的 API 文件，(3) 測試案例，還是 (4) 呼叫 API 的 SDK？",
+    "reason": "openapi-spec-generator、api-documentation、api-to-testcase-generator 與 api-sdk-generator 的 Done 分別是規格、文件、測試與 SDK。"
+  },
+  {
+    "id": "vq-05",
+    "case": "C",
+    "question": "Which outcome do you want: (1) a quick cleanup of the UI code, (2) a read-only audit and implementation plan, or (3) a reference-backed redesign with before-and-after images?",
+    "reason": "baseline-ui, improve-ui, and mobbin redesign-screen describe different work in When and Done: direct polish, plans only, or an evidenced visual redesign."
+  },
+  {
+    "id": "vq-06",
+    "case": "C",
+    "question": "Which kind of help are you looking for: (1) platform-specific design guidance, (2) shared design and interaction principles, or (3) hands-on changes to an existing screen or UI codebase?",
+    "reason": "hig-platforms and hig-foundations produce guidance in their Done slots, whereas redesign-screen and baseline-ui describe changing an existing screen or UI in When."
+  },
+  {
+    "id": "vq-07",
+    "case": "B",
+    "question": "你目前手上的材料是可修改的頁面程式碼、手機與暗黑模式的截圖，還是兩者都有？",
+    "reason": "baseline-ui 的 When 是直接清理 UI，hig-doctor-audit 的 When 是對 source 審查與修復，因此需要先用 Material 確認手上有程式碼還是視覺證據。"
+  },
+  {
+    "id": "vq-08",
+    "case": "B",
+    "question": "這個桌面端產品是 macOS、Windows，還是網頁應用？",
+    "reason": "hig-components-layout、hig-components-menus 與 hig-components-content 的 Done 都會依目標平台給出版面或元件建議，Requires 缺少平台資訊。"
+  },
+  {
+    "id": "vq-09",
+    "case": "A",
+    "question": null,
+    "reason": "seo-roast explicitly covers declining or flat search traffic in When and provides a prioritized site teardown and fixes in Done, matching the request without another question."
+  },
+  {
+    "id": "vq-10",
+    "case": "C",
+    "question": "Where do you want to start: (1) a whole-site SEO audit, (2) refreshing existing blog posts, (3) a focused sprint for one product page, or (4) improving internal links from blog content to product pages?",
+    "reason": "seo-roast, blog-refresher, blitz-seo, and internal-linking have distinct Done slots covering a site teardown, refreshed posts, one-page ranking work, and link edits."
+  },
+  {
+    "id": "vq-11",
+    "case": "A",
+    "question": null,
+    "reason": "domain-migration 的 When 明確涵蓋網址與網站整併且保留搜尋流量，Done 的 URL inventory、redirect map 與驗證腳本符合這次需求。"
+  },
+  {
+    "id": "vq-12",
+    "case": "C",
+    "question": "你想優先得到哪種成果：(1) 競品比較頁，(2) 更新既有文章，(3) 關鍵字群與內容地圖，還是 (4) 內部連結調整與前後對照表？",
+    "reason": "vs-and-alternatives、blog-refresher、dataforseo-serp 與 internal-linking 的 Done 分別是比較頁、文章更新、內容地圖與連結修改。"
+  },
+  {
+    "id": "vq-13",
+    "case": "B",
+    "question": "Which social media platforms do you want these announcements published to?",
+    "reason": "The Hupu, Dayuhao, Alipay, Baijiahao, Kuaishou, Xueqiu, and WeChat cards have the same publishing job in When and differ by target platform in Requires."
+  },
+  {
+    "id": "vq-14",
+    "case": "B",
+    "question": "Which social channels must your weekly publishing workflow support?",
+    "reason": "upload-post, postiz, and social-auto-upload all describe multi-channel publishing in When, but their Requires differ by supported channels and connected accounts."
+  },
+  {
+    "id": "vq-15",
+    "case": "B",
+    "question": "你想把這些內容發布到哪些社群平台？",
+    "reason": "xueqiu-upload、dayu-upload、hupu-upload、kuaishou-upload、xiaohongshu-upload 等卡的 When 都是發布或排程，Requires 的關鍵差異是目標平台。"
+  },
+  {
+    "id": "vq-16",
+    "case": "B",
+    "question": "這個發布流程需要涵蓋哪些社群平台？",
+    "reason": "social-auto-upload 與各平台卡的 When 都是發布或排程，選擇流程前需要先補上 Requires 中的目標平台。"
+  },
+  {
+    "id": "vq-17",
+    "case": "C",
+    "question": "Which result would help first: (1) an analysis of existing failure reports, (2) repairs to flaky browser tests, (3) new tests in your current framework, or (4) CI automation for the existing suite?",
+    "reason": "newman-report-analyzer, playwright-skill, framework-specific test cards, and postman-newman-automation have different Done slots for diagnosis, test repair or generation, and CI configuration."
+  },
+  {
+    "id": "vq-18",
+    "case": "B",
+    "question": "Is the mobile target a native iOS or Android app, a React Native app, or a mobile web app?",
+    "reason": "playwright-skill, appium-skill, and detox-skill all cover test automation in When, but their Material differs between mobile web, native mobile, and React Native apps."
+  },
+  {
+    "id": "vq-19",
+    "case": "B",
+    "question": "這些舊測試目前使用哪個程式語言與測試框架？",
+    "reason": "robot-framework-skill、detox-skill、playwright-skill 與 testng-skill 的 Done 都是產生或整理測試，但 Requires 的語言與框架不同。"
+  },
+  {
+    "id": "vq-20",
+    "case": "C",
+    "question": "你想先取得哪種成果：(1) 現有失敗與慢點的分析報告，(2) 測試執行器與平行化設定調整，還是 (3) 依目前框架重寫關鍵測試？",
+    "reason": "newman-report-analyzer 的 Done 是失敗與慢請求分析，karma-skill 與 testng-skill 偏向執行設定，而 vitest-skill 與 pytest-skill 的 Done 是產生框架特定測試。"
+  }
+]

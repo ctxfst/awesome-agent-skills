@@ -1,0 +1,2282 @@
+{
+  "gold": "experiment/ask/gold-full_intent.json",
+  "query_count": 20,
+  "conditions": {
+    "A": {
+      "method": "description",
+      "overall": {
+        "queries": 20,
+        "recall_at_5": 0.95,
+        "top1_accuracy": 0.7,
+        "near_miss_top1_rate": 0.05,
+        "near_miss_top1_count": 1,
+        "queries_with_near_misses": 20
+      },
+      "categories": {
+        "api-development": {
+          "queries": 4,
+          "recall_at_5": 1.0,
+          "top1_accuracy": 1.0,
+          "near_miss_top1_rate": 0.0,
+          "near_miss_top1_count": 0,
+          "queries_with_near_misses": 4
+        },
+        "frontend-design": {
+          "queries": 4,
+          "recall_at_5": 1.0,
+          "top1_accuracy": 0.75,
+          "near_miss_top1_rate": 0.0,
+          "near_miss_top1_count": 0,
+          "queries_with_near_misses": 4
+        },
+        "seo": {
+          "queries": 4,
+          "recall_at_5": 1.0,
+          "top1_accuracy": 1.0,
+          "near_miss_top1_rate": 0.0,
+          "near_miss_top1_count": 0,
+          "queries_with_near_misses": 4
+        },
+        "social-media-publishing": {
+          "queries": 4,
+          "recall_at_5": 1.0,
+          "top1_accuracy": 0.25,
+          "near_miss_top1_rate": 0.0,
+          "near_miss_top1_count": 0,
+          "queries_with_near_misses": 4
+        },
+        "test-automation": {
+          "queries": 4,
+          "recall_at_5": 0.75,
+          "top1_accuracy": 0.5,
+          "near_miss_top1_rate": 0.25,
+          "near_miss_top1_count": 1,
+          "queries_with_near_misses": 4
+        }
+      }
+    },
+    "B": {
+      "method": "skill-md-4000",
+      "overall": {
+        "queries": 20,
+        "recall_at_5": 0.85,
+        "top1_accuracy": 0.65,
+        "near_miss_top1_rate": 0.1,
+        "near_miss_top1_count": 2,
+        "queries_with_near_misses": 20
+      },
+      "categories": {
+        "api-development": {
+          "queries": 4,
+          "recall_at_5": 1.0,
+          "top1_accuracy": 1.0,
+          "near_miss_top1_rate": 0.0,
+          "near_miss_top1_count": 0,
+          "queries_with_near_misses": 4
+        },
+        "frontend-design": {
+          "queries": 4,
+          "recall_at_5": 1.0,
+          "top1_accuracy": 0.75,
+          "near_miss_top1_rate": 0.0,
+          "near_miss_top1_count": 0,
+          "queries_with_near_misses": 4
+        },
+        "seo": {
+          "queries": 4,
+          "recall_at_5": 1.0,
+          "top1_accuracy": 1.0,
+          "near_miss_top1_rate": 0.0,
+          "near_miss_top1_count": 0,
+          "queries_with_near_misses": 4
+        },
+        "social-media-publishing": {
+          "queries": 4,
+          "recall_at_5": 0.5,
+          "top1_accuracy": 0.25,
+          "near_miss_top1_rate": 0.0,
+          "near_miss_top1_count": 0,
+          "queries_with_near_misses": 4
+        },
+        "test-automation": {
+          "queries": 4,
+          "recall_at_5": 0.75,
+          "top1_accuracy": 0.25,
+          "near_miss_top1_rate": 0.5,
+          "near_miss_top1_count": 2,
+          "queries_with_near_misses": 4
+        }
+      }
+    },
+    "C": {
+      "method": "job-line-card",
+      "overall": {
+        "queries": 20,
+        "recall_at_5": 0.9,
+        "top1_accuracy": 0.8,
+        "near_miss_top1_rate": 0.1,
+        "near_miss_top1_count": 2,
+        "queries_with_near_misses": 20
+      },
+      "categories": {
+        "api-development": {
+          "queries": 4,
+          "recall_at_5": 1.0,
+          "top1_accuracy": 1.0,
+          "near_miss_top1_rate": 0.0,
+          "near_miss_top1_count": 0,
+          "queries_with_near_misses": 4
+        },
+        "frontend-design": {
+          "queries": 4,
+          "recall_at_5": 1.0,
+          "top1_accuracy": 1.0,
+          "near_miss_top1_rate": 0.0,
+          "near_miss_top1_count": 0,
+          "queries_with_near_misses": 4
+        },
+        "seo": {
+          "queries": 4,
+          "recall_at_5": 1.0,
+          "top1_accuracy": 1.0,
+          "near_miss_top1_rate": 0.0,
+          "near_miss_top1_count": 0,
+          "queries_with_near_misses": 4
+        },
+        "social-media-publishing": {
+          "queries": 4,
+          "recall_at_5": 0.75,
+          "top1_accuracy": 0.5,
+          "near_miss_top1_rate": 0.25,
+          "near_miss_top1_count": 1,
+          "queries_with_near_misses": 4
+        },
+        "test-automation": {
+          "queries": 4,
+          "recall_at_5": 0.75,
+          "top1_accuracy": 0.5,
+          "near_miss_top1_rate": 0.25,
+          "near_miss_top1_count": 1,
+          "queries_with_near_misses": 4
+        }
+      }
+    },
+    "D": {
+      "method": "bm25",
+      "overall": {
+        "queries": 20,
+        "recall_at_5": 1.0,
+        "top1_accuracy": 0.8,
+        "near_miss_top1_rate": 0.05,
+        "near_miss_top1_count": 1,
+        "queries_with_near_misses": 20
+      },
+      "categories": {
+        "api-development": {
+          "queries": 4,
+          "recall_at_5": 1.0,
+          "top1_accuracy": 0.75,
+          "near_miss_top1_rate": 0.25,
+          "near_miss_top1_count": 1,
+          "queries_with_near_misses": 4
+        },
+        "frontend-design": {
+          "queries": 4,
+          "recall_at_5": 1.0,
+          "top1_accuracy": 0.75,
+          "near_miss_top1_rate": 0.0,
+          "near_miss_top1_count": 0,
+          "queries_with_near_misses": 4
+        },
+        "seo": {
+          "queries": 4,
+          "recall_at_5": 1.0,
+          "top1_accuracy": 0.75,
+          "near_miss_top1_rate": 0.0,
+          "near_miss_top1_count": 0,
+          "queries_with_near_misses": 4
+        },
+        "social-media-publishing": {
+          "queries": 4,
+          "recall_at_5": 1.0,
+          "top1_accuracy": 1.0,
+          "near_miss_top1_rate": 0.0,
+          "near_miss_top1_count": 0,
+          "queries_with_near_misses": 4
+        },
+        "test-automation": {
+          "queries": 4,
+          "recall_at_5": 1.0,
+          "top1_accuracy": 0.75,
+          "near_miss_top1_rate": 0.0,
+          "near_miss_top1_count": 0,
+          "queries_with_near_misses": 4
+        }
+      }
+    }
+  },
+  "queries": [
+    {
+      "query": "Convert an exported internal API endpoint collection into a clean OpenAPI 3.1 YAML specification and partner-facing developer guide with request/response examples.",
+      "category": "api-development",
+      "expected": [
+        "api-development/lambdatest-agent-skills--openapi-spec-generator",
+        "api-development/lambdatest-agent-skills--api-documentation"
+      ],
+      "near_misses": [
+        "api-development/lambdatest-agent-skills--api-analyzer",
+        "api-development/lambdatest-agent-skills--api-designer",
+        "api-development/lambdatest-agent-skills--api-inferrer-from-files"
+      ],
+      "conditions": {
+        "A": [
+          {
+            "card_id": "api-development/lambdatest-agent-skills--openapi-spec-generator",
+            "score": 0.5149141550064087
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-documentation",
+            "score": 0.5022557377815247
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-designer",
+            "score": 0.46119242906570435
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-to-testcase-generator",
+            "score": 0.4458490014076233
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-sdk-generator",
+            "score": 0.44529008865356445
+          }
+        ],
+        "B": [
+          {
+            "card_id": "api-development/lambdatest-agent-skills--openapi-spec-generator",
+            "score": 0.5631959438323975
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-documentation",
+            "score": 0.5143674612045288
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-designer",
+            "score": 0.4964609444141388
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-to-testcase-generator",
+            "score": 0.48666366934776306
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-integration",
+            "score": 0.4377078115940094
+          }
+        ],
+        "C": [
+          {
+            "card_id": "api-development/lambdatest-agent-skills--openapi-spec-generator",
+            "score": 0.5261232852935791
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-documentation",
+            "score": 0.4887448847293854
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-designer",
+            "score": 0.4851250946521759
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-to-testcase-generator",
+            "score": 0.46439605951309204
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-sdk-generator",
+            "score": 0.44609490036964417
+          }
+        ],
+        "D": [
+          {
+            "card_id": "api-development/lambdatest-agent-skills--openapi-spec-generator",
+            "score": 30.35557586140728
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-to-testcase-generator",
+            "score": 29.45204150404659
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-documentation",
+            "score": 29.148789132194167
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--postman-test-script-generator",
+            "score": 26.494971824914995
+          },
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--create-design-md",
+            "score": 21.01539137595511
+          }
+        ]
+      }
+    },
+    {
+      "query": "Audit existing endpoint definitions for naming, pagination, error-schema, and versioning inconsistencies, and produce an API style-lint report plus a v2 deprecation plan.",
+      "category": "api-development",
+      "expected": [
+        "api-development/lambdatest-agent-skills--openapi-spec-generator",
+        "api-development/lambdatest-agent-skills--api-versioning-helper"
+      ],
+      "near_misses": [
+        "api-development/lambdatest-agent-skills--api-designer",
+        "api-development/lambdatest-agent-skills--api-documentation",
+        "api-development/lambdatest-agent-skills--api-analyzer"
+      ],
+      "conditions": {
+        "A": [
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-versioning-helper",
+            "score": 0.43656736612319946
+          },
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--improve-ui",
+            "score": 0.35939615964889526
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-compliance-checker",
+            "score": 0.3589039742946625
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--openapi-spec-generator",
+            "score": 0.34833723306655884
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-health-monitoring",
+            "score": 0.34282737970352173
+          }
+        ],
+        "B": [
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-versioning-helper",
+            "score": 0.46449705958366394
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-inferrer-from-files",
+            "score": 0.42084619402885437
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-compliance-checker",
+            "score": 0.4176424443721771
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-designer",
+            "score": 0.4092363119125366
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--openapi-spec-generator",
+            "score": 0.4036597013473511
+          }
+        ],
+        "C": [
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-versioning-helper",
+            "score": 0.42756715416908264
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-compliance-checker",
+            "score": 0.3802323043346405
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-inferrer-from-files",
+            "score": 0.3801194131374359
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-designer",
+            "score": 0.37390998005867004
+          },
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--improve-ui",
+            "score": 0.3467584550380707
+          }
+        ],
+        "D": [
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-documentation",
+            "score": 33.329061662405174
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-versioning-helper",
+            "score": 30.671714789236265
+          },
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--improve-ui",
+            "score": 22.635676010136095
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-doctor-audit",
+            "score": 21.498163253314555
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--openapi-spec-generator",
+            "score": 21.005600180314225
+          }
+        ]
+      }
+    },
+    {
+      "query": "Design a backwards-compatible v1-to-v2 API versioning and Sunset header migration specification along with a local mock server config for client testing.",
+      "category": "api-development",
+      "expected": [
+        "api-development/lambdatest-agent-skills--api-versioning-helper",
+        "api-development/lambdatest-agent-skills--api-mock-helper"
+      ],
+      "near_misses": [
+        "api-development/lambdatest-agent-skills--api-documentation",
+        "api-development/lambdatest-agent-skills--api-designer"
+      ],
+      "conditions": {
+        "A": [
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-versioning-helper",
+            "score": 0.4357207119464874
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-mock-helper",
+            "score": 0.33110693097114563
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-graphql-grpc",
+            "score": 0.27923962473869324
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-designer",
+            "score": 0.27511146664619446
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-compliance-checker",
+            "score": 0.2730197608470917
+          }
+        ],
+        "B": [
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-versioning-helper",
+            "score": 0.5191193222999573
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-mock-helper",
+            "score": 0.3560643196105957
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-designer",
+            "score": 0.33262985944747925
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--openapi-spec-generator",
+            "score": 0.32420408725738525
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-security-auth-pattern",
+            "score": 0.31807082891464233
+          }
+        ],
+        "C": [
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-versioning-helper",
+            "score": 0.4301002621650696
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-mock-helper",
+            "score": 0.3244854807853699
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-designer",
+            "score": 0.3038669228553772
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--domain-migration",
+            "score": 0.2915509343147278
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-graphql-grpc",
+            "score": 0.27624478936195374
+          }
+        ],
+        "D": [
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-versioning-helper",
+            "score": 44.32413461797032
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--openapi-spec-generator",
+            "score": 22.704196952121464
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-documentation",
+            "score": 20.918038770933798
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--vitest-skill",
+            "score": 18.70294576772237
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-mock-helper",
+            "score": 18.37650166022778
+          }
+        ]
+      }
+    },
+    {
+      "query": "Generate realistic mock fixture payloads for blocked frontend screens and a standardized `/health` and `/ready` monitoring contract from the draft OpenAPI file.",
+      "category": "api-development",
+      "expected": [
+        "api-development/lambdatest-agent-skills--api-mock-helper",
+        "api-development/lambdatest-agent-skills--api-health-monitoring"
+      ],
+      "near_misses": [
+        "api-development/lambdatest-agent-skills--openapi-spec-generator",
+        "api-development/lambdatest-agent-skills--api-documentation"
+      ],
+      "conditions": {
+        "A": [
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-mock-helper",
+            "score": 0.44301944971084595
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-health-monitoring",
+            "score": 0.4083378314971924
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-designer",
+            "score": 0.4060397446155548
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-to-testcase-generator",
+            "score": 0.392205148935318
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--openapi-spec-generator",
+            "score": 0.3731924295425415
+          }
+        ],
+        "B": [
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-mock-helper",
+            "score": 0.46215933561325073
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-designer",
+            "score": 0.418884813785553
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-to-testcase-generator",
+            "score": 0.41291430592536926
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-health-monitoring",
+            "score": 0.4107044041156769
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--openapi-spec-generator",
+            "score": 0.3970910310745239
+          }
+        ],
+        "C": [
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-mock-helper",
+            "score": 0.42227205634117126
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-designer",
+            "score": 0.4111401438713074
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-to-testcase-generator",
+            "score": 0.3936149775981903
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-health-monitoring",
+            "score": 0.388748437166214
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--openapi-spec-generator",
+            "score": 0.3736879825592041
+          }
+        ],
+        "D": [
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-mock-helper",
+            "score": 29.854776166458535
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-to-testcase-generator",
+            "score": 19.108876340627766
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--openapi-spec-generator",
+            "score": 17.902769154866032
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-health-monitoring",
+            "score": 17.352000268610617
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-documentation",
+            "score": 15.810924379252642
+          }
+        ]
+      }
+    },
+    {
+      "query": "Redesign the main analytics dashboard layout from existing screenshots and output updated HTML/CSS with a clear visual hierarchy and spacing tokens.",
+      "category": "frontend-design",
+      "expected": [
+        "frontend-design/mobbin-skills--redesign-screen",
+        "frontend-design/ibelick-ui-skills--baseline-ui"
+      ],
+      "near_misses": [
+        "frontend-design/ibelick-ui-skills--improve-ui",
+        "frontend-design/raintree-hig-doctor--hig-components-layout",
+        "frontend-design/raintree-hig-doctor--hig-foundations"
+      ],
+      "conditions": {
+        "A": [
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--create-design-md",
+            "score": 0.4209754168987274
+          },
+          {
+            "card_id": "frontend-design/mobbin-skills--redesign-screen",
+            "score": 0.4113587439060211
+          },
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--baseline-ui",
+            "score": 0.4108922481536865
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-components-layout",
+            "score": 0.3853936493396759
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-components-content",
+            "score": 0.3821876049041748
+          }
+        ],
+        "B": [
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--create-design-md",
+            "score": 0.4328887462615967
+          },
+          {
+            "card_id": "frontend-design/mobbin-skills--redesign-screen",
+            "score": 0.4316459596157074
+          },
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--baseline-ui",
+            "score": 0.41896048188209534
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-components-layout",
+            "score": 0.4037265181541443
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-components-content",
+            "score": 0.40256717801094055
+          }
+        ],
+        "C": [
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--baseline-ui",
+            "score": 0.43618112802505493
+          },
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--create-design-md",
+            "score": 0.4188500940799713
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-components-layout",
+            "score": 0.4065817892551422
+          },
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--improve-ui",
+            "score": 0.4003557562828064
+          },
+          {
+            "card_id": "frontend-design/mobbin-skills--redesign-screen",
+            "score": 0.39802423119544983
+          }
+        ],
+        "D": [
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--create-design-md",
+            "score": 26.489485692274187
+          },
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--baseline-ui",
+            "score": 25.477610541601727
+          },
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--improve-ui",
+            "score": 22.202810140812403
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-foundations",
+            "score": 20.608404865624344
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-components-layout",
+            "score": 19.94702912084078
+          }
+        ]
+      }
+    },
+    {
+      "query": "Consolidate existing UI components into a unified design-system specification with typography scale, semantic light/dark color tokens, and interactive state rules.",
+      "category": "frontend-design",
+      "expected": [
+        "frontend-design/ibelick-ui-skills--create-design-md",
+        "frontend-design/raintree-hig-doctor--hig-foundations"
+      ],
+      "near_misses": [
+        "frontend-design/ibelick-ui-skills--baseline-ui",
+        "frontend-design/ibelick-ui-skills--improve-ui",
+        "frontend-design/raintree-hig-doctor--hig-components-menus"
+      ],
+      "conditions": {
+        "A": [
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-foundations",
+            "score": 0.45208829641342163
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-components-controls",
+            "score": 0.39400559663772583
+          },
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--create-design-md",
+            "score": 0.3860465884208679
+          },
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--improve-ui",
+            "score": 0.38291695713996887
+          },
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--fixing-accessibility",
+            "score": 0.3715042769908905
+          }
+        ],
+        "B": [
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-foundations",
+            "score": 0.49074462056159973
+          },
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--baseline-ui",
+            "score": 0.4699065387248993
+          },
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--improve-ui",
+            "score": 0.4449455440044403
+          },
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--create-design-md",
+            "score": 0.4318900406360626
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-components-controls",
+            "score": 0.42182865738868713
+          }
+        ],
+        "C": [
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-foundations",
+            "score": 0.4596538841724396
+          },
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--baseline-ui",
+            "score": 0.4089435636997223
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-components-controls",
+            "score": 0.40702131390571594
+          },
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--improve-ui",
+            "score": 0.40684643387794495
+          },
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--create-design-md",
+            "score": 0.40321630239486694
+          }
+        ],
+        "D": [
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-foundations",
+            "score": 42.1507852759543
+          },
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--create-design-md",
+            "score": 39.783083135771875
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-components-status",
+            "score": 27.819231630288265
+          },
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--improve-ui",
+            "score": 26.21089552979401
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-project-context",
+            "score": 25.17183941280857
+          }
+        ]
+      }
+    },
+    {
+      "query": "Audit the responsive mobile layout and dark-mode contrast from provided code and screenshots, delivering patched CSS variables and accessible component fixes.",
+      "category": "frontend-design",
+      "expected": [
+        "frontend-design/raintree-hig-doctor--hig-foundations",
+        "frontend-design/ibelick-ui-skills--fixing-accessibility",
+        "frontend-design/raintree-hig-doctor--hig-doctor-audit"
+      ],
+      "near_misses": [
+        "frontend-design/ibelick-ui-skills--create-design-md",
+        "frontend-design/ibelick-ui-skills--baseline-ui",
+        "frontend-design/ibelick-ui-skills--improve-ui"
+      ],
+      "conditions": {
+        "A": [
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-foundations",
+            "score": 0.4489440321922302
+          },
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--fixing-accessibility",
+            "score": 0.4408658742904663
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-doctor-audit",
+            "score": 0.4144829511642456
+          },
+          {
+            "card_id": "frontend-design/mobbin-skills--redesign-screen",
+            "score": 0.40992724895477295
+          },
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--baseline-ui",
+            "score": 0.39217647910118103
+          }
+        ],
+        "B": [
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--fixing-accessibility",
+            "score": 0.46010082960128784
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-foundations",
+            "score": 0.4536117911338806
+          },
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--baseline-ui",
+            "score": 0.4476165771484375
+          },
+          {
+            "card_id": "frontend-design/mobbin-skills--redesign-screen",
+            "score": 0.41979271173477173
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-doctor-audit",
+            "score": 0.41874176263809204
+          }
+        ],
+        "C": [
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--fixing-accessibility",
+            "score": 0.4533699154853821
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-foundations",
+            "score": 0.4426470398902893
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-doctor-audit",
+            "score": 0.42342159152030945
+          },
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--baseline-ui",
+            "score": 0.40781939029693604
+          },
+          {
+            "card_id": "frontend-design/mobbin-skills--redesign-screen",
+            "score": 0.3929975628852844
+          }
+        ],
+        "D": [
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-foundations",
+            "score": 34.680125764424716
+          },
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--create-design-md",
+            "score": 24.69803789574198
+          },
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--improve-ui",
+            "score": 20.191386749129673
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-project-context",
+            "score": 19.833611117453835
+          },
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--fixing-accessibility",
+            "score": 19.025536992010476
+          }
+        ]
+      }
+    },
+    {
+      "query": "Produce a platform-native desktop UI layout specification and accessible keyboard-navigable component structure following native human interface guidelines.",
+      "category": "frontend-design",
+      "expected": [
+        "frontend-design/raintree-hig-doctor--hig-platforms",
+        "frontend-design/raintree-hig-doctor--hig-foundations",
+        "frontend-design/raintree-hig-doctor--hig-components-layout"
+      ],
+      "near_misses": [
+        "frontend-design/raintree-hig-doctor--hig-components-controls",
+        "frontend-design/raintree-hig-doctor--hig-inputs",
+        "frontend-design/raintree-hig-doctor--hig-doctor-audit"
+      ],
+      "conditions": {
+        "A": [
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-components-layout",
+            "score": 0.4952845275402069
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-platforms",
+            "score": 0.4490634500980377
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-foundations",
+            "score": 0.44579148292541504
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-components-menus",
+            "score": 0.42063286900520325
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-project-context",
+            "score": 0.41308292746543884
+          }
+        ],
+        "B": [
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-components-layout",
+            "score": 0.520155131816864
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-platforms",
+            "score": 0.4890522360801697
+          },
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--baseline-ui",
+            "score": 0.46852391958236694
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-foundations",
+            "score": 0.45760950446128845
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-project-context",
+            "score": 0.4517456591129303
+          }
+        ],
+        "C": [
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-components-layout",
+            "score": 0.511838436126709
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-platforms",
+            "score": 0.46373769640922546
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-components-menus",
+            "score": 0.45674946904182434
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-foundations",
+            "score": 0.45554453134536743
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-inputs",
+            "score": 0.4344763159751892
+          }
+        ],
+        "D": [
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-platforms",
+            "score": 23.30994922461827
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-components-content",
+            "score": 23.172860776815487
+          },
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--baseline-ui",
+            "score": 21.122040920487237
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-foundations",
+            "score": 21.025211085741716
+          },
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--fixing-accessibility",
+            "score": 20.66904797514278
+          }
+        ]
+      }
+    },
+    {
+      "query": "Analyze the site's crawl export and ranking CSV to produce a prioritized technical SEO fix plan addressing unindexed key pages, canonical issues, and parameterized URLs.",
+      "category": "seo",
+      "expected": [
+        "seo/illyism-seo-skills--seo-roast",
+        "seo/illyism-seo-skills--seo-autopilot"
+      ],
+      "near_misses": [
+        "seo/illyism-seo-skills--internal-linking",
+        "seo/illyism-seo-skills--block-ai-scrapers",
+        "seo/illyism-seo-skills--seo-title-optimization"
+      ],
+      "conditions": {
+        "A": [
+          {
+            "card_id": "seo/illyism-seo-skills--seo-roast",
+            "score": 0.511197566986084
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--internal-linking",
+            "score": 0.47050800919532776
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--dataforseo-serp",
+            "score": 0.45591723918914795
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--blog-refresher",
+            "score": 0.44245627522468567
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--ahrefs-research",
+            "score": 0.4265716075897217
+          }
+        ],
+        "B": [
+          {
+            "card_id": "seo/illyism-seo-skills--seo-roast",
+            "score": 0.49794578552246094
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--dataforseo-serp",
+            "score": 0.447273313999176
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--domain-migration",
+            "score": 0.426444947719574
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--internal-linking",
+            "score": 0.4263887107372284
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--blog-refresher",
+            "score": 0.4254886209964752
+          }
+        ],
+        "C": [
+          {
+            "card_id": "seo/illyism-seo-skills--seo-roast",
+            "score": 0.5102836489677429
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--dataforseo-serp",
+            "score": 0.4525100886821747
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--blog-refresher",
+            "score": 0.43712034821510315
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--internal-linking",
+            "score": 0.436017781496048
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--newman-report-analyzer",
+            "score": 0.41976720094680786
+          }
+        ],
+        "D": [
+          {
+            "card_id": "seo/illyism-seo-skills--domain-migration",
+            "score": 32.2512104496292
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--seo-roast",
+            "score": 30.62510243453815
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--ahrefs-research",
+            "score": 28.38566468849693
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--newman-report-analyzer",
+            "score": 28.033623615711896
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--blog-refresher",
+            "score": 27.11245849723406
+          }
+        ]
+      }
+    },
+    {
+      "query": "Build a revenue-oriented SEO roadmap that rewrites underperforming landing-page title tags/meta descriptions and adds structured Schema.org markup for search and AI answers.",
+      "category": "seo",
+      "expected": [
+        "seo/illyism-seo-skills--seo-roast",
+        "seo/illyism-seo-skills--seo-title-optimization",
+        "seo/illyism-seo-skills--seo-autopilot"
+      ],
+      "near_misses": [
+        "seo/illyism-seo-skills--dataforseo-serp",
+        "seo/illyism-seo-skills--blog-refresher",
+        "seo/illyism-seo-skills--vs-and-alternatives"
+      ],
+      "conditions": {
+        "A": [
+          {
+            "card_id": "seo/illyism-seo-skills--seo-roast",
+            "score": 0.6227397918701172
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--internal-linking",
+            "score": 0.5773712396621704
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--seo-title-optimization",
+            "score": 0.572083055973053
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--blitz-seo",
+            "score": 0.5698751211166382
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--blog-refresher",
+            "score": 0.5650029182434082
+          }
+        ],
+        "B": [
+          {
+            "card_id": "seo/illyism-seo-skills--seo-roast",
+            "score": 0.616558849811554
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--blitz-seo",
+            "score": 0.5852289199829102
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--seo-autopilot",
+            "score": 0.5839484333992004
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--seo-title-optimization",
+            "score": 0.5678774118423462
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--blog-refresher",
+            "score": 0.559485137462616
+          }
+        ],
+        "C": [
+          {
+            "card_id": "seo/illyism-seo-skills--seo-roast",
+            "score": 0.6330752968788147
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--seo-title-optimization",
+            "score": 0.5739275813102722
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--blog-refresher",
+            "score": 0.5667420625686646
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--blitz-seo",
+            "score": 0.5634558200836182
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--domain-migration",
+            "score": 0.5526367425918579
+          }
+        ],
+        "D": [
+          {
+            "card_id": "seo/illyism-seo-skills--seo-roast",
+            "score": 34.473068036025126
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--blog-refresher",
+            "score": 29.53954418591401
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--seo-autopilot",
+            "score": 25.268808238592612
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--ahrefs-research",
+            "score": 22.486202465787102
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--domain-migration",
+            "score": 21.802031658754238
+          }
+        ]
+      }
+    },
+    {
+      "query": "Create a zero-traffic-loss domain and URL migration checklist with 301 redirect mapping rules and post-launch indexation monitoring steps.",
+      "category": "seo",
+      "expected": [
+        "seo/illyism-seo-skills--domain-migration"
+      ],
+      "near_misses": [
+        "seo/illyism-seo-skills--seo-roast",
+        "seo/illyism-seo-skills--seo-autopilot"
+      ],
+      "conditions": {
+        "A": [
+          {
+            "card_id": "seo/illyism-seo-skills--domain-migration",
+            "score": 0.5145155787467957
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--internal-linking",
+            "score": 0.3657327890396118
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--seo-roast",
+            "score": 0.3545072674751282
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--seo-autopilot",
+            "score": 0.35262972116470337
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--blitz-seo",
+            "score": 0.3395223617553711
+          }
+        ],
+        "B": [
+          {
+            "card_id": "seo/illyism-seo-skills--domain-migration",
+            "score": 0.6003125905990601
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--seo-autopilot",
+            "score": 0.4127102494239807
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--blitz-seo",
+            "score": 0.37652817368507385
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--seo-roast",
+            "score": 0.37404462695121765
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--honest-link-outreach",
+            "score": 0.3672814667224884
+          }
+        ],
+        "C": [
+          {
+            "card_id": "seo/illyism-seo-skills--domain-migration",
+            "score": 0.5646195411682129
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--seo-roast",
+            "score": 0.37001293897628784
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--seo-autopilot",
+            "score": 0.3643742799758911
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--vs-and-alternatives",
+            "score": 0.3608134388923645
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--dataforseo-serp",
+            "score": 0.3530992567539215
+          }
+        ],
+        "D": [
+          {
+            "card_id": "seo/illyism-seo-skills--domain-migration",
+            "score": 40.659946588965525
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--seo-roast",
+            "score": 18.66164609112756
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--dataforseo-serp",
+            "score": 18.351208684412544
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--blog-refresher",
+            "score": 16.483980514587305
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--directory-submissions",
+            "score": 16.121105565878842
+          }
+        ]
+      }
+    },
+    {
+      "query": "Design a topic-cluster internal linking blueprint and content-refresh template based on competitor SERP gaps to lift bottom-of-funnel pages to page one.",
+      "category": "seo",
+      "expected": [
+        "seo/illyism-seo-skills--dataforseo-serp",
+        "seo/illyism-seo-skills--internal-linking",
+        "seo/illyism-seo-skills--blog-refresher",
+        "seo/illyism-seo-skills--ahrefs-research",
+        "seo/illyism-seo-skills--blitz-seo"
+      ],
+      "near_misses": [
+        "seo/illyism-seo-skills--proof-kb",
+        "seo/illyism-seo-skills--seo-title-optimization"
+      ],
+      "conditions": {
+        "A": [
+          {
+            "card_id": "seo/illyism-seo-skills--ahrefs-research",
+            "score": 0.554161012172699
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--internal-linking",
+            "score": 0.5258817672729492
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--blog-refresher",
+            "score": 0.5188794732093811
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--dataforseo-serp",
+            "score": 0.514641284942627
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--blitz-seo",
+            "score": 0.4871004819869995
+          }
+        ],
+        "B": [
+          {
+            "card_id": "seo/illyism-seo-skills--blog-refresher",
+            "score": 0.5639654397964478
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--blitz-seo",
+            "score": 0.5058876872062683
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--ahrefs-research",
+            "score": 0.5026001930236816
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--internal-linking",
+            "score": 0.5012167692184448
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--content-coverage",
+            "score": 0.4994654953479767
+          }
+        ],
+        "C": [
+          {
+            "card_id": "seo/illyism-seo-skills--blog-refresher",
+            "score": 0.5302294492721558
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--internal-linking",
+            "score": 0.513002336025238
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--dataforseo-serp",
+            "score": 0.5107471942901611
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--ahrefs-research",
+            "score": 0.5105831027030945
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--blitz-seo",
+            "score": 0.488898903131485
+          }
+        ],
+        "D": [
+          {
+            "card_id": "seo/illyism-seo-skills--ahrefs-research",
+            "score": 34.78617147270534
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--internal-linking",
+            "score": 32.96876648608041
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--blog-refresher",
+            "score": 30.240785183418176
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--seo-roast",
+            "score": 29.356086044998502
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--dataforseo-serp",
+            "score": 29.297181310849428
+          }
+        ]
+      }
+    },
+    {
+      "query": "Adapt launch copy and media attachments into platform-specific post variants across three channels, generate a scheduled publishing queue payload, and verify live post URLs.",
+      "category": "social-media-publishing",
+      "expected": [
+        "social-media-publishing/gitroomhq-postiz-agent--postiz",
+        "social-media-publishing/upload-post-upload-post-skill--upload-post"
+      ],
+      "near_misses": [
+        "social-media-publishing/dreammis-social-auto-upload--social-auto-upload",
+        "social-media-publishing/dreammis-social-auto-upload--instagram-upload"
+      ],
+      "conditions": {
+        "A": [
+          {
+            "card_id": "social-media-publishing/upload-post-upload-post-skill--upload-post",
+            "score": 0.4926353991031647
+          },
+          {
+            "card_id": "social-media-publishing/gitroomhq-postiz-agent--postiz",
+            "score": 0.46050238609313965
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--social-auto-upload",
+            "score": 0.4476701617240906
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--xueqiu-upload",
+            "score": 0.44512856006622314
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--instagram-upload",
+            "score": 0.43641138076782227
+          }
+        ],
+        "B": [
+          {
+            "card_id": "social-media-publishing/gitroomhq-postiz-agent--postiz",
+            "score": 0.4863216280937195
+          },
+          {
+            "card_id": "social-media-publishing/upload-post-upload-post-skill--upload-post",
+            "score": 0.4769246280193329
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--instagram-upload",
+            "score": 0.45817288756370544
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--xueqiu-upload",
+            "score": 0.45397886633872986
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--social-auto-upload",
+            "score": 0.4505099654197693
+          }
+        ],
+        "C": [
+          {
+            "card_id": "social-media-publishing/upload-post-upload-post-skill--upload-post",
+            "score": 0.48933517932891846
+          },
+          {
+            "card_id": "social-media-publishing/gitroomhq-postiz-agent--postiz",
+            "score": 0.4799390435218811
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--kuaishou-upload",
+            "score": 0.46468260884284973
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--social-auto-upload",
+            "score": 0.461127370595932
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--baijiahao-upload",
+            "score": 0.46112361550331116
+          }
+        ],
+        "D": [
+          {
+            "card_id": "social-media-publishing/upload-post-upload-post-skill--upload-post",
+            "score": 34.35688472881434
+          },
+          {
+            "card_id": "social-media-publishing/gitroomhq-postiz-agent--postiz",
+            "score": 29.04879048721964
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--dataforseo-serp",
+            "score": 19.55592600771824
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--domain-migration",
+            "score": 18.585242052233404
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-components-layout",
+            "score": 17.572456490583157
+          }
+        ]
+      }
+    },
+    {
+      "query": "Design an automated multi-platform publishing queue workflow with pre-flight media/character checks, account-session validation, and post-publish visibility confirmation.",
+      "category": "social-media-publishing",
+      "expected": [
+        "social-media-publishing/upload-post-upload-post-skill--upload-post",
+        "social-media-publishing/gitroomhq-postiz-agent--postiz",
+        "social-media-publishing/dreammis-social-auto-upload--social-auto-upload"
+      ],
+      "near_misses": [
+        "social-media-publishing/dreammis-social-auto-upload--youtube-upload",
+        "social-media-publishing/dreammis-social-auto-upload--bilibili-upload"
+      ],
+      "conditions": {
+        "A": [
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--xueqiu-upload",
+            "score": 0.4486972391605377
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--dayu-upload",
+            "score": 0.4289216995239258
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--social-auto-upload",
+            "score": 0.4194307029247284
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--zhihu-upload",
+            "score": 0.41402503848075867
+          },
+          {
+            "card_id": "social-media-publishing/upload-post-upload-post-skill--upload-post",
+            "score": 0.398040235042572
+          }
+        ],
+        "B": [
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--xueqiu-upload",
+            "score": 0.48882144689559937
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--zhihu-upload",
+            "score": 0.4686000347137451
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--dayu-upload",
+            "score": 0.46188563108444214
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--social-auto-upload",
+            "score": 0.4513028860092163
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--instagram-upload",
+            "score": 0.44961297512054443
+          }
+        ],
+        "C": [
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--social-auto-upload",
+            "score": 0.4147864282131195
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--baijiahao-upload",
+            "score": 0.4123699367046356
+          },
+          {
+            "card_id": "social-media-publishing/upload-post-upload-post-skill--upload-post",
+            "score": 0.40837785601615906
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--alipay-upload",
+            "score": 0.40778642892837524
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--xueqiu-upload",
+            "score": 0.40527617931365967
+          }
+        ],
+        "D": [
+          {
+            "card_id": "social-media-publishing/gitroomhq-postiz-agent--postiz",
+            "score": 25.52200440506373
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--reddit-serp",
+            "score": 22.839868804493154
+          },
+          {
+            "card_id": "social-media-publishing/upload-post-upload-post-skill--upload-post",
+            "score": 21.48700430428157
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--directory-submissions",
+            "score": 18.538487224340642
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-patterns",
+            "score": 16.64762220947878
+          }
+        ]
+      }
+    },
+    {
+      "query": "Format a long-form article and short-form video assets to meet each target platform's media ratios and character limits, schedule them as drafts, and confirm publication.",
+      "category": "social-media-publishing",
+      "expected": [
+        "social-media-publishing/gitroomhq-postiz-agent--postiz",
+        "social-media-publishing/upload-post-upload-post-skill--upload-post"
+      ],
+      "near_misses": [
+        "social-media-publishing/dreammis-social-auto-upload--zhihu-upload",
+        "social-media-publishing/dreammis-social-auto-upload--youtube-upload",
+        "social-media-publishing/dreammis-social-auto-upload--social-auto-upload"
+      ],
+      "conditions": {
+        "A": [
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--xueqiu-upload",
+            "score": 0.4930615723133087
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--social-auto-upload",
+            "score": 0.4772767126560211
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--dayu-upload",
+            "score": 0.47220373153686523
+          },
+          {
+            "card_id": "social-media-publishing/upload-post-upload-post-skill--upload-post",
+            "score": 0.4534223675727844
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--zhihu-upload",
+            "score": 0.446478009223938
+          }
+        ],
+        "B": [
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--dayu-upload",
+            "score": 0.5293487310409546
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--zhihu-upload",
+            "score": 0.5049476623535156
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--xueqiu-upload",
+            "score": 0.4992460310459137
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--tencent-upload",
+            "score": 0.4772627651691437
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--social-auto-upload",
+            "score": 0.4770209491252899
+          }
+        ],
+        "C": [
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--social-auto-upload",
+            "score": 0.49212440848350525
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--xiaohongshu-upload",
+            "score": 0.4778752326965332
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--dayu-upload",
+            "score": 0.477389395236969
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--kuaishou-upload",
+            "score": 0.4768412709236145
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--baijiahao-upload",
+            "score": 0.47475290298461914
+          }
+        ],
+        "D": [
+          {
+            "card_id": "social-media-publishing/gitroomhq-postiz-agent--postiz",
+            "score": 24.80992398262906
+          },
+          {
+            "card_id": "social-media-publishing/upload-post-upload-post-skill--upload-post",
+            "score": 23.83704043450406
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--seo-autopilot",
+            "score": 21.91643681925699
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--directory-submissions",
+            "score": 18.141307395147173
+          },
+          {
+            "card_id": "frontend-design/raintree-hig-doctor--hig-foundations",
+            "score": 18.01091328297825
+          }
+        ]
+      }
+    },
+    {
+      "query": "Build a pre-publish account-selection and visibility guardrail checklist plus an exception-recovery workflow for expired sessions or failed media uploads.",
+      "category": "social-media-publishing",
+      "expected": [
+        "social-media-publishing/dreammis-social-auto-upload--social-auto-upload",
+        "social-media-publishing/gitroomhq-postiz-agent--postiz",
+        "social-media-publishing/upload-post-upload-post-skill--upload-post"
+      ],
+      "near_misses": [
+        "social-media-publishing/dreammis-social-auto-upload--meta-upload",
+        "social-media-publishing/dreammis-social-auto-upload--tencent-upload",
+        "social-media-publishing/dreammis-social-auto-upload--dayu-upload"
+      ],
+      "conditions": {
+        "A": [
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--instagram-upload",
+            "score": 0.394222617149353
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--zhihu-upload",
+            "score": 0.3790046274662018
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--xueqiu-upload",
+            "score": 0.3616963326931
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--social-auto-upload",
+            "score": 0.3536374866962433
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--baijiahao-upload",
+            "score": 0.35277611017227173
+          }
+        ],
+        "B": [
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--instagram-upload",
+            "score": 0.4333227872848511
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--xiaohongshu-upload",
+            "score": 0.41082629561424255
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--zhihu-upload",
+            "score": 0.4044307470321655
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--xueqiu-upload",
+            "score": 0.3975766897201538
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--bilibili-upload",
+            "score": 0.39643988013267517
+          }
+        ],
+        "C": [
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--alipay-upload",
+            "score": 0.38157010078430176
+          },
+          {
+            "card_id": "social-media-publishing/upload-post-upload-post-skill--upload-post",
+            "score": 0.3802728056907654
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--hupu-upload",
+            "score": 0.36961278319358826
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--dayu-upload",
+            "score": 0.3600376844406128
+          },
+          {
+            "card_id": "social-media-publishing/dreammis-social-auto-upload--instagram-upload",
+            "score": 0.35942015051841736
+          }
+        ],
+        "D": [
+          {
+            "card_id": "social-media-publishing/upload-post-upload-post-skill--upload-post",
+            "score": 18.369348229578357
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--reddit-serp",
+            "score": 17.532167943352153
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--seo-roast",
+            "score": 16.289787334671395
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--directory-submissions",
+            "score": 15.98376528965485
+          },
+          {
+            "card_id": "social-media-publishing/gitroomhq-postiz-agent--postiz",
+            "score": 15.504541125830887
+          }
+        ]
+      }
+    },
+    {
+      "query": "Diagnose flaky end-to-end checkout tests failing on timeouts and detached elements, and rewrite them using deterministic waits, isolated fixtures, and resilient locators.",
+      "category": "test-automation",
+      "expected": [
+        "test-automation/lambdatest-agent-skills--playwright-skill",
+        "test-automation/lambdatest-agent-skills--cypress-skill",
+        "test-automation/lambdatest-agent-skills--selenium-skill"
+      ],
+      "near_misses": [
+        "test-automation/lambdatest-agent-skills--webdriverio-skill",
+        "test-automation/lambdatest-agent-skills--appium-skill"
+      ],
+      "conditions": {
+        "A": [
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--detox-skill",
+            "score": 0.3306710124015808
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--playwright-skill",
+            "score": 0.2940550744533539
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--jest-skill",
+            "score": 0.28081443905830383
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--cypress-skill",
+            "score": 0.27759894728660583
+          },
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--improve-ui",
+            "score": 0.2740009129047394
+          }
+        ],
+        "B": [
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--detox-skill",
+            "score": 0.39891317486763
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--playwright-skill",
+            "score": 0.3553113639354706
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--selenium-skill",
+            "score": 0.33955809473991394
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--webdriverio-skill",
+            "score": 0.33169862627983093
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--flutter-testing-skill",
+            "score": 0.3180258870124817
+          }
+        ],
+        "C": [
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--detox-skill",
+            "score": 0.328788697719574
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--playwright-skill",
+            "score": 0.2971590459346771
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--seo-roast",
+            "score": 0.28472650051116943
+          },
+          {
+            "card_id": "frontend-design/ibelick-ui-skills--improve-ui",
+            "score": 0.27996504306793213
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--jest-skill",
+            "score": 0.27245035767555237
+          }
+        ],
+        "D": [
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--selenium-skill",
+            "score": 28.704325216940493
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--playwright-skill",
+            "score": 26.89322457477485
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--newman-report-analyzer",
+            "score": 22.128286678418746
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--cypress-skill",
+            "score": 21.18144812662441
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--appium-skill",
+            "score": 13.460745041048451
+          }
+        ]
+      }
+    },
+    {
+      "query": "Evaluate and recommend a test-automation framework stack, project directory structure, and local-vs-cloud cross-browser and mobile execution matrix.",
+      "category": "test-automation",
+      "expected": [
+        "test-automation/lambdatest-agent-skills--playwright-skill",
+        "test-automation/lambdatest-agent-skills--selenium-skill",
+        "test-automation/lambdatest-agent-skills--appium-skill",
+        "test-automation/lambdatest-agent-skills--cypress-skill"
+      ],
+      "near_misses": [
+        "test-automation/lambdatest-agent-skills--webdriverio-skill",
+        "test-automation/lambdatest-agent-skills--testng-skill",
+        "test-automation/lambdatest-agent-skills--karma-skill"
+      ],
+      "conditions": {
+        "A": [
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--playwright-skill",
+            "score": 0.42790311574935913
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--selenium-skill",
+            "score": 0.4066694676876068
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--detox-skill",
+            "score": 0.37585026025772095
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--webdriverio-skill",
+            "score": 0.37571361660957336
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--appium-skill",
+            "score": 0.3693464696407318
+          }
+        ],
+        "B": [
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--playwright-skill",
+            "score": 0.43350473046302795
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--selenium-skill",
+            "score": 0.42639634013175964
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--webdriverio-skill",
+            "score": 0.3941209614276886
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--appium-skill",
+            "score": 0.3838300108909607
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--karma-skill",
+            "score": 0.3633679151535034
+          }
+        ],
+        "C": [
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--playwright-skill",
+            "score": 0.41754940152168274
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--selenium-skill",
+            "score": 0.38906461000442505
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--karma-skill",
+            "score": 0.3561351001262665
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--appium-skill",
+            "score": 0.35608527064323425
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--webdriverio-skill",
+            "score": 0.35434848070144653
+          }
+        ],
+        "D": [
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--playwright-skill",
+            "score": 34.7733373178248
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--selenium-skill",
+            "score": 27.58355334182125
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--robot-framework-skill",
+            "score": 25.504368878498525
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--appium-skill",
+            "score": 24.557734703574262
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--cypress-skill",
+            "score": 23.606296661261815
+          }
+        ]
+      }
+    },
+    {
+      "query": "Produce a phased migration guide from legacy synchronous browser tests to a modern auto-waiting suite and convert core login and checkout flows.",
+      "category": "test-automation",
+      "expected": [
+        "test-automation/lambdatest-agent-skills--playwright-skill",
+        "test-automation/lambdatest-agent-skills--selenium-skill"
+      ],
+      "near_misses": [
+        "test-automation/lambdatest-agent-skills--webdriverio-skill",
+        "test-automation/lambdatest-agent-skills--cypress-skill"
+      ],
+      "conditions": {
+        "A": [
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--playwright-skill",
+            "score": 0.37483465671539307
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--vs-and-alternatives",
+            "score": 0.3610130250453949
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--detox-skill",
+            "score": 0.3549541234970093
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--selenium-skill",
+            "score": 0.3541458547115326
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--webdriverio-skill",
+            "score": 0.34571516513824463
+          }
+        ],
+        "B": [
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--webdriverio-skill",
+            "score": 0.46008947491645813
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--selenium-skill",
+            "score": 0.4482475519180298
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--detox-skill",
+            "score": 0.43094301223754883
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--playwright-skill",
+            "score": 0.4216783046722412
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--behave-skill",
+            "score": 0.4046131670475006
+          }
+        ],
+        "C": [
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--playwright-skill",
+            "score": 0.3927081525325775
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--vs-and-alternatives",
+            "score": 0.37855690717697144
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--selenium-skill",
+            "score": 0.3667510449886322
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--detox-skill",
+            "score": 0.36577796936035156
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--domain-migration",
+            "score": 0.36161959171295166
+          }
+        ],
+        "D": [
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--robot-framework-skill",
+            "score": 20.016214893355308
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--playwright-skill",
+            "score": 18.029968176298045
+          },
+          {
+            "card_id": "seo/illyism-seo-skills--linkdr",
+            "score": 14.754107698949486
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--testng-skill",
+            "score": 13.946515572970275
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--webdriverio-skill",
+            "score": 13.534472410918397
+          }
+        ]
+      }
+    },
+    {
+      "query": "Refactor duplicated test helpers and hardcoded sleeps into composable fixtures, parallel CI sharding configuration, and diagnostic failure artifact collection.",
+      "category": "test-automation",
+      "expected": [
+        "test-automation/lambdatest-agent-skills--playwright-skill",
+        "test-automation/lambdatest-agent-skills--cypress-skill",
+        "test-automation/lambdatest-agent-skills--selenium-skill"
+      ],
+      "near_misses": [
+        "test-automation/lambdatest-agent-skills--webdriverio-skill",
+        "test-automation/lambdatest-agent-skills--testng-skill"
+      ],
+      "conditions": {
+        "A": [
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--testng-skill",
+            "score": 0.3478838801383972
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--pytest-skill",
+            "score": 0.30352988839149475
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--flutter-testing-skill",
+            "score": 0.2893335819244385
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--api-mock-helper",
+            "score": 0.28233587741851807
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--postman-newman-automation",
+            "score": 0.28125956654548645
+          }
+        ],
+        "B": [
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--testng-skill",
+            "score": 0.3501102924346924
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--pytest-skill",
+            "score": 0.3199136257171631
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--postman-newman-automation",
+            "score": 0.28521549701690674
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--junit-5-skill",
+            "score": 0.2734208106994629
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--flutter-testing-skill",
+            "score": 0.2551201581954956
+          }
+        ],
+        "C": [
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--testng-skill",
+            "score": 0.32884687185287476
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--pytest-skill",
+            "score": 0.2948884963989258
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--flutter-testing-skill",
+            "score": 0.2754869759082794
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--postman-newman-automation",
+            "score": 0.2742644250392914
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--junit-5-skill",
+            "score": 0.2636149823665619
+          }
+        ],
+        "D": [
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--playwright-skill",
+            "score": 20.785161576556668
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--pytest-skill",
+            "score": 14.97675307785643
+          },
+          {
+            "card_id": "api-development/lambdatest-agent-skills--postman-newman-automation",
+            "score": 14.634291243913342
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--cucumber-skill",
+            "score": 12.396114917908609
+          },
+          {
+            "card_id": "test-automation/lambdatest-agent-skills--testng-skill",
+            "score": 12.092312292063788
+          }
+        ]
+      }
+    }
+  ]
+}

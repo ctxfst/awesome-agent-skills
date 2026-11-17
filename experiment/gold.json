@@ -1,0 +1,1441 @@
+[
+  {
+    "id": "api-01",
+    "category": "api-development",
+    "query": "We have an unorganized JSON collection of 40 internal billing endpoints exported from our old API client, and new hires keep breaking integrations because field types are undocumented. Convert this collection into a clean OpenAPI 3.1 YAML spec with request/response examples and strict error schemas, without inventing fields that aren't in the export.",
+    "expected": [
+      "api-development/lambdatest-agent-skills--openapi-spec-generator"
+    ],
+    "near_misses": [
+      "api-development/lambdatest-agent-skills--api-documentation",
+      "api-development/lambdatest-agent-skills--api-designer",
+      "api-development/lambdatest-agent-skills--api-analyzer"
+    ],
+    "evidence": {
+      "api-development/lambdatest-agent-skills--openapi-spec-generator": "SKILL.md: 'Generate complete, production-ready OpenAPI 3.x and Swagger 2.0 specifications'; Step 3 'Include example or examples on every schema', 'Mark required fields with the required array', 'Prefer format keywords: int32, date, date-time'; Step 6 response codes incl. 400/409/422/429/500; Step 7 quality checklist; 'Always produce a complete, valid spec - never leave placeholder comments'.",
+      "api-development/lambdatest-agent-skills--api-documentation": "SKILL.md documented job is 'Generate comprehensive, professional API documentation'; OpenAPI YAML appears only as an optional output format ('If user requests OpenAPI: Produce a valid OpenAPI 3.0 YAML document'), not a spec generator with schemas/securitySchemes.",
+      "api-development/lambdatest-agent-skills--api-designer": "SKILL.md: 'This skill does not provide API documentation but just the endpoints and their one-line meanings'; outputs headers/request body/error codes per resource, no OpenAPI YAML, and rule 1 'Infer resources if the user doesn't list them' conflicts with 'without inventing fields'.",
+      "api-development/lambdatest-agent-skills--api-analyzer": "SKILL.md: 'validate an API request and respond in one line (or two at most)'; output is a single verdict such as 'Looks correct.' - it cannot produce a 40-endpoint spec."
+    }
+  },
+  {
+    "id": "api-02",
+    "category": "api-development",
+    "query": "我們正在設計一套多租戶訂單系統的 REST API，需要把目前的草稿端點重構為符合資源導向設計的規格，包含分頁、冪等鍵（Idempotency-Key）與統一的錯誤格式，產出一份可直接給後端與前端對齊的 API 設計規範文件（Markdown + JSON 範例）。",
+    "expected": [
+      "api-development/lambdatest-agent-skills--api-designer"
+    ],
+    "near_misses": [
+      "api-development/lambdatest-agent-skills--api-rate-limiting-helper",
+      "api-development/lambdatest-agent-skills--api-security-auth-pattern",
+      "api-development/lambdatest-agent-skills--openapi-spec-generator"
+    ],
+    "evidence": {
+      "api-development/lambdatest-agent-skills--api-designer": "SKILL.md: 'Use RESTful conventions: plural nouns for collections, nested paths for relationships'; rule 8 pagination ('include query params (page, limit, sort, filter) and wrap responses in a paginated envelope'); per-endpoint 'Request Body'/'Success Response'/'Error Codes' JSON blocks; 'Group endpoints by resource' - matches a Markdown + JSON design spec.",
+      "api-development/lambdatest-agent-skills--api-rate-limiting-helper": "SKILL.md scope is 'rate limiting, quotas, throttling, retry logic'; it covers 'Idempotency Keys' and tiers but documents no resource-oriented endpoint design, pagination envelope, or unified error format.",
+      "api-development/lambdatest-agent-skills--api-security-auth-pattern": "SKILL.md scope is auth/authz ('multi-tenancy isolation', RBAC, OAuth, OWASP); no endpoint spec, pagination or error-format design.",
+      "api-development/lambdatest-agent-skills--openapi-spec-generator": "SKILL.md output is 'Emit the complete YAML (or JSON) spec in a code block' - not the requested Markdown design document with JSON examples."
+    }
+  },
+  {
+    "id": "api-03",
+    "category": "api-development",
+    "query": "Our mobile team is blocked waiting on the backend for three new checkout endpoints. Given the attached OpenAPI draft, generate a local mock server configuration and realistic fixture payloads—including rate-limit 429 and validation 422 cases—so the frontend can build against realistic behavior right away.",
+    "expected": [
+      "api-development/lambdatest-agent-skills--api-mock-helper"
+    ],
+    "near_misses": [
+      "api-development/lambdatest-agent-skills--api-to-testcase-generator",
+      "api-development/lambdatest-agent-skills--api-rate-limiting-helper",
+      "api-development/lambdatest-agent-skills--api-documentation"
+    ],
+    "evidence": {
+      "api-development/lambdatest-agent-skills--api-mock-helper": "SKILL.md: 'Produces mock server definitions, sandbox environment specs, API stub configurations, and fixture data'; 'Mock Strategy Selection' table (WireMock/Prism/MSW); 'Prism CLI (mock from OpenAPI spec)'; 'Error Scenario Stubs ... status 429, headers Retry-After'; faker-based 'Fixture Data Generator'.",
+      "api-development/lambdatest-agent-skills--api-to-testcase-generator": "SKILL.md '--mock mode' generates test files ('responses (Python) or nock / msw (JS) to mock HTTP calls'); its deliverable is a test suite, not a mock server configuration + fixture set for frontend development.",
+      "api-development/lambdatest-agent-skills--api-rate-limiting-helper": "SKILL.md supplies the 429 body/'Retry-After: 18' semantics but no mock server, stubs or fixtures.",
+      "api-development/lambdatest-agent-skills--api-documentation": "SKILL.md turns the OpenAPI draft into Markdown reference docs; no stub/mock configuration output."
+    }
+  },
+  {
+    "id": "api-04",
+    "category": "api-development",
+    "query": "我們要把公開 API 從 v1 升級到 v2，部分回傳欄位要改名而且分頁結構從 offset 改成 cursor。請幫我整理一份無痛版本遷移計畫與棄用公告（含 Deprecation / Sunset header 設計與相容層規則），確保舊版合作夥伴至少有 90 天緩衝期。",
+    "expected": [
+      "api-development/lambdatest-agent-skills--api-versioning-helper"
+    ],
+    "near_misses": [
+      "api-development/lambdatest-agent-skills--api-documentation",
+      "api-development/lambdatest-agent-skills--api-designer"
+    ],
+    "evidence": {
+      "api-development/lambdatest-agent-skills--api-versioning-helper": "SKILL.md: 'designs deprecation flows, generates migration guides'; breaking list ('Renaming fields', 'Changing error codes or error shapes'); 'Deprecation: true' + 'Sunset: Sat, 01 Jan 2025 00:00:00 GMT' + 'Link: ... rel=\"successor-version\"'; 'Keep v2 as the canonical implementation. v1 is a compatibility shim that transforms v2 responses'; checklist 'At least 6 months notice before sunset'.",
+      "api-development/lambdatest-agent-skills--api-documentation": "SKILL.md has '### 7. Changelog / Versioning Notes - If version info is present, summarize breaking vs non-breaking changes', but its job is documentation output, not a migration plan with sunset headers and compatibility-layer rules.",
+      "api-development/lambdatest-agent-skills--api-designer": "SKILL.md pagination is page/limit based and has no deprecation, sunset or compatibility-shim rules."
+    }
+  },
+  {
+    "id": "api-05",
+    "category": "api-development",
+    "query": "Audit these 12 partner-facing webhook and REST endpoint definitions against our internal compliance checklist (PII masking in logs, TLS-only callbacks, HMAC signature headers, and audit trail fields). Deliver a prioritized remediation table and patched OpenAPI snippets for every gap.",
+    "expected": [
+      "api-development/lambdatest-agent-skills--api-compliance-checker",
+      "api-development/lambdatest-agent-skills--api-security-auth-pattern"
+    ],
+    "near_misses": [
+      "api-development/lambdatest-agent-skills--api-integration",
+      "api-development/lambdatest-agent-skills--api-documentation"
+    ],
+    "evidence": {
+      "api-development/lambdatest-agent-skills--api-compliance-checker": "SKILL.md: PCI-DSS field masking table ('Card number (PAN) ... Logs: Never log'), SOC2 'Audit Log Schema' (actor/action/resource/changes/result/request_id/tenant_id), 'Audit log every access', 'Compliance Checklist' ('All PII fields documented in a data map', 'Encryption at rest (AES-256) and in transit (TLS 1.2+)'), compliance response headers.",
+      "api-development/lambdatest-agent-skills--api-security-auth-pattern": "SKILL.md: 'Webhook verification | HMAC-SHA256 signature header'; OWASP item 8 'Security Misconfiguration | Disable debug, enforce HTTPS, CORS policy'; 'Security Headers' incl. Strict-Transport-Security; 'OWASP API Security Top 10 Checklist'.",
+      "api-development/lambdatest-agent-skills--api-integration": "SKILL.md covers webhook signature verification, idempotency and DLQ, but its scope is integration patterns - it has no PII masking, audit-trail or compliance checklist to audit endpoints against.",
+      "api-development/lambdatest-agent-skills--api-documentation": "SKILL.md documents endpoints and errors; it has no security/compliance audit or patched-snippet output."
+    }
+  },
+  {
+    "id": "api-06",
+    "category": "api-development",
+    "query": "我們有一份完整的 OpenAPI 規格檔，想幫外部開發者產生一套輕量級的 TypeScript 與 Python SDK 包裝設計，要求支援自動重試、指數退避與明確的型別錯誤類別，請產出 SDK 介面架構與核心程式碼骨架。",
+    "expected": [
+      "api-development/lambdatest-agent-skills--api-sdk-generator"
+    ],
+    "near_misses": [
+      "api-development/lambdatest-agent-skills--api-documentation",
+      "api-development/lambdatest-agent-skills--api-rate-limiting-helper"
+    ],
+    "evidence": {
+      "api-development/lambdatest-agent-skills--api-sdk-generator": "SKILL.md: SDK tree with 'errors.{ext} - typed error classes' and 'utils/retry.{ext}'; 'Always include retry logic with exponential backoff for 429 and 5xx'; typed error classes (AuthenticationError/ValidationError/RateLimitError); Python dataclass + TypeScript interface models; pagination helper; 'Provide a usage example for every generated class'.",
+      "api-development/lambdatest-agent-skills--api-documentation": "SKILL.md produces reference documentation, not SDK packages or typed error classes.",
+      "api-development/lambdatest-agent-skills--api-rate-limiting-helper": "SKILL.md documents a client-side retry/backoff snippet but no SDK scaffolding, resource classes or typed error hierarchy."
+    }
+  },
+  {
+    "id": "api-07",
+    "category": "api-development",
+    "query": "Our public search endpoint keeps getting hammered by misbehaving scrapers while paying customers hit unexpected timeouts. Design a tiered rate-limiting and quota policy (token bucket headers, burst allowances, and Retry-After semantics) and produce the gateway policy spec plus client-facing usage-limit documentation.",
+    "expected": [
+      "api-development/lambdatest-agent-skills--api-rate-limiting-helper",
+      "api-development/lambdatest-agent-skills--api-documentation"
+    ],
+    "near_misses": [
+      "api-development/lambdatest-agent-skills--api-security-auth-pattern"
+    ],
+    "evidence": {
+      "api-development/lambdatest-agent-skills--api-rate-limiting-helper": "SKILL.md: algorithm table incl. 'Token bucket | Bursty traffic with sustained avg'; headers 'X-RateLimit-Limit/Remaining/Reset/Policy' and 'Retry-After: 18'; 'Tiered Quota Design' table (Free/Starter/Pro/Enterprise with Requests-per-min, Burst, Concurrent); 429 body; 'Retryable vs Non-retryable status codes'.",
+      "api-development/lambdatest-agent-skills--api-documentation": "SKILL.md '### 6. Rate Limits & Quotas - If mentioned or inferable, document limits and headers used (e.g. X-RateLimit-Remaining)' plus its Authentication/Overview sections - the client-facing usage-limit documentation deliverable.",
+      "api-development/lambdatest-agent-skills--api-security-auth-pattern": "SKILL.md mentions rate limiting only as OWASP item 4 ('Unrestricted Resource Consumption | Rate limiting, pagination limits'); it documents no tiering, burst allowance, Retry-After or quota policy."
+    }
+  },
+  {
+    "id": "api-08",
+    "category": "api-development",
+    "query": "公司目前只有散落在程式碼註解裡的端點說明，沒有統一的 API 監控與健康檢查標準。請根據這份微服務清單，設計一套 `/health` 與 `/ready` 回應契約以及延遲/錯誤率探針設定檔，方便維運團隊即時掌握依賴服務狀態。",
+    "expected": [
+      "api-development/lambdatest-agent-skills--api-health-monitoring"
+    ],
+    "near_misses": [
+      "api-development/lambdatest-agent-skills--api-designer"
+    ],
+    "evidence": {
+      "api-development/lambdatest-agent-skills--api-health-monitoring": "SKILL.md: 'GET /health/live', 'GET /health/ready' with dependency 'checks' (database/cache/message_queue/external_api) and a 503 body, 'GET /health/deep'; 'Prometheus Metrics to Expose'; alerting rules (HighErrorRate, HighLatency); SLI/SLO/SLA table (latency p99, error rate); triggers include 'readiness probe', 'latency monitoring'.",
+      "api-development/lambdatest-agent-skills--api-designer": "SKILL.md can list a /health endpoint but documents no response contract for liveness/readiness, no probe configuration and no latency/error-rate monitoring."
+    }
+  },
+  {
+    "id": "api-09",
+    "category": "api-development",
+    "query": "I need to integrate our inventory service with a third-party logistics webhook that sends nested XML payloads and occasional duplicate events. Write an integration mapping spec and idempotent ingestion handler contract in JSON/TypeScript, detailing signature verification and dead-letter retry rules.",
+    "expected": [
+      "api-development/lambdatest-agent-skills--api-integration"
+    ],
+    "near_misses": [
+      "api-development/lambdatest-agent-skills--api-fetcher-specific-domains",
+      "api-development/lambdatest-agent-skills--api-rate-limiting-helper",
+      "api-development/lambdatest-agent-skills--api-security-auth-pattern"
+    ],
+    "evidence": {
+      "api-development/lambdatest-agent-skills--api-integration": "SKILL.md: webhook payload envelope + 'Signature verification (receiver side)' HMAC snippet; 'API Chaining ... Always: handle failures at each step independently, use idempotency keys, implement retry with exponential backoff'; checklist 'Idempotency keys on all state-changing calls', 'Dead-letter queue for unprocessable events', 'Webhook delivery logging + manual replay endpoint'.",
+      "api-development/lambdatest-agent-skills--api-fetcher-specific-domains": "SKILL.md 'Shipping / Logistics' block lists 'POST /shipments', 'GET /shipments/{id}/track' etc. as real-world patterns, but the documented output is an endpoint catalogue - no mapping spec or idempotent ingestion handler contract.",
+      "api-development/lambdatest-agent-skills--api-rate-limiting-helper": "SKILL.md 'Idempotency Keys' section alone; it has no webhook signature verification, DLQ or ingestion handler design.",
+      "api-development/lambdatest-agent-skills--api-security-auth-pattern": "SKILL.md lists 'HMAC-SHA256 signature header' as one row of a pattern-selection table, with no payload-mapping or DLQ design."
+    }
+  },
+  {
+    "id": "api-10",
+    "category": "api-development",
+    "query": "我們已經寫好 OpenAPI 規格，但產品團隊希望有一份給非技術合作夥伴也能看懂的互動式 API 開發者指南與教學文件（含認證流程圖與常見錯誤排除），同時保持跟原始 YAML 完全同步，不能出現文件與實作脫節。",
+    "expected": [
+      "api-development/lambdatest-agent-skills--api-documentation"
+    ],
+    "near_misses": [
+      "api-development/lambdatest-agent-skills--openapi-spec-generator",
+      "api-development/lambdatest-agent-skills--api-designer"
+    ],
+    "evidence": {
+      "api-development/lambdatest-agent-skills--api-documentation": "SKILL.md: 'Generate clear, complete, professional API documentation from any form of API input'; supported input 'OpenAPI / Swagger (YAML or JSON, v2 or v3)'; '### 2. Authentication' with token location and example header; '### 5. Error Reference'; 'Always include a curl example for each endpoint'; 'Be precise: Use exact field names and types from the input. Don't invent names.' (keeps docs in sync with the YAML).",
+      "api-development/lambdatest-agent-skills--openapi-spec-generator": "SKILL.md generates the specification itself ('Emit the complete YAML (or JSON) spec'), not a partner-facing tutorial/troubleshooting guide.",
+      "api-development/lambdatest-agent-skills--api-designer": "SKILL.md outputs endpoint specs (headers/request body/error codes), not interactive documentation with flow diagrams and error troubleshooting."
+    }
+  },
+  {
+    "id": "api-11",
+    "category": "api-development",
+    "query": "Take our legacy SOAP/RPC XML service definitions for customer verification and translate them into clean RESTful resource endpoints with an OpenAPI specification and a field-by-field mapping table so downstream teams can migrate incrementally.",
+    "expected": [
+      "api-development/lambdatest-agent-skills--openapi-spec-generator",
+      "api-development/lambdatest-agent-skills--api-designer"
+    ],
+    "near_misses": [
+      "api-development/lambdatest-agent-skills--api-documentation",
+      "api-development/lambdatest-agent-skills--api-versioning-helper"
+    ],
+    "evidence": {
+      "api-development/lambdatest-agent-skills--openapi-spec-generator": "SKILL.md: 'Generate complete, production-ready OpenAPI 3.x and Swagger 2.0 specifications from natural language descriptions, code, or partial specs'; 'Extracting from Code' section; 'Always produce a complete, valid spec'.",
+      "api-development/lambdatest-agent-skills--api-designer": "SKILL.md produces the RESTful resource endpoints ('Use RESTful conventions: plural nouns for collections, nested paths for relationships', 'Always include CRUD where applicable') - the REST endpoint half of the translation.",
+      "api-development/lambdatest-agent-skills--api-documentation": "SKILL.md 'Supported Input Formats' lists OpenAPI/Swagger, endpoint lists, route definitions, controller code, informal descriptions, Postman collections, gRPC proto and GraphQL schema - SOAP/RPC XML is not an accepted input, so it cannot document the legacy service definitions.",
+      "api-development/lambdatest-agent-skills--api-versioning-helper": "SKILL.md covers version-to-version evolution ('migrate from v1 to v2'), not protocol/format migration or field-by-field SOAP-to-REST mapping."
+    }
+  },
+  {
+    "id": "api-12",
+    "category": "api-development",
+    "query": "我們想為現有的分析查詢 API 加上非同步任務輪詢機制（202 Accepted + Location header + 任務狀態資源），因為部分報表需要 20 秒以上才能算完。請產出完整的狀態機設計與 OpenAPI 端點定義，限制不能破壞現有同步查詢呼叫。",
+    "expected": [
+      "api-development/lambdatest-agent-skills--openapi-spec-generator",
+      "api-development/lambdatest-agent-skills--api-designer"
+    ],
+    "near_misses": [
+      "api-development/lambdatest-agent-skills--api-versioning-helper",
+      "api-development/lambdatest-agent-skills--api-integration"
+    ],
+    "evidence": {
+      "api-development/lambdatest-agent-skills--openapi-spec-generator": "SKILL.md: paths/operations with per-operation responses ('Always include at minimum ... 200/201/204, 400, 401, 403, 404, 409, 422, 429, 500'), 'Headers - include X-Request-ID, correlation IDs, etc. as common parameters', components/responses with $ref - supports the new 202 + Location endpoints.",
+      "api-development/lambdatest-agent-skills--api-designer": "SKILL.md: 'Always include CRUD (Create, Read, Update, Delete) where applicable, plus domain-specific actions' with per-endpoint headers/request body/success response/error codes - designs the new task and task-status resources.",
+      "api-development/lambdatest-agent-skills--api-versioning-helper": "SKILL.md classifies breaking vs non-breaking changes and adds deprecation headers; it documents no asynchronous job/status resource or 202+Location contract.",
+      "api-development/lambdatest-agent-skills--api-integration": "SKILL.md async primitives are events/sagas/outbox ('POST {subscriber_url}', topics/queues); it does not define a REST polling resource with 202 Accepted + Location header."
+    }
+  },
+  {
+    "id": "api-13",
+    "category": "api-development",
+    "query": "Review these sample request/response captures from production and flag inconsistencies in naming conventions, nullable vs. omitted fields, date formats, and HTTP status codes. Output a concise API style-lint report and corrected JSON schemas.",
+    "expected": [
+      "api-development/lambdatest-agent-skills--openapi-spec-generator"
+    ],
+    "near_misses": [
+      "api-development/lambdatest-agent-skills--api-analyzer",
+      "api-development/lambdatest-agent-skills--api-to-testcase-generator",
+      "api-development/lambdatest-agent-skills--api-documentation"
+    ],
+    "evidence": {
+      "api-development/lambdatest-agent-skills--openapi-spec-generator": "SKILL.md description covers 'describe, model, or validate any HTTP API'; Step 3 schemas ('Mark required fields with the required array', 'Use nullable: true ... for optional nullable fields', 'Prefer format keywords: int32, date, date-time'), Step 6 status-code set, Step 7 quality checklist - it can emit corrected JSON schemas from the captures.",
+      "api-development/lambdatest-agent-skills--api-analyzer": "SKILL.md: 'validate an API request and respond in one line' - it flags a single request's correctness and cannot produce a naming/nullable/date/status style-lint report or corrected schemas.",
+      "api-development/lambdatest-agent-skills--api-to-testcase-generator": "SKILL.md accepts 'HTTP request/response examples' as input but its documented output is test suites ('Step 4 Output Structure ... Test file(s)'), not a style report with corrected schemas.",
+      "api-development/lambdatest-agent-skills--api-documentation": "SKILL.md documents the given endpoints; it has no consistency linting of naming, nullability, date formats or status codes."
+    }
+  },
+  {
+    "id": "api-14",
+    "category": "api-development",
+    "query": "針對我們即將上線的開放平台 API，需要建立一套自動化契約驗證與回歸測試計畫（確保每次改版不會不小心移除必填欄位或改變狀態碼），請產出可整合進 CI 的驗證清單與測試案例規格。",
+    "expected": [
+      "api-development/lambdatest-agent-skills--api-to-testcase-generator"
+    ],
+    "near_misses": [
+      "api-development/lambdatest-agent-skills--postman-newman-automation",
+      "api-development/lambdatest-agent-skills--postman-test-script-generator"
+    ],
+    "evidence": {
+      "api-development/lambdatest-agent-skills--api-to-testcase-generator": "SKILL.md: Step 1 parses endpoints/request/response/auth/constraints ('required vs optional fields, types'); Step 2 generates 'Missing required fields -> expect 400/422', boundary and status-code tests; '--contract mode ... generate Pact (JS/Python/Java) test stubs'; Step 4 output includes 'Setup instructions - how to install deps and run the suite' and 'Coverage gaps - any untestable scenarios due to missing spec info' - a CI-integrable validation plan.",
+      "api-development/lambdatest-agent-skills--postman-newman-automation": "SKILL.md runs existing Postman collections ('newman run <collection>') with Jenkins pipelines; it cannot author the contract-validation checklist or test-case specs for a new OpenAPI API.",
+      "api-development/lambdatest-agent-skills--postman-test-script-generator": "SKILL.md scope is 'Write Postman test scripts (JavaScript) for pre-request logic and post-response assertions' inside a collection - not a contract/regression checklist for an OpenAPI API."
+    }
+  },
+  {
+    "id": "api-15",
+    "category": "api-development",
+    "query": "We're bundling our API reference, mock fixtures, and quickstart curl recipes into a single developer onboarding pack. Produce a structured documentation outline and runnable sample requests covering OAuth client credentials, pagination, and webhook verification.",
+    "expected": [
+      "api-development/lambdatest-agent-skills--api-documentation",
+      "api-development/lambdatest-agent-skills--api-mock-helper"
+    ],
+    "near_misses": [
+      "api-development/lambdatest-agent-skills--api-security-auth-pattern",
+      "api-development/lambdatest-agent-skills--api-integration"
+    ],
+    "evidence": {
+      "api-development/lambdatest-agent-skills--api-documentation": "SKILL.md produces the reference half: '### 3. Endpoints' with 'Example Request' curl blocks ('Always include a curl example for each endpoint'), '### 2. Authentication', '### 4. Data Models / Schemas', '### 6. Rate Limits & Quotas', '### 5. Error Reference'.",
+      "api-development/lambdatest-agent-skills--api-mock-helper": "SKILL.md produces the mock-fixture half: 'Produces mock server definitions, sandbox environment specs, API stub configurations, and fixture data' (WireMock stubs, MSW handlers, faker fixture generator).",
+      "api-development/lambdatest-agent-skills--api-security-auth-pattern": "SKILL.md designs OAuth/JWT/RBAC layers; it has no onboarding reference, mock fixtures or curl recipes, so it cannot produce the pack.",
+      "api-development/lambdatest-agent-skills--api-integration": "SKILL.md documents webhook signature verification and DLQ rules but its output is an integration design, not a developer onboarding pack with sample requests."
+    }
+  },
+  {
+    "id": "fe-01",
+    "category": "frontend-design",
+    "query": "Here are three screenshots of our current B2B analytics dashboard—users complain the filters feel cramped on 13-inch laptops and the KPI cards look identical in visual weight. Redesign the layout hierarchy and produce updated HTML/CSS and component structure with clear spacing tokens.",
+    "expected": [
+      "frontend-design/mobbin-skills--redesign-screen",
+      "frontend-design/ibelick-ui-skills--baseline-ui"
+    ],
+    "near_misses": [
+      "frontend-design/ibelick-ui-skills--improve-ui",
+      "frontend-design/raintree-hig-doctor--hig-components-layout",
+      "frontend-design/raintree-hig-doctor--hig-foundations"
+    ],
+    "evidence": {
+      "frontend-design/mobbin-skills--redesign-screen": "SKILL.md: 'Redesign any screen from patterns real apps ship. Share a screenshot, your code or a design file'; workflow steps 'Scope the target', 'Freeze the baseline', 'Plan the moves. One move per problem', 'Apply ... in the source's own form'; Outputs table 'A codebase -> edits to the source'.",
+      "frontend-design/ibelick-ui-skills--baseline-ui": "SKILL.md: '/baseline-ui <file> Review the file against all constraints below and output: violations (quote the exact line/snippet) ... a concrete fix (code-level suggestion)'; constraints cover spacing, hierarchy ('SHOULD use truncate or line-clamp for dense UI'), typography and layout.",
+      "frontend-design/ibelick-ui-skills--improve-ui": "SKILL.md: 'Strictly read-only on product source ... another agent executes them' - it produces plans under design-plans/, not updated HTML/CSS and component structure.",
+      "frontend-design/raintree-hig-doctor--hig-components-layout": "SKILL.md is 'Apple Human Interface Guidelines for layout and navigation components' (sidebar/split view/tab bar) - its documented scope is Apple platforms, not a web analytics dashboard.",
+      "frontend-design/raintree-hig-doctor--hig-foundations": "SKILL.md Output Format: 'Provide concrete code patterns (SwiftUI/UIKit/AppKit)' - Apple code patterns, not the requested HTML/CSS output."
+    }
+  },
+  {
+    "id": "fe-02",
+    "category": "frontend-design",
+    "query": "我們正在開發一款原生桌面端筆記與待辦應用程式，希望介面完全貼合該桌面作業系統的原生人機介面設計規範（工具列、側邊欄毛玻璃層次、快速鍵提示與表單控制項間距）。請產出一份詳細的 UI 規格與元件佈局指南。",
+    "expected": [
+      "frontend-design/raintree-hig-doctor--hig-platforms",
+      "frontend-design/raintree-hig-doctor--hig-foundations"
+    ],
+    "near_misses": [
+      "frontend-design/raintree-hig-doctor--hig-components-menus",
+      "frontend-design/raintree-hig-doctor--hig-inputs",
+      "frontend-design/raintree-hig-doctor--hig-components-layout"
+    ],
+    "evidence": {
+      "frontend-design/raintree-hig-doctor--hig-platforms": "SKILL.md: 'macOS: pointer and keyboard. Dense information display is acceptable. Use menu bars, toolbars, and keyboard shortcuts extensively'; Output Format 'Platform-specific recommendations ... Platform differences table comparing navigation, input, layout, and conventions ... Implementation notes per platform'.",
+      "frontend-design/raintree-hig-doctor--hig-foundations": "SKILL.md reference index: 'materials.md - Vibrancy, blur, translucency, system materials, material thickness', 'layout.md - Margins, spacing, alignment, safe areas, adaptive layouts', 'typography.md - ... line spacing'; Output 'Provide concrete code patterns (SwiftUI/UIKit/AppKit)'.",
+      "frontend-design/raintree-hig-doctor--hig-components-menus": "SKILL.md Output Format is a single menu/button component recommendation ('Component recommendation - which menu or button type and why'); it cannot produce a whole-platform UI spec and layout guide.",
+      "frontend-design/raintree-hig-doctor--hig-inputs": "SKILL.md scope is 'input methods and interaction patterns: gestures, Apple Pencil, keyboards, game controllers, pointers ...' - no layout, materials or component-layout guidance.",
+      "frontend-design/raintree-hig-doctor--hig-components-layout": "SKILL.md covers navigation/layout containers (sidebars, split views, tab bars) only, not toolbar/shortcut/form-spacing guidance for a native desktop app."
+    }
+  },
+  {
+    "id": "fe-03",
+    "category": "frontend-design",
+    "query": "Audit our existing checkout form code for WCAG AA accessibility, keyboard-only navigation, focus ring visibility, and screen-reader announcements on inline validation errors. Return an annotated issue list and patched component markup.",
+    "expected": [
+      "frontend-design/ibelick-ui-skills--fixing-accessibility",
+      "frontend-design/raintree-hig-doctor--hig-doctor-audit"
+    ],
+    "near_misses": [
+      "frontend-design/ibelick-ui-skills--baseline-ui",
+      "frontend-design/raintree-hig-doctor--hig-foundations"
+    ],
+    "evidence": {
+      "frontend-design/ibelick-ui-skills--fixing-accessibility": "SKILL.md: 'Audit and fix HTML accessibility issues including ARIA labels, keyboard navigation, focus management, color contrast, and form errors'; rules 'focus must be visible for keyboard users', 'modals must trap focus while open', 'errors must be linked to fields using aria-describedby', 'invalid fields must set aria-invalid', 'critical form errors should use aria-live'; '/fixing-accessibility <file>' output = violations + 'a concrete fix (code-level suggestion)'.",
+      "frontend-design/raintree-hig-doctor--hig-doctor-audit": "SKILL.md: 'Audit interface source with HIG Doctor when the user asks to scan, lint, review, or remediate Swift, UIKit, AppKit, React, Vue, Svelte, Angular, Compose, Android XML, Flutter, CSS, or HTML for HIG-aligned interface and accessibility concerns'; workflow reports 'severity counts, rule IDs, locations' and can remediate.",
+      "frontend-design/ibelick-ui-skills--baseline-ui": "SKILL.md only states 'MUST use accessible component primitives for anything with keyboard or focus behavior' and 'MUST add an aria-label to icon-only buttons' - a baseline checklist, not an audit of an existing checkout form.",
+      "frontend-design/raintree-hig-doctor--hig-foundations": "SKILL.md accessibility reference is 'VoiceOver, Dynamic Type, color contrast, motor accessibility, Switch Control' for Apple platforms; it has no HTML form audit or patched-markup workflow."
+    }
+  },
+  {
+    "id": "fe-04",
+    "category": "frontend-design",
+    "query": "我們網站的暗黑模式（Dark Mode）目前只是把背景硬轉成純黑、文字轉成純白，看久了很刺眼，而且圖表顏色在深色背景下對比不足。請幫我們重新設計語意化的色彩 Token（包含表面層級、邊框與狀態色）並附上 CSS 變數檔案。",
+    "expected": [
+      "frontend-design/raintree-hig-doctor--hig-foundations"
+    ],
+    "near_misses": [
+      "frontend-design/ibelick-ui-skills--create-design-md",
+      "frontend-design/ibelick-ui-skills--baseline-ui"
+    ],
+    "evidence": {
+      "frontend-design/raintree-hig-doctor--hig-foundations": "SKILL.md: 'color.md - System colors, Dynamic Colors, semantic colors, custom palettes, contrast ratios', 'dark-mode.md - Elevated surfaces, semantic colors, adapted palettes, vibrancy, testing in both modes'; principle 3 'Prefer semantic colors (label, secondaryLabel, systemBackground) over hard-coded values'; 'Color + Dark Mode + Accessibility - Custom palettes must work in both modes while maintaining WCAG contrast ratios'.",
+      "frontend-design/ibelick-ui-skills--create-design-md": "SKILL.md: 'Modify only DESIGN.md. Do not change product source'; it records 'the design language that governs it' and 'Do not convert repetition, local styling, or visual preference into product intent' - it documents existing tokens rather than redesigning a dark-mode scale, and exports are validation artifacts ('Do not create or retain exported files').",
+      "frontend-design/ibelick-ui-skills--baseline-ui": "SKILL.md only says 'SHOULD use existing theme or Tailwind CSS color tokens before introducing new ones' - it has no dark-mode/semantic-surface token design guidance."
+    }
+  },
+  {
+    "id": "fe-05",
+    "category": "frontend-design",
+    "query": "We have six product squads building slightly different buttons, modals, and data tables. Consolidate the attached component inventory into a unified design-system specification with strict typography scale, spacing rhythm, and state matrix (hover, active, disabled, loading).",
+    "expected": [
+      "frontend-design/ibelick-ui-skills--create-design-md"
+    ],
+    "near_misses": [
+      "frontend-design/ibelick-ui-skills--improve-ui",
+      "frontend-design/ibelick-ui-skills--baseline-ui",
+      "frontend-design/raintree-hig-doctor--hig-components-menus"
+    ],
+    "evidence": {
+      "frontend-design/ibelick-ui-skills--create-design-md": "SKILL.md: 'Create or update a DESIGN.md from an existing product repository or public website ... reconstruct its visual system, extract design tokens and guidance from current evidence'; frontmatter schema with colors/typography/rounded/spacing/components plus a Components section; 'give coding agents persistent UI context'.",
+      "frontend-design/ibelick-ui-skills--improve-ui": "SKILL.md audits one surface and writes 'self-contained implementation plans' for selected findings (read-only, 'Stop at three'); it does not produce a unified design-system specification.",
+      "frontend-design/ibelick-ui-skills--baseline-ui": "SKILL.md is a fixed constraint list applied per file ('violations ... a concrete fix'), not a consolidated system specification derived from a component inventory.",
+      "frontend-design/raintree-hig-doctor--hig-components-menus": "SKILL.md documents Apple menu/button components only, not a cross-platform component inventory spec with typography scale and state matrix."
+    }
+  },
+  {
+    "id": "fe-06",
+    "category": "frontend-design",
+    "query": "想把我們的電商商品列表頁從桌機三欄改造成真正好用的行動端優先（Mobile-First）介面，要解決手機上篩選抽屜難滑動、圖片載入跳動（CLS）以及拇指操作區過遠的問題，請提供響應式佈局藍圖與關鍵 CSS 實作。",
+    "expected": [
+      "frontend-design/mobbin-skills--redesign-screen",
+      "frontend-design/ibelick-ui-skills--baseline-ui"
+    ],
+    "near_misses": [
+      "frontend-design/raintree-hig-doctor--hig-components-layout",
+      "frontend-design/ibelick-ui-skills--improve-ui"
+    ],
+    "evidence": {
+      "frontend-design/mobbin-skills--redesign-screen": "SKILL.md: 'Someone has a screen that exists and wants a better version of it'; steps 'Scope the target', 'Freeze the baseline', 'Plan the moves', 'Apply ... in the source's own form' - a mobile-first redesign of an existing product-listing screen.",
+      "frontend-design/ibelick-ui-skills--baseline-ui": "SKILL.md CSS-level rules for the rewrite: 'SHOULD use structural skeletons for loading states', 'MUST respect safe-area-inset for fixed elements', 'SHOULD respect prefers-reduced-motion', 'NEVER use h-screen, use h-dvh', spacing/typography scale constraints.",
+      "frontend-design/raintree-hig-doctor--hig-components-layout": "SKILL.md 'Adapt to screen size. Three-column on iPad collapses to single-column on iPhone. Use size classes and adaptive APIs' - Apple adaptation, not a mobile-first web layout blueprint.",
+      "frontend-design/ibelick-ui-skills--improve-ui": "SKILL.md is read-only and writes plans for another agent; it does not deliver the responsive blueprint plus CSS implementation."
+    }
+  },
+  {
+    "id": "fe-07",
+    "category": "frontend-design",
+    "query": "Design a calm, editorial reading and annotation workspace from scratch for long-form legal documents. Focus on typographic hierarchy, line length, sticky margin notes, and subtle micro-interactions that respect reduced-motion preferences; output a working interactive prototype.",
+    "expected": [
+      "frontend-design/raintree-hig-doctor--hig-foundations",
+      "frontend-design/ibelick-ui-skills--baseline-ui"
+    ],
+    "near_misses": [
+      "frontend-design/mobbin-skills--redesign-screen"
+    ],
+    "evidence": {
+      "frontend-design/raintree-hig-doctor--hig-foundations": "SKILL.md: 'typography.md - SF Pro, Dynamic Type sizes, text styles, font weight hierarchy, line spacing', 'layout.md - Margins, spacing, alignment, safe areas, adaptive layouts, readable content guides', 'motion.md - Animation curves, transitions, continuity, Reduce Motion support' and 'Honor Reduce Motion by providing crossfade alternatives'.",
+      "frontend-design/ibelick-ui-skills--baseline-ui": "SKILL.md: 'MUST use text-balance for headings and text-pretty for body/paragraphs', 'SHOULD respect prefers-reduced-motion', 'MUST animate only compositor props (transform, opacity)', 'NEVER exceed 200ms for interaction feedback'.",
+      "frontend-design/mobbin-skills--redesign-screen": "SKILL.md scope starts from an existing artifact ('Someone has a screen that exists and wants a better version of it ... Share a screenshot, your code or a design file'); it does not cover a from-scratch workspace design."
+    }
+  },
+  {
+    "id": "fe-08",
+    "category": "frontend-design",
+    "query": "我們的主頁 Hero 區塊與卡片切換動畫目前在低階手機上會掉幀，而且沒有考慮使用者的「減少動態效果」系統設定。請幫我重構這組微互動與轉場動畫規範，改用效能友善的屬性並產出可替換的 CSS/JS 動畫模組。",
+    "expected": [
+      "frontend-design/ibelick-ui-skills--baseline-ui"
+    ],
+    "near_misses": [
+      "frontend-design/raintree-hig-doctor--hig-foundations",
+      "frontend-design/ibelick-ui-skills--fixing-accessibility"
+    ],
+    "evidence": {
+      "frontend-design/ibelick-ui-skills--baseline-ui": "SKILL.md Animation: 'MUST animate only compositor props (transform, opacity)', 'NEVER animate layout properties (width, height, top, left, margin, padding)', 'SHOULD respect prefers-reduced-motion', 'NEVER exceed 200ms for interaction feedback'; Performance: 'MUST pause looping animations when off-screen', 'NEVER animate large blur()/backdrop-filter surfaces'.",
+      "frontend-design/raintree-hig-doctor--hig-foundations": "SKILL.md motion.md covers Apple's animation curves/Reduce Motion support, but its Output Format gives SwiftUI/UIKit/AppKit code patterns, not a replaceable CSS/JS animation module for a web page.",
+      "frontend-design/ibelick-ui-skills--fixing-accessibility": "SKILL.md lists only 'respect prefers-reduced-motion for non-essential motion' as a media rule; it addresses neither frame drops nor animation-performance properties."
+    }
+  },
+  {
+    "id": "fe-09",
+    "category": "frontend-design",
+    "query": "Compare these desktop and mobile screenshots of our onboarding wizard against our brand typography and spacing guidelines. Write a visual QA discrepancy report highlighting misalignment, truncated labels, and contrast failures, with exact CSS fixes.",
+    "expected": [
+      "frontend-design/ibelick-ui-skills--improve-ui"
+    ],
+    "near_misses": [
+      "frontend-design/ibelick-ui-skills--baseline-ui",
+      "frontend-design/raintree-hig-doctor--hig-doctor-audit",
+      "frontend-design/ibelick-ui-skills--fixing-accessibility"
+    ],
+    "evidence": {
+      "frontend-design/ibelick-ui-skills--improve-ui": "SKILL.md: 'Audit an existing product surface against its own design evidence, identify verified UI problems'; 'Use rendered evidence only when the user provides it' (screenshots given); Findings table 'Evidence | Proposed change | Scope | Confidence' with 'one concrete correction' per row.",
+      "frontend-design/ibelick-ui-skills--baseline-ui": "SKILL.md reviews a source file ('/baseline-ui <file>'), not screenshots, and outputs violations/fixes without a discrepancy report against brand guidelines.",
+      "frontend-design/raintree-hig-doctor--hig-doctor-audit": "SKILL.md 'Confirm the target repository or directory to scan' - it needs a source tree to lint, not rendered screenshots to compare against brand typography/spacing rules.",
+      "frontend-design/ibelick-ui-skills--fixing-accessibility": "SKILL.md covers contrast/focus/labels but not visual QA of misalignment, truncated labels or spacing against brand guidelines."
+    }
+  },
+  {
+    "id": "fe-10",
+    "category": "frontend-design",
+    "query": "我們要把現有的後台設定頁改造成更直覺的分區表單與即時預覽介面，同時確保每個元件的狀態切換與錯誤提示都能輕鬆被瀏覽器自動化測試定位與驗證。請產出重新設計後的元件規格與語意化 HTML 結構。",
+    "expected": [
+      "frontend-design/ibelick-ui-skills--fixing-accessibility",
+      "frontend-design/ibelick-ui-skills--baseline-ui"
+    ],
+    "near_misses": [
+      "frontend-design/raintree-hig-doctor--hig-components-controls",
+      "frontend-design/ibelick-ui-skills--improve-ui"
+    ],
+    "evidence": {
+      "frontend-design/ibelick-ui-skills--fixing-accessibility": "SKILL.md semantics rules give the testable markup contract: 'prefer native elements (button, a, input) over role-based hacks', 'every input, select, and textarea must be labeled', 'do not skip heading levels', 'tables must use th for headers when applicable', 'required fields must be announced', 'state changes must be announced'.",
+      "frontend-design/ibelick-ui-skills--baseline-ui": "SKILL.md: 'MUST use accessible component primitives for anything with keyboard or focus behavior (Base UI, React Aria, Radix)', 'MUST show errors next to where the action happens', 'NEVER rebuild keyboard or focus behavior by hand' - the component rules behind the spec.",
+      "frontend-design/raintree-hig-doctor--hig-components-controls": "SKILL.md gives Apple form-control guidance ('Control recommendation', 'Validation approach', 'labels, traits, hints for VoiceOver') - Apple output, not semantic HTML designed for browser-automation targeting.",
+      "frontend-design/ibelick-ui-skills--improve-ui": "SKILL.md 'Discard accessibility and HTML/ARIA semantic findings unless the user explicitly requests them' and its output is a set of plans, not a component spec with markup."
+    }
+  },
+  {
+    "id": "fe-11",
+    "category": "frontend-design",
+    "query": "Create a responsive multi-step pricing and plan-comparison interface that clearly differentiates three tiers without relying on noisy badges or deceptive dark patterns. Deliver a self-contained HTML/CSS/JS component with accessible comparison table behavior on small screens.",
+    "expected": [
+      "frontend-design/ibelick-ui-skills--baseline-ui",
+      "frontend-design/ibelick-ui-skills--fixing-accessibility"
+    ],
+    "near_misses": [
+      "frontend-design/raintree-hig-doctor--hig-components-content",
+      "frontend-design/ibelick-ui-skills--improve-ui"
+    ],
+    "evidence": {
+      "frontend-design/ibelick-ui-skills--baseline-ui": "SKILL.md: 'SHOULD limit accent color usage to one per view', 'MUST use accessible component primitives', 'MUST give empty states one clear next action', 'NEVER use gradients unless explicitly requested', 'SHOULD use truncate or line-clamp for dense UI' - supports the no-badge/no-dark-pattern brief.",
+      "frontend-design/ibelick-ui-skills--fixing-accessibility": "SKILL.md: 'tables must use th for headers when applicable', 'do not skip heading levels', 'modals must trap focus while open', 'respect prefers-reduced-motion for non-essential motion' - accessible comparison-table behaviour on small screens.",
+      "frontend-design/raintree-hig-doctor--hig-components-content": "SKILL.md covers Apple charts/collections/image views/web views; it has no pricing-comparison or accessible-table guidance.",
+      "frontend-design/ibelick-ui-skills--improve-ui": "SKILL.md audits an existing surface and writes plans; 'Hierarchy, prominence, density, clarity ... require rendered or user evidence' - it does not design a component from scratch."
+    }
+  },
+  {
+    "id": "fe-12",
+    "category": "frontend-design",
+    "query": "我們打算在行銷登陸頁（Landing Page）加上即時的 API 請求預覽與互動式文件區塊，但希望維持雜誌級的排版美感與一致的設計系統。請設計這個區塊的版面配置、字體階級與互動狀態規格。",
+    "expected": [
+      "frontend-design/raintree-hig-doctor--hig-foundations",
+      "frontend-design/ibelick-ui-skills--baseline-ui"
+    ],
+    "near_misses": [
+      "frontend-design/ibelick-ui-skills--create-design-md",
+      "frontend-design/raintree-hig-doctor--hig-components-content"
+    ],
+    "evidence": {
+      "frontend-design/raintree-hig-doctor--hig-foundations": "SKILL.md: 'typography.md - ... font weight hierarchy, line spacing', 'layout.md - Margins, spacing, alignment, safe areas, adaptive layouts', 'motion.md - Animation curves, transitions ... Reduce Motion support' - type hierarchy, layout and interaction-state guidance.",
+      "frontend-design/ibelick-ui-skills--baseline-ui": "SKILL.md: 'MUST use text-balance for headings and text-pretty for body/paragraphs', 'SHOULD limit accent color usage to one per view', 'MUST animate only compositor props', 'SHOULD use truncate or line-clamp for dense UI' - the consistent rules for building the block.",
+      "frontend-design/ibelick-ui-skills--create-design-md": "SKILL.md produces a DESIGN.md for a product/website and warns 'Do not convert repetition, local styling, or visual preference into product intent'; it documents an existing language rather than specifying one new landing-page block.",
+      "frontend-design/raintree-hig-doctor--hig-components-content": "SKILL.md covers Apple content components (charts, collection views, image views, web views) only."
+    }
+  },
+  {
+    "id": "fe-13",
+    "category": "frontend-design",
+    "query": "Our tablet and mobile app shares a codebase, and touch targets in the dense inventory table are way too small while desktop users still want high information density. Propose an adaptive component pattern and responsive token rules so both form factors feel intentional.",
+    "expected": [
+      "frontend-design/raintree-hig-doctor--hig-components-layout",
+      "frontend-design/ibelick-ui-skills--baseline-ui"
+    ],
+    "near_misses": [
+      "frontend-design/raintree-hig-doctor--hig-components-content",
+      "frontend-design/raintree-hig-doctor--hig-inputs"
+    ],
+    "evidence": {
+      "frontend-design/raintree-hig-doctor--hig-components-layout": "SKILL.md: 'Adapt to screen size. Three-column on iPad collapses to single-column on iPhone. Use size classes and adaptive APIs'; 'lists-and-tables.md - Plain/grouped/inset-grouped styles, sidebar list styles, Disclosure style'; 'Layout Adaptation Checklist (compact/regular width, dynamic type, dark mode)'.",
+      "frontend-design/ibelick-ui-skills--baseline-ui": "SKILL.md token rules for the same problem: 'SHOULD use truncate or line-clamp for dense UI', 'MUST use tabular-nums for data', 'SHOULD use size-* for square elements instead of w-* + h-*', 'MUST use a fixed z-index scale', 'SHOULD use space-y-* for vertical rhythm'.",
+      "frontend-design/raintree-hig-doctor--hig-components-content": "SKILL.md's touch-target note ('compact cells with touch targets') belongs to Apple content components (collections/charts); it documents no adaptive pattern or responsive token rules.",
+      "frontend-design/raintree-hig-doctor--hig-inputs": "SKILL.md scope is input methods ('pointer and keyboard', 'touch'); it has no layout, density or token rules."
+    }
+  },
+  {
+    "id": "fe-14",
+    "category": "frontend-design",
+    "query": "針對我們目前充滿預設樣式的內部管理後台，請根據這份頁面截圖進行全面視覺翻新設計，重點放在資訊密度控制、表格可讀性、空白狀態（Empty State）插畫/文案配置與一致的按鈕層級，輸出設計改造方案與基礎樣式表。",
+    "expected": [
+      "frontend-design/ibelick-ui-skills--improve-ui",
+      "frontend-design/ibelick-ui-skills--baseline-ui"
+    ],
+    "near_misses": [
+      "frontend-design/raintree-hig-doctor--hig-components-layout",
+      "frontend-design/raintree-hig-doctor--hig-components-content"
+    ],
+    "evidence": {
+      "frontend-design/ibelick-ui-skills--improve-ui": "SKILL.md: 'Audit an existing product surface against its own design evidence, identify verified UI problems'; 'investigate design-system drift'; 'prepare a design handoff'; Findings/Proposed change/Scope/Confidence table plus 'Stop at three' - the makeover plan.",
+      "frontend-design/ibelick-ui-skills--baseline-ui": "SKILL.md: 'MUST give empty states one clear next action', 'SHOULD use truncate or line-clamp for dense UI', 'MUST use tabular-nums for data', 'SHOULD limit accent color usage to one per view', 'MUST use Tailwind CSS default shadow scale' - the base-stylesheet rules for density, tables and button hierarchy.",
+      "frontend-design/raintree-hig-doctor--hig-components-layout": "SKILL.md covers Apple lists/tables and section grouping; it does not review an existing admin screenshot or define a stylesheet baseline.",
+      "frontend-design/raintree-hig-doctor--hig-components-content": "SKILL.md mentions empty states only for Apple content components, not empty-state illustration/copy arrangement for an admin console."
+    }
+  },
+  {
+    "id": "fe-15",
+    "category": "frontend-design",
+    "query": "Build a clean, distraction-free command palette and keyboard shortcut overlay for our web IDE. Specify focus-trap behavior, ARIA roles, highlight states, and motion timing, and provide the ready-to-wire frontend component code.",
+    "expected": [
+      "frontend-design/ibelick-ui-skills--fixing-accessibility",
+      "frontend-design/ibelick-ui-skills--baseline-ui"
+    ],
+    "near_misses": [
+      "frontend-design/raintree-hig-doctor--hig-inputs",
+      "frontend-design/raintree-hig-doctor--hig-components-dialogs"
+    ],
+    "evidence": {
+      "frontend-design/ibelick-ui-skills--fixing-accessibility": "SKILL.md: 'modals must trap focus while open', 'restore focus to the trigger on close', 'set initial focus inside dialogs', 'Escape must close dialogs or overlays', 'expandable controls must use aria-expanded and aria-controls' - focus-trap and ARIA role requirements for an overlay.",
+      "frontend-design/ibelick-ui-skills--baseline-ui": "SKILL.md: 'NEVER exceed 200ms for interaction feedback', 'MUST animate only compositor props', 'SHOULD respect prefers-reduced-motion', 'MUST use accessible component primitives ... (Base UI, React Aria, Radix)' - highlight/motion timing and ready-to-wire primitives.",
+      "frontend-design/raintree-hig-doctor--hig-inputs": "SKILL.md covers Apple keyboard shortcuts and focus systems for tvOS/visionOS, not a web command palette overlay.",
+      "frontend-design/raintree-hig-doctor--hig-components-dialogs": "SKILL.md covers Apple presentation components (alerts, action sheets, popovers, sheets), not a web command palette with ARIA roles."
+    }
+  },
+  {
+    "id": "seo-01",
+    "category": "seo",
+    "query": "Our organic traffic dropped 35% after last month's site restructure, and our crawl logs show thousands of parameterized URLs getting indexed while key product pages sit unindexed. Run a technical SEO diagnosis from the attached crawl export and produce a prioritized fix plan (robots, canonicals, sitemaps).",
+    "expected": [
+      "seo/illyism-seo-skills--seo-roast",
+      "seo/illyism-seo-skills--seo-autopilot"
+    ],
+    "near_misses": [
+      "seo/illyism-seo-skills--internal-linking",
+      "seo/illyism-seo-skills--block-ai-scrapers"
+    ],
+    "evidence": {
+      "seo/illyism-seo-skills--seo-roast": "SKILL.md Point 1 'Default-deny robots.txt' (fix: default-allow, block only private paths), Point 2 programmatic traps ('Search URL bloat | ?q=, ?sort=, ?page= URLs indexed -> noindex first, Disallow only after they drop out of the index'; 'Thin result pages | > 10% of sampled pages show 0-1 results -> noindex, follow when results < 3, drop from sitemap'), Point 6 money-page indexation (canonical, sitemap, 'Linked from nav/footer/menu at least once'); output 'seo/roast-roadmap.md' with 'Ordered by revenue impact, not by audit category'.",
+      "seo/illyism-seo-skills--seo-autopilot": "SKILL.md Daily health check: 'anything that is not a 200, redirect chains, missing or wrong canonicals, stray noindex, pages blocked by robots.txt, broken internal links, pages no other page links to, duplicate or missing titles and descriptions'; Weekly 'Indexing - For every URL in the sitemap, confirm Google has indexed it. For any that are not, find the cause (thin, duplicate, orphaned, blocked, canonical pointing elsewhere)'; 'seo/backlog.md - The queue, ordered by expected signups per hour of work'.",
+      "seo/illyism-seo-skills--internal-linking": "SKILL.md scope is internal linking / traffic-to-money routing; it can list under-linked pages but documents no crawl diagnosis, robots.txt or canonical plan.",
+      "seo/illyism-seo-skills--block-ai-scrapers": "SKILL.md is 'a robots.txt policy for blocking AI crawlers/scrapers ... keeping verified Googlebot SEO indexing intact' - it configures crawler blocking, not indexation of parameterized URLs or unindexed money pages."
+    }
+  },
+  {
+    "id": "seo-02",
+    "category": "seo",
+    "query": "我們即將把三個舊網域合併到單一主網域，同時 URL 結構也會全面改寫。請幫我規劃一份零流量流失的網域遷移（Domain Migration）檢核表與 301 重新導向對應規則設計，包含上線前後的索引監控步驟。",
+    "expected": [
+      "seo/illyism-seo-skills--domain-migration"
+    ],
+    "near_misses": [
+      "seo/illyism-seo-skills--seo-roast"
+    ],
+    "evidence": {
+      "seo/illyism-seo-skills--domain-migration": "SKILL.md: 'Executes a domain rebrand, subdomain-to-subfolder merge, or multi-site consolidation ... shipping a verified 1-to-1 redirect config, scripts/verify-redirects.sh, canonical and schema cutover edits'; 'seo/redirect-map.csv' 1-to-1 mapping with Cloudflare/Nginx/Next.js configs; 'Merging 2 sites into 1 ... Map each retired page to its closest topical equivalent'; Post-launch monitoring 'Day 1 ... GSC shows no spike in 404s', 'Days 1-30 ... indexed count climbs', 'Day 30-90 ... commercial terms recover'.",
+      "seo/illyism-seo-skills--seo-roast": "SKILL.md mentions 301 rules only inside a site-wide teardown (locale drops); it has no multi-domain redirect map, verification script or migration checklist."
+    }
+  },
+  {
+    "id": "seo-03",
+    "category": "seo",
+    "query": "Here is a spreadsheet of our top 50 landing pages with high impressions but low click-through rates. Rewrite their title tags and meta descriptions to improve SERP relevance and click intent without keyword stuffing, and explain the prioritization rationale.",
+    "expected": [
+      "seo/illyism-seo-skills--seo-title-optimization"
+    ],
+    "near_misses": [
+      "seo/illyism-seo-skills--blog-refresher",
+      "seo/illyism-seo-skills--seo-autopilot"
+    ],
+    "evidence": {
+      "seo/illyism-seo-skills--seo-title-optimization": "SKILL.md: 'Rewrite and audit SEO page titles, title tags, MDX frontmatter titles, H1 alignment, and bulk title improvements'; checklist 'Put the primary query near the front', 'Keep the important words visible before truncation', 'Prefer human clarity over keyword stuffing'; 'Bulk Rewrite Output' table with 'Why' per row; 'Align title, meta description, H1, and URL slug around the same topic'.",
+      "seo/illyism-seo-skills--blog-refresher": "SKILL.md refreshes whole posts (6-phase audit, gap analysis, rewrite); its title/meta rules ('Title tag 50-60 characters', 'Meta description 150-160 characters') are one line of a broader refresh checklist, not a title/description rewriting service.",
+      "seo/illyism-seo-skills--seo-autopilot": "SKILL.md mentions 'If the position is good but the click rate is low, rewrite the title and description instead' as one step inside a daily/weekly operating loop, not a CSV-driven bulk rewrite with rationale."
+    }
+  },
+  {
+    "id": "seo-04",
+    "category": "seo",
+    "query": "我們部落格有上百篇兩年前寫的教學文章，最近排名一直被競爭對手超越。請建立一套內容翻新（Content Refresh）與內部連結優化流程，幫我找出最值得優先更新、整併或設定轉址的文章類型與改寫範本。",
+    "expected": [
+      "seo/illyism-seo-skills--blog-refresher",
+      "seo/illyism-seo-skills--internal-linking"
+    ],
+    "near_misses": [
+      "seo/illyism-seo-skills--proof-kb",
+      "seo/illyism-seo-skills--seo-title-optimization"
+    ],
+    "evidence": {
+      "seo/illyism-seo-skills--blog-refresher": "SKILL.md: 'The 6-phase framework: Current state analysis, Competitor research, Gap identification, Improvement plan, Approval checkpoint, Content recreation'; Phase 1 audit checklist (word count, structure, quality); Phase 4 'Refresh strategy' incl. 'Keep the URL (or plan a 301 redirect)', 'Internal links to add'; Phase 3 gap table.",
+      "seo/illyism-seo-skills--internal-linking": "SKILL.md: 'Runs reverse internal linking (traffic-to-money routing) ... editing high-traffic informational posts in place to pass contextual links'; Step 1 orphan/underlinked classification ('contextualInbound < 3 -> ORPHAN TARGET'); anchor rules ('3-7 descriptive words, not full titles'); Step 3 before/after inbound-link table.",
+      "seo/illyism-seo-skills--proof-kb": "SKILL.md: 'Build and maintain an atomic First-Hand Proof Knowledge Base (seo/kb/)' whose inputs are 'Interviews with the founder, engineers, or customers' and 'Real product usage evidence' - it requires first-hand evidence gathering and does not rank posts by ranking loss or plan internal linking.",
+      "seo/illyism-seo-skills--seo-title-optimization": "SKILL.md rewrites titles only; it does not cover a refresh/consolidate/redirect decision process or internal-link optimization."
+    }
+  },
+  {
+    "id": "seo-05",
+    "category": "seo",
+    "query": "Analyze these SERP snapshots and competitor page outlines for ten commercial-intent SaaS keywords. Identify content gaps, search-intent shifts, and a structured topic-cluster blueprint that prioritizes pages closest to pipeline and revenue.",
+    "expected": [
+      "seo/illyism-seo-skills--dataforseo-serp",
+      "seo/illyism-seo-skills--ahrefs-research"
+    ],
+    "near_misses": [
+      "seo/illyism-seo-skills--blog-refresher"
+    ],
+    "evidence": {
+      "seo/illyism-seo-skills--dataforseo-serp": "SKILL.md Workflow A 'SERP URL-Overlap Keyword Clustering (Anti-Cannibalization)' writing 'seo/keyword-clusters.json' and 'seo/content-map.md' with action create/merge/split; Workflow D 'Pre-Write SERP Intent Lock' detecting intent shifts ('the top 5 shifted from listicle to tools - your page needs to change or you need a different page'); Workflow B 'Traffic-Value Free-Tool Filter' ranking by CPC x volume.",
+      "seo/illyism-seo-skills--ahrefs-research": "SKILL.md Workflow A 'Competitor Top-Pages Gap Diffing' -> 'seo/competitor-gaps.md' Kanban board where 'Score = value_usd_sum x competitors_ranking / (1 + median_referring_domains / 10)' plus 1-3 scaffolded pages - competitor content gaps ranked by money.",
+      "seo/illyism-seo-skills--blog-refresher": "SKILL.md researches 'the top 5-10 SERP results' for one existing post; it does not build a site-wide topic-cluster blueprint or detect cannibalization."
+    }
+  },
+  {
+    "id": "seo-06",
+    "category": "seo",
+    "query": "除了傳統搜尋排名外，我們發現潛在客戶越來越常透過 AI 問答與摘要工具尋找解決方案，但品牌很少被引用。請評估我們現有的產品與比較頁面結構，提出提升 AI 搜尋能見度與結構化資料（Schema.org JSON-LD）的改造方案。",
+    "expected": [
+      "seo/illyism-seo-skills--dataforseo-serp",
+      "seo/illyism-seo-skills--ai-seo-report",
+      "seo/illyism-seo-skills--seo-roast"
+    ],
+    "near_misses": [
+      "seo/illyism-seo-skills--vs-and-alternatives",
+      "seo/illyism-seo-skills--aiseotracker"
+    ],
+    "evidence": {
+      "seo/illyism-seo-skills--dataforseo-serp": "SKILL.md Workflow C 'AI Overview and LLM Citation Source Extraction' writing 'seo/citation-gaps.md' with one action per cited source (e.g. 'Ship /vs/<competitor> and /alternatives/<competitor> pages'); Workflow D 'Pre-Write SERP Intent Lock' for per-page structure.",
+      "seo/illyism-seo-skills--ai-seo-report": "SKILL.md: 'Write the AI SEO Tracker report brief from live MCP data ... interpret live visibility for someone who wants mentions in ChatGPT, Gemini, Perplexity, Copilot, and AI Overviews' - the evaluation of current AI-search visibility.",
+      "seo/illyism-seo-skills--seo-roast": "SKILL.md Point 5 'AI Search Entity and Pricing Visibility': 'Fix shipped: server-render the pricing table as text, publish public docs for core features, add Product/Offer JSON-LD with the same prices, and make llms.txt match the page exactly' - the Schema.org structured-data work.",
+      "seo/illyism-seo-skills--vs-and-alternatives": "SKILL.md ships new /vs/, /alternatives/ and best-for routes with a required section order; it does not audit existing pages' structure or specify JSON-LD/schema changes.",
+      "seo/illyism-seo-skills--aiseotracker": "SKILL.md is the MCP setup/connection skill ('Connect MCP once ... call aiseo_list_projects'); the report brief itself is written by ai-seo-report."
+    }
+  },
+  {
+    "id": "seo-07",
+    "category": "seo",
+    "query": "Our marketing team keeps asking for more top-of-funnel blog posts, but leadership wants SEO work tied directly to qualified signups. Given our page conversion and keyword ranking CSV, build a revenue-first SEO roadmap ranking the highest-ROI fixes and bottom-of-funnel pages.",
+    "expected": [
+      "seo/illyism-seo-skills--seo-roast",
+      "seo/illyism-seo-skills--blitz-seo",
+      "seo/illyism-seo-skills--seo-autopilot"
+    ],
+    "near_misses": [
+      "seo/illyism-seo-skills--internal-linking",
+      "seo/illyism-seo-skills--ahrefs-research"
+    ],
+    "evidence": {
+      "seo/illyism-seo-skills--seo-roast": "SKILL.md: 'Revenue-First Teardown ... order the rest by money'; severity tiers 'FATAL | REVENUE | COMPOUNDING | FLUFF'; 'seo/roast-roadmap.md ... Ordered by revenue impact, not by audit category' and 'Revenue impact column states what money it blocks'.",
+      "seo/illyism-seo-skills--blitz-seo": "SKILL.md: 'Concentrates every available resource on ranking a single high-value page'; 'Revenue link: would ranking top 3 for this keyword directly produce signups or sales?'; 'Do not use it ... for keywords with no revenue attached'; 30-day sprint plan by keyword/target page/why it is stuck.",
+      "seo/illyism-seo-skills--seo-autopilot": "SKILL.md: 'Traffic that never converts does not count'; 'seo/backlog.md - The queue, ordered by expected signups per hour of work. Each item names the query, the page and the change'; Monthly keyword map assigns one primary query per page.",
+      "seo/illyism-seo-skills--internal-linking": "SKILL.md routes existing blog traffic to money pages; it does not rank fixes by ROI across the site or build a revenue-first roadmap.",
+      "seo/illyism-seo-skills--ahrefs-research": "SKILL.md scores competitor topic gaps into a Kanban board; its output is a page backlog, not a revenue-ranked roadmap of fixes."
+    }
+  },
+  {
+    "id": "seo-08",
+    "category": "seo",
+    "query": "我們新上線的電子商務網站有兩萬個商品頁面，但目前孤島頁面（Orphan Pages）很多、麵包屑導覽不一致，導致深層商品很難被爬蟲抓到。請設計一套可擴展的內部連結架構與結構化標記規則，讓權重能有效流向核心分類頁。",
+    "expected": [
+      "seo/illyism-seo-skills--internal-linking"
+    ],
+    "near_misses": [
+      "seo/illyism-seo-skills--seo-roast",
+      "seo/illyism-seo-skills--seo-autopilot"
+    ],
+    "evidence": {
+      "seo/illyism-seo-skills--internal-linking": "SKILL.md: 'Runs reverse internal linking (traffic-to-money routing)'; Step 1 'orphanMoneyPages' from scripts/internal-link-graph.mjs and the underlinked threshold ('contextualInbound < 3 -> ORPHAN TARGET'); Step 2 contextual anchor injection ('2-4 new money links per post', '3-7 descriptive words'); Step 4 'Hub, lateral, and breadcrumb check' plus 'BreadcrumbList JSON-LD' - the scalable linking architecture and markup rules.",
+      "seo/illyism-seo-skills--seo-roast": "SKILL.md checks 'Contextual body links pointing in ... Fewer than 3' per money page inside a site-wide teardown; it does not design a scalable architecture for 20k product pages or structured markup rules.",
+      "seo/illyism-seo-skills--seo-autopilot": "SKILL.md's health check can flag pages 'no other page links to', but its documented outputs are a daily report and a backlog, not a scalable internal-linking architecture with markup rules."
+    }
+  },
+  {
+    "id": "seo-09",
+    "category": "seo",
+    "query": "We have strong on-page content in a competitive B2B niche, yet we consistently lose page-one spots to domains with higher authority. Design an ethical authority-building and digital PR outreach plan—target linkable assets, prospect criteria, and outreach email templates.",
+    "expected": [
+      "seo/illyism-seo-skills--honest-link-outreach",
+      "seo/illyism-seo-skills--ahrefs-research"
+    ],
+    "near_misses": [
+      "seo/illyism-seo-skills--linkdr",
+      "seo/illyism-seo-skills--directory-submissions"
+    ],
+    "evidence": {
+      "seo/illyism-seo-skills--honest-link-outreach": "SKILL.md: 'Target a ranking page, never a homepage'; SEND/CUT gate table ('Editor's own link: CUT'); 'Route by relationship, then by contact role'; 'Ask first, reward second'; 'No direct swaps'; structurally varied email drafts; output 'seo/outreach-batch-YYYY-MM-DD.md' with a prospect table (site, contact, page, relevance note, angle, email, status).",
+      "seo/illyism-seo-skills--ahrefs-research": "SKILL.md Workflow B 'Fake DR vs. Real Best Links Audit' -> 'seo/link-targets.csv' with per-domain replication paths and a 'should we link to this' decision; Workflow D 'Link-Insertion Page Matcher' -> exact prospect URLs with insertion sentences - linkable assets and prospect criteria.",
+      "seo/illyism-seo-skills--linkdr": "SKILL.md sells managed placements ('Prices (USD, per link): DR 30+ $160 ...') and 'Does not ... replace the user's SEO strategy'; it returns a checkout URL and placement list, not an outreach plan, prospect criteria or email templates.",
+      "seo/illyism-seo-skills--directory-submissions": "SKILL.md submits a product to directories/launchpads/registries via a manifest and wave schedule; it does not prospect editorial link targets or write outreach emails."
+    }
+  },
+  {
+    "id": "seo-10",
+    "category": "seo",
+    "query": "這份網站體檢匯出報告顯示有大量重複標題、失效外部連結、圖片缺少 alt 屬性以及核心網頁指標（Core Web Vitals）過慢的問題。請幫我把這些問題依對抓取與排名的實際影響力分級，產出一份跨工程與編輯團隊的執行清單。",
+    "expected": [
+      "seo/illyism-seo-skills--seo-roast",
+      "seo/illyism-seo-skills--seo-autopilot"
+    ],
+    "near_misses": [
+      "seo/illyism-seo-skills--seo-title-optimization",
+      "seo/illyism-seo-skills--blog-refresher"
+    ],
+    "evidence": {
+      "seo/illyism-seo-skills--seo-roast": "SKILL.md: 'FLUFF: alt text, meta length, heading order, minor schema warnings - One line at the bottom of the roadmap. Do not fix while FATAL or REVENUE rows remain'; 'COMPOUNDING: ... crawl waste, slow pages'; the roadmap table '# | Tier | Issue | Revenue impact | Fix | Owner | Status' - impact-graded triage across engineering and editorial issues.",
+      "seo/illyism-seo-skills--seo-autopilot": "SKILL.md Daily health check flags 'duplicate or missing titles and descriptions', 'broken internal links', 'slow pages'; Weekly 'Fixes to existing pages. Aim for 12 or more a week'; the health report and backlog give a cross-team execution list.",
+      "seo/illyism-seo-skills--seo-title-optimization": "SKILL.md only rewrites titles ('Bulk Rewrite Output' table); it cannot grade broken links, alt text or Core Web Vitals.",
+      "seo/illyism-seo-skills--blog-refresher": "SKILL.md's checklist covers one post's structure/FAQ/schema; it is not a site-wide issue triage with impact grades."
+    }
+  },
+  {
+    "id": "seo-11",
+    "category": "seo",
+    "query": "Audit our documentation hub and marketing pages for structured content quality—headings hierarchy, FAQ markup, comparison tables, and entity clarity—so both traditional search crawlers and generative answer engines can parse our product capabilities accurately.",
+    "expected": [
+      "seo/illyism-seo-skills--blog-refresher",
+      "seo/illyism-seo-skills--dataforseo-serp"
+    ],
+    "near_misses": [
+      "seo/illyism-seo-skills--vs-and-alternatives",
+      "seo/illyism-seo-skills--proof-kb"
+    ],
+    "evidence": {
+      "seo/illyism-seo-skills--blog-refresher": "SKILL.md Phase 1 'Content audit checklist' (structure: 'Number of H2s and H3s', lists, tables, media, internal/external links; quality) and Phase 3 gap table columns 'FAQ section', 'Schema markup', 'Comparison tables', 'Featured snippet format' - the structured-content quality criteria.",
+      "seo/illyism-seo-skills--dataforseo-serp": "SKILL.md Workflow D locks the page format from the live Top-5 ('LISTICLE with at least the median entry count, comparison table first', 'DOCS page: steps, code blocks', 'PAA answers as FAQ') and Workflow C extracts the sources generative engines cite - matching 'parseable by crawlers and answer engines'.",
+      "seo/illyism-seo-skills--vs-and-alternatives": "SKILL.md builds new comparison routes with a required section order; it does not audit existing documentation pages' heading hierarchy, FAQ markup or entity clarity.",
+      "seo/illyism-seo-skills--proof-kb": "SKILL.md structures page drafts around five first-hand proof categories and a proof store; it does not audit heading hierarchy, FAQ markup or entity clarity."
+    }
+  },
+  {
+    "id": "seo-12",
+    "category": "seo",
+    "query": "我們想為即將發布的大型產業年度報告設計一套完整的上線策略：一方面要最大化網站搜尋排名與自然外部連結取得，另一方面也想順便拆成適合社群平台連載的精簡觀點。請產出以 SEO 權威與結構化頁面為核心的發布藍圖。",
+    "expected": [
+      "seo/illyism-seo-skills--seo-autopilot",
+      "seo/illyism-seo-skills--content-coverage",
+      "seo/illyism-seo-skills--blitz-seo"
+    ],
+    "near_misses": [
+      "seo/illyism-seo-skills--honest-link-outreach",
+      "seo/illyism-seo-skills--directory-submissions"
+    ],
+    "evidence": {
+      "seo/illyism-seo-skills--seo-autopilot": "SKILL.md Monthly: 'Up to 12 articles', 'Comparison pages', 'One free tool', 'Links ... Draft up to five pitches in seo/outreach/'; and 'Every new article gets seo/social/<slug>.md with one X post and one LinkedIn post' - the social-repurposing half of the launch.",
+      "seo/illyism-seo-skills--content-coverage": "SKILL.md: 'Plan and write blog posts that cover missing AI search prompts from live MCP data'; the campaign table 'prompt cluster | intent | slug | action | title | sources' with 'rewrite'/'consolidate' cannibalization handling; 'Independent listicles to pitch after publish (drafts only)' - the natural external-link half.",
+      "seo/illyism-seo-skills--blitz-seo": "SKILL.md names 'Launching something new that needs one page to win fast' as an explicit use case; the 30-day sprint concentrates internal links, backlinks and on-page work onto the single report page.",
+      "seo/illyism-seo-skills--honest-link-outreach": "SKILL.md produces outreach emails for individual prospects; it is not a launch blueprint covering SEO authority, structured pages and social repurposing.",
+      "seo/illyism-seo-skills--directory-submissions": "SKILL.md is for submitting a product/tool ('Launch and submit a startup, SaaS, AI tool, or MCP server across 50+ high-DR software review sites'), not for launching a content asset like an industry report."
+    }
+  },
+  {
+    "id": "seo-13",
+    "category": "seo",
+    "query": "Our multi-language site (English, Traditional Chinese, and Japanese) is suffering from wrong-region pages ranking in local search results. Review our URL and hreflang setup and produce a corrected hreflang mapping specification plus validation checklist.",
+    "expected": [
+      "seo/illyism-seo-skills--seo-roast"
+    ],
+    "near_misses": [
+      "seo/illyism-seo-skills--domain-migration",
+      "seo/illyism-seo-skills--seo-autopilot"
+    ],
+    "evidence": {
+      "seo/illyism-seo-skills--seo-roast": "SKILL.md Point 1b 'Locale sprawl': FAIL when '>= 8 locales, or any locale with English strings left in templates, or hreflang not reciprocal'; PASS requires '<= 3 locales, fully translated, reciprocal hreflang + x-default'; fix 'hreflang generator that emits the full reciprocal set for kept locales, noindex guard in the layout for dropped locales, sitemap filtered to kept locales' - the corrected hreflang mapping spec.",
+      "seo/illyism-seo-skills--domain-migration": "SKILL.md handles hreflang only as a migration cutover edit ('every alternate points to new-domain URLs, and each locale page still links back reciprocally'); its documented scope is a domain/URL migration, not an international hreflang specification with a validation checklist.",
+      "seo/illyism-seo-skills--seo-autopilot": "SKILL.md can flag duplicate titles/descriptions and per-URL indexation, but documents no hreflang reciprocity, x-default or locale mapping rules."
+    }
+  },
+  {
+    "id": "seo-14",
+    "category": "seo",
+    "query": "檢視我們這五個主打產品落地頁（Landing Pages）的現有文案與 HTML 標記，為什麼明明針對高轉換關鍵字卻一直卡在第二頁？請從搜尋意圖匹配、頁面結構化元素、內部錨點文字與頁面體驗給出具體修改稿。",
+    "expected": [
+      "seo/illyism-seo-skills--blitz-seo",
+      "seo/illyism-seo-skills--internal-linking"
+    ],
+    "near_misses": [
+      "seo/illyism-seo-skills--seo-title-optimization",
+      "seo/illyism-seo-skills--seo-roast"
+    ],
+    "evidence": {
+      "seo/illyism-seo-skills--blitz-seo": "SKILL.md: 'a page stuck on position 5-20 is the ideal Blitz target'; Step 2 on-page rewrite checklist (tight H1 with the keyword, keyword in title tag/URL/meta description, fast load, visual trust, link from homepage/nav); 'If the position is good but the click rate is low, rewrite the title and description instead'.",
+      "seo/illyism-seo-skills--internal-linking": "SKILL.md: 'Link /pricing with the plan that fits the post's reader'; contextual body links only ('nav, footer, sidebar excluded'); anchor rules ('3-7 descriptive words'); 'Contextual body links pointing in ... Fewer than 3 -> FIX FIRST' - the internal anchor-text part of the revision.",
+      "seo/illyism-seo-skills--seo-title-optimization": "SKILL.md covers titles and H1 alignment only; the query asks for intent match, structured page elements, anchor text and page experience together.",
+      "seo/illyism-seo-skills--seo-roast": "SKILL.md's deliverable is a site-wide teardown roadmap plus a fix PR, not a per-landing-page revision set; its money-page tier checks indexation and demo walls rather than intent-matched rewrites."
+    }
+  },
+  {
+    "id": "seo-15",
+    "category": "seo",
+    "query": "We're launching a programmatic glossary of 300 technical terms and want to avoid thin-content penalties. Define the minimum content standard, internal cross-linking rules, schema template, and indexation gating criteria before we publish.",
+    "expected": [
+      "seo/illyism-seo-skills--seo-roast",
+      "seo/illyism-seo-skills--internal-linking",
+      "seo/illyism-seo-skills--dataforseo-serp"
+    ],
+    "near_misses": [
+      "seo/illyism-seo-skills--proof-kb",
+      "seo/illyism-seo-skills--blog-refresher"
+    ],
+    "evidence": {
+      "seo/illyism-seo-skills--seo-roast": "SKILL.md Point 2 'Programmatic SEO Traps': 'Thin result pages | > 10% of sampled pages show 0-1 results -> noindex, follow when results < 3, drop from sitemap'; 'noindex before Disallow'; 'Search URL bloat -> noindex first' - the minimum content standard and indexation gating criteria.",
+      "seo/illyism-seo-skills--internal-linking": "SKILL.md cross-linking rules: '1-3 targets per source post', 'At least 1 new money link in the upper 40% of the body', anchors '3-7 descriptive words', 'Vary anchors across posts ... No exact anchor is reused more than 3 times sitewide', plus hub/breadcrumb structure for term pages.",
+      "seo/illyism-seo-skills--dataforseo-serp": "SKILL.md Workflow A clusters keywords by SERP URL overlap and 'If two existing pages target keywords from one cluster, flag a merge with a 301 from the weaker page' - prevents 300-term cannibalization.",
+      "seo/illyism-seo-skills--proof-kb": "SKILL.md requires first-hand benchmarks/customers/interviews for each page ('Every commercial guide, comparison page, or benchmark post ships with at least 4 of these 5 categories'); it does not define a programmatic indexation gate for a 300-term glossary.",
+      "seo/illyism-seo-skills--blog-refresher": "SKILL.md refreshes individual posts by hand in 6 phases; it has no programmatic content standard, gating criteria or schema template for a glossary factory."
+    }
+  },
+  {
+    "id": "smp-01",
+    "category": "social-media-publishing",
+    "query": "We have a product launch announcement, a 45-second vertical demo video, and four high-res screenshots ready in a folder. Prepare and schedule a coordinated multi-platform rollout across our short-text feed, visual carousel network, and professional network—adapting copy length, aspect ratios, and alt text—and define how we verify every post actually went live.",
+    "expected": [
+      "social-media-publishing/gitroomhq-postiz-agent--postiz",
+      "social-media-publishing/upload-post-upload-post-skill--upload-post"
+    ],
+    "near_misses": [
+      "social-media-publishing/dreammis-social-auto-upload--social-auto-upload",
+      "social-media-publishing/dreammis-social-auto-upload--instagram-upload"
+    ],
+    "evidence": {
+      "social-media-publishing/gitroomhq-postiz-agent--postiz": "SKILL.md: 'Social media automation CLI and MCP server for scheduling posts across 28+ platforms'; Rule 2 media upload; 'postiz posts:create ... -m \"$IMG1,$IMG2,$EXISTENT\"' for carousels; '--alt \"A sunset over the sea,A sandy beach\"' (alt text for Instagram images/carousels); 'Pattern 4: Multi-Platform Campaign' with per-platform content in one JSON payload.",
+      "social-media-publishing/upload-post-upload-post-skill--upload-post": "SKILL.md: '/upload_photos ... photos[]' for carousels; 'scheduled_date' + 'timezone' for scheduling; '/uploadposts/history' returning 'upload timestamp, platform, success status, post URLs, errors' - the live-verification log; platform list includes Instagram, LinkedIn, X.",
+      "social-media-publishing/dreammis-social-auto-upload--social-auto-upload": "SKILL.md's platform routing table lists 抖音/Bilibili/小红书/快手/视频号/百家号/大鱼号/支付宝/微博/虎扑/TikTok/雪球/YouTube/知乎/Facebook/Instagram - there is no LinkedIn or X/Twitter entry, so it cannot reach the professional network and short-text feed named in the query.",
+      "social-media-publishing/dreammis-social-auto-upload--instagram-upload": "SKILL.md: '当前账号独立网页版的照片/Reels 表单及高级设置没有定时入口，当前 CLI 仅支持立即发布' - single platform, no scheduling, so it cannot run a coordinated multi-platform rollout."
+    }
+  },
+  {
+    "id": "smp-02",
+    "category": "social-media-publishing",
+    "query": "我寫好了一篇 2,500 字的深度技術長文（Markdown 格式，附三張架構圖），想同時發到專業長文專欄平台，並拆成五則串文發到即時短訊社群平台。請幫我處理各平台的格式限制、圖片附件規格與排程佇列設定，並列出發布後的確認檢查步驟。",
+    "expected": [
+      "social-media-publishing/dreammis-social-auto-upload--zhihu-upload",
+      "social-media-publishing/gitroomhq-postiz-agent--postiz",
+      "social-media-publishing/upload-post-upload-post-skill--upload-post"
+    ],
+    "near_misses": [
+      "social-media-publishing/dreammis-social-auto-upload--xueqiu-upload",
+      "social-media-publishing/dreammis-social-auto-upload--weibo-upload"
+    ],
+    "evidence": {
+      "social-media-publishing/dreammis-social-auto-upload--zhihu-upload": "SKILL.md: '文章发布 | sau zhihu upload-article ... HTML/Markdown/TXT 原稿，图片保留原稿位置'; '标题最多 100 字'; '--schedule \"YYYY-MM-DD HH:MM\"' (experimental, 30 minutes to 48 hours ahead, Beijing time); '作品核对 | sau zhihu verify --account creator --result <json> | 打开结果文件中的原作品链接核对标题' - the post-publish confirmation step.",
+      "social-media-publishing/gitroomhq-postiz-agent--postiz": "SKILL.md: 'Pattern 3: Twitter Thread' (multiple -c comments with '-d 2000' delay between posts); 'postiz posts:create -c \"Content\" -s \"2026-01-15T10:00:00Z\" -i \"twitter-id,linkedin-id,facebook-id\"'; 'postiz integrations:settings <integration-id>' exposing per-provider 'rules' and 'maxLength' - per-platform format limits.",
+      "social-media-publishing/upload-post-upload-post-skill--upload-post": "SKILL.md: '/upload_text' for X/Threads/Bluesky/LinkedIn text posts; 'X long text creates threads unless x_long_text_as_post=true'; 'scheduled_date' with an IANA 'timezone'.",
+      "social-media-publishing/dreammis-social-auto-upload--xueqiu-upload": "SKILL.md publishes long-form HTML/Markdown/TXT with inline images, but '没有定时参数：本次账号的完整长文表单未观察到定时功能' - it cannot satisfy the scheduling-queue requirement.",
+      "social-media-publishing/dreammis-social-auto-upload--weibo-upload": "SKILL.md: '当前仅支持视频，不支持图文和定时发布' - it cannot publish either the long-form article or the 5-part text thread."
+    }
+  },
+  {
+    "id": "smp-03",
+    "category": "social-media-publishing",
+    "query": "Our last automated release thread silently failed halfway through because an account session expired and one image exceeded the platform's file-size cap. Design a resilient publishing queue workflow with pre-flight media/character validation, session health checks, and post-publish URL verification.",
+    "expected": [
+      "social-media-publishing/upload-post-upload-post-skill--upload-post",
+      "social-media-publishing/gitroomhq-postiz-agent--postiz",
+      "social-media-publishing/dreammis-social-auto-upload--social-auto-upload"
+    ],
+    "near_misses": [
+      "social-media-publishing/dreammis-social-auto-upload--youtube-upload",
+      "social-media-publishing/dreammis-social-auto-upload--bilibili-upload"
+    ],
+    "evidence": {
+      "social-media-publishing/upload-post-upload-post-skill--upload-post": "SKILL.md: '/uploadposts/status?request_id' for async uploads; '/uploadposts/history' with 'upload timestamp, platform, success status, post URLs, errors'; error table '429 | Rate limit / quota exceeded'; webhook events 'social_account_reauth_required' and 'upload_completed'; '/uploadposts/queue/settings ... slots: \"auto\"' - resilient queue, pre-flight and post-publish confirmation.",
+      "social-media-publishing/gitroomhq-postiz-agent--postiz": "SKILL.md: 'Rule 1 - Authenticate before anything' with 'postiz auth:status' / 'auth:login'; 'integrations:settings' maxLength + rules ('Character limits: Each platform has different limits'); 'postiz upload --adjust' then 'media:status' to wait for 'ready'; 'Pattern 7: Error Handling & Retry' with exponential backoff; 'posts:missing' / 'posts:connect' to confirm what shipped.",
+      "social-media-publishing/dreammis-social-auto-upload--social-auto-upload": "SKILL.md: '先检查目标账号状态'; '发布前核对文件、标题、文案、标签、可见范围、发布时间及目标账号'; '只有命令或平台提供本次提交的成功证据才报告已发布。超时或结果未知时先查原作品，不盲目重发' - the pre-flight checks, session health check and no-blind-retry rule.",
+      "social-media-publishing/dreammis-social-auto-upload--youtube-upload": "SKILL.md uploads/schedules a single video and says to check YouTube Studio on timeout; it documents no queue, media-size pre-flight or character validation.",
+      "social-media-publishing/dreammis-social-auto-upload--bilibili-upload": "SKILL.md: '对 agent 来说，不要在非交互环境里硬跑 sau bilibili login' - login must be performed by the user in a terminal, so it cannot run an unattended resilient publishing queue."
+    }
+  },
+  {
+    "id": "smp-04",
+    "category": "social-media-publishing",
+    "query": "我們團隊管理三個品牌帳號（主品牌、開發者帳號、創辦人個人帳號），常發生發錯帳號或誤把內部測試貼文設成公開的窘境。請設計一套發文前帳號切換與可見度（公開／僅限追蹤者／草稿）防呆流程與發布確認單。",
+    "expected": [
+      "social-media-publishing/dreammis-social-auto-upload--social-auto-upload",
+      "social-media-publishing/gitroomhq-postiz-agent--postiz",
+      "social-media-publishing/upload-post-upload-post-skill--upload-post"
+    ],
+    "near_misses": [
+      "social-media-publishing/dreammis-social-auto-upload--dayu-upload",
+      "social-media-publishing/dreammis-social-auto-upload--youtube-upload",
+      "social-media-publishing/dreammis-social-auto-upload--xueqiu-upload"
+    ],
+    "evidence": {
+      "social-media-publishing/dreammis-social-auto-upload--social-auto-upload": "SKILL.md: per-platform account alias ('账号别名'), '先检查目标账号状态', '发布前核对文件、标题、文案、标签、可见范围、发布时间及目标账号。只发布用户明确指定的平台' - the account-switching and visibility guardrails plus the confirmation checklist.",
+      "social-media-publishing/gitroomhq-postiz-agent--postiz": "SKILL.md: 'postiz posts:create ... -t draft' for staged drafts; 'postiz posts:status <post-id> --status draft' ('Move back to draft, terminates any running publish workflow') and '--status schedule' (draft<->queue); 'postiz integrations:list' (one row per connected account) and 'integrations:groups' for multi-brand setups.",
+      "social-media-publishing/upload-post-upload-post-skill--upload-post": "SKILL.md: a Profile links the connected accounts ('The user parameter ... refers to your profile name ... which determines which connected social accounts receive the content'); '/uploadposts/schedule' lists/cancels/edits scheduled posts; 'visibility: PUBLIC, CONNECTIONS, LOGGED_IN, CONTAINER' for LinkedIn; '/uploadposts/posts/unpublish'.",
+      "social-media-publishing/dreammis-social-auto-upload--dayu-upload": "SKILL.md: 'CLI 会绑定发布主体，拒绝错号' - strong wrong-account protection but limited to the 大鱼号 video/article CLI.",
+      "social-media-publishing/dreammis-social-auto-upload--youtube-upload": "SKILL.md offers '--visibility public, unlisted, private' but only for YouTube and without an account-switch confirmation workflow.",
+      "social-media-publishing/dreammis-social-auto-upload--xueqiu-upload": "SKILL.md: '--visibility 为 公开 或 私人' but the skill is long-form-only for 雪球 ('不支持定时或视频')."
+    }
+  },
+  {
+    "id": "smp-05",
+    "category": "social-media-publishing",
+    "query": "Schedule next week's batch of 12 educational tips (mix of single-image cards, short clips, and link posts) into optimal time slots across two time zones without colliding with our major webinar announcement. Output the structured publishing calendar payload and collision-check rules.",
+    "expected": [
+      "social-media-publishing/upload-post-upload-post-skill--upload-post",
+      "social-media-publishing/gitroomhq-postiz-agent--postiz"
+    ],
+    "near_misses": [
+      "social-media-publishing/dreammis-social-auto-upload--dayu-upload",
+      "social-media-publishing/dreammis-social-auto-upload--meta-upload",
+      "social-media-publishing/dreammis-social-auto-upload--tencent-upload"
+    ],
+    "evidence": {
+      "social-media-publishing/upload-post-upload-post-skill--upload-post": "SKILL.md: '/uploadposts/best-times?profile_username=&platform=' returning 'best_times' per timezone; '/uploadposts/queue/settings' with 'slots: \"auto\"' and 'auto_slots_count'; '/uploadposts/queue/preview' and '/uploadposts/queue/next-slot'; 'scheduled_date' + 'timezone' per post - the structured publishing-calendar payload and slot rules.",
+      "social-media-publishing/gitroomhq-postiz-agent--postiz": "SKILL.md: 'Pattern 6: Batch Scheduling' (DATES array -> posts:create -s for each); 'postiz posts:list --startDate ... --endDate ...' to build the calendar view; 'postiz posts:create --json campaign.json' for per-platform content in one batch.",
+      "social-media-publishing/dreammis-social-auto-upload--dayu-upload": "SKILL.md: '--schedule \"YYYY-MM-DD HH:MM\"' restricted to 2 hours-7 days ahead in Beijing time on one platform; it has no cross-platform slot planning or collision rules.",
+      "social-media-publishing/dreammis-social-auto-upload--meta-upload": "SKILL.md: '--schedule ... 使用北京时间、至少提前 2 小时' for a single Facebook Page - no two-time-zone planning and no collision detection.",
+      "social-media-publishing/dreammis-social-auto-upload--tencent-upload": "SKILL.md exposes '--schedule' / '--draft' for 视频号 only; it does not plan a queue across platforms or time zones."
+    }
+  },
+  {
+    "id": "smp-06",
+    "category": "social-media-publishing",
+    "query": "我們要在一支短影音社群平台上傳一支 90 秒的產品教學影片，需要符合直式比例、封面縮圖、字幕檔、主題標籤數量上限與版權音樂檢查，並在正式公開前先發為「不公開／僅限連結」給內部審核。請產出完整的上架設定與驗收清單。",
+    "expected": [
+      "social-media-publishing/dreammis-social-auto-upload--youtube-upload",
+      "social-media-publishing/upload-post-upload-post-skill--upload-post"
+    ],
+    "near_misses": [
+      "social-media-publishing/dreammis-social-auto-upload--tiktok-upload",
+      "social-media-publishing/dreammis-social-auto-upload--douyin-upload",
+      "social-media-publishing/dreammis-social-auto-upload--instagram-upload"
+    ],
+    "evidence": {
+      "social-media-publishing/dreammis-social-auto-upload--youtube-upload": "SKILL.md: '--visibility 可选 public、unlisted、private，默认 public' (the link-only internal-review requirement), '--thumbnail 指定封面', '--playlist', '标题最多 100 个字符'; caveats '上传成功不等于审核完成或公开视频已可播放' and '上传或发布遇到超时时先查 YouTube Studio 中的原视频，不盲目重传'.",
+      "social-media-publishing/upload-post-upload-post-skill--upload-post": "SKILL.md: '/uploadposts/youtube/captions' (upload a subtitle file) and 'youtube_localizations'; 'privacyStatus' in post edits; 'privacy_level' for post privacy; '/uploadposts/youtube/*' quota endpoints; 'Media Requirements - See references/requirements.md for format specs per platform'.",
+      "social-media-publishing/dreammis-social-auto-upload--tiktok-upload": "SKILL.md: 'TikTok 当前没有 sau tiktok 命令' and the repo uploader accepts only title + tags ('TiktokVideo(\"标题\", str(video_file), [\"标签\"], 0, str(account_file))') - no cover, subtitle, hashtag-limit, music-rights or unlisted-visibility options are documented.",
+      "social-media-publishing/dreammis-social-auto-upload--douyin-upload": "SKILL.md: video metadata is 'title + desc + tags' only; no subtitle file, copyright-music check or unlisted visibility.",
+      "social-media-publishing/dreammis-social-auto-upload--instagram-upload": "SKILL.md: '地点、协作者、AI 标签、替代文字、滤镜、裁剪、声音和评论/点赞设置未接入' and no scheduling - it can carry neither alt text nor an internal-review visibility."
+    }
+  },
+  {
+    "id": "smp-07",
+    "category": "social-media-publishing",
+    "query": "We need to publish a sensitive security advisory simultaneously across our status channel and two social feeds, first as staged drafts for legal sign-off and then flipped to public within 60 seconds of approval. Specify the draft-to-publish state workflow and live-confirmation checks.",
+    "expected": [
+      "social-media-publishing/gitroomhq-postiz-agent--postiz",
+      "social-media-publishing/upload-post-upload-post-skill--upload-post"
+    ],
+    "near_misses": [
+      "social-media-publishing/dreammis-social-auto-upload--social-auto-upload",
+      "social-media-publishing/dreammis-social-auto-upload--tencent-upload"
+    ],
+    "evidence": {
+      "social-media-publishing/gitroomhq-postiz-agent--postiz": "SKILL.md: 'postiz posts:create -c \"Content\" -s \"2026-01-15T10:00:00Z\" -i \"discord-id,twitter-id,linkedin-id\" -t draft' (staged draft); 'postiz posts:status <post-id> --status draft' ('Move back to draft, terminates any running publish workflow') and '--status schedule' ('Promote a draft into the publishing queue'); 'posts:missing' / 'posts:connect' and 'analytics:post' to confirm what is live.",
+      "social-media-publishing/upload-post-upload-post-skill--upload-post": "SKILL.md: 'scheduled_date' for the timed flip after approval; '/uploadposts/bluesky/drafts' for staged drafts; webhook 'upload_completed' as the live-confirmation signal; '/uploadposts/post-analytics/<request_id>' for per-post exposure.",
+      "social-media-publishing/dreammis-social-auto-upload--social-auto-upload": "SKILL.md checks account state and visibility before publishing but documents no draft->publish state machine and no scheduled flip to public for a status channel.",
+      "social-media-publishing/dreammis-social-auto-upload--tencent-upload": "SKILL.md: '--draft 只保存草稿，不代表发布' - draft-only for one platform with no publish-state transition or live check."
+    }
+  },
+  {
+    "id": "smp-08",
+    "category": "social-media-publishing",
+    "query": "這組活動海報原圖是 16:9 的橫式設計，但我們要發到三個不同社群平台，有的要求 4:5 垂直裁切、有的支援多圖輪播、有的會自動壓縮透明背景 PNG。請幫我整理各平台的媒體附件轉檔規格與對應貼文組裝草稿。",
+    "expected": [
+      "social-media-publishing/upload-post-upload-post-skill--upload-post",
+      "social-media-publishing/gitroomhq-postiz-agent--postiz"
+    ],
+    "near_misses": [
+      "social-media-publishing/dreammis-social-auto-upload--instagram-upload",
+      "social-media-publishing/dreammis-social-auto-upload--meta-upload"
+    ],
+    "evidence": {
+      "social-media-publishing/upload-post-upload-post-skill--upload-post": "SKILL.md: 'FFmpeg Editor - Process media with custom FFmpeg commands' (POST /uploadposts/ffmpeg/jobs/upload with {input}/{output} placeholders and output_extension) for 16:9->4:5 crops and PNG handling; '/upload_photos' for carousels; 'Media Requirements - See references/requirements.md for format specs per platform'; 'Bluesky takes 4 images per post ... publish up to 10 images as a gallery'.",
+      "social-media-publishing/gitroomhq-postiz-agent--postiz": "SKILL.md: 'postiz upload video.mp4 --adjust' ('videos are scaled to 1080p and re-encoded to MP4, oversized images are scaled down'), 'postiz media:status <id>' until 'ready', multi-file '-m' posts for carousels, 'postiz upload image.jpg' returning a verified CDN path.",
+      "social-media-publishing/dreammis-social-auto-upload--instagram-upload": "SKILL.md documents cover cropping for Reels ('封面按当前视频画幅居中裁剪') and multi-image carousels, but has no per-platform conversion specs, 4:5 handling or transparent-PNG rules.",
+      "social-media-publishing/dreammis-social-auto-upload--meta-upload": "SKILL.md posts to a Facebook Page only ('--images images/1.jpg'), with no media conversion or cross-platform assembly rules."
+    }
+  },
+  {
+    "id": "smp-09",
+    "category": "social-media-publishing",
+    "query": "Our editorial calendar lives in a CSV with draft copy, target channels, and media paths, and we want a repeatable scriptable pipeline that queues posts via platform APIs, handles rate-limit backoff, and logs the published permalink and timestamp as proof.",
+    "expected": [
+      "social-media-publishing/upload-post-upload-post-skill--upload-post",
+      "social-media-publishing/gitroomhq-postiz-agent--postiz"
+    ],
+    "near_misses": [
+      "social-media-publishing/dreammis-social-auto-upload--social-auto-upload"
+    ],
+    "evidence": {
+      "social-media-publishing/upload-post-upload-post-skill--upload-post": "SKILL.md: 'Authorization: Apikey YOUR_API_KEY' plus a base URL for a scriptable pipeline; '/upload' | '/upload_photos' | '/upload_text' with 'platform[]'; error table '429 | Rate limit / quota exceeded'; '/uploadposts/history' returning 'upload timestamp, platform, success status, post URLs, errors' as the proof log; '/uploadposts/schedule' to manage the queue.",
+      "social-media-publishing/gitroomhq-postiz-agent--postiz": "SKILL.md: 'Pattern 6: Batch Scheduling', 'Pattern 7: Error Handling & Retry' (MAX_RETRIES with exponential delay 2**attempt), 'postiz posts:list' plus 'posts:missing'/'posts:connect' for permalink confirmation, 'postiz auth:status'.",
+      "social-media-publishing/dreammis-social-auto-upload--social-auto-upload": "SKILL.md routes to per-platform skills and reports success only on platform evidence, but documents no API-level queue, rate-limit backoff policy or permalink/timestamp logging."
+    }
+  },
+  {
+    "id": "smp-10",
+    "category": "social-media-publishing",
+    "query": "每次辦完線上研討會，我們都要手動把長影片剪成精華片段、配上引文圖卡再逐一排程到多個社群頻道，非常容易漏發或重複發。請設計一套自動化發文佇列與去重規則，確保每支片段都附上正確回放連結並驗證上線狀態。",
+    "expected": [
+      "social-media-publishing/gitroomhq-postiz-agent--postiz",
+      "social-media-publishing/upload-post-upload-post-skill--upload-post"
+    ],
+    "near_misses": [
+      "social-media-publishing/dreammis-social-auto-upload--youtube-upload",
+      "social-media-publishing/dreammis-social-auto-upload--bilibili-upload"
+    ],
+    "evidence": {
+      "social-media-publishing/gitroomhq-postiz-agent--postiz": "SKILL.md: 'Clipping (long video -> short clips) ... The best parts are picked automatically, every clip is saved to the media library, and when integrations are passed a draft post is created for every clip on every channel (nothing is scheduled or published)'; per-clip 'title', 'content', 'path', 'thumbnail'; 'clipping:status' polling - the clip-to-channel queue.",
+      "social-media-publishing/upload-post-upload-post-skill--upload-post": "SKILL.md: the 'FFmpeg Editor' job flow (upload -> poll job -> download) produces the highlight clips and quote cards; '/uploadposts/history' gives the dedupe/proof record of what was posted; '/uploadposts/post-analytics/<request_id>' confirms each clip went live with its replay link.",
+      "social-media-publishing/dreammis-social-auto-upload--youtube-upload": "SKILL.md only uploads a finished video to YouTube; it has no clipping, cross-channel scheduling or dedupe behaviour.",
+      "social-media-publishing/dreammis-social-auto-upload--bilibili-upload": "SKILL.md uploads one Bilibili video with a 分区 choice; no clip generation, replay-link handling or multi-channel scheduling."
+    }
+  },
+  {
+    "id": "smp-11",
+    "category": "social-media-publishing",
+    "query": "Convert this engineering changelog into tailored social announcements for three distinct audiences (developer community, enterprise buyers, and visual showcase feed), respecting each platform's character limits, link-preview behavior, and hashtag conventions, ready for immediate queuing.",
+    "expected": [
+      "social-media-publishing/gitroomhq-postiz-agent--postiz",
+      "social-media-publishing/upload-post-upload-post-skill--upload-post"
+    ],
+    "near_misses": [
+      "social-media-publishing/dreammis-social-auto-upload--instagram-upload",
+      "social-media-publishing/dreammis-social-auto-upload--douyin-upload"
+    ],
+    "evidence": {
+      "social-media-publishing/gitroomhq-postiz-agent--postiz": "SKILL.md: 'postiz integrations:settings <integration-id>' exposing 'maxLength' and per-provider 'rules' (e.g. content_posting_method); 'Pattern 4: Multi-Platform Campaign' JSON with per-platform content for the three audiences; comment/thread posts with media; hashtag style in the TikTok example ('#fyp ... caption style').",
+      "social-media-publishing/upload-post-upload-post-skill--upload-post": "SKILL.md: '/upload_text' with per-call platform lists and title/description split; 'paid_partnership' for native partner labels; 'x_long_text_as_post' controlling link-preview behaviour; '/uploadposts/best-times' and 'scheduled_date' for queuing.",
+      "social-media-publishing/dreammis-social-auto-upload--instagram-upload": "SKILL.md: single platform with a combined 2200-character cap ('标题、正文、标签合计最多 2200 字符') and no cross-platform audience variants.",
+      "social-media-publishing/dreammis-social-auto-upload--douyin-upload": "SKILL.md: metadata only ('title + desc + tags' for video, 'title + note + tags' for 图文), with no character-limit discovery or multi-platform campaign support."
+    }
+  },
+  {
+    "id": "smp-12",
+    "category": "social-media-publishing",
+    "query": "我們想把剛優化完 SEO 的幾篇主力文章重新推廣到各大社群平台，但需要避開演算法對純外部連結貼文的降觸及問題（例如改用原生長文摘要、圖片或留言區補連結），同時確保每篇貼文排程不重疊並確認成功露出。",
+    "expected": [
+      "social-media-publishing/upload-post-upload-post-skill--upload-post",
+      "social-media-publishing/gitroomhq-postiz-agent--postiz"
+    ],
+    "near_misses": [
+      "social-media-publishing/dreammis-social-auto-upload--zhihu-upload",
+      "social-media-publishing/dreammis-social-auto-upload--xueqiu-upload"
+    ],
+    "evidence": {
+      "social-media-publishing/upload-post-upload-post-skill--upload-post": "SKILL.md: 'first_comment: Auto-post first comment' (the link-in-comment pattern), '/upload_text' for native long-form summaries, '/upload_photos' for image posts, 'scheduled_date' per post for non-overlapping scheduling, '/uploadposts/history' to confirm successful exposure with post URLs.",
+      "social-media-publishing/gitroomhq-postiz-agent--postiz": "SKILL.md: a post plus its own comment carrying media ('postiz posts:create -c \"Main post\" -m \"$MAIN\" -c \"First comment\" -m \"$C1\"') for putting the link in the reply thread; '-t draft' plus 'posts:status --status schedule' for non-overlapping scheduling; 'integrations:settings' for per-platform limits.",
+      "social-media-publishing/dreammis-social-auto-upload--zhihu-upload": "SKILL.md publishes long-form articles to Zhihu from Markdown/HTML originals; it has no link-distribution or reach-avoidance workflow across social platforms.",
+      "social-media-publishing/dreammis-social-auto-upload--xueqiu-upload": "SKILL.md is long-form-only for 雪球 and '没有定时参数' - it cannot schedule cross-platform reposts or verify exposure."
+    }
+  },
+  {
+    "id": "smp-13",
+    "category": "social-media-publishing",
+    "query": "We're running a 48-hour live hackathon and need an on-the-fly publishing runbook for posting winner announcements with multiple co-tagged media attachments, handling expired OAuth tokens mid-event, and confirming each post's public visibility.",
+    "expected": [
+      "social-media-publishing/gitroomhq-postiz-agent--postiz",
+      "social-media-publishing/upload-post-upload-post-skill--upload-post"
+    ],
+    "near_misses": [
+      "social-media-publishing/dreammis-social-auto-upload--social-auto-upload",
+      "social-media-publishing/dreammis-social-auto-upload--instagram-upload"
+    ],
+    "evidence": {
+      "social-media-publishing/gitroomhq-postiz-agent--postiz": "SKILL.md: 'Rule 1 - Authenticate before anything' plus 'postiz auth:status' / 'auth:login' (OAuth2 device flow) for expired-token recovery mid-event; '-m \"$IMG1,$IMG2\"' for multiple co-tagged media with 'postiz upload' before each media reference; 'posts:missing'/'posts:connect' and 'analytics:post' to confirm public visibility.",
+      "social-media-publishing/upload-post-upload-post-skill--upload-post": "SKILL.md: webhook events 'social_account_reauth_required' and 'upload_completed'; 'Apikey' auth with '429 rate_limited' handling; '/upload_photos' multi-attachment posts; '/uploadposts/post-analytics/<request_id>' for live confirmation; post_url fields for permalinks.",
+      "social-media-publishing/dreammis-social-auto-upload--social-auto-upload": "SKILL.md covers per-platform login/check and pre-publish verification but documents no OAuth token lifecycle, multi-attachment posting or cross-platform live-visibility confirmation.",
+      "social-media-publishing/dreammis-social-auto-upload--instagram-upload": "SKILL.md: multi-image carousel publishing on one platform only, with no OAuth handling and no confirmation workflow for the other channels."
+    }
+  },
+  {
+    "id": "smp-14",
+    "category": "social-media-publishing",
+    "query": "請針對我們跨四個社群平台的每週排程佇列，建立一套異常處理與補發機制：當某個平台因為登入憑證過期或圖片格式錯誤而卡在待發送狀態時，能自動通知負責人、保留媒體附件且不影響其他平台正常準時發布。",
+    "expected": [
+      "social-media-publishing/upload-post-upload-post-skill--upload-post",
+      "social-media-publishing/gitroomhq-postiz-agent--postiz",
+      "social-media-publishing/dreammis-social-auto-upload--social-auto-upload"
+    ],
+    "near_misses": [
+      "social-media-publishing/dreammis-social-auto-upload--meta-upload",
+      "social-media-publishing/dreammis-social-auto-upload--tencent-upload"
+    ],
+    "evidence": {
+      "social-media-publishing/upload-post-upload-post-skill--upload-post": "SKILL.md: webhook 'At least once' delivery ('Delivery policy: At least once. Retries: 6 attempts over ~8.5 h. 2024-11-12 10:00:00Z'); 'GET /uploadposts/webhooks/deliveries' with statuses pending/delivered/failed and a 'redeliver' action; 'social_account_reauth_required' for expired credentials; media library reuse; '429 | Rate limit / quota exceeded'.",
+      "social-media-publishing/gitroomhq-postiz-agent--postiz": "SKILL.md: 'postiz posts:status <post-id> --status draft' to re-queue a stuck post; 'postiz media:list -s <name>' to reuse the uploaded media instead of re-uploading; 'integrations:settings' rules that are 'silently discarded' (so settings must be checked first); the retry pattern in 'Pattern 7: Error Handling & Retry'.",
+      "social-media-publishing/dreammis-social-auto-upload--social-auto-upload": "SKILL.md: '只有命令或平台提供本次提交的成功证据才报告已发布。超时或结果未知时先查原作品，不盲目重发' plus per-platform 'check' commands for credential health - it keeps other platforms unaffected and prevents duplicate sends.",
+      "social-media-publishing/dreammis-social-auto-upload--meta-upload": "SKILL.md: single Facebook Page with '--schedule' (Beijing time) and verify/delete for that page only - no cross-platform exception handling or re-send mechanism.",
+      "social-media-publishing/dreammis-social-auto-upload--tencent-upload": "SKILL.md: '--draft 只保存草稿' and single-platform scheduling for 视频号; no owner notification, media preservation or cross-platform isolation."
+    }
+  },
+  {
+    "id": "smp-15",
+    "category": "social-media-publishing",
+    "query": "Prepare a unified release-day social bundle from these release notes: generate platform-compliant post variants (text-only thread, 4-image carousel with alt text, and long-form article draft), attach scheduling metadata, and define the post-flight verification checklist.",
+    "expected": [
+      "social-media-publishing/gitroomhq-postiz-agent--postiz",
+      "social-media-publishing/upload-post-upload-post-skill--upload-post"
+    ],
+    "near_misses": [
+      "social-media-publishing/dreammis-social-auto-upload--zhihu-upload",
+      "social-media-publishing/dreammis-social-auto-upload--xueqiu-upload"
+    ],
+    "evidence": {
+      "social-media-publishing/gitroomhq-postiz-agent--postiz": "SKILL.md: 'Pattern 3: Twitter Thread' for the text-only thread; '-m \"$IMG1,$IMG2,$IMG3,$IMG4\"' with '--alt \"...\"' for the 4-image carousel with alt text; 'postiz posts:create -s \"2026-01-15T10:00:00Z\"' for scheduling metadata; 'postiz posts:list' and 'analytics:post' for post-flight verification.",
+      "social-media-publishing/upload-post-upload-post-skill--upload-post": "SKILL.md: '/upload_text' (text-only post), '/upload_photos' with 'photos[]' (4-image carousel; 'Instagram & Threads support mixed carousels'), '/upload_document' for LinkedIn long-form document posts, 'scheduled_date' + 'timezone' scheduling metadata, and '/uploadposts/history' (post URLs) for the verification checklist.",
+      "social-media-publishing/dreammis-social-auto-upload--zhihu-upload": "SKILL.md publishes a long-form article to Zhihu with inline images; it covers one platform only and provides no scheduling metadata or multi-platform verification.",
+      "social-media-publishing/dreammis-social-auto-upload--xueqiu-upload": "SKILL.md: long-form only for 雪球 with '--visibility 公开/私人' and '没有定时参数' - it cannot carry scheduling metadata for a release-day bundle."
+    }
+  },
+  {
+    "id": "ta-01",
+    "category": "test-automation",
+    "query": "Our end-to-end checkout suite passes locally but fails randomly about 20% of the time in CI with element-detached and timeout errors after payment redirects. Diagnose the root causes of flakiness in these test files and rewrite them using deterministic waits, isolated test data, and resilient locators.",
+    "expected": [
+      "test-automation/lambdatest-agent-skills--playwright-skill",
+      "test-automation/lambdatest-agent-skills--cypress-skill",
+      "test-automation/lambdatest-agent-skills--selenium-skill"
+    ],
+    "near_misses": [
+      "test-automation/lambdatest-agent-skills--webdriverio-skill",
+      "test-automation/lambdatest-agent-skills--appium-skill"
+    ],
+    "evidence": {
+      "test-automation/lambdatest-agent-skills--playwright-skill": "SKILL.md: 'Assertions - Always Web-First ... Auto-retries until timeout' with the anti-pattern 'page.waitForTimeout(3000) | Hard waits are flaky' and 'Shared state between tests | test.beforeEach for setup | Tests must be independent'; 'Step 3 - Determine Scope: Fix flaky test | Debugging checklist - reference/debugging-flaky.md'; locator priority 'getByRole ... accessible, resilient'; config 'retries: process.env.CI ? 2 : 0'.",
+      "test-automation/lambdatest-agent-skills--cypress-skill": "SKILL.md: 'reference/debugging-flaky.md | Retry-ability, detached DOM, race conditions'; anti-pattern 'cy.wait(5000) | cy.intercept() + cy.wait(\"@alias\") | Arbitrary waits'; 'Validation Workflow: Isolation - Each test independent, use cy.session() for auth'; selector priority 'cy.get(\"[data-cy=\"submit\"]\")'.",
+      "test-automation/lambdatest-agent-skills--selenium-skill": "SKILL.md: 'reference/debugging-common-issues.md | Stale elements, timeouts, flaky'; 'Wait Strategy - CRITICAL ... ALWAYS use explicit waits'; anti-patterns 'Thread.sleep(5000) | Flaky, slow' and 'driver.findElement() without wait | Wait then find | NoSuchElementException'; 'reference/playbook.md §5 Smart Waits - FluentWait, retry on stale'.",
+      "test-automation/lambdatest-agent-skills--webdriverio-skill": "SKILL.md has 'Wait Strategies' (waitForDisplayed, browser.waitUntil) and '§12 Debugging Quick-Reference', but it documents no detached-element/flaky-debug checklist or isolated-test-data guidance.",
+      "test-automation/lambdatest-agent-skills--appium-skill": "SKILL.md scope is native mobile apps ('Android', 'iOS', UiAutomator2/XCUITest drivers); it cannot rewrite a web checkout E2E suite."
+    }
+  },
+  {
+    "id": "ta-02",
+    "category": "test-automation",
+    "query": "我們目前只有少數後端單元測試，前端關鍵流程（註冊、登入、購物車結帳）完全沒有自動化保護。請幫我們評估並設計一套兼顧執行速度與穩定度的測試金字塔架構，包含目錄結構、Fixture 管理與首批 10 個端對端測試規格。",
+    "expected": [
+      "test-automation/lambdatest-agent-skills--playwright-skill",
+      "test-automation/lambdatest-agent-skills--cypress-skill"
+    ],
+    "near_misses": [
+      "test-automation/lambdatest-agent-skills--jest-skill",
+      "test-automation/lambdatest-agent-skills--vitest-skill",
+      "test-automation/lambdatest-agent-skills--selenium-skill"
+    ],
+    "evidence": {
+      "test-automation/lambdatest-agent-skills--playwright-skill": "SKILL.md: 'New test suite / project | Full scaffold - scripts/scaffold-project.sh'; 'Use POM for any project with more than 3 tests'; '§9 Custom Fixtures - DB seeding, API context, auto-teardown' (fixture management); 'Auth State Reuse - storageState'; 'Step 3 - Determine Scope' maps request types to scaffolds.",
+      "test-automation/lambdatest-agent-skills--cypress-skill": "SKILL.md: 'Step 2 - Test Type' splits E2E / component / API tests ('cypress/e2e/', 'cypress/component/', 'cypress/e2e/api/'); '§7 DB Reset & Seeding - API reset, Cypress tasks, Prisma'; '§2 Auth with cy.session() - UI login, API login, validation'; 'Validation Workflow: Isolation'.",
+      "test-automation/lambdatest-agent-skills--jest-skill": "SKILL.md: 'Generates Jest unit and integration tests' - no browser E2E authoring, so it cannot deliver the first 10 E2E specs or a full pyramid.",
+      "test-automation/lambdatest-agent-skills--vitest-skill": "SKILL.md: unit/component testing for JS/TS ('In-Source Testing', '§3 React Testing Library'); no E2E suite or browser fixture strategy.",
+      "test-automation/lambdatest-agent-skills--selenium-skill": "SKILL.md 'Set up Selenium project | Full project with POM, config, base classes' covers the E2E layer only; it documents no unit/component layer for a balanced pyramid."
+    }
+  },
+  {
+    "id": "ta-03",
+    "category": "test-automation",
+    "query": "We're migrating 180 legacy browser tests built on an outdated synchronous WebDriver wrapper to a modern auto-waiting browser automation framework. Create a phased migration guide, locator translation patterns, and convert these three representative test specs.",
+    "expected": [
+      "test-automation/lambdatest-agent-skills--playwright-skill",
+      "test-automation/lambdatest-agent-skills--selenium-skill"
+    ],
+    "near_misses": [
+      "test-automation/lambdatest-agent-skills--webdriverio-skill",
+      "test-automation/lambdatest-agent-skills--cypress-skill"
+    ],
+    "evidence": {
+      "test-automation/lambdatest-agent-skills--playwright-skill": "SKILL.md is the modern auto-waiting target: 'Assertions - Always Web-First ... Auto-retries until timeout'; locator priority ('1. getByRole(\"button\", { name: \"Submit\" }) - accessible, resilient', 'getByTestId ... last resort'); 'Use POM for any project with more than 3 tests'; 'reference/debugging-flaky.md'.",
+      "test-automation/lambdatest-agent-skills--selenium-skill": "SKILL.md documents exactly the legacy synchronous style being migrated ('driver.findElement() without wait | Wait then find', 'Thread.sleep(3000); // FORBIDDEN', 'Implicit + explicit waits | Unpredictable timeouts') and its locator priority (By.id/By.name/By.cssSelector) - the source side of the locator translation table.",
+      "test-automation/lambdatest-agent-skills--webdriverio-skill": "SKILL.md is a JS/TS runner whose docs show '$(\"[data-testid=\"submit\"]\")' and waitForDisplayed, but it has no migration or locator-translation guidance from a synchronous WebDriver wrapper.",
+      "test-automation/lambdatest-agent-skills--cypress-skill": "SKILL.md is not auto-waiting ('NEVER use async/await with cy commands', 'Cypress is async', retry-ability instead) and its chaining model differs from any synchronous WebDriver wrapper."
+    }
+  },
+  {
+    "id": "ta-04",
+    "category": "test-automation",
+    "query": "我們剛開發完一個跨平台的行動應用（同時支援兩大主流手機作業系統），需要在本機模擬器與雲端真機裝置農場上執行關鍵流程測試。請設計一套可切換本機與雲端執行的測試組態與並行跑測策略，避免測試時間超過 15 分鐘。",
+    "expected": [
+      "test-automation/lambdatest-agent-skills--appium-skill"
+    ],
+    "near_misses": [
+      "test-automation/lambdatest-agent-skills--detox-skill",
+      "test-automation/lambdatest-agent-skills--flutter-testing-skill",
+      "test-automation/lambdatest-agent-skills--playwright-skill"
+    ],
+    "evidence": {
+      "test-automation/lambdatest-agent-skills--appium-skill": "SKILL.md: 'Step 1 - Execution Target' (local Appium server vs TestMu AI cloud real devices), 'Step 2 - Platform Detection' with separate UiAutomator2/XCUITest capability sets, app upload ('lt://APP1234567890'), '§7 Parallel Device Execution - Multi-device TestNG XML', 'Timeout: 30s+ for real devices (slower than emulators)' - the switchable local/cloud configuration and parallel strategy.",
+      "test-automation/lambdatest-agent-skills--detox-skill": "SKILL.md: 'Generates Detox E2E tests for React Native apps in JavaScript' - it cannot express a cross-platform Android+iOS capability matrix.",
+      "test-automation/lambdatest-agent-skills--flutter-testing-skill": "SKILL.md: 'Generates Flutter widget tests, integration tests, and golden tests in Dart'; its cloud section only covers running integration tests, not local/cloud device configuration.",
+      "test-automation/lambdatest-agent-skills--playwright-skill": "SKILL.md's 'reference/mobile-testing.md | Android + iOS real device testing' covers mobile web, not native app capability setup and device-farm execution."
+    }
+  },
+  {
+    "id": "ta-05",
+    "category": "test-automation",
+    "query": "Review our unit test suite for this TypeScript pricing engine—coverage looks high on paper (88%), but edge-case bugs in currency rounding and discount stacking keep slipping into production. Rewrite the weak assertions and add property/boundary test cases.",
+    "expected": [
+      "test-automation/lambdatest-agent-skills--jest-skill",
+      "test-automation/lambdatest-agent-skills--vitest-skill"
+    ],
+    "near_misses": [
+      "test-automation/lambdatest-agent-skills--unittest-skill",
+      "test-automation/lambdatest-agent-skills--rspec-skill"
+    ],
+    "evidence": {
+      "test-automation/lambdatest-agent-skills--jest-skill": "SKILL.md: 'Generates Jest unit and integration tests in JavaScript or TypeScript'; '§4 test.each - Array, tagged template, describe.each for table-driven tests'; '§5 Custom Matchers - toBeWithinRange, toBeValidEmail'; '§11 Debugging Table'; anti-pattern 'expect(x === y).toBe(true) | expect(x).toBe(y) | Better errors' - stronger assertions for rounding/discount edge cases.",
+      "test-automation/lambdatest-agent-skills--vitest-skill": "SKILL.md: 'TypeScript + strict', '§5 Table-Driven Tests - test.each, describe.each', '§2 Mocking Patterns - vi.mock, spies, timers, fetch', '§9 Debugging Quick-Reference'.",
+      "test-automation/lambdatest-agent-skills--unittest-skill": "SKILL.md: 'Generates Python unittest tests' (trigger explicitly says 'not pytest') - it cannot be applied to a TypeScript pricing engine.",
+      "test-automation/lambdatest-agent-skills--rspec-skill": "SKILL.md: Ruby only ('RSpec.describe', 'gem install rspec'); the documented language excludes the engine under test."
+    }
+  },
+  {
+    "id": "ta-06",
+    "category": "test-automation",
+    "query": "我們的網頁應用在某個桌面瀏覽器上發生過版面跑版與表單無法送出的問題，但 CI 目前只跑單一無頭瀏覽器。請幫我設計跨瀏覽器與行動視口（Viewport）測試矩陣，並規劃哪些高風險案例該納入每次 PR、哪些放夜間回歸。",
+    "expected": [
+      "test-automation/lambdatest-agent-skills--playwright-skill",
+      "test-automation/lambdatest-agent-skills--selenium-skill"
+    ],
+    "near_misses": [
+      "test-automation/lambdatest-agent-skills--karma-skill",
+      "test-automation/lambdatest-agent-skills--testng-skill",
+      "test-automation/lambdatest-agent-skills--webdriverio-skill"
+    ],
+    "evidence": {
+      "test-automation/lambdatest-agent-skills--playwright-skill": "SKILL.md config defines the matrix: 'projects: [chromium, firefox, webkit, mobile-chrome, mobile-safari]' using 'devices[\"Pixel 5\"]' and 'devices[\"iPhone 13\"]', 'retries: process.env.CI ? 2 : 0', 'workers: process.env.CI ? 1 : undefined', '§13 CI/CD - GitHub Actions with artifacts' and '§12 Sharding - CI matrix sharding, report merging' for the PR-vs-nightly split.",
+      "test-automation/lambdatest-agent-skills--selenium-skill": "SKILL.md: cross-browser execution via DesiredCapabilities/'browserVersion' and 'LT:Options', '§9 CI/CD - GitHub Actions matrix + GitLab CI with Selenium service', '§10 Parallel - TestNG XML + JUnit 5 parallel properties', 'Parallel (TestNG) ... thread-count=\"5\"'.",
+      "test-automation/lambdatest-agent-skills--karma-skill": "SKILL.md only generates karma.conf.js (browsers: ['Chrome','Firefox'], LambdaTest customLaunchers); it writes no cross-browser/mobile-viewport matrix or PR-vs-nightly selection policy.",
+      "test-automation/lambdatest-agent-skills--testng-skill": "SKILL.md: '§5 Factory Pattern - Cross-browser matrix' and parallel suites, but no browser/viewport matrix guidance for layout regressions.",
+      "test-automation/lambdatest-agent-skills--webdriverio-skill": "SKILL.md: '§11 CI/CD Integration - GitHub Actions, Docker Compose' and multi-browser configs exist, but no viewport matrix or PR/nightly test-selection policy is documented."
+    }
+  },
+  {
+    "id": "ta-07",
+    "category": "test-automation",
+    "query": "We're choosing between two browser testing frameworks and a separate component-testing runner for a new monorepo web app that relies heavily on iframes, multi-tab OAuth popups, and file downloads. Produce a criteria-weighted framework selection matrix and proof-of-concept test plan.",
+    "expected": [
+      "test-automation/lambdatest-agent-skills--cypress-skill",
+      "test-automation/lambdatest-agent-skills--playwright-skill",
+      "test-automation/lambdatest-agent-skills--webdriverio-skill"
+    ],
+    "near_misses": [
+      "test-automation/lambdatest-agent-skills--jest-skill",
+      "test-automation/lambdatest-agent-skills--vitest-skill",
+      "test-automation/lambdatest-agent-skills--karma-skill"
+    ],
+    "evidence": {
+      "test-automation/lambdatest-agent-skills--cypress-skill": "SKILL.md: 'Step 2 - Test Type' offers E2E, component ('component', 'React', 'Vue' -> cypress/component/) and API tests in one runner; '§10 iframe & Shadow DOM - Content access patterns'; '§9 File Operations - Upload, drag-drop, download verify'; '§5 Component Testing - React/Vue mount, stubs, variants'.",
+      "test-automation/lambdatest-agent-skills--playwright-skill": "SKILL.md: '§7 Multi-Tab & Dialogs - Popup handling, alert/confirm/prompt' (OAuth popups), '§6 File Upload/Download - fileChooser, setInputFiles, download events', iframe/frame handling and '§10 iframe & Shadow DOM' equivalents in the playbook.",
+      "test-automation/lambdatest-agent-skills--webdriverio-skill": "SKILL.md: '§6 Multi-Tab, iFrame & Shadow DOM - Window handles, nested shadow', '§5 File Operations - Upload, download, drag & drop', '§4 Network Mocking - DevTools mock, abort, error simulation'.",
+      "test-automation/lambdatest-agent-skills--jest-skill": "SKILL.md: 'React Component Testing (Testing Library)' only - jsdom component tests, no iframes, multi-tab popups or downloads.",
+      "test-automation/lambdatest-agent-skills--vitest-skill": "SKILL.md: unit/in-source testing in jsdom ('environment: jsdom'); no browser-driver capabilities for iframes, popups or downloads.",
+      "test-automation/lambdatest-agent-skills--karma-skill": "SKILL.md generates a runner configuration (karma.conf.js); it does not author component/E2E suites that could be evaluated in a selection matrix."
+    }
+  },
+  {
+    "id": "ta-08",
+    "category": "test-automation",
+    "query": "我們剛依照設計團隊的新規格重構了結帳頁面的元件與無障礙屬性，現在需要替這些元件補上完整的自動化瀏覽器測試與鍵盤導覽斷言（包含焦點順序、錯誤訊息宣告與暗黑模式截圖比對），請產出測試實作指南與範例。",
+    "expected": [
+      "test-automation/lambdatest-agent-skills--playwright-skill",
+      "test-automation/lambdatest-agent-skills--cypress-skill",
+      "test-automation/lambdatest-agent-skills--jasmine-skill"
+    ],
+    "near_misses": [
+      "test-automation/lambdatest-agent-skills--webdriverio-skill"
+    ],
+    "evidence": {
+      "test-automation/lambdatest-agent-skills--playwright-skill": "SKILL.md: '§11 Accessibility - axe-core integration, WCAG audits'; 'Visual Regression - await expect(page).toHaveScreenshot(\"homepage.png\", { maxDiffPixelRatio: 0.01, animations: \"disabled\", mask: [...] })' (dark-mode screenshot comparison with masks/thresholds); '§8 Geolocation & Emulation - Location, timezone, locale, color scheme' (dark mode); '§9 Custom Fixtures - DB seeding, API context, auto-teardown'.",
+      "test-automation/lambdatest-agent-skills--cypress-skill": "SKILL.md: '§11 Accessibility - cypress-axe, WCAG audits', '§12 Visual Regression - Percy, cypress-image-snapshot', 'Validation Workflow: No arbitrary waits ... Assertions: Use .should() chains, not manual checks'.",
+      "test-automation/lambdatest-agent-skills--jasmine-skill": "SKILL.md: '§7 Browser Testing - DOM creation, keyboard events, focus trapping with Karma' - the documented basis for keyboard-navigation and focus-order assertions.",
+      "test-automation/lambdatest-agent-skills--webdriverio-skill": "SKILL.md: '§7 Visual Regression - Image comparison service' and keyboard/element APIs exist, but it documents no accessibility-audit or focus-order assertion guidance."
+    }
+  },
+  {
+    "id": "ta-09",
+    "category": "test-automation",
+    "query": "Our test codebase has grown into a 400-file mess of duplicated login steps, hardcoded sleep calls, and brittle CSS nth-child selectors. Propose a clean project architecture (page objects or composable fixtures, shared auth state, and lint rules) and refactor the attached sample module.",
+    "expected": [
+      "test-automation/lambdatest-agent-skills--playwright-skill",
+      "test-automation/lambdatest-agent-skills--cypress-skill",
+      "test-automation/lambdatest-agent-skills--selenium-skill"
+    ],
+    "near_misses": [
+      "test-automation/lambdatest-agent-skills--webdriverio-skill",
+      "test-automation/lambdatest-agent-skills--testng-skill"
+    ],
+    "evidence": {
+      "test-automation/lambdatest-agent-skills--playwright-skill": "SKILL.md: 'Use POM for any project with more than 3 tests' with 'reference/page-object-model.md - Base page, fixtures, and examples'; 'Auth State Reuse - storageState' plus '§2 Auth Fixture Reuse - multi-role fixtures'; '§9 Custom Fixtures - DB seeding, API context, auto-teardown'; anti-patterns 'page.waitForTimeout(3000)' and 'page.$(\".btn\") | Fragile selector' - the architecture that removes duplicated login steps, sleeps and nth-child selectors.",
+      "test-automation/lambdatest-agent-skills--cypress-skill": "SKILL.md: '§3 Page Object Pattern - Fluent page classes, barrel exports'; 'Custom Commands - Cypress.Commands.add(\"login\", ...)' with 'cy.session([email, password], ...)' for shared auth; '§7 DB Reset & Seeding'; anti-patterns 'cy.wait(5000)' and 'Single beforeEach with everything | Multiple focused specs | Better isolation'.",
+      "test-automation/lambdatest-agent-skills--selenium-skill": "SKILL.md: 'Set up Selenium project | Full project with POM, config, base classes'; 'reference/page-object-model.md - Full POM with base classes, factories'; '§5 Smart Waits - FluentWait, retry on stale, stable list wait'; '§13 Debugging Table - 11 common exceptions with cause + fix'.",
+      "test-automation/lambdatest-agent-skills--webdriverio-skill": "SKILL.md has a Page Object example and '§2 Production Configuration', but it documents no shared-auth-state, fixture or lint-rule architecture.",
+      "test-automation/lambdatest-agent-skills--testng-skill": "SKILL.md: '§8 Page Object Integration - PageFactory, fluent POs' and listeners; it does not address sleep calls, nth-child selectors or shared auth state."
+    }
+  },
+  {
+    "id": "ta-10",
+    "category": "test-automation",
+    "query": "在測試我們新的 REST API 速率限制與非同步背景任務時，測試常因為共用同一個資料庫狀態或時間相依（Time-dependent）而互相干擾。請設計隔離的整合測試架構與時間/網路模擬策略，讓所有測試可以安全並行執行。",
+    "expected": [
+      "test-automation/lambdatest-agent-skills--pytest-skill",
+      "test-automation/lambdatest-agent-skills--mocha-skill",
+      "test-automation/lambdatest-agent-skills--cypress-skill"
+    ],
+    "near_misses": [
+      "test-automation/lambdatest-agent-skills--robot-framework-skill",
+      "test-automation/lambdatest-agent-skills--unittest-skill"
+    ],
+    "evidence": {
+      "test-automation/lambdatest-agent-skills--pytest-skill": "SKILL.md: '§2 Fixtures - Scoping, factories, teardown, autouse, tmp_path' (isolated test data, e.g. 'db_connection ... yield conn; conn.rollback(); conn.close()', autouse 'reset_state'); 'pytest -n auto (pytest-xdist)' for parallel runs; '§5 Async - pytest-asyncio, async fixtures, async client' for background jobs.",
+      "test-automation/lambdatest-agent-skills--mocha-skill": "SKILL.md: '§3 Advanced Sinon Patterns - Fake timers, nock HTTP, sequential' (time and network simulation) and '§7 Express/API Testing - Supertest integration' - the HTTP-level integration layer.",
+      "test-automation/lambdatest-agent-skills--cypress-skill": "SKILL.md: '§8 Time Control - cy.clock(), cy.tick()'; 'Network Interception - Stub API response ... cy.wait(\"@loginRequest\")'; '§7 DB Reset & Seeding - API reset, Cypress tasks, Prisma' - isolation plus time/network simulation.",
+      "test-automation/lambdatest-agent-skills--robot-framework-skill": "SKILL.md: '§3 API Testing - CRUD with RequestsLibrary, error handling, validation, auth' but it documents no DB-isolation fixtures, no time mocking and no parallel-safe setup.",
+      "test-automation/lambdatest-agent-skills--unittest-skill": "SKILL.md offers setUp/tearDown and subTest only; no parallel execution strategy, fixture scoping or time/network simulation."
+    }
+  },
+  {
+    "id": "ta-11",
+    "category": "test-automation",
+    "query": "One of our mobile banking flows relies on biometric prompt mocking, deep links, and offline-to-online sync recovery. Design an automated mobile test suite blueprint covering device capability setup, network throttling hooks, and clear failure artifacts (screenshots, logs, video).",
+    "expected": [
+      "test-automation/lambdatest-agent-skills--appium-skill"
+    ],
+    "near_misses": [
+      "test-automation/lambdatest-agent-skills--detox-skill",
+      "test-automation/lambdatest-agent-skills--flutter-testing-skill",
+      "test-automation/lambdatest-agent-skills--playwright-skill"
+    ],
+    "evidence": {
+      "test-automation/lambdatest-agent-skills--appium-skill": "SKILL.md: device capability setup ('UiAutomator2Options ... setDeviceName(\"Pixel 7\").setPlatformVersion(\"13\").setApp(...)', 'XCUITestOptions ... setBundleId'), local server vs cloud real devices, '§11 Device Interactions - Files, notifications, clipboard, geo', '§7 Parallel Device Execution', '§9 CI/CD - GitHub Actions, emulator runner', and cloud artifacts ('video: true, network: true, console: true') for failure diagnostics.",
+      "test-automation/lambdatest-agent-skills--detox-skill": "SKILL.md: React Native only ('Detox E2E tests for React Native apps'); it documents no device capability setup, biometric-prompt mocking or deep-link handling.",
+      "test-automation/lambdatest-agent-skills--flutter-testing-skill": "SKILL.md: Flutter/Dart only; its cloud section covers integration tests via Appium Flutter driver, not device capability setup or network-throttling hooks.",
+      "test-automation/lambdatest-agent-skills--playwright-skill": "SKILL.md 'reference/mobile-testing.md' covers mobile web on real devices; it cannot drive native biometric prompts or app deep links."
+    }
+  },
+  {
+    "id": "ta-12",
+    "category": "test-automation",
+    "query": "我們想把原本在開發者電腦本機手動執行的回歸測試清單，轉成可在雲端執行器上自動分片（Sharding）並於失敗時自動收集 Trace 與截圖的 CI 流程，請產出分片設定、重試上限規範與測試報告整併架構。",
+    "expected": [
+      "test-automation/lambdatest-agent-skills--playwright-skill"
+    ],
+    "near_misses": [
+      "test-automation/lambdatest-agent-skills--selenium-skill",
+      "test-automation/lambdatest-agent-skills--testng-skill",
+      "test-automation/lambdatest-agent-skills--appium-skill"
+    ],
+    "evidence": {
+      "test-automation/lambdatest-agent-skills--playwright-skill": "SKILL.md: config 'retries: process.env.CI ? 2 : 0', 'workers: process.env.CI ? 1 : undefined', 'trace: \"on-first-retry\"', 'screenshot: \"only-on-failure\"' (automatic failure artifacts); '§12 Sharding - CI matrix sharding, report merging'; '§13 CI/CD - GitHub Actions with artifacts'; '§14 Debugging Toolkit - Debug, UI mode, trace viewer, codegen'.",
+      "test-automation/lambdatest-agent-skills--selenium-skill": "SKILL.md: '§7 Screenshots - JUnit 5 Extension + TestNG Listener with Allure attachment' and '§9 CI/CD - GitHub Actions matrix'; it documents no sharding scheme, no trace collection and no report-merge architecture.",
+      "test-automation/lambdatest-agent-skills--testng-skill": "SKILL.md: '§9 Parallel Execution Strategies - Method/class/test/mixed' and '§6 Listeners (Production Suite) - Retry, screenshot, timing'; no CI sharding or report merging.",
+      "test-automation/lambdatest-agent-skills--appium-skill": "SKILL.md: '§7 Parallel Device Execution - Multi-device TestNG XML' and cloud 'deviceLog: true, video: true'; it has no trace-based sharding or report-merge design."
+    }
+  },
+  {
+    "id": "ta-13",
+    "category": "test-automation",
+    "query": "Repair these six failing integration tests after a recent API response wrapper change—they currently swallow HTTP errors and assert only on array length rather than schema and business invariants. Provide fixed test code with clear, diagnostic failure messages.",
+    "expected": [
+      "test-automation/lambdatest-agent-skills--jest-skill",
+      "test-automation/lambdatest-agent-skills--vitest-skill",
+      "test-automation/lambdatest-agent-skills--pytest-skill"
+    ],
+    "near_misses": [
+      "test-automation/lambdatest-agent-skills--mocha-skill",
+      "test-automation/lambdatest-agent-skills--unittest-skill",
+      "test-automation/lambdatest-agent-skills--rspec-skill"
+    ],
+    "evidence": {
+      "test-automation/lambdatest-agent-skills--jest-skill": "SKILL.md: '§8 API Service Testing - Mocked axios, CRUD patterns, error handling'; 'Async Testing - return expect(fetchBadData()).rejects.toThrow(\"not found\")' (asserting the error instead of swallowing it); anti-pattern 'expect(x === y).toBe(true) | expect(x).toBe(y) | Better errors'.",
+      "test-automation/lambdatest-agent-skills--vitest-skill": "SKILL.md: '§7 API / Integration Testing - Server tests with fetch', 'vi.mock' error paths and '§9 Debugging Quick-Reference - 10 common problems with fixes'.",
+      "test-automation/lambdatest-agent-skills--pytest-skill": "SKILL.md: '§4 Mocking - pytest-mock, monkeypatch, spies, env vars' with 'mock_response.status_code = 200' assertions, 'pytest.raises(ValueError, match=\"invalid\")' for error assertions, and '§10 Debugging Table'.",
+      "test-automation/lambdatest-agent-skills--mocha-skill": "SKILL.md: '§7 Express/API Testing - Supertest integration' exists, but its documented patterns do not cover schema/business-invariant assertions or diagnostic failure messages.",
+      "test-automation/lambdatest-agent-skills--unittest-skill": "SKILL.md covers the stdlib assertion/mocking API only ('self.assertEqual', '@patch'); it has no HTTP-wrapper or schema-assertion patterns for an API wrapper change.",
+      "test-automation/lambdatest-agent-skills--rspec-skill": "SKILL.md: Ruby matchers/doubles only ('RSpec.describe', 'allow(repo).to receive') - not the stack implied by these integration tests."
+    }
+  },
+  {
+    "id": "ta-14",
+    "category": "test-automation",
+    "query": "針對一個即時協作畫布應用，傳統 DOM 斷言很難驗證拖曳與圖形重疊結果。請幫我設計結合狀態層單元測試、瀏覽器操作模擬與視覺回歸截圖容錯閾值的混合測試策略與結構建議。",
+    "expected": [
+      "test-automation/lambdatest-agent-skills--playwright-skill",
+      "test-automation/lambdatest-agent-skills--cypress-skill",
+      "test-automation/lambdatest-agent-skills--jest-skill"
+    ],
+    "near_misses": [
+      "test-automation/lambdatest-agent-skills--selenium-skill",
+      "test-automation/lambdatest-agent-skills--vitest-skill"
+    ],
+    "evidence": {
+      "test-automation/lambdatest-agent-skills--playwright-skill": "SKILL.md: 'Visual Regression - await expect(page).toHaveScreenshot(\"homepage.png\", { maxDiffPixelRatio: 0.01, animations: \"disabled\", mask: [page.locator(\".dynamic-date\")] })' plus '§5 Visual Regression - Screenshot comparison, masks, thresholds' (the tolerance part); 'Network Mocking / §4 Network Interception - Mock, modify, HAR replay' for simulating canvas operations; '§9 Custom Fixtures - DB seeding, API context, auto-teardown'.",
+      "test-automation/lambdatest-agent-skills--cypress-skill": "SKILL.md: '§12 Visual Regression - Percy, cypress-image-snapshot', '§5 Component Testing - React/Vue mount, stubs, variants', '§6 Custom Commands - TypeScript declarations, drag-drop' (browser operation simulation).",
+      "test-automation/lambdatest-agent-skills--jest-skill": "SKILL.md: the state-layer unit side - 'describe/it/expect' for reducers/state machines, '§3 Async Patterns', '§9 Global Setup - DB setup/teardown'.",
+      "test-automation/lambdatest-agent-skills--selenium-skill": "SKILL.md: 'Actions API' drag support and '§7 Screenshots' exist, but the skill documents no visual-diff tolerance/threshold configuration.",
+      "test-automation/lambdatest-agent-skills--vitest-skill": "SKILL.md covers state-level unit testing ('§5 Table-Driven Tests', '§3 React Testing Library') but has no browser interaction or screenshot comparison guidance."
+    }
+  },
+  {
+    "id": "ta-15",
+    "category": "test-automation",
+    "query": "Set up a clean test-automation starter structure for a full-stack web service: separate fast unit tests, contract tests, and browser E2E suites with clear naming conventions, test-data factories, and a CI execution script that fails fast on broken smoke checks.",
+    "expected": [
+      "test-automation/lambdatest-agent-skills--playwright-skill",
+      "test-automation/lambdatest-agent-skills--jest-skill",
+      "test-automation/lambdatest-agent-skills--pytest-skill"
+    ],
+    "near_misses": [
+      "test-automation/lambdatest-agent-skills--vitest-skill",
+      "test-automation/lambdatest-agent-skills--mocha-skill"
+    ],
+    "evidence": {
+      "test-automation/lambdatest-agent-skills--playwright-skill": "SKILL.md: 'New test suite / project | Full scaffold - scripts/scaffold-project.sh'; config with 'projects' and 'webServer'; 'Use POM for any project with more than 3 tests' + '§9 Custom Fixtures - DB seeding, API context, auto-teardown' (test-data factories); '§13 CI/CD - GitHub Actions with artifacts'; '§12 Sharding - CI matrix sharding, report merging'.",
+      "test-automation/lambdatest-agent-skills--jest-skill": "SKILL.md: '§9 Global Setup - Multi-project config, DB setup/teardown'; '§10 CI/CD - GitHub Actions with coverage gates' (fails fast); '§4 test.each' for table-driven unit cases; describe/it naming conventions.",
+      "test-automation/lambdatest-agent-skills--pytest-skill": "SKILL.md: '[tool.pytest.ini_options] testpaths/markers/addopts' with 'markers = [\"slow: slow tests\", \"integration: integration tests\"]' (naming/tiering); '§2 Fixtures - factories'; 'pytest -x' ('Stop first fail') and '§9 CI/CD - GitHub Actions matrix + coverage gates'.",
+      "test-automation/lambdatest-agent-skills--vitest-skill": "SKILL.md: '§1 Production Configuration - Config, workspace, setup file' and '§8 CI/CD Integration - GitHub Actions, scripts'; it documents no contract-test layer, fixture factories or smoke-gate script.",
+      "test-automation/lambdatest-agent-skills--mocha-skill": "SKILL.md: '§7 Express/API Testing - Supertest integration' and '§8 CI/CD Integration'; it has no contract-test structure, fixture factory guidance or naming conventions."
+    }
+  }
+]

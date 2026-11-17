@@ -1,0 +1,34 @@
+---
+skill: baijiahao-upload
+source: dreammis/social-auto-upload
+path: skills/baijiahao-upload
+commit: 3847fff01f5434a8a32829833163cd6723cabc59
+url: https://github.com/dreammis/social-auto-upload/tree/3847fff01f5434a8a32829833163cd6723cabc59/skills/baijiahao-upload
+license: MIT-0
+description: "\u4F7F\u7528 social-auto-upload \u7684 `sau baijiahao` \u767B\u5F55\u767E\u5BB6\u53F7\u3001\u68C0\u67E5\u8D26\u53F7\u5E76\u53D1\u5E03\u89C6\u9891\u3002Use when \u7528\u6237\u8981\u5411\u767E\u5BB6\u53F7\u53D1\u5E03\u89C6\u9891\u6216\u6838\u9A8C\u767E\u5BB6\u53F7\u767B\u5F55\u72B6\u6001\u3002"
+trust: T3
+category: social-media-publishing
+has_scripts: false
+network: false
+needs_secrets: true
+---
+
+# Publish or schedule content on Baijiahao
+
+## When
+Use when publishing or scheduling content on Baijiahao through social-auto-upload.
+
+## Material
+missing
+
+## Done
+missing
+
+## Requires
+missing
+
+## Replaces
+missing
+
+## Not for
+missing

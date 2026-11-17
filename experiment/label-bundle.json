@@ -1,0 +1,612 @@
+{
+ "api-development": [
+  {
+   "candidate_id": "api-development/lambdatest-agent-skills--api-analyzer",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/api-skill/api-analyzer/SKILL.md"
+  },
+  {
+   "candidate_id": "api-development/lambdatest-agent-skills--api-documentation",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/api-skill/api-documentation/SKILL.md"
+  },
+  {
+   "candidate_id": "api-development/lambdatest-agent-skills--api-compliance-checker",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/api-skill/api-compliance/SKILL.md"
+  },
+  {
+   "candidate_id": "api-development/lambdatest-agent-skills--api-rate-limiting-helper",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/api-skill/api-ratelimit-helper/SKILL.md"
+  },
+  {
+   "candidate_id": "api-development/lambdatest-agent-skills--api-to-testcase-generator",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/api-skill/api-to-testcase-generator/SKILL.md"
+  },
+  {
+   "candidate_id": "api-development/lambdatest-agent-skills--api-sdk-generator",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/api-skill/api-sdk-generator/SKILL.md"
+  },
+  {
+   "candidate_id": "api-development/lambdatest-agent-skills--api-security-auth-pattern",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/api-skill/api-security-patterns/SKILL.md"
+  },
+  {
+   "candidate_id": "api-development/lambdatest-agent-skills--api-mock-helper",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/api-skill/api-mocking/SKILL.md"
+  },
+  {
+   "candidate_id": "api-development/lambdatest-agent-skills--api-versioning-helper",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/api-skill/api-versioning-helper/SKILL.md"
+  },
+  {
+   "candidate_id": "api-development/lambdatest-agent-skills--api-integration",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/api-skill/api-integration-helper/SKILL.md"
+  },
+  {
+   "candidate_id": "api-development/lambdatest-agent-skills--api-health-monitoring",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/api-skill/api-health-monitoring/SKILL.md"
+  },
+  {
+   "candidate_id": "api-development/lambdatest-agent-skills--api-inferrer-from-files",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/api-skill/api-inference-from-files/SKILL.md"
+  },
+  {
+   "candidate_id": "api-development/lambdatest-agent-skills--api-fetcher-specific-domains",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/api-skill/popular-api-fetcher/SKILL.md"
+  },
+  {
+   "candidate_id": "api-development/lambdatest-agent-skills--api-graphql-grpc",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/api-skill/graphql-grpc-helper/SKILL.md"
+  },
+  {
+   "candidate_id": "api-development/lambdatest-agent-skills--openapi-spec-generator",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/api-skill/openapi-spec-generator/SKILL.md"
+  },
+  {
+   "candidate_id": "api-development/lambdatest-agent-skills--api-designer",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/api-skill/api-designer/SKILL.md"
+  },
+  {
+   "candidate_id": "api-development/lambdatest-agent-skills--api-ai-augmented",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/api-skill/ai-based-api/SKILL.md"
+  },
+  {
+   "candidate_id": "api-development/lambdatest-agent-skills--postman-test-script-generator",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/api-skill/postman/postman-testcase-generator/SKILL.md"
+  },
+  {
+   "candidate_id": "api-development/lambdatest-agent-skills--postman-newman-automation",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/api-skill/postman/postman-to-newman/SKILL.md"
+  },
+  {
+   "candidate_id": "api-development/lambdatest-agent-skills--newman-report-analyzer",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/api-skill/newman/newman-report-analyzer/SKILL.md"
+  }
+ ],
+ "frontend-design": [
+  {
+   "candidate_id": "frontend-design/raintree-hig-doctor--hig-project-context",
+   "source": "raintree-technology/hig-doctor",
+   "commit": "a0f1e4ec3c5ada82e538710b54a344db63189d8b",
+   "skill_md": "sources/raintree-hig-doctor/skills/hig-project-context/SKILL.md"
+  },
+  {
+   "candidate_id": "frontend-design/raintree-hig-doctor--hig-platforms",
+   "source": "raintree-technology/hig-doctor",
+   "commit": "a0f1e4ec3c5ada82e538710b54a344db63189d8b",
+   "skill_md": "sources/raintree-hig-doctor/skills/hig-platforms/SKILL.md"
+  },
+  {
+   "candidate_id": "frontend-design/raintree-hig-doctor--hig-patterns",
+   "source": "raintree-technology/hig-doctor",
+   "commit": "a0f1e4ec3c5ada82e538710b54a344db63189d8b",
+   "skill_md": "sources/raintree-hig-doctor/skills/hig-patterns/SKILL.md"
+  },
+  {
+   "candidate_id": "frontend-design/raintree-hig-doctor--hig-foundations",
+   "source": "raintree-technology/hig-doctor",
+   "commit": "a0f1e4ec3c5ada82e538710b54a344db63189d8b",
+   "skill_md": "sources/raintree-hig-doctor/skills/hig-foundations/SKILL.md"
+  },
+  {
+   "candidate_id": "frontend-design/raintree-hig-doctor--hig-inputs",
+   "source": "raintree-technology/hig-doctor",
+   "commit": "a0f1e4ec3c5ada82e538710b54a344db63189d8b",
+   "skill_md": "sources/raintree-hig-doctor/skills/hig-inputs/SKILL.md"
+  },
+  {
+   "candidate_id": "frontend-design/raintree-hig-doctor--hig-technologies",
+   "source": "raintree-technology/hig-doctor",
+   "commit": "a0f1e4ec3c5ada82e538710b54a344db63189d8b",
+   "skill_md": "sources/raintree-hig-doctor/skills/hig-technologies/SKILL.md"
+  },
+  {
+   "candidate_id": "frontend-design/raintree-hig-doctor--hig-components-status",
+   "source": "raintree-technology/hig-doctor",
+   "commit": "a0f1e4ec3c5ada82e538710b54a344db63189d8b",
+   "skill_md": "sources/raintree-hig-doctor/skills/hig-components-status/SKILL.md"
+  },
+  {
+   "candidate_id": "frontend-design/raintree-hig-doctor--hig-components-menus",
+   "source": "raintree-technology/hig-doctor",
+   "commit": "a0f1e4ec3c5ada82e538710b54a344db63189d8b",
+   "skill_md": "sources/raintree-hig-doctor/skills/hig-components-menus/SKILL.md"
+  },
+  {
+   "candidate_id": "frontend-design/raintree-hig-doctor--hig-components-controls",
+   "source": "raintree-technology/hig-doctor",
+   "commit": "a0f1e4ec3c5ada82e538710b54a344db63189d8b",
+   "skill_md": "sources/raintree-hig-doctor/skills/hig-components-controls/SKILL.md"
+  },
+  {
+   "candidate_id": "frontend-design/raintree-hig-doctor--hig-components-layout",
+   "source": "raintree-technology/hig-doctor",
+   "commit": "a0f1e4ec3c5ada82e538710b54a344db63189d8b",
+   "skill_md": "sources/raintree-hig-doctor/skills/hig-components-layout/SKILL.md"
+  },
+  {
+   "candidate_id": "frontend-design/raintree-hig-doctor--hig-components-content",
+   "source": "raintree-technology/hig-doctor",
+   "commit": "a0f1e4ec3c5ada82e538710b54a344db63189d8b",
+   "skill_md": "sources/raintree-hig-doctor/skills/hig-components-content/SKILL.md"
+  },
+  {
+   "candidate_id": "frontend-design/raintree-hig-doctor--hig-components-search",
+   "source": "raintree-technology/hig-doctor",
+   "commit": "a0f1e4ec3c5ada82e538710b54a344db63189d8b",
+   "skill_md": "sources/raintree-hig-doctor/skills/hig-components-search/SKILL.md"
+  },
+  {
+   "candidate_id": "frontend-design/raintree-hig-doctor--hig-components-system",
+   "source": "raintree-technology/hig-doctor",
+   "commit": "a0f1e4ec3c5ada82e538710b54a344db63189d8b",
+   "skill_md": "sources/raintree-hig-doctor/skills/hig-components-system/SKILL.md"
+  },
+  {
+   "candidate_id": "frontend-design/raintree-hig-doctor--hig-components-dialogs",
+   "source": "raintree-technology/hig-doctor",
+   "commit": "a0f1e4ec3c5ada82e538710b54a344db63189d8b",
+   "skill_md": "sources/raintree-hig-doctor/skills/hig-components-dialogs/SKILL.md"
+  },
+  {
+   "candidate_id": "frontend-design/raintree-hig-doctor--hig-doctor-audit",
+   "source": "raintree-technology/hig-doctor",
+   "commit": "a0f1e4ec3c5ada82e538710b54a344db63189d8b",
+   "skill_md": "sources/raintree-hig-doctor/plugin/skills/hig-doctor-audit/SKILL.md"
+  },
+  {
+   "candidate_id": "frontend-design/mobbin-skills--redesign-screen",
+   "source": "mobbin/skills",
+   "commit": "cac338357d596415773874f06a6c16e862c195e4",
+   "skill_md": "sources/mobbin-skills/skills/redesign-screen/SKILL.md"
+  },
+  {
+   "candidate_id": "frontend-design/ibelick-ui-skills--improve-ui",
+   "source": "ibelick/ui-skills",
+   "commit": "65cc0edb4f64fe8bfe7e9c59466074de25bece76",
+   "skill_md": "sources/ibelick-ui-skills/skills/improve-ui/SKILL.md"
+  },
+  {
+   "candidate_id": "frontend-design/ibelick-ui-skills--baseline-ui",
+   "source": "ibelick/ui-skills",
+   "commit": "65cc0edb4f64fe8bfe7e9c59466074de25bece76",
+   "skill_md": "sources/ibelick-ui-skills/skills/baseline-ui/SKILL.md"
+  },
+  {
+   "candidate_id": "frontend-design/ibelick-ui-skills--create-design-md",
+   "source": "ibelick/ui-skills",
+   "commit": "65cc0edb4f64fe8bfe7e9c59466074de25bece76",
+   "skill_md": "sources/ibelick-ui-skills/skills/create-design-md/SKILL.md"
+  },
+  {
+   "candidate_id": "frontend-design/ibelick-ui-skills--fixing-accessibility",
+   "source": "ibelick/ui-skills",
+   "commit": "65cc0edb4f64fe8bfe7e9c59466074de25bece76",
+   "skill_md": "sources/ibelick-ui-skills/skills/fixing-accessibility/SKILL.md"
+  }
+ ],
+ "seo": [
+  {
+   "candidate_id": "seo/illyism-seo-skills--reddit-serp",
+   "source": "Illyism/seo-skills",
+   "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+   "skill_md": "sources/illyism-seo-skills/seo/reddit-serp/SKILL.md"
+  },
+  {
+   "candidate_id": "seo/illyism-seo-skills--linkdr",
+   "source": "Illyism/seo-skills",
+   "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+   "skill_md": "sources/illyism-seo-skills/seo/linkdr/SKILL.md"
+  },
+  {
+   "candidate_id": "seo/illyism-seo-skills--directory-submissions",
+   "source": "Illyism/seo-skills",
+   "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+   "skill_md": "sources/illyism-seo-skills/seo/directory-submissions/SKILL.md"
+  },
+  {
+   "candidate_id": "seo/illyism-seo-skills--dataforseo-serp",
+   "source": "Illyism/seo-skills",
+   "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+   "skill_md": "sources/illyism-seo-skills/seo/dataforseo-serp/SKILL.md"
+  },
+  {
+   "candidate_id": "seo/illyism-seo-skills--ai-seo-report",
+   "source": "Illyism/seo-skills",
+   "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+   "skill_md": "sources/illyism-seo-skills/seo/ai-seo-report/SKILL.md"
+  },
+  {
+   "candidate_id": "seo/illyism-seo-skills--seo-roast",
+   "source": "Illyism/seo-skills",
+   "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+   "skill_md": "sources/illyism-seo-skills/seo/seo-roast/SKILL.md"
+  },
+  {
+   "candidate_id": "seo/illyism-seo-skills--proof-kb",
+   "source": "Illyism/seo-skills",
+   "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+   "skill_md": "sources/illyism-seo-skills/seo/proof-kb/SKILL.md"
+  },
+  {
+   "candidate_id": "seo/illyism-seo-skills--ahrefs-research",
+   "source": "Illyism/seo-skills",
+   "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+   "skill_md": "sources/illyism-seo-skills/seo/ahrefs-research/SKILL.md"
+  },
+  {
+   "candidate_id": "seo/illyism-seo-skills--honest-link-outreach",
+   "source": "Illyism/seo-skills",
+   "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+   "skill_md": "sources/illyism-seo-skills/seo/honest-link-outreach/SKILL.md"
+  },
+  {
+   "candidate_id": "seo/illyism-seo-skills--blog-refresher",
+   "source": "Illyism/seo-skills",
+   "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+   "skill_md": "sources/illyism-seo-skills/seo/blog-refresher/SKILL.md"
+  },
+  {
+   "candidate_id": "seo/illyism-seo-skills--domain-migration",
+   "source": "Illyism/seo-skills",
+   "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+   "skill_md": "sources/illyism-seo-skills/seo/domain-migration/SKILL.md"
+  },
+  {
+   "candidate_id": "seo/illyism-seo-skills--vs-and-alternatives",
+   "source": "Illyism/seo-skills",
+   "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+   "skill_md": "sources/illyism-seo-skills/seo/vs-and-alternatives/SKILL.md"
+  },
+  {
+   "candidate_id": "seo/illyism-seo-skills--blitz-seo",
+   "source": "Illyism/seo-skills",
+   "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+   "skill_md": "sources/illyism-seo-skills/seo/blitz-seo/SKILL.md"
+  },
+  {
+   "candidate_id": "seo/illyism-seo-skills--internal-linking",
+   "source": "Illyism/seo-skills",
+   "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+   "skill_md": "sources/illyism-seo-skills/seo/internal-linking/SKILL.md"
+  },
+  {
+   "candidate_id": "seo/illyism-seo-skills--block-ai-scrapers",
+   "source": "Illyism/seo-skills",
+   "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+   "skill_md": "sources/illyism-seo-skills/seo/block-ai-scrapers/SKILL.md"
+  },
+  {
+   "candidate_id": "seo/illyism-seo-skills--awesome-tools",
+   "source": "Illyism/seo-skills",
+   "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+   "skill_md": "sources/illyism-seo-skills/seo/awesome-tools/SKILL.md"
+  },
+  {
+   "candidate_id": "seo/illyism-seo-skills--seo-autopilot",
+   "source": "Illyism/seo-skills",
+   "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+   "skill_md": "sources/illyism-seo-skills/seo/seo-autopilot/SKILL.md"
+  },
+  {
+   "candidate_id": "seo/illyism-seo-skills--content-coverage",
+   "source": "Illyism/seo-skills",
+   "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+   "skill_md": "sources/illyism-seo-skills/seo/content-coverage/SKILL.md"
+  },
+  {
+   "candidate_id": "seo/illyism-seo-skills--seo-title-optimization",
+   "source": "Illyism/seo-skills",
+   "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+   "skill_md": "sources/illyism-seo-skills/seo/seo-title-optimization/SKILL.md"
+  },
+  {
+   "candidate_id": "seo/illyism-seo-skills--aiseotracker",
+   "source": "Illyism/seo-skills",
+   "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+   "skill_md": "sources/illyism-seo-skills/seo/aiseotracker/SKILL.md"
+  }
+ ],
+ "social-media-publishing": [
+  {
+   "candidate_id": "social-media-publishing/dreammis-social-auto-upload--social-auto-upload",
+   "source": "dreammis/social-auto-upload",
+   "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+   "skill_md": "sources/dreammis-social-auto-upload/skills/social-auto-upload/SKILL.md"
+  },
+  {
+   "candidate_id": "social-media-publishing/dreammis-social-auto-upload--alipay-upload",
+   "source": "dreammis/social-auto-upload",
+   "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+   "skill_md": "sources/dreammis-social-auto-upload/skills/alipay-upload/SKILL.md"
+  },
+  {
+   "candidate_id": "social-media-publishing/dreammis-social-auto-upload--baijiahao-upload",
+   "source": "dreammis/social-auto-upload",
+   "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+   "skill_md": "sources/dreammis-social-auto-upload/skills/baijiahao-upload/SKILL.md"
+  },
+  {
+   "candidate_id": "social-media-publishing/dreammis-social-auto-upload--bilibili-upload",
+   "source": "dreammis/social-auto-upload",
+   "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+   "skill_md": "sources/dreammis-social-auto-upload/skills/bilibili-upload/SKILL.md"
+  },
+  {
+   "candidate_id": "social-media-publishing/dreammis-social-auto-upload--dayu-upload",
+   "source": "dreammis/social-auto-upload",
+   "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+   "skill_md": "sources/dreammis-social-auto-upload/skills/dayu-upload/SKILL.md"
+  },
+  {
+   "candidate_id": "social-media-publishing/dreammis-social-auto-upload--douyin-upload",
+   "source": "dreammis/social-auto-upload",
+   "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+   "skill_md": "sources/dreammis-social-auto-upload/skills/douyin-upload/SKILL.md"
+  },
+  {
+   "candidate_id": "social-media-publishing/dreammis-social-auto-upload--facebook-upload",
+   "source": "dreammis/social-auto-upload",
+   "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+   "skill_md": "sources/dreammis-social-auto-upload/skills/facebook-upload/SKILL.md"
+  },
+  {
+   "candidate_id": "social-media-publishing/dreammis-social-auto-upload--hupu-upload",
+   "source": "dreammis/social-auto-upload",
+   "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+   "skill_md": "sources/dreammis-social-auto-upload/skills/hupu-upload/SKILL.md"
+  },
+  {
+   "candidate_id": "social-media-publishing/dreammis-social-auto-upload--instagram-upload",
+   "source": "dreammis/social-auto-upload",
+   "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+   "skill_md": "sources/dreammis-social-auto-upload/skills/instagram-upload/SKILL.md"
+  },
+  {
+   "candidate_id": "social-media-publishing/dreammis-social-auto-upload--kuaishou-upload",
+   "source": "dreammis/social-auto-upload",
+   "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+   "skill_md": "sources/dreammis-social-auto-upload/skills/kuaishou-upload/SKILL.md"
+  },
+  {
+   "candidate_id": "social-media-publishing/dreammis-social-auto-upload--meta-upload",
+   "source": "dreammis/social-auto-upload",
+   "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+   "skill_md": "sources/dreammis-social-auto-upload/skills/meta-upload/SKILL.md"
+  },
+  {
+   "candidate_id": "social-media-publishing/dreammis-social-auto-upload--tencent-upload",
+   "source": "dreammis/social-auto-upload",
+   "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+   "skill_md": "sources/dreammis-social-auto-upload/skills/tencent-upload/SKILL.md"
+  },
+  {
+   "candidate_id": "social-media-publishing/dreammis-social-auto-upload--tiktok-upload",
+   "source": "dreammis/social-auto-upload",
+   "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+   "skill_md": "sources/dreammis-social-auto-upload/skills/tiktok-upload/SKILL.md"
+  },
+  {
+   "candidate_id": "social-media-publishing/dreammis-social-auto-upload--weibo-upload",
+   "source": "dreammis/social-auto-upload",
+   "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+   "skill_md": "sources/dreammis-social-auto-upload/skills/weibo-upload/SKILL.md"
+  },
+  {
+   "candidate_id": "social-media-publishing/dreammis-social-auto-upload--xiaohongshu-upload",
+   "source": "dreammis/social-auto-upload",
+   "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+   "skill_md": "sources/dreammis-social-auto-upload/skills/xiaohongshu-upload/SKILL.md"
+  },
+  {
+   "candidate_id": "social-media-publishing/dreammis-social-auto-upload--xueqiu-upload",
+   "source": "dreammis/social-auto-upload",
+   "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+   "skill_md": "sources/dreammis-social-auto-upload/skills/xueqiu-upload/SKILL.md"
+  },
+  {
+   "candidate_id": "social-media-publishing/dreammis-social-auto-upload--youtube-upload",
+   "source": "dreammis/social-auto-upload",
+   "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+   "skill_md": "sources/dreammis-social-auto-upload/skills/youtube-upload/SKILL.md"
+  },
+  {
+   "candidate_id": "social-media-publishing/dreammis-social-auto-upload--zhihu-upload",
+   "source": "dreammis/social-auto-upload",
+   "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+   "skill_md": "sources/dreammis-social-auto-upload/skills/zhihu-upload/SKILL.md"
+  },
+  {
+   "candidate_id": "social-media-publishing/gitroomhq-postiz-agent--postiz",
+   "source": "gitroomhq/postiz-agent",
+   "commit": "01ab1fe17efa30d12de7758b961e8776d34dba4e",
+   "skill_md": "sources/gitroomhq-postiz-agent/skills/postiz/SKILL.md"
+  },
+  {
+   "candidate_id": "social-media-publishing/upload-post-upload-post-skill--upload-post",
+   "source": "Upload-Post/upload-post-skill",
+   "commit": "6cebb4bb0b42e609e28a9d5564ad4ac5c2f9d400",
+   "skill_md": "sources/upload-post-upload-post-skill/SKILL.md"
+  }
+ ],
+ "test-automation": [
+  {
+   "candidate_id": "test-automation/lambdatest-agent-skills--appium-skill",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/appium-skill/SKILL.md"
+  },
+  {
+   "candidate_id": "test-automation/lambdatest-agent-skills--cypress-skill",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/cypress-skill/SKILL.md"
+  },
+  {
+   "candidate_id": "test-automation/lambdatest-agent-skills--playwright-skill",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/playwright-skill/SKILL.md"
+  },
+  {
+   "candidate_id": "test-automation/lambdatest-agent-skills--selenium-skill",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/selenium-skill/SKILL.md"
+  },
+  {
+   "candidate_id": "test-automation/lambdatest-agent-skills--jest-skill",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/jest-skill/SKILL.md"
+  },
+  {
+   "candidate_id": "test-automation/lambdatest-agent-skills--vitest-skill",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/vitest-skill/SKILL.md"
+  },
+  {
+   "candidate_id": "test-automation/lambdatest-agent-skills--mocha-skill",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/mocha-skill/SKILL.md"
+  },
+  {
+   "candidate_id": "test-automation/lambdatest-agent-skills--jasmine-skill",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/jasmine-skill/SKILL.md"
+  },
+  {
+   "candidate_id": "test-automation/lambdatest-agent-skills--karma-skill",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/karma-skill/SKILL.md"
+  },
+  {
+   "candidate_id": "test-automation/lambdatest-agent-skills--junit-5-skill",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/junit-5-skill/SKILL.md"
+  },
+  {
+   "candidate_id": "test-automation/lambdatest-agent-skills--testng-skill",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/testng-skill/SKILL.md"
+  },
+  {
+   "candidate_id": "test-automation/lambdatest-agent-skills--pytest-skill",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/pytest-skill/SKILL.md"
+  },
+  {
+   "candidate_id": "test-automation/lambdatest-agent-skills--unittest-skill",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/unittest-skill/SKILL.md"
+  },
+  {
+   "candidate_id": "test-automation/lambdatest-agent-skills--rspec-skill",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/rspec-skill/SKILL.md"
+  },
+  {
+   "candidate_id": "test-automation/lambdatest-agent-skills--cucumber-skill",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/cucumber-skill/SKILL.md"
+  },
+  {
+   "candidate_id": "test-automation/lambdatest-agent-skills--behave-skill",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/behave-skill/SKILL.md"
+  },
+  {
+   "candidate_id": "test-automation/lambdatest-agent-skills--robot-framework-skill",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/robot-framework-skill/SKILL.md"
+  },
+  {
+   "candidate_id": "test-automation/lambdatest-agent-skills--webdriverio-skill",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/webdriverio-skill/SKILL.md"
+  },
+  {
+   "candidate_id": "test-automation/lambdatest-agent-skills--detox-skill",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/detox-skill/SKILL.md"
+  },
+  {
+   "candidate_id": "test-automation/lambdatest-agent-skills--flutter-testing-skill",
+   "source": "LambdaTest/agent-skills",
+   "commit": "375e466d6efd77436075e39ffba9623433740e18",
+   "skill_md": "sources/lambdatest-agent-skills/flutter-testing-skill/SKILL.md"
+  }
+ ]
+}

@@ -1,0 +1,35 @@
+version: 2
+sources:
+  - repo: anthropics/skills
+    commit: e4bb5d960d87126ff3b3a8af1a104b7db67560ba
+    kind: official
+  - repo: openai/skills
+    commit: 49f948faa9258a0c61caceaf225e179651397431
+    kind: official
+  - repo: microsoft/skills
+    commit: b35d2c60fac796bfd2cfd14ad3f550c73e92d9bb
+    kind: official
+  - repo: LambdaTest/agent-skills
+    commit: 375e466d6efd77436075e39ffba9623433740e18
+    kind: community
+  - repo: raintree-technology/hig-doctor
+    commit: a0f1e4ec3c5ada82e538710b54a344db63189d8b
+    kind: community
+  - repo: mobbin/skills
+    commit: cac338357d596415773874f06a6c16e862c195e4
+    kind: community
+  - repo: ibelick/ui-skills
+    commit: 65cc0edb4f64fe8bfe7e9c59466074de25bece76
+    kind: community
+  - repo: Illyism/seo-skills
+    commit: 99d51a33db135cf278c7e61cf3dd1b502e2390b4
+    kind: community
+  - repo: dreammis/social-auto-upload
+    commit: 3847fff01f5434a8a32829833163cd6723cabc59
+    kind: community
+  - repo: gitroomhq/postiz-agent
+    commit: 01ab1fe17efa30d12de7758b961e8776d34dba4e
+    kind: community
+  - repo: Upload-Post/upload-post-skill
+    commit: 6cebb4bb0b42e609e28a9d5564ad4ac5c2f9d400
+    kind: community

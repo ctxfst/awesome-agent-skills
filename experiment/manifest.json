@@ -1,0 +1,906 @@
+{
+  "frozen": true,
+  "card_count": 100,
+  "cards": [
+    {
+      "card_id": "api-development/lambdatest-agent-skills--api-analyzer",
+      "category": "api-development",
+      "source": "LambdaTest/agent-skills",
+      "path": "api-skill/api-analyzer",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/api-skill/api-analyzer",
+      "sha256": "f5240ee63e8e5249bd4c4cf859eb8c0c3450b86f37ef1dc92f90aab5fb620714"
+    },
+    {
+      "card_id": "api-development/lambdatest-agent-skills--api-documentation",
+      "category": "api-development",
+      "source": "LambdaTest/agent-skills",
+      "path": "api-skill/api-documentation",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/api-skill/api-documentation",
+      "sha256": "3de4441afff6d31369c14edb5375dd5f5ea3d6dc742fedfcba02d4337b3426a4"
+    },
+    {
+      "card_id": "api-development/lambdatest-agent-skills--api-compliance-checker",
+      "category": "api-development",
+      "source": "LambdaTest/agent-skills",
+      "path": "api-skill/api-compliance",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/api-skill/api-compliance",
+      "sha256": "a53713789847ccee20917bcaec687fe2cc3d0dc6194400f068541686771c2e6f"
+    },
+    {
+      "card_id": "api-development/lambdatest-agent-skills--api-rate-limiting-helper",
+      "category": "api-development",
+      "source": "LambdaTest/agent-skills",
+      "path": "api-skill/api-ratelimit-helper",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/api-skill/api-ratelimit-helper",
+      "sha256": "c2520ceac1a91b75d8357476f037170ee4d5bd044671a171ed28fde9450e5926"
+    },
+    {
+      "card_id": "api-development/lambdatest-agent-skills--api-to-testcase-generator",
+      "category": "api-development",
+      "source": "LambdaTest/agent-skills",
+      "path": "api-skill/api-to-testcase-generator",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/api-skill/api-to-testcase-generator",
+      "sha256": "3058ec46c23bd4ca3541d3e512164e126d50116988708e160c6171bc44de6085"
+    },
+    {
+      "card_id": "api-development/lambdatest-agent-skills--api-sdk-generator",
+      "category": "api-development",
+      "source": "LambdaTest/agent-skills",
+      "path": "api-skill/api-sdk-generator",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/api-skill/api-sdk-generator",
+      "sha256": "d4946c97b78e600177ec670598c9369d5e5e0676da2e50796017fe237043c3c8"
+    },
+    {
+      "card_id": "api-development/lambdatest-agent-skills--api-security-auth-pattern",
+      "category": "api-development",
+      "source": "LambdaTest/agent-skills",
+      "path": "api-skill/api-security-patterns",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/api-skill/api-security-patterns",
+      "sha256": "e600ff1b5af03ec92abb3b9d58c77e4ac6e8637946df4fd3d80878f940c46f26"
+    },
+    {
+      "card_id": "api-development/lambdatest-agent-skills--api-mock-helper",
+      "category": "api-development",
+      "source": "LambdaTest/agent-skills",
+      "path": "api-skill/api-mocking",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/api-skill/api-mocking",
+      "sha256": "97c579f9ebc62d09f3c59d1dc576046efebc686dd1af880270fb4450782d22ec"
+    },
+    {
+      "card_id": "api-development/lambdatest-agent-skills--api-versioning-helper",
+      "category": "api-development",
+      "source": "LambdaTest/agent-skills",
+      "path": "api-skill/api-versioning-helper",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/api-skill/api-versioning-helper",
+      "sha256": "ce401292118111d65993e8027865acd9ec28e434f6d2f5348e09a8260055411b"
+    },
+    {
+      "card_id": "api-development/lambdatest-agent-skills--api-integration",
+      "category": "api-development",
+      "source": "LambdaTest/agent-skills",
+      "path": "api-skill/api-integration-helper",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/api-skill/api-integration-helper",
+      "sha256": "95a6b036df4bb03e86b505c5da787b322ac9018df24784e276e61a71ea344250"
+    },
+    {
+      "card_id": "api-development/lambdatest-agent-skills--api-health-monitoring",
+      "category": "api-development",
+      "source": "LambdaTest/agent-skills",
+      "path": "api-skill/api-health-monitoring",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/api-skill/api-health-monitoring",
+      "sha256": "76215fde45c01fcc8c3e6da81bbcaf64349a5b3c0342ab2609e6d561b92e725d"
+    },
+    {
+      "card_id": "api-development/lambdatest-agent-skills--api-inferrer-from-files",
+      "category": "api-development",
+      "source": "LambdaTest/agent-skills",
+      "path": "api-skill/api-inference-from-files",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/api-skill/api-inference-from-files",
+      "sha256": "447f89d769215e4ddfcc942a9eb3d7f49aeb9bf87eb499cb75f1f816354b3f92"
+    },
+    {
+      "card_id": "api-development/lambdatest-agent-skills--api-fetcher-specific-domains",
+      "category": "api-development",
+      "source": "LambdaTest/agent-skills",
+      "path": "api-skill/popular-api-fetcher",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/api-skill/popular-api-fetcher",
+      "sha256": "eb5109b9e6a1e94da308d38b74bc101474b149c599e1743588e9ca346f494c95"
+    },
+    {
+      "card_id": "api-development/lambdatest-agent-skills--api-graphql-grpc",
+      "category": "api-development",
+      "source": "LambdaTest/agent-skills",
+      "path": "api-skill/graphql-grpc-helper",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/api-skill/graphql-grpc-helper",
+      "sha256": "2ad1e861e39534e5241ea1482755b62351c5178296f298441834aa9e1c59a694"
+    },
+    {
+      "card_id": "api-development/lambdatest-agent-skills--openapi-spec-generator",
+      "category": "api-development",
+      "source": "LambdaTest/agent-skills",
+      "path": "api-skill/openapi-spec-generator",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/api-skill/openapi-spec-generator",
+      "sha256": "d1c91f2fe621161ec33e0420fe96c15a7753c3ef6e8655984f8282017e49568e"
+    },
+    {
+      "card_id": "api-development/lambdatest-agent-skills--api-designer",
+      "category": "api-development",
+      "source": "LambdaTest/agent-skills",
+      "path": "api-skill/api-designer",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/api-skill/api-designer",
+      "sha256": "3e3a290e2f24e4399ce84078a2f3e658715fa9541c68f6611c41bc7c80b980be"
+    },
+    {
+      "card_id": "api-development/lambdatest-agent-skills--api-ai-augmented",
+      "category": "api-development",
+      "source": "LambdaTest/agent-skills",
+      "path": "api-skill/ai-based-api",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/api-skill/ai-based-api",
+      "sha256": "2626864c7454247a1db752db1853e88966efd5ee8b1d172d2cfe0adec147152d"
+    },
+    {
+      "card_id": "api-development/lambdatest-agent-skills--postman-test-script-generator",
+      "category": "api-development",
+      "source": "LambdaTest/agent-skills",
+      "path": "api-skill/postman/postman-testcase-generator",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/api-skill/postman/postman-testcase-generator",
+      "sha256": "98fa98100ee57551e4bb7f969b1aaa7871f82375a9564597155f92bc808d7e73"
+    },
+    {
+      "card_id": "api-development/lambdatest-agent-skills--postman-newman-automation",
+      "category": "api-development",
+      "source": "LambdaTest/agent-skills",
+      "path": "api-skill/postman/postman-to-newman",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/api-skill/postman/postman-to-newman",
+      "sha256": "bc66fd8532d8ae9dc65334b151171d6c54ac09fc6ccb0745de248e6875c08032"
+    },
+    {
+      "card_id": "api-development/lambdatest-agent-skills--newman-report-analyzer",
+      "category": "api-development",
+      "source": "LambdaTest/agent-skills",
+      "path": "api-skill/newman/newman-report-analyzer",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/api-skill/newman/newman-report-analyzer",
+      "sha256": "02f354cae99ee08afd3e86504feea225c3668a6b47065568980a1526fbbb9ac4"
+    },
+    {
+      "card_id": "frontend-design/raintree-hig-doctor--hig-project-context",
+      "category": "frontend-design",
+      "source": "raintree-technology/hig-doctor",
+      "path": "skills/hig-project-context",
+      "commit": "a0f1e4ec3c5ada82e538710b54a344db63189d8b",
+      "url": "https://github.com/raintree-technology/hig-doctor/tree/a0f1e4ec3c5ada82e538710b54a344db63189d8b/skills/hig-project-context",
+      "sha256": "84b908b967f7ad5cce9e2b1a21843850a09a2194a297fa5300e5eeb66681ac10"
+    },
+    {
+      "card_id": "frontend-design/raintree-hig-doctor--hig-platforms",
+      "category": "frontend-design",
+      "source": "raintree-technology/hig-doctor",
+      "path": "skills/hig-platforms",
+      "commit": "a0f1e4ec3c5ada82e538710b54a344db63189d8b",
+      "url": "https://github.com/raintree-technology/hig-doctor/tree/a0f1e4ec3c5ada82e538710b54a344db63189d8b/skills/hig-platforms",
+      "sha256": "68040a193938a3377e9acf68ec58cb723faf70b1a15a34432c45e47428ea1641"
+    },
+    {
+      "card_id": "frontend-design/raintree-hig-doctor--hig-patterns",
+      "category": "frontend-design",
+      "source": "raintree-technology/hig-doctor",
+      "path": "skills/hig-patterns",
+      "commit": "a0f1e4ec3c5ada82e538710b54a344db63189d8b",
+      "url": "https://github.com/raintree-technology/hig-doctor/tree/a0f1e4ec3c5ada82e538710b54a344db63189d8b/skills/hig-patterns",
+      "sha256": "db1bbe02f7168ca3748e6f3afff6e8293e9d46900f6618539562330f24b07899"
+    },
+    {
+      "card_id": "frontend-design/raintree-hig-doctor--hig-foundations",
+      "category": "frontend-design",
+      "source": "raintree-technology/hig-doctor",
+      "path": "skills/hig-foundations",
+      "commit": "a0f1e4ec3c5ada82e538710b54a344db63189d8b",
+      "url": "https://github.com/raintree-technology/hig-doctor/tree/a0f1e4ec3c5ada82e538710b54a344db63189d8b/skills/hig-foundations",
+      "sha256": "ba435e76d6db9101d9d2b0d3bacd9a05c7e5707c223922cd1e00f1b2ed5203c0"
+    },
+    {
+      "card_id": "frontend-design/raintree-hig-doctor--hig-inputs",
+      "category": "frontend-design",
+      "source": "raintree-technology/hig-doctor",
+      "path": "skills/hig-inputs",
+      "commit": "a0f1e4ec3c5ada82e538710b54a344db63189d8b",
+      "url": "https://github.com/raintree-technology/hig-doctor/tree/a0f1e4ec3c5ada82e538710b54a344db63189d8b/skills/hig-inputs",
+      "sha256": "134adcc2f9cb9d24c4444431d88952a10b71dd8b0a5d927a192bcf13318dd898"
+    },
+    {
+      "card_id": "frontend-design/raintree-hig-doctor--hig-technologies",
+      "category": "frontend-design",
+      "source": "raintree-technology/hig-doctor",
+      "path": "skills/hig-technologies",
+      "commit": "a0f1e4ec3c5ada82e538710b54a344db63189d8b",
+      "url": "https://github.com/raintree-technology/hig-doctor/tree/a0f1e4ec3c5ada82e538710b54a344db63189d8b/skills/hig-technologies",
+      "sha256": "797470dcc0c4c4007c23480b081d8c77a3c2636c4572fe68955dd4cd5ff103a3"
+    },
+    {
+      "card_id": "frontend-design/raintree-hig-doctor--hig-components-status",
+      "category": "frontend-design",
+      "source": "raintree-technology/hig-doctor",
+      "path": "skills/hig-components-status",
+      "commit": "a0f1e4ec3c5ada82e538710b54a344db63189d8b",
+      "url": "https://github.com/raintree-technology/hig-doctor/tree/a0f1e4ec3c5ada82e538710b54a344db63189d8b/skills/hig-components-status",
+      "sha256": "fca55cdfe6bea970e1990bb0e020118cc62af540b22a9b5d785b48f2431c223e"
+    },
+    {
+      "card_id": "frontend-design/raintree-hig-doctor--hig-components-menus",
+      "category": "frontend-design",
+      "source": "raintree-technology/hig-doctor",
+      "path": "skills/hig-components-menus",
+      "commit": "a0f1e4ec3c5ada82e538710b54a344db63189d8b",
+      "url": "https://github.com/raintree-technology/hig-doctor/tree/a0f1e4ec3c5ada82e538710b54a344db63189d8b/skills/hig-components-menus",
+      "sha256": "453522d4a432b5cd4ca7942c14f5c6f9754a8b76376f498094e963619af211d1"
+    },
+    {
+      "card_id": "frontend-design/raintree-hig-doctor--hig-components-controls",
+      "category": "frontend-design",
+      "source": "raintree-technology/hig-doctor",
+      "path": "skills/hig-components-controls",
+      "commit": "a0f1e4ec3c5ada82e538710b54a344db63189d8b",
+      "url": "https://github.com/raintree-technology/hig-doctor/tree/a0f1e4ec3c5ada82e538710b54a344db63189d8b/skills/hig-components-controls",
+      "sha256": "52ba01b4f27850a1f47d87044f43fa3a0f06f49691e5c391f0441cc50f2136e2"
+    },
+    {
+      "card_id": "frontend-design/raintree-hig-doctor--hig-components-layout",
+      "category": "frontend-design",
+      "source": "raintree-technology/hig-doctor",
+      "path": "skills/hig-components-layout",
+      "commit": "a0f1e4ec3c5ada82e538710b54a344db63189d8b",
+      "url": "https://github.com/raintree-technology/hig-doctor/tree/a0f1e4ec3c5ada82e538710b54a344db63189d8b/skills/hig-components-layout",
+      "sha256": "9494a883118522361ebf0f523b369979b86b986312943ea3be653d186ce0cefd"
+    },
+    {
+      "card_id": "frontend-design/raintree-hig-doctor--hig-components-content",
+      "category": "frontend-design",
+      "source": "raintree-technology/hig-doctor",
+      "path": "skills/hig-components-content",
+      "commit": "a0f1e4ec3c5ada82e538710b54a344db63189d8b",
+      "url": "https://github.com/raintree-technology/hig-doctor/tree/a0f1e4ec3c5ada82e538710b54a344db63189d8b/skills/hig-components-content",
+      "sha256": "772b86f2e07d6e2a4417884ee9bc18568168628867149d7ebc958ac9207583ec"
+    },
+    {
+      "card_id": "frontend-design/raintree-hig-doctor--hig-components-search",
+      "category": "frontend-design",
+      "source": "raintree-technology/hig-doctor",
+      "path": "skills/hig-components-search",
+      "commit": "a0f1e4ec3c5ada82e538710b54a344db63189d8b",
+      "url": "https://github.com/raintree-technology/hig-doctor/tree/a0f1e4ec3c5ada82e538710b54a344db63189d8b/skills/hig-components-search",
+      "sha256": "a8cbba95baf391bcc82cb15f63437d238dbb17bd796b7e39cbdebcbaa6b07737"
+    },
+    {
+      "card_id": "frontend-design/raintree-hig-doctor--hig-components-system",
+      "category": "frontend-design",
+      "source": "raintree-technology/hig-doctor",
+      "path": "skills/hig-components-system",
+      "commit": "a0f1e4ec3c5ada82e538710b54a344db63189d8b",
+      "url": "https://github.com/raintree-technology/hig-doctor/tree/a0f1e4ec3c5ada82e538710b54a344db63189d8b/skills/hig-components-system",
+      "sha256": "3c92d326bc093976c5d11ab1ef825a5bc025b7522d043d2250fd34aea7a8725e"
+    },
+    {
+      "card_id": "frontend-design/raintree-hig-doctor--hig-components-dialogs",
+      "category": "frontend-design",
+      "source": "raintree-technology/hig-doctor",
+      "path": "skills/hig-components-dialogs",
+      "commit": "a0f1e4ec3c5ada82e538710b54a344db63189d8b",
+      "url": "https://github.com/raintree-technology/hig-doctor/tree/a0f1e4ec3c5ada82e538710b54a344db63189d8b/skills/hig-components-dialogs",
+      "sha256": "7bfeeb0e0972fdbd22d554cbde90b873f8b7cba41d2e479435dc6e7d72724228"
+    },
+    {
+      "card_id": "frontend-design/raintree-hig-doctor--hig-doctor-audit",
+      "category": "frontend-design",
+      "source": "raintree-technology/hig-doctor",
+      "path": "plugin/skills/hig-doctor-audit",
+      "commit": "a0f1e4ec3c5ada82e538710b54a344db63189d8b",
+      "url": "https://github.com/raintree-technology/hig-doctor/tree/a0f1e4ec3c5ada82e538710b54a344db63189d8b/plugin/skills/hig-doctor-audit",
+      "sha256": "f04883c396a144c94e5d5aec5215368bf182ed1d3ecfb209b614ce671870a834"
+    },
+    {
+      "card_id": "frontend-design/mobbin-skills--redesign-screen",
+      "category": "frontend-design",
+      "source": "mobbin/skills",
+      "path": "skills/redesign-screen",
+      "commit": "cac338357d596415773874f06a6c16e862c195e4",
+      "url": "https://github.com/mobbin/skills/tree/cac338357d596415773874f06a6c16e862c195e4/skills/redesign-screen",
+      "sha256": "9933710a41df5075ba1b7935cd96a8428f0da66024c7a5e1ef351a1f80f1cb65"
+    },
+    {
+      "card_id": "frontend-design/ibelick-ui-skills--improve-ui",
+      "category": "frontend-design",
+      "source": "ibelick/ui-skills",
+      "path": "skills/improve-ui",
+      "commit": "65cc0edb4f64fe8bfe7e9c59466074de25bece76",
+      "url": "https://github.com/ibelick/ui-skills/tree/65cc0edb4f64fe8bfe7e9c59466074de25bece76/skills/improve-ui",
+      "sha256": "f1f387db69af536e9fffb497699cf72bc225a4bbc996f32b97c6a17adeb45263"
+    },
+    {
+      "card_id": "frontend-design/ibelick-ui-skills--baseline-ui",
+      "category": "frontend-design",
+      "source": "ibelick/ui-skills",
+      "path": "skills/baseline-ui",
+      "commit": "65cc0edb4f64fe8bfe7e9c59466074de25bece76",
+      "url": "https://github.com/ibelick/ui-skills/tree/65cc0edb4f64fe8bfe7e9c59466074de25bece76/skills/baseline-ui",
+      "sha256": "1cce21459525abf19bf489088c5bfcf69cf6856b6a5adca7610d12c8a3e2b804"
+    },
+    {
+      "card_id": "frontend-design/ibelick-ui-skills--create-design-md",
+      "category": "frontend-design",
+      "source": "ibelick/ui-skills",
+      "path": "skills/create-design-md",
+      "commit": "65cc0edb4f64fe8bfe7e9c59466074de25bece76",
+      "url": "https://github.com/ibelick/ui-skills/tree/65cc0edb4f64fe8bfe7e9c59466074de25bece76/skills/create-design-md",
+      "sha256": "dc5afa3f19d64c3f5f2fa5efbc1013839013806e6faa9a63f7ac5a6c57977617"
+    },
+    {
+      "card_id": "frontend-design/ibelick-ui-skills--fixing-accessibility",
+      "category": "frontend-design",
+      "source": "ibelick/ui-skills",
+      "path": "skills/fixing-accessibility",
+      "commit": "65cc0edb4f64fe8bfe7e9c59466074de25bece76",
+      "url": "https://github.com/ibelick/ui-skills/tree/65cc0edb4f64fe8bfe7e9c59466074de25bece76/skills/fixing-accessibility",
+      "sha256": "dd7ff6f3ea9462ac093fb68b13f5913732ad1b2834a0c4f2c518bd6c778a3896"
+    },
+    {
+      "card_id": "seo/illyism-seo-skills--reddit-serp",
+      "category": "seo",
+      "source": "Illyism/seo-skills",
+      "path": "seo/reddit-serp",
+      "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+      "url": "https://github.com/Illyism/seo-skills/tree/99d51a33db135cf278c7e61cf3dd1b502e2390b4/seo/reddit-serp",
+      "sha256": "a8e459308fe7e49bf09db11ff3048f7456db490104fb45fa303d8cbb8f7e8f34"
+    },
+    {
+      "card_id": "seo/illyism-seo-skills--linkdr",
+      "category": "seo",
+      "source": "Illyism/seo-skills",
+      "path": "seo/linkdr",
+      "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+      "url": "https://github.com/Illyism/seo-skills/tree/99d51a33db135cf278c7e61cf3dd1b502e2390b4/seo/linkdr",
+      "sha256": "27b668f1cd1629bd850595cf48796d0e02f0b95ce050fcd09dfb958adf4ee63a"
+    },
+    {
+      "card_id": "seo/illyism-seo-skills--directory-submissions",
+      "category": "seo",
+      "source": "Illyism/seo-skills",
+      "path": "seo/directory-submissions",
+      "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+      "url": "https://github.com/Illyism/seo-skills/tree/99d51a33db135cf278c7e61cf3dd1b502e2390b4/seo/directory-submissions",
+      "sha256": "629eaefd959bdbb0cded319d3bc6b9d62d9aa2aa3ea3cbd33226781bc663de1c"
+    },
+    {
+      "card_id": "seo/illyism-seo-skills--dataforseo-serp",
+      "category": "seo",
+      "source": "Illyism/seo-skills",
+      "path": "seo/dataforseo-serp",
+      "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+      "url": "https://github.com/Illyism/seo-skills/tree/99d51a33db135cf278c7e61cf3dd1b502e2390b4/seo/dataforseo-serp",
+      "sha256": "22e65c19b4acc7bce8272012796b3cc0a3b683fad32fa7a5af176e4a0f3dc7c7"
+    },
+    {
+      "card_id": "seo/illyism-seo-skills--ai-seo-report",
+      "category": "seo",
+      "source": "Illyism/seo-skills",
+      "path": "seo/ai-seo-report",
+      "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+      "url": "https://github.com/Illyism/seo-skills/tree/99d51a33db135cf278c7e61cf3dd1b502e2390b4/seo/ai-seo-report",
+      "sha256": "6260ec54756bbeeec3b139db10a102ee13061777c10a40bfc0185d385b99ab04"
+    },
+    {
+      "card_id": "seo/illyism-seo-skills--seo-roast",
+      "category": "seo",
+      "source": "Illyism/seo-skills",
+      "path": "seo/seo-roast",
+      "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+      "url": "https://github.com/Illyism/seo-skills/tree/99d51a33db135cf278c7e61cf3dd1b502e2390b4/seo/seo-roast",
+      "sha256": "d3ebe86fc9c076e0dfe6214dbcf8f48ad55aadb43a00a2fb88b731e607d69a65"
+    },
+    {
+      "card_id": "seo/illyism-seo-skills--proof-kb",
+      "category": "seo",
+      "source": "Illyism/seo-skills",
+      "path": "seo/proof-kb",
+      "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+      "url": "https://github.com/Illyism/seo-skills/tree/99d51a33db135cf278c7e61cf3dd1b502e2390b4/seo/proof-kb",
+      "sha256": "11eea7c0140f089003b258d5085c375c59dcabc8c671cd50d437cfd9a25201da"
+    },
+    {
+      "card_id": "seo/illyism-seo-skills--ahrefs-research",
+      "category": "seo",
+      "source": "Illyism/seo-skills",
+      "path": "seo/ahrefs-research",
+      "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+      "url": "https://github.com/Illyism/seo-skills/tree/99d51a33db135cf278c7e61cf3dd1b502e2390b4/seo/ahrefs-research",
+      "sha256": "a459c412f15424b0533a72dc1dac8e3ad533fd04d3e4163289ca9cc579b88066"
+    },
+    {
+      "card_id": "seo/illyism-seo-skills--honest-link-outreach",
+      "category": "seo",
+      "source": "Illyism/seo-skills",
+      "path": "seo/honest-link-outreach",
+      "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+      "url": "https://github.com/Illyism/seo-skills/tree/99d51a33db135cf278c7e61cf3dd1b502e2390b4/seo/honest-link-outreach",
+      "sha256": "6bc300757062420b05ba88a4bd1a4809e3a5fd873797235dc00d69bdc257f151"
+    },
+    {
+      "card_id": "seo/illyism-seo-skills--blog-refresher",
+      "category": "seo",
+      "source": "Illyism/seo-skills",
+      "path": "seo/blog-refresher",
+      "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+      "url": "https://github.com/Illyism/seo-skills/tree/99d51a33db135cf278c7e61cf3dd1b502e2390b4/seo/blog-refresher",
+      "sha256": "16e489eaea6b02589240e67acedfcdf3bb4b80081eaa64d5ebffa219149c468e"
+    },
+    {
+      "card_id": "seo/illyism-seo-skills--domain-migration",
+      "category": "seo",
+      "source": "Illyism/seo-skills",
+      "path": "seo/domain-migration",
+      "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+      "url": "https://github.com/Illyism/seo-skills/tree/99d51a33db135cf278c7e61cf3dd1b502e2390b4/seo/domain-migration",
+      "sha256": "d193df763a2b634628fd443ee5a49295a96af477d465b42f824d757a3e2d2bd1"
+    },
+    {
+      "card_id": "seo/illyism-seo-skills--vs-and-alternatives",
+      "category": "seo",
+      "source": "Illyism/seo-skills",
+      "path": "seo/vs-and-alternatives",
+      "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+      "url": "https://github.com/Illyism/seo-skills/tree/99d51a33db135cf278c7e61cf3dd1b502e2390b4/seo/vs-and-alternatives",
+      "sha256": "91179d8e492a3ba5e69da16e390396baec9a9faf18237ae122e2f4e6760b9d59"
+    },
+    {
+      "card_id": "seo/illyism-seo-skills--blitz-seo",
+      "category": "seo",
+      "source": "Illyism/seo-skills",
+      "path": "seo/blitz-seo",
+      "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+      "url": "https://github.com/Illyism/seo-skills/tree/99d51a33db135cf278c7e61cf3dd1b502e2390b4/seo/blitz-seo",
+      "sha256": "f069ea92023b7899b55ebc48663a04c49dbaaaeff8b236db7bdf45925404fe46"
+    },
+    {
+      "card_id": "seo/illyism-seo-skills--internal-linking",
+      "category": "seo",
+      "source": "Illyism/seo-skills",
+      "path": "seo/internal-linking",
+      "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+      "url": "https://github.com/Illyism/seo-skills/tree/99d51a33db135cf278c7e61cf3dd1b502e2390b4/seo/internal-linking",
+      "sha256": "4d3f3792c634d2e25d8ffc82e2dd21b6f4af331b904f7bab1d85b6a30bbbceab"
+    },
+    {
+      "card_id": "seo/illyism-seo-skills--block-ai-scrapers",
+      "category": "seo",
+      "source": "Illyism/seo-skills",
+      "path": "seo/block-ai-scrapers",
+      "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+      "url": "https://github.com/Illyism/seo-skills/tree/99d51a33db135cf278c7e61cf3dd1b502e2390b4/seo/block-ai-scrapers",
+      "sha256": "037489973bdbda6eac288d6f8570a405e73061cfcfb6f7cd00c1f0c829f1abb8"
+    },
+    {
+      "card_id": "seo/illyism-seo-skills--awesome-tools",
+      "category": "seo",
+      "source": "Illyism/seo-skills",
+      "path": "seo/awesome-tools",
+      "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+      "url": "https://github.com/Illyism/seo-skills/tree/99d51a33db135cf278c7e61cf3dd1b502e2390b4/seo/awesome-tools",
+      "sha256": "69f443a05c6c7a50de89a4bde861090648a5993ec8f00ac96bf1e5cbba36a1e8"
+    },
+    {
+      "card_id": "seo/illyism-seo-skills--seo-autopilot",
+      "category": "seo",
+      "source": "Illyism/seo-skills",
+      "path": "seo/seo-autopilot",
+      "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+      "url": "https://github.com/Illyism/seo-skills/tree/99d51a33db135cf278c7e61cf3dd1b502e2390b4/seo/seo-autopilot",
+      "sha256": "993739ffac5f288f8dcd2182c1d37ea21f90cd890fc6bee645bbc014161d6df1"
+    },
+    {
+      "card_id": "seo/illyism-seo-skills--content-coverage",
+      "category": "seo",
+      "source": "Illyism/seo-skills",
+      "path": "seo/content-coverage",
+      "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+      "url": "https://github.com/Illyism/seo-skills/tree/99d51a33db135cf278c7e61cf3dd1b502e2390b4/seo/content-coverage",
+      "sha256": "a67af8fcbdd0b7e323097b69314f86c5fbe96a30097619d427f045f4064a1c20"
+    },
+    {
+      "card_id": "seo/illyism-seo-skills--seo-title-optimization",
+      "category": "seo",
+      "source": "Illyism/seo-skills",
+      "path": "seo/seo-title-optimization",
+      "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+      "url": "https://github.com/Illyism/seo-skills/tree/99d51a33db135cf278c7e61cf3dd1b502e2390b4/seo/seo-title-optimization",
+      "sha256": "86d3a5d2527a9e3cbe6bc1eb01380ebf45a022cb1a2182c5f9fe88a509fe0cae"
+    },
+    {
+      "card_id": "seo/illyism-seo-skills--aiseotracker",
+      "category": "seo",
+      "source": "Illyism/seo-skills",
+      "path": "seo/aiseotracker",
+      "commit": "99d51a33db135cf278c7e61cf3dd1b502e2390b4",
+      "url": "https://github.com/Illyism/seo-skills/tree/99d51a33db135cf278c7e61cf3dd1b502e2390b4/seo/aiseotracker",
+      "sha256": "f1f1c42e432f6d0e96912b261694678fc2b212b123bf4147893c4ab03c23270a"
+    },
+    {
+      "card_id": "social-media-publishing/dreammis-social-auto-upload--social-auto-upload",
+      "category": "social-media-publishing",
+      "source": "dreammis/social-auto-upload",
+      "path": "skills/social-auto-upload",
+      "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/3847fff01f5434a8a32829833163cd6723cabc59/skills/social-auto-upload",
+      "sha256": "84f2d8b84f126a24a1dca23f86161761ac43f095224daa7be0a0224f2e572424"
+    },
+    {
+      "card_id": "social-media-publishing/dreammis-social-auto-upload--alipay-upload",
+      "category": "social-media-publishing",
+      "source": "dreammis/social-auto-upload",
+      "path": "skills/alipay-upload",
+      "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/3847fff01f5434a8a32829833163cd6723cabc59/skills/alipay-upload",
+      "sha256": "90024b2e8b99560dc73bc93f030d6398715109132dcaf2ac16a1a17a597e8daf"
+    },
+    {
+      "card_id": "social-media-publishing/dreammis-social-auto-upload--baijiahao-upload",
+      "category": "social-media-publishing",
+      "source": "dreammis/social-auto-upload",
+      "path": "skills/baijiahao-upload",
+      "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/3847fff01f5434a8a32829833163cd6723cabc59/skills/baijiahao-upload",
+      "sha256": "915b6d01343b518679da6baffa1068984330fdc175a9a32368c6f194c8cf92aa"
+    },
+    {
+      "card_id": "social-media-publishing/dreammis-social-auto-upload--bilibili-upload",
+      "category": "social-media-publishing",
+      "source": "dreammis/social-auto-upload",
+      "path": "skills/bilibili-upload",
+      "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/3847fff01f5434a8a32829833163cd6723cabc59/skills/bilibili-upload",
+      "sha256": "09763c3acb77d33519029b2a0ecdd43a6ea79bd367ab3917a2ab4514d3328226"
+    },
+    {
+      "card_id": "social-media-publishing/dreammis-social-auto-upload--dayu-upload",
+      "category": "social-media-publishing",
+      "source": "dreammis/social-auto-upload",
+      "path": "skills/dayu-upload",
+      "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/3847fff01f5434a8a32829833163cd6723cabc59/skills/dayu-upload",
+      "sha256": "442800f939c71ef28c91ffe2e2a4674229e8ac9bd4cf6b5e644c94d0a49f2d58"
+    },
+    {
+      "card_id": "social-media-publishing/dreammis-social-auto-upload--douyin-upload",
+      "category": "social-media-publishing",
+      "source": "dreammis/social-auto-upload",
+      "path": "skills/douyin-upload",
+      "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/3847fff01f5434a8a32829833163cd6723cabc59/skills/douyin-upload",
+      "sha256": "613be245fa55f581584d3cf34d7076149fbf348a57ced50ee8ba1eb655676947"
+    },
+    {
+      "card_id": "social-media-publishing/dreammis-social-auto-upload--facebook-upload",
+      "category": "social-media-publishing",
+      "source": "dreammis/social-auto-upload",
+      "path": "skills/facebook-upload",
+      "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/3847fff01f5434a8a32829833163cd6723cabc59/skills/facebook-upload",
+      "sha256": "b4d02271747d49cbffb0d4d5125d9a204742a94cd20029ca43db068be73de5e4"
+    },
+    {
+      "card_id": "social-media-publishing/dreammis-social-auto-upload--hupu-upload",
+      "category": "social-media-publishing",
+      "source": "dreammis/social-auto-upload",
+      "path": "skills/hupu-upload",
+      "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/3847fff01f5434a8a32829833163cd6723cabc59/skills/hupu-upload",
+      "sha256": "b06cbe30722f6bf8728bb0406c233e4564859006bee8b778c50f3d2cf36eb751"
+    },
+    {
+      "card_id": "social-media-publishing/dreammis-social-auto-upload--instagram-upload",
+      "category": "social-media-publishing",
+      "source": "dreammis/social-auto-upload",
+      "path": "skills/instagram-upload",
+      "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/3847fff01f5434a8a32829833163cd6723cabc59/skills/instagram-upload",
+      "sha256": "772c03de1b572098b3c095b29f622aa9ff83c3433b8d7a42d8010571fdf14d02"
+    },
+    {
+      "card_id": "social-media-publishing/dreammis-social-auto-upload--kuaishou-upload",
+      "category": "social-media-publishing",
+      "source": "dreammis/social-auto-upload",
+      "path": "skills/kuaishou-upload",
+      "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/3847fff01f5434a8a32829833163cd6723cabc59/skills/kuaishou-upload",
+      "sha256": "c8b5c4813dc718a6d451de611cae61e09bddba1c3e18be52b54e6dd0a26dc3f8"
+    },
+    {
+      "card_id": "social-media-publishing/dreammis-social-auto-upload--meta-upload",
+      "category": "social-media-publishing",
+      "source": "dreammis/social-auto-upload",
+      "path": "skills/meta-upload",
+      "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/3847fff01f5434a8a32829833163cd6723cabc59/skills/meta-upload",
+      "sha256": "011e8e7b16d4336ff5a99d47a667c117cff6e41174f158c3caf612d092c17675"
+    },
+    {
+      "card_id": "social-media-publishing/dreammis-social-auto-upload--tencent-upload",
+      "category": "social-media-publishing",
+      "source": "dreammis/social-auto-upload",
+      "path": "skills/tencent-upload",
+      "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/3847fff01f5434a8a32829833163cd6723cabc59/skills/tencent-upload",
+      "sha256": "1c1e761522a50a2529a9fc9e3586f2fa03cfea2d7c782a6ee4d11343ae70c04f"
+    },
+    {
+      "card_id": "social-media-publishing/dreammis-social-auto-upload--tiktok-upload",
+      "category": "social-media-publishing",
+      "source": "dreammis/social-auto-upload",
+      "path": "skills/tiktok-upload",
+      "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/3847fff01f5434a8a32829833163cd6723cabc59/skills/tiktok-upload",
+      "sha256": "fedb95a0fcfdfc20cb3f323bdb2668be0abdcb50a5d116b11e29cf1c6fdfdfa7"
+    },
+    {
+      "card_id": "social-media-publishing/dreammis-social-auto-upload--weibo-upload",
+      "category": "social-media-publishing",
+      "source": "dreammis/social-auto-upload",
+      "path": "skills/weibo-upload",
+      "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/3847fff01f5434a8a32829833163cd6723cabc59/skills/weibo-upload",
+      "sha256": "5ea37e10699c005ada9eac7fc37e8aab3d65cfe6ea9c0093a1ff41366fe634a5"
+    },
+    {
+      "card_id": "social-media-publishing/dreammis-social-auto-upload--xiaohongshu-upload",
+      "category": "social-media-publishing",
+      "source": "dreammis/social-auto-upload",
+      "path": "skills/xiaohongshu-upload",
+      "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/3847fff01f5434a8a32829833163cd6723cabc59/skills/xiaohongshu-upload",
+      "sha256": "7f33c4b492a4c736b4347345526815ac422e7d488a051ded16d92f052953efc2"
+    },
+    {
+      "card_id": "social-media-publishing/dreammis-social-auto-upload--xueqiu-upload",
+      "category": "social-media-publishing",
+      "source": "dreammis/social-auto-upload",
+      "path": "skills/xueqiu-upload",
+      "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/3847fff01f5434a8a32829833163cd6723cabc59/skills/xueqiu-upload",
+      "sha256": "93e378c2148df99b4e315c9eed5c870594660a07a0425b2c13bb407e0bb11d6a"
+    },
+    {
+      "card_id": "social-media-publishing/dreammis-social-auto-upload--youtube-upload",
+      "category": "social-media-publishing",
+      "source": "dreammis/social-auto-upload",
+      "path": "skills/youtube-upload",
+      "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/3847fff01f5434a8a32829833163cd6723cabc59/skills/youtube-upload",
+      "sha256": "6ef296f08a98d93753c795a2b0dda904074057e77bd03cb6954b278f2e040531"
+    },
+    {
+      "card_id": "social-media-publishing/dreammis-social-auto-upload--zhihu-upload",
+      "category": "social-media-publishing",
+      "source": "dreammis/social-auto-upload",
+      "path": "skills/zhihu-upload",
+      "commit": "3847fff01f5434a8a32829833163cd6723cabc59",
+      "url": "https://github.com/dreammis/social-auto-upload/tree/3847fff01f5434a8a32829833163cd6723cabc59/skills/zhihu-upload",
+      "sha256": "a13fa3ec0fc4a91de3f0890eb78301437e2c156334f03f9cf5125d611263493b"
+    },
+    {
+      "card_id": "social-media-publishing/gitroomhq-postiz-agent--postiz",
+      "category": "social-media-publishing",
+      "source": "gitroomhq/postiz-agent",
+      "path": "skills/postiz",
+      "commit": "01ab1fe17efa30d12de7758b961e8776d34dba4e",
+      "url": "https://github.com/gitroomhq/postiz-agent/tree/01ab1fe17efa30d12de7758b961e8776d34dba4e/skills/postiz",
+      "sha256": "34754f9dd6cfadfe3ce57df7db67910179f391225bca365442e06ca1f4950ce4"
+    },
+    {
+      "card_id": "social-media-publishing/upload-post-upload-post-skill--upload-post",
+      "category": "social-media-publishing",
+      "source": "Upload-Post/upload-post-skill",
+      "path": ".",
+      "commit": "6cebb4bb0b42e609e28a9d5564ad4ac5c2f9d400",
+      "url": "https://github.com/Upload-Post/upload-post-skill/tree/6cebb4bb0b42e609e28a9d5564ad4ac5c2f9d400",
+      "sha256": "5603c963e49d6df7229a84d0284eb18c5ee7808da20844fd09a39dcc0b632708"
+    },
+    {
+      "card_id": "test-automation/lambdatest-agent-skills--appium-skill",
+      "category": "test-automation",
+      "source": "LambdaTest/agent-skills",
+      "path": "appium-skill",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/appium-skill",
+      "sha256": "f9f3502c3ab335a9db089b5338feb89afeb5b1fae9ceaa27412c528e5cfad6a5"
+    },
+    {
+      "card_id": "test-automation/lambdatest-agent-skills--cypress-skill",
+      "category": "test-automation",
+      "source": "LambdaTest/agent-skills",
+      "path": "cypress-skill",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/cypress-skill",
+      "sha256": "fd8b3ec762d4dd27343b24c802017bf5b7708b656e7dabe5d59b7cd7202236e8"
+    },
+    {
+      "card_id": "test-automation/lambdatest-agent-skills--playwright-skill",
+      "category": "test-automation",
+      "source": "LambdaTest/agent-skills",
+      "path": "playwright-skill",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/playwright-skill",
+      "sha256": "8219afc6d8b47aa611c9a5e0f8ba336a8400697ab2853c74647205fcaf86092b"
+    },
+    {
+      "card_id": "test-automation/lambdatest-agent-skills--selenium-skill",
+      "category": "test-automation",
+      "source": "LambdaTest/agent-skills",
+      "path": "selenium-skill",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/selenium-skill",
+      "sha256": "530e69fe987174b03101f6181fcdc210c2600fa03d52cb4cc9fa7434132ebe49"
+    },
+    {
+      "card_id": "test-automation/lambdatest-agent-skills--jest-skill",
+      "category": "test-automation",
+      "source": "LambdaTest/agent-skills",
+      "path": "jest-skill",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/jest-skill",
+      "sha256": "b8b859154a404a6f2d946b649add405cebdb35cf7558211a1f1c6765365dd4d3"
+    },
+    {
+      "card_id": "test-automation/lambdatest-agent-skills--vitest-skill",
+      "category": "test-automation",
+      "source": "LambdaTest/agent-skills",
+      "path": "vitest-skill",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/vitest-skill",
+      "sha256": "ff1ec93f823e8d54ab3a715d30db457a3f48a8f9762c6862b51a5fcd3b609184"
+    },
+    {
+      "card_id": "test-automation/lambdatest-agent-skills--mocha-skill",
+      "category": "test-automation",
+      "source": "LambdaTest/agent-skills",
+      "path": "mocha-skill",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/mocha-skill",
+      "sha256": "048888a3df7c883d96be5e89e1d4d191794788714828576b962657d9f2a30c86"
+    },
+    {
+      "card_id": "test-automation/lambdatest-agent-skills--jasmine-skill",
+      "category": "test-automation",
+      "source": "LambdaTest/agent-skills",
+      "path": "jasmine-skill",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/jasmine-skill",
+      "sha256": "4ceda74ee721a94efd4b0c03d3e2f76b1b9066f76fc8f8f92cc7aaee9cee1371"
+    },
+    {
+      "card_id": "test-automation/lambdatest-agent-skills--karma-skill",
+      "category": "test-automation",
+      "source": "LambdaTest/agent-skills",
+      "path": "karma-skill",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/karma-skill",
+      "sha256": "d000d0f16cec4b6b6953347173d2cee75cb46482a2a40d96ecb8b06998a85989"
+    },
+    {
+      "card_id": "test-automation/lambdatest-agent-skills--junit-5-skill",
+      "category": "test-automation",
+      "source": "LambdaTest/agent-skills",
+      "path": "junit-5-skill",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/junit-5-skill",
+      "sha256": "0d08547bc12030dfdaa1559b88b164dffc1d47bbbd4e9dc9ed65501c7100dca4"
+    },
+    {
+      "card_id": "test-automation/lambdatest-agent-skills--testng-skill",
+      "category": "test-automation",
+      "source": "LambdaTest/agent-skills",
+      "path": "testng-skill",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/testng-skill",
+      "sha256": "c6b41cb439a2ed28db14a61a8c25e313592efc26cba77dfabdc538ff75bab5ab"
+    },
+    {
+      "card_id": "test-automation/lambdatest-agent-skills--pytest-skill",
+      "category": "test-automation",
+      "source": "LambdaTest/agent-skills",
+      "path": "pytest-skill",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/pytest-skill",
+      "sha256": "fff38ea868644b9c7c8de9a98700adc23b3b90d22beeebab9945a7d9f02b6292"
+    },
+    {
+      "card_id": "test-automation/lambdatest-agent-skills--unittest-skill",
+      "category": "test-automation",
+      "source": "LambdaTest/agent-skills",
+      "path": "unittest-skill",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/unittest-skill",
+      "sha256": "9c05c71b0e9b5bdefacfef3c1f581bbb472941dd643fc90d51554fb84fc54b5b"
+    },
+    {
+      "card_id": "test-automation/lambdatest-agent-skills--rspec-skill",
+      "category": "test-automation",
+      "source": "LambdaTest/agent-skills",
+      "path": "rspec-skill",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/rspec-skill",
+      "sha256": "10f31f6ecc032a6019149064403f12c667bf81340bc627d45fcbbb14e08045c3"
+    },
+    {
+      "card_id": "test-automation/lambdatest-agent-skills--cucumber-skill",
+      "category": "test-automation",
+      "source": "LambdaTest/agent-skills",
+      "path": "cucumber-skill",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/cucumber-skill",
+      "sha256": "5c9645ea2cf69473acbf234e8f645c9dd137cdb7163b6060a4363cb44ef34660"
+    },
+    {
+      "card_id": "test-automation/lambdatest-agent-skills--behave-skill",
+      "category": "test-automation",
+      "source": "LambdaTest/agent-skills",
+      "path": "behave-skill",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/behave-skill",
+      "sha256": "9764f651b89063f80ac42d705b276730dd62e91a9dc8baed3d4ef4b2dd18016c"
+    },
+    {
+      "card_id": "test-automation/lambdatest-agent-skills--robot-framework-skill",
+      "category": "test-automation",
+      "source": "LambdaTest/agent-skills",
+      "path": "robot-framework-skill",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/robot-framework-skill",
+      "sha256": "999b2762b5c36dcbeb90d67eda814b4afab4567942661c2d15cb9b1cbd1801ca"
+    },
+    {
+      "card_id": "test-automation/lambdatest-agent-skills--webdriverio-skill",
+      "category": "test-automation",
+      "source": "LambdaTest/agent-skills",
+      "path": "webdriverio-skill",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/webdriverio-skill",
+      "sha256": "9e9ea11f6bfa49e76a5c151a4db262a34d930b55000d5724313df907ecc39283"
+    },
+    {
+      "card_id": "test-automation/lambdatest-agent-skills--detox-skill",
+      "category": "test-automation",
+      "source": "LambdaTest/agent-skills",
+      "path": "detox-skill",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/detox-skill",
+      "sha256": "82ee4e920f7fdd812d1de1ffb7460fd11a244a41d551c39c47964251df72ae39"
+    },
+    {
+      "card_id": "test-automation/lambdatest-agent-skills--flutter-testing-skill",
+      "category": "test-automation",
+      "source": "LambdaTest/agent-skills",
+      "path": "flutter-testing-skill",
+      "commit": "375e466d6efd77436075e39ffba9623433740e18",
+      "url": "https://github.com/LambdaTest/agent-skills/tree/375e466d6efd77436075e39ffba9623433740e18/flutter-testing-skill",
+      "sha256": "db9bdbefcec26e94eeb6e90819c2875add5cbe22ca4c939bd65ca75bcdf46640"
+    }
+  ]
+}

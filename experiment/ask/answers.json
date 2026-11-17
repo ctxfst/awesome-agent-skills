@@ -1,0 +1,102 @@
+[
+  {
+    "id": "vq-01",
+    "targeted_answer": "Mainly (3) partner-facing documentation, built from a clean OpenAPI 3.1 YAML spec with request and response examples.",
+    "generic_answer": "I need to turn our exported internal API collection into a clean OpenAPI spec and partner guide."
+  },
+  {
+    "id": "vq-02",
+    "targeted_answer": "Both (1) auditing the messy endpoint conventions and (2) mapping out a clean v2 deprecation plan.",
+    "generic_answer": "We want an audit of naming and schema inconsistencies across our endpoints, plus a v2 deprecation plan."
+  },
+  {
+    "id": "vq-03",
+    "targeted_answer": "我需要 (1) v1 到 v2 的版本相容策略與遷移指南，並能讓客戶端本地模擬測試。",
+    "generic_answer": "我們要把對外 API 從 v1 升到 v2，需要向後相容的遷移規範和本機模擬測試環境。"
+  },
+  {
+    "id": "vq-04",
+    "targeted_answer": "比較接近 (1) 從草稿補齊可驗證的規格細節，好產出前端假資料跟維運健康檢查契約。",
+    "generic_answer": "我想先用草稿生出前端要用的模擬資料，並定好維運需要的健康與就緒檢查端點契約。"
+  },
+  {
+    "id": "vq-05",
+    "targeted_answer": "Option (3) works best—a redesign of our analytics dashboard with updated HTML/CSS and clearer layout spacing.",
+    "generic_answer": "I'd like to redesign our analytics dashboard from current screenshots into cleaner HTML and CSS."
+  },
+  {
+    "id": "vq-06",
+    "targeted_answer": "Definitely (2) shared design principles—a unified design-system spec covering typography, color tokens, and states.",
+    "generic_answer": "We want to unify our UI components into one design system with typography, color tokens, and states."
+  },
+  {
+    "id": "vq-07",
+    "targeted_answer": "兩者都有，我有現有的頁面程式碼，也準備了手機版和暗黑模式的異常截圖。",
+    "generic_answer": "想請你檢查手機排版與暗黑模式對比問題，並給我修正後的 CSS 變數與無障礙元件調整。"
+  },
+  {
+    "id": "vq-08",
+    "targeted_answer": "這是一款專為 macOS 設計的原生桌面端應用程式。",
+    "generic_answer": "我需要一份符合原生規範的桌面版面設計規格，以及支援鍵盤導覽的無障礙元件結構。"
+  },
+  {
+    "id": "vq-09",
+    "targeted_answer": null,
+    "generic_answer": "I have crawl exports and ranking data, and need a prioritized plan to fix indexing and canonical issues."
+  },
+  {
+    "id": "vq-10",
+    "targeted_answer": "Closer to (1) an overall SEO roadmap first, prioritizing landing-page titles, descriptions, and structured markup.",
+    "generic_answer": "We need a revenue-focused SEO roadmap to fix weak landing-page metadata and add structured data."
+  },
+  {
+    "id": "vq-11",
+    "targeted_answer": null,
+    "generic_answer": "我需要一份無流量流失的網址遷移檢查清單，包含 301 轉址對應規則與上線後索引監控。"
+  },
+  {
+    "id": "vq-12",
+    "targeted_answer": "我最需要 (3) 基於競品缺口的主題群藍圖與 (4) 內部連結優化方案，幫轉換頁衝上首頁。",
+    "generic_answer": "想根據競品搜尋缺口設計主題群內部連結架構與內容翻新範本，拉升底部漏斗頁面排名。"
+  },
+  {
+    "id": "vq-13",
+    "targeted_answer": "We're publishing across X, LinkedIn, and Instagram, and need tailored post variants for each.",
+    "generic_answer": "I need our launch copy and media adapted for three channels, queued for publishing, and verified live."
+  },
+  {
+    "id": "vq-14",
+    "targeted_answer": "Our weekly workflow needs to cover X, LinkedIn, Bluesky, and YouTube.",
+    "generic_answer": "We want an automated weekly publishing queue with media checks, session validation, and live post confirmation."
+  },
+  {
+    "id": "vq-15",
+    "targeted_answer": "主要是發到 IG、Threads 和 YouTube，長文同步發 Medium。",
+    "generic_answer": "我想把長文與短影音依各平台比例與字數限制排成草稿，並在正式發出後確認上線。"
+  },
+  {
+    "id": "vq-16",
+    "targeted_answer": "需要涵蓋 X、FB 粉專、IG 與 LinkedIn 公司帳號。",
+    "generic_answer": "我需要發文前帳號與公開權限的防呆檢查表，以及登入過期或上傳失敗時的補發恢復流程。"
+  },
+  {
+    "id": "vq-17",
+    "targeted_answer": "Definitely (2) repairing our flaky browser checkout tests so they stop failing on timeouts and detached elements.",
+    "generic_answer": "Our end-to-end checkout tests keep flaking on timeouts in CI, so we need them stabilized."
+  },
+  {
+    "id": "vq-18",
+    "targeted_answer": "We have both a responsive mobile web app and a React Native app to cover.",
+    "generic_answer": "We need a framework recommendation, clean test folder structure, and a local-versus-cloud execution matrix."
+  },
+  {
+    "id": "vq-19",
+    "targeted_answer": "目前是用 Python 搭配舊版同步式的 Selenium WebDriver 寫的。",
+    "generic_answer": "我需要一份分階段遷移到現代化瀏覽器測試架構的指南，並先重寫登入與結帳流程。"
+  },
+  {
+    "id": "vq-20",
+    "targeted_answer": "我需要 (2) 調整 CI 平行化分片設定，並把重複輔助函式重構成可複用的測試裝置。",
+    "generic_answer": "想清理重複程式碼與寫死的等待時間，並設定平行分片跑測和失敗自動蒐集除錯檔案。"
+  }
+]

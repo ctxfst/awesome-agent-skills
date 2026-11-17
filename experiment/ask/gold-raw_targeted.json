@@ -1,0 +1,284 @@
+[
+ {
+  "id": "vq-01",
+  "category": "api-development",
+  "query": "I have a bunch of API files from our backend team and need help getting them ready for our partners.\nWe need both a clean OpenAPI 3.1 YAML spec and readable partner documentation with request and response examples.",
+  "expected": [
+   "api-development/lambdatest-agent-skills--openapi-spec-generator",
+   "api-development/lambdatest-agent-skills--api-documentation"
+  ],
+  "near_misses": [
+   "api-development/lambdatest-agent-skills--api-analyzer",
+   "api-development/lambdatest-agent-skills--api-designer",
+   "api-development/lambdatest-agent-skills--api-inferrer-from-files"
+  ]
+ },
+ {
+  "id": "vq-02",
+  "category": "api-development",
+  "query": "Our REST API has been growing fast and things are starting to feel messy—can you help me sort it out?\nUnclear endpoint design consistency first, plus planning versioning and deprecation so we can roll out v2 cleanly.",
+  "expected": [
+   "api-development/lambdatest-agent-skills--openapi-spec-generator",
+   "api-development/lambdatest-agent-skills--api-versioning-helper"
+  ],
+  "near_misses": [
+   "api-development/lambdatest-agent-skills--api-designer",
+   "api-development/lambdatest-agent-skills--api-documentation",
+   "api-development/lambdatest-agent-skills--api-analyzer"
+  ]
+ },
+ {
+  "id": "vq-03",
+  "category": "api-development",
+  "query": "我們最近要調整對外的 API 規格，想先請你幫忙看一下怎麼處理比較好。\n最想先處理版本與向下相容策略，並希望有本地模擬測試設定方便客戶端驗證。",
+  "expected": [
+   "api-development/lambdatest-agent-skills--api-versioning-helper",
+   "api-development/lambdatest-agent-skills--api-mock-helper"
+  ],
+  "near_misses": [
+   "api-development/lambdatest-agent-skills--api-documentation",
+   "api-development/lambdatest-agent-skills--api-designer"
+  ]
+ },
+ {
+  "id": "vq-04",
+  "category": "api-development",
+  "query": "手邊有幾份 OpenAPI 的東西還沒整理好，前端跟維運都在等，能協助嗎？\n優先給前端模擬資料來開發，同時幫維運定好標準化的健康檢查與監控契約。",
+  "expected": [
+   "api-development/lambdatest-agent-skills--api-mock-helper",
+   "api-development/lambdatest-agent-skills--api-health-monitoring"
+  ],
+  "near_misses": [
+   "api-development/lambdatest-agent-skills--openapi-spec-generator",
+   "api-development/lambdatest-agent-skills--api-documentation"
+  ]
+ },
+ {
+  "id": "vq-05",
+  "category": "frontend-design",
+  "query": "Our web app UI feels outdated and clunky—can you help us improve the frontend design?\nA fuller screen redesign of our analytics dashboard with updated HTML/CSS and cleaner spacing hierarchy.",
+  "expected": [
+   "frontend-design/mobbin-skills--redesign-screen",
+   "frontend-design/ibelick-ui-skills--baseline-ui"
+  ],
+  "near_misses": [
+   "frontend-design/ibelick-ui-skills--improve-ui",
+   "frontend-design/raintree-hig-doctor--hig-components-layout",
+   "frontend-design/raintree-hig-doctor--hig-foundations"
+  ]
+ },
+ {
+  "id": "vq-06",
+  "category": "frontend-design",
+  "query": "We're building a new interface for our product and want it to look consistent across screens.\nIt's a cross-platform web product, and we mainly need shared visual foundations like typography, color tokens, and states.",
+  "expected": [
+   "frontend-design/ibelick-ui-skills--create-design-md",
+   "frontend-design/raintree-hig-doctor--hig-foundations"
+  ],
+  "near_misses": [
+   "frontend-design/ibelick-ui-skills--baseline-ui",
+   "frontend-design/ibelick-ui-skills--improve-ui",
+   "frontend-design/raintree-hig-doctor--hig-components-menus"
+  ]
+ },
+ {
+  "id": "vq-07",
+  "category": "frontend-design",
+  "query": "我們網站的前端畫面在手機跟暗黑模式下好像有點怪怪的，可以幫我調整嗎？",
+  "expected": [
+   "frontend-design/raintree-hig-doctor--hig-foundations",
+   "frontend-design/ibelick-ui-skills--fixing-accessibility",
+   "frontend-design/raintree-hig-doctor--hig-doctor-audit"
+  ],
+  "near_misses": [
+   "frontend-design/ibelick-ui-skills--create-design-md",
+   "frontend-design/ibelick-ui-skills--baseline-ui",
+   "frontend-design/ibelick-ui-skills--improve-ui"
+  ]
+ },
+ {
+  "id": "vq-08",
+  "category": "frontend-design",
+  "query": "我正在做一個新的桌面端產品介面設計，有一些版面與元件的問題想請你幫忙。\n想優先處理整體版面與導覽架構，並讓元件符合原生規範且支援鍵盤操作。",
+  "expected": [
+   "frontend-design/raintree-hig-doctor--hig-platforms",
+   "frontend-design/raintree-hig-doctor--hig-foundations",
+   "frontend-design/raintree-hig-doctor--hig-components-layout"
+  ],
+  "near_misses": [
+   "frontend-design/raintree-hig-doctor--hig-components-controls",
+   "frontend-design/raintree-hig-doctor--hig-inputs",
+   "frontend-design/raintree-hig-doctor--hig-doctor-audit"
+  ]
+ },
+ {
+  "id": "vq-09",
+  "category": "seo",
+  "query": "Our site's search traffic hasn't been great lately—can you take a look at our SEO?",
+  "expected": [
+   "seo/illyism-seo-skills--seo-roast",
+   "seo/illyism-seo-skills--seo-autopilot"
+  ],
+  "near_misses": [
+   "seo/illyism-seo-skills--internal-linking",
+   "seo/illyism-seo-skills--block-ai-scrapers",
+   "seo/illyism-seo-skills--seo-title-optimization"
+  ]
+ },
+ {
+  "id": "vq-10",
+  "category": "seo",
+  "query": "We want more organic visibility for our product pages and blog, where should we start?",
+  "expected": [
+   "seo/illyism-seo-skills--seo-roast",
+   "seo/illyism-seo-skills--seo-title-optimization",
+   "seo/illyism-seo-skills--seo-autopilot"
+  ],
+  "near_misses": [
+   "seo/illyism-seo-skills--dataforseo-serp",
+   "seo/illyism-seo-skills--blog-refresher",
+   "seo/illyism-seo-skills--vs-and-alternatives"
+  ]
+ },
+ {
+  "id": "vq-11",
+  "category": "seo",
+  "query": "我們網站最近要調整架構跟網址，很怕搜尋排名掉下來，可以幫忙規劃嗎？",
+  "expected": [
+   "seo/illyism-seo-skills--domain-migration"
+  ],
+  "near_misses": [
+   "seo/illyism-seo-skills--seo-roast",
+   "seo/illyism-seo-skills--seo-autopilot"
+  ]
+ },
+ {
+  "id": "vq-12",
+  "category": "seo",
+  "query": "手上有一些關鍵字和競爭對手的資料，想優化一下網站內容跟連結結構。\n想先從分析競爭對手搜尋缺口開始，再規劃主題群的站內連結與既有文章翻新。",
+  "expected": [
+   "seo/illyism-seo-skills--dataforseo-serp",
+   "seo/illyism-seo-skills--internal-linking",
+   "seo/illyism-seo-skills--blog-refresher",
+   "seo/illyism-seo-skills--ahrefs-research",
+   "seo/illyism-seo-skills--blitz-seo"
+  ],
+  "near_misses": [
+   "seo/illyism-seo-skills--proof-kb",
+   "seo/illyism-seo-skills--seo-title-optimization"
+  ]
+ },
+ {
+  "id": "vq-13",
+  "category": "social-media-publishing",
+  "query": "We have some launch announcements and media ready—can you help us handle social media publishing?",
+  "expected": [
+   "social-media-publishing/gitroomhq-postiz-agent--postiz",
+   "social-media-publishing/upload-post-upload-post-skill--upload-post"
+  ],
+  "near_misses": [
+   "social-media-publishing/dreammis-social-auto-upload--social-auto-upload",
+   "social-media-publishing/dreammis-social-auto-upload--instagram-upload"
+  ]
+ },
+ {
+  "id": "vq-14",
+  "category": "social-media-publishing",
+  "query": "Our team keeps running into headaches when posting across multiple social channels each week.\nWe post to X, LinkedIn, Bluesky, and YouTube, and need a full workflow with pre-flight checks and confirmation.",
+  "expected": [
+   "social-media-publishing/upload-post-upload-post-skill--upload-post",
+   "social-media-publishing/gitroomhq-postiz-agent--postiz",
+   "social-media-publishing/dreammis-social-auto-upload--social-auto-upload"
+  ],
+  "near_misses": [
+   "social-media-publishing/dreammis-social-auto-upload--youtube-upload",
+   "social-media-publishing/dreammis-social-auto-upload--bilibili-upload"
+  ]
+ },
+ {
+  "id": "vq-15",
+  "category": "social-media-publishing",
+  "query": "我寫好了一些內容也準備了圖片跟影片，想安排發到幾個社群平台上，該怎麼弄？",
+  "expected": [
+   "social-media-publishing/gitroomhq-postiz-agent--postiz",
+   "social-media-publishing/upload-post-upload-post-skill--upload-post"
+  ],
+  "near_misses": [
+   "social-media-publishing/dreammis-social-auto-upload--zhihu-upload",
+   "social-media-publishing/dreammis-social-auto-upload--youtube-upload",
+   "social-media-publishing/dreammis-social-auto-upload--social-auto-upload"
+  ]
+ },
+ {
+  "id": "vq-16",
+  "category": "social-media-publishing",
+  "query": "最近社群排程常漏發或搞錯帳號公開權限，想請你幫我整理一下發布流程。\n主要發圖文與短片到 IG、X、FB 和 LinkedIn，最想先處理發文前帳號權限檢查。",
+  "expected": [
+   "social-media-publishing/dreammis-social-auto-upload--social-auto-upload",
+   "social-media-publishing/gitroomhq-postiz-agent--postiz",
+   "social-media-publishing/upload-post-upload-post-skill--upload-post"
+  ],
+  "near_misses": [
+   "social-media-publishing/dreammis-social-auto-upload--meta-upload",
+   "social-media-publishing/dreammis-social-auto-upload--tencent-upload",
+   "social-media-publishing/dreammis-social-auto-upload--dayu-upload"
+  ]
+ },
+ {
+  "id": "vq-17",
+  "category": "test-automation",
+  "query": "Our automated test suite is giving us a lot of trouble in CI—can you help fix it?\nWe're running Playwright for our checkout E2E tests, and we have the CI failure logs ready to share.",
+  "expected": [
+   "test-automation/lambdatest-agent-skills--playwright-skill",
+   "test-automation/lambdatest-agent-skills--cypress-skill",
+   "test-automation/lambdatest-agent-skills--selenium-skill"
+  ],
+  "near_misses": [
+   "test-automation/lambdatest-agent-skills--webdriverio-skill",
+   "test-automation/lambdatest-agent-skills--appium-skill"
+  ]
+ },
+ {
+  "id": "vq-18",
+  "category": "test-automation",
+  "query": "We need to set up test automation for our app, including browser and mobile coverage.\nWe need coverage for both mobile browsers and a React Native app, with no fixed framework preference yet.",
+  "expected": [
+   "test-automation/lambdatest-agent-skills--playwright-skill",
+   "test-automation/lambdatest-agent-skills--selenium-skill",
+   "test-automation/lambdatest-agent-skills--appium-skill",
+   "test-automation/lambdatest-agent-skills--cypress-skill"
+  ],
+  "near_misses": [
+   "test-automation/lambdatest-agent-skills--webdriverio-skill",
+   "test-automation/lambdatest-agent-skills--testng-skill",
+   "test-automation/lambdatest-agent-skills--karma-skill"
+  ]
+ },
+ {
+  "id": "vq-19",
+  "category": "test-automation",
+  "query": "我們想把舊的自動化測試整理一下，順便補齊關鍵流程的測試保護，可以怎麼做？\n舊測試是用同步式的 Robot Framework 寫的，關鍵流程主要是網頁的登入跟結帳。",
+  "expected": [
+   "test-automation/lambdatest-agent-skills--playwright-skill",
+   "test-automation/lambdatest-agent-skills--selenium-skill"
+  ],
+  "near_misses": [
+   "test-automation/lambdatest-agent-skills--webdriverio-skill",
+   "test-automation/lambdatest-agent-skills--cypress-skill"
+  ]
+ },
+ {
+  "id": "vq-20",
+  "category": "test-automation",
+  "query": "目前的測試跑起來很慢又常莫名其妙紅燈，想請你協助重構測試架構。\n目前主要是用 Playwright 測網頁流程，想重構測試裝置並加上平行分片與錯誤蒐集。",
+  "expected": [
+   "test-automation/lambdatest-agent-skills--playwright-skill",
+   "test-automation/lambdatest-agent-skills--cypress-skill",
+   "test-automation/lambdatest-agent-skills--selenium-skill"
+  ],
+  "near_misses": [
+   "test-automation/lambdatest-agent-skills--webdriverio-skill",
+   "test-automation/lambdatest-agent-skills--testng-skill"
+  ]
+ }
+]

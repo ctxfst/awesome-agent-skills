@@ -1,0 +1,142 @@
+[
+ {
+  "id": "vq-01",
+  "query": "I have a bunch of API files from our backend team and need help getting them ready for our partners.",
+  "true_intent": "Convert an exported internal API endpoint collection into a clean OpenAPI 3.1 YAML specification and partner-facing developer guide with request/response examples.",
+  "targeted_question": "Which result do you need for your partners: (1) an endpoint list inferred from the files, (2) a detailed API design, (3) partner-facing documentation, (4) a client SDK, or (5) API test cases?",
+  "generic_question": "Could you tell me more about what you need?"
+ },
+ {
+  "id": "vq-02",
+  "query": "Our REST API has been growing fast and things are starting to feel messy—can you help me sort it out?",
+  "true_intent": "Audit existing endpoint definitions for naming, pagination, error-schema, and versioning inconsistencies, and produce an API style-lint report plus a v2 deprecation plan.",
+  "targeted_question": "Which kind of cleanup do you mean: (1) inventory and redesign the endpoints, (2) plan versions and deprecation, (3) produce documentation, or (4) design integrations between services?",
+  "generic_question": "Could you tell me more about what you need?"
+ },
+ {
+  "id": "vq-03",
+  "query": "我們最近要調整對外的 API 規格，想先請你幫忙看一下怎麼處理比較好。",
+  "true_intent": "Design a backwards-compatible v1-to-v2 API versioning and Sunset header migration specification along with a local mock server config for client testing.",
+  "targeted_question": "你希望這次調整交出哪種成果：(1) 版本與相容性策略及遷移指南，(2) 重新設計端點規格，(3) 完整的 API 文件，還是 (4) 監控與告警設計？",
+  "generic_question": "可以多說一點你需要什麼嗎？"
+ },
+ {
+  "id": "vq-04",
+  "query": "手邊有幾份 OpenAPI 的東西還沒整理好，前端跟維運都在等，能協助嗎？",
+  "true_intent": "Generate realistic mock fixture payloads for blocked frontend screens and a standardized `/health` and `/ready` monitoring contract from the draft OpenAPI file.",
+  "targeted_question": "前端跟維運等待的交付物是哪一種：(1) 可驗證的 OpenAPI 規格，(2) 可讀的 API 文件，(3) 測試案例，還是 (4) 呼叫 API 的 SDK？",
+  "generic_question": "可以多說一點你需要什麼嗎？"
+ },
+ {
+  "id": "vq-05",
+  "query": "Our web app UI feels outdated and clunky—can you help us improve the frontend design?",
+  "true_intent": "Redesign the main analytics dashboard layout from existing screenshots and output updated HTML/CSS with a clear visual hierarchy and spacing tokens.",
+  "targeted_question": "Which outcome do you want: (1) a quick cleanup of the UI code, (2) a read-only audit and implementation plan, or (3) a reference-backed redesign with before-and-after images?",
+  "generic_question": "Could you tell me more about what you need?"
+ },
+ {
+  "id": "vq-06",
+  "query": "We're building a new interface for our product and want it to look consistent across screens.",
+  "true_intent": "Consolidate existing UI components into a unified design-system specification with typography scale, semantic light/dark color tokens, and interactive state rules.",
+  "targeted_question": "Which kind of help are you looking for: (1) platform-specific design guidance, (2) shared design and interaction principles, or (3) hands-on changes to an existing screen or UI codebase?",
+  "generic_question": "Could you tell me more about what you need?"
+ },
+ {
+  "id": "vq-07",
+  "query": "我們網站的前端畫面在手機跟暗黑模式下好像有點怪怪的，可以幫我調整嗎？",
+  "true_intent": "Audit the responsive mobile layout and dark-mode contrast from provided code and screenshots, delivering patched CSS variables and accessible component fixes.",
+  "targeted_question": "你目前手上的材料是可修改的頁面程式碼、手機與暗黑模式的截圖，還是兩者都有？",
+  "generic_question": "可以多說一點你需要什麼嗎？"
+ },
+ {
+  "id": "vq-08",
+  "query": "我正在做一個新的桌面端產品介面設計，有一些版面與元件的問題想請你幫忙。",
+  "true_intent": "Produce a platform-native desktop UI layout specification and accessible keyboard-navigable component structure following native human interface guidelines.",
+  "targeted_question": "這個桌面端產品是 macOS、Windows，還是網頁應用？",
+  "generic_question": "可以多說一點你需要什麼嗎？"
+ },
+ {
+  "id": "vq-09",
+  "query": "Our site's search traffic hasn't been great lately—can you take a look at our SEO?",
+  "true_intent": "Analyze the site's crawl export and ranking CSV to produce a prioritized technical SEO fix plan addressing unindexed key pages, canonical issues, and parameterized URLs.",
+  "targeted_question": null,
+  "generic_question": "Could you tell me more about what you need?"
+ },
+ {
+  "id": "vq-10",
+  "query": "We want more organic visibility for our product pages and blog, where should we start?",
+  "true_intent": "Build a revenue-oriented SEO roadmap that rewrites underperforming landing-page title tags/meta descriptions and adds structured Schema.org markup for search and AI answers.",
+  "targeted_question": "Where do you want to start: (1) a whole-site SEO audit, (2) refreshing existing blog posts, (3) a focused sprint for one product page, or (4) improving internal links from blog content to product pages?",
+  "generic_question": "Could you tell me more about what you need?"
+ },
+ {
+  "id": "vq-11",
+  "query": "我們網站最近要調整架構跟網址，很怕搜尋排名掉下來，可以幫忙規劃嗎？",
+  "true_intent": "Create a zero-traffic-loss domain and URL migration checklist with 301 redirect mapping rules and post-launch indexation monitoring steps.",
+  "targeted_question": null,
+  "generic_question": "可以多說一點你需要什麼嗎？"
+ },
+ {
+  "id": "vq-12",
+  "query": "手上有一些關鍵字和競爭對手的資料，想優化一下網站內容跟連結結構。",
+  "true_intent": "Design a topic-cluster internal linking blueprint and content-refresh template based on competitor SERP gaps to lift bottom-of-funnel pages to page one.",
+  "targeted_question": "你想優先得到哪種成果：(1) 競品比較頁，(2) 更新既有文章，(3) 關鍵字群與內容地圖，還是 (4) 內部連結調整與前後對照表？",
+  "generic_question": "可以多說一點你需要什麼嗎？"
+ },
+ {
+  "id": "vq-13",
+  "query": "We have some launch announcements and media ready—can you help us handle social media publishing?",
+  "true_intent": "Adapt launch copy and media attachments into platform-specific post variants across three channels, generate a scheduled publishing queue payload, and verify live post URLs.",
+  "targeted_question": "Which social media platforms do you want these announcements published to?",
+  "generic_question": "Could you tell me more about what you need?"
+ },
+ {
+  "id": "vq-14",
+  "query": "Our team keeps running into headaches when posting across multiple social channels each week.",
+  "true_intent": "Design an automated multi-platform publishing queue workflow with pre-flight media/character checks, account-session validation, and post-publish visibility confirmation.",
+  "targeted_question": "Which social channels must your weekly publishing workflow support?",
+  "generic_question": "Could you tell me more about what you need?"
+ },
+ {
+  "id": "vq-15",
+  "query": "我寫好了一些內容也準備了圖片跟影片，想安排發到幾個社群平台上，該怎麼弄？",
+  "true_intent": "Format a long-form article and short-form video assets to meet each target platform's media ratios and character limits, schedule them as drafts, and confirm publication.",
+  "targeted_question": "你想把這些內容發布到哪些社群平台？",
+  "generic_question": "可以多說一點你需要什麼嗎？"
+ },
+ {
+  "id": "vq-16",
+  "query": "最近社群排程常漏發或搞錯帳號公開權限，想請你幫我整理一下發布流程。",
+  "true_intent": "Build a pre-publish account-selection and visibility guardrail checklist plus an exception-recovery workflow for expired sessions or failed media uploads.",
+  "targeted_question": "這個發布流程需要涵蓋哪些社群平台？",
+  "generic_question": "可以多說一點你需要什麼嗎？"
+ },
+ {
+  "id": "vq-17",
+  "query": "Our automated test suite is giving us a lot of trouble in CI—can you help fix it?",
+  "true_intent": "Diagnose flaky end-to-end checkout tests failing on timeouts and detached elements, and rewrite them using deterministic waits, isolated fixtures, and resilient locators.",
+  "targeted_question": "Which result would help first: (1) an analysis of existing failure reports, (2) repairs to flaky browser tests, (3) new tests in your current framework, or (4) CI automation for the existing suite?",
+  "generic_question": "Could you tell me more about what you need?"
+ },
+ {
+  "id": "vq-18",
+  "query": "We need to set up test automation for our app, including browser and mobile coverage.",
+  "true_intent": "Evaluate and recommend a test-automation framework stack, project directory structure, and local-vs-cloud cross-browser and mobile execution matrix.",
+  "targeted_question": "Is the mobile target a native iOS or Android app, a React Native app, or a mobile web app?",
+  "generic_question": "Could you tell me more about what you need?"
+ },
+ {
+  "id": "vq-19",
+  "query": "我們想把舊的自動化測試整理一下，順便補齊關鍵流程的測試保護，可以怎麼做？",
+  "true_intent": "Produce a phased migration guide from legacy synchronous browser tests to a modern auto-waiting suite and convert core login and checkout flows.",
+  "targeted_question": "這些舊測試目前使用哪個程式語言與測試框架？",
+  "generic_question": "可以多說一點你需要什麼嗎？"
+ },
+ {
+  "id": "vq-20",
+  "query": "目前的測試跑起來很慢又常莫名其妙紅燈，想請你協助重構測試架構。",
+  "true_intent": "Refactor duplicated test helpers and hardcoded sleeps into composable fixtures, parallel CI sharding configuration, and diagnostic failure artifact collection.",
+  "targeted_question": "你想先取得哪種成果：(1) 現有失敗與慢點的分析報告，(2) 測試執行器與平行化設定調整，還是 (3) 依目前框架重寫關鍵測試？",
+  "generic_question": "可以多說一點你需要什麼嗎？"
+ }
+]

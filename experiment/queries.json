@@ -1,0 +1,377 @@
+[
+  {
+    "id": "api-01",
+    "category": "api-development",
+    "query": "We have an unorganized JSON collection of 40 internal billing endpoints exported from our old API client, and new hires keep breaking integrations because field types are undocumented. Convert this collection into a clean OpenAPI 3.1 YAML spec with request/response examples and strict error schemas, without inventing fields that aren't in the export."
+  },
+  {
+    "id": "api-02",
+    "category": "api-development",
+    "query": "我們正在設計一套多租戶訂單系統的 REST API，需要把目前的草稿端點重構為符合資源導向設計的規格，包含分頁、冪等鍵（Idempotency-Key）與統一的錯誤格式，產出一份可直接給後端與前端對齊的 API 設計規範文件（Markdown + JSON 範例）。"
+  },
+  {
+    "id": "api-03",
+    "category": "api-development",
+    "query": "Our mobile team is blocked waiting on the backend for three new checkout endpoints. Given the attached OpenAPI draft, generate a local mock server configuration and realistic fixture payloads—including rate-limit 429 and validation 422 cases—so the frontend can build against realistic behavior right away."
+  },
+  {
+    "id": "api-04",
+    "category": "api-development",
+    "query": "我們要把公開 API 從 v1 升級到 v2，部分回傳欄位要改名而且分頁結構從 offset 改成 cursor。請幫我整理一份無痛版本遷移計畫與棄用公告（含 Deprecation / Sunset header 設計與相容層規則），確保舊版合作夥伴至少有 90 天緩衝期。"
+  },
+  {
+    "id": "api-05",
+    "category": "api-development",
+    "query": "Audit these 12 partner-facing webhook and REST endpoint definitions against our internal compliance checklist (PII masking in logs, TLS-only callbacks, HMAC signature headers, and audit trail fields). Deliver a prioritized remediation table and patched OpenAPI snippets for every gap."
+  },
+  {
+    "id": "api-06",
+    "category": "api-development",
+    "query": "我們有一份完整的 OpenAPI 規格檔，想幫外部開發者產生一套輕量級的 TypeScript 與 Python SDK 包裝設計，要求支援自動重試、指數退避與明確的型別錯誤類別，請產出 SDK 介面架構與核心程式碼骨架。"
+  },
+  {
+    "id": "api-07",
+    "category": "api-development",
+    "query": "Our public search endpoint keeps getting hammered by misbehaving scrapers while paying customers hit unexpected timeouts. Design a tiered rate-limiting and quota policy (token bucket headers, burst allowances, and Retry-After semantics) and produce the gateway policy spec plus client-facing usage-limit documentation."
+  },
+  {
+    "id": "api-08",
+    "category": "api-development",
+    "query": "公司目前只有散落在程式碼註解裡的端點說明，沒有統一的 API 監控與健康檢查標準。請根據這份微服務清單，設計一套 `/health` 與 `/ready` 回應契約以及延遲/錯誤率探針設定檔，方便維運團隊即時掌握依賴服務狀態。"
+  },
+  {
+    "id": "api-09",
+    "category": "api-development",
+    "query": "I need to integrate our inventory service with a third-party logistics webhook that sends nested XML payloads and occasional duplicate events. Write an integration mapping spec and idempotent ingestion handler contract in JSON/TypeScript, detailing signature verification and dead-letter retry rules."
+  },
+  {
+    "id": "api-10",
+    "category": "api-development",
+    "query": "我們已經寫好 OpenAPI 規格，但產品團隊希望有一份給非技術合作夥伴也能看懂的互動式 API 開發者指南與教學文件（含認證流程圖與常見錯誤排除），同時保持跟原始 YAML 完全同步，不能出現文件與實作脫節。"
+  },
+  {
+    "id": "api-11",
+    "category": "api-development",
+    "query": "Take our legacy SOAP/RPC XML service definitions for customer verification and translate them into clean RESTful resource endpoints with an OpenAPI specification and a field-by-field mapping table so downstream teams can migrate incrementally."
+  },
+  {
+    "id": "api-12",
+    "category": "api-development",
+    "query": "我們想為現有的分析查詢 API 加上非同步任務輪詢機制（202 Accepted + Location header + 任務狀態資源），因為部分報表需要 20 秒以上才能算完。請產出完整的狀態機設計與 OpenAPI 端點定義，限制不能破壞現有同步查詢呼叫。"
+  },
+  {
+    "id": "api-13",
+    "category": "api-development",
+    "query": "Review these sample request/response captures from production and flag inconsistencies in naming conventions, nullable vs. omitted fields, date formats, and HTTP status codes. Output a concise API style-lint report and corrected JSON schemas."
+  },
+  {
+    "id": "api-14",
+    "category": "api-development",
+    "query": "針對我們即將上線的開放平台 API，需要建立一套自動化契約驗證與回歸測試計畫（確保每次改版不會不小心移除必填欄位或改變狀態碼），請產出可整合進 CI 的驗證清單與測試案例規格。"
+  },
+  {
+    "id": "api-15",
+    "category": "api-development",
+    "query": "We're bundling our API reference, mock fixtures, and quickstart curl recipes into a single developer onboarding pack. Produce a structured documentation outline and runnable sample requests covering OAuth client credentials, pagination, and webhook verification."
+  },
+  {
+    "id": "fe-01",
+    "category": "frontend-design",
+    "query": "Here are three screenshots of our current B2B analytics dashboard—users complain the filters feel cramped on 13-inch laptops and the KPI cards look identical in visual weight. Redesign the layout hierarchy and produce updated HTML/CSS and component structure with clear spacing tokens."
+  },
+  {
+    "id": "fe-02",
+    "category": "frontend-design",
+    "query": "我們正在開發一款原生桌面端筆記與待辦應用程式，希望介面完全貼合該桌面作業系統的原生人機介面設計規範（工具列、側邊欄毛玻璃層次、快速鍵提示與表單控制項間距）。請產出一份詳細的 UI 規格與元件佈局指南。"
+  },
+  {
+    "id": "fe-03",
+    "category": "frontend-design",
+    "query": "Audit our existing checkout form code for WCAG AA accessibility, keyboard-only navigation, focus ring visibility, and screen-reader announcements on inline validation errors. Return an annotated issue list and patched component markup."
+  },
+  {
+    "id": "fe-04",
+    "category": "frontend-design",
+    "query": "我們網站的暗黑模式（Dark Mode）目前只是把背景硬轉成純黑、文字轉成純白，看久了很刺眼，而且圖表顏色在深色背景下對比不足。請幫我們重新設計語意化的色彩 Token（包含表面層級、邊框與狀態色）並附上 CSS 變數檔案。"
+  },
+  {
+    "id": "fe-05",
+    "category": "frontend-design",
+    "query": "We have six product squads building slightly different buttons, modals, and data tables. Consolidate the attached component inventory into a unified design-system specification with strict typography scale, spacing rhythm, and state matrix (hover, active, disabled, loading)."
+  },
+  {
+    "id": "fe-06",
+    "category": "frontend-design",
+    "query": "想把我們的電商商品列表頁從桌機三欄改造成真正好用的行動端優先（Mobile-First）介面，要解決手機上篩選抽屜難滑動、圖片載入跳動（CLS）以及拇指操作區過遠的問題，請提供響應式佈局藍圖與關鍵 CSS 實作。"
+  },
+  {
+    "id": "fe-07",
+    "category": "frontend-design",
+    "query": "Design a calm, editorial reading and annotation workspace from scratch for long-form legal documents. Focus on typographic hierarchy, line length, sticky margin notes, and subtle micro-interactions that respect reduced-motion preferences; output a working interactive prototype."
+  },
+  {
+    "id": "fe-08",
+    "category": "frontend-design",
+    "query": "我們的主頁 Hero 區塊與卡片切換動畫目前在低階手機上會掉幀，而且沒有考慮使用者的「減少動態效果」系統設定。請幫我重構這組微互動與轉場動畫規範，改用效能友善的屬性並產出可替換的 CSS/JS 動畫模組。"
+  },
+  {
+    "id": "fe-09",
+    "category": "frontend-design",
+    "query": "Compare these desktop and mobile screenshots of our onboarding wizard against our brand typography and spacing guidelines. Write a visual QA discrepancy report highlighting misalignment, truncated labels, and contrast failures, with exact CSS fixes."
+  },
+  {
+    "id": "fe-10",
+    "category": "frontend-design",
+    "query": "我們要把現有的後台設定頁改造成更直覺的分區表單與即時預覽介面，同時確保每個元件的狀態切換與錯誤提示都能輕鬆被瀏覽器自動化測試定位與驗證。請產出重新設計後的元件規格與語意化 HTML 結構。"
+  },
+  {
+    "id": "fe-11",
+    "category": "frontend-design",
+    "query": "Create a responsive multi-step pricing and plan-comparison interface that clearly differentiates three tiers without relying on noisy badges or deceptive dark patterns. Deliver a self-contained HTML/CSS/JS component with accessible comparison table behavior on small screens."
+  },
+  {
+    "id": "fe-12",
+    "category": "frontend-design",
+    "query": "我們打算在行銷登陸頁（Landing Page）加上即時的 API 請求預覽與互動式文件區塊，但希望維持雜誌級的排版美感與一致的設計系統。請設計這個區塊的版面配置、字體階級與互動狀態規格。"
+  },
+  {
+    "id": "fe-13",
+    "category": "frontend-design",
+    "query": "Our tablet and mobile app shares a codebase, and touch targets in the dense inventory table are way too small while desktop users still want high information density. Propose an adaptive component pattern and responsive token rules so both form factors feel intentional."
+  },
+  {
+    "id": "fe-14",
+    "category": "frontend-design",
+    "query": "針對我們目前充滿預設樣式的內部管理後台，請根據這份頁面截圖進行全面視覺翻新設計，重點放在資訊密度控制、表格可讀性、空白狀態（Empty State）插畫/文案配置與一致的按鈕層級，輸出設計改造方案與基礎樣式表。"
+  },
+  {
+    "id": "fe-15",
+    "category": "frontend-design",
+    "query": "Build a clean, distraction-free command palette and keyboard shortcut overlay for our web IDE. Specify focus-trap behavior, ARIA roles, highlight states, and motion timing, and provide the ready-to-wire frontend component code."
+  },
+  {
+    "id": "seo-01",
+    "category": "seo",
+    "query": "Our organic traffic dropped 35% after last month's site restructure, and our crawl logs show thousands of parameterized URLs getting indexed while key product pages sit unindexed. Run a technical SEO diagnosis from the attached crawl export and produce a prioritized fix plan (robots, canonicals, sitemaps)."
+  },
+  {
+    "id": "seo-02",
+    "category": "seo",
+    "query": "我們即將把三個舊網域合併到單一主網域，同時 URL 結構也會全面改寫。請幫我規劃一份零流量流失的網域遷移（Domain Migration）檢核表與 301 重新導向對應規則設計，包含上線前後的索引監控步驟。"
+  },
+  {
+    "id": "seo-03",
+    "category": "seo",
+    "query": "Here is a spreadsheet of our top 50 landing pages with high impressions but low click-through rates. Rewrite their title tags and meta descriptions to improve SERP relevance and click intent without keyword stuffing, and explain the prioritization rationale."
+  },
+  {
+    "id": "seo-04",
+    "category": "seo",
+    "query": "我們部落格有上百篇兩年前寫的教學文章，最近排名一直被競爭對手超越。請建立一套內容翻新（Content Refresh）與內部連結優化流程，幫我找出最值得優先更新、整併或設定轉址的文章類型與改寫範本。"
+  },
+  {
+    "id": "seo-05",
+    "category": "seo",
+    "query": "Analyze these SERP snapshots and competitor page outlines for ten commercial-intent SaaS keywords. Identify content gaps, search-intent shifts, and a structured topic-cluster blueprint that prioritizes pages closest to pipeline and revenue."
+  },
+  {
+    "id": "seo-06",
+    "category": "seo",
+    "query": "除了傳統搜尋排名外，我們發現潛在客戶越來越常透過 AI 問答與摘要工具尋找解決方案，但品牌很少被引用。請評估我們現有的產品與比較頁面結構，提出提升 AI 搜尋能見度與結構化資料（Schema.org JSON-LD）的改造方案。"
+  },
+  {
+    "id": "seo-07",
+    "category": "seo",
+    "query": "Our marketing team keeps asking for more top-of-funnel blog posts, but leadership wants SEO work tied directly to qualified signups. Given our page conversion and keyword ranking CSV, build a revenue-first SEO roadmap ranking the highest-ROI fixes and bottom-of-funnel pages."
+  },
+  {
+    "id": "seo-08",
+    "category": "seo",
+    "query": "我們新上線的電子商務網站有兩萬個商品頁面，但目前孤島頁面（Orphan Pages）很多、麵包屑導覽不一致，導致深層商品很難被爬蟲抓到。請設計一套可擴展的內部連結架構與結構化標記規則，讓權重能有效流向核心分類頁。"
+  },
+  {
+    "id": "seo-09",
+    "category": "seo",
+    "query": "We have strong on-page content in a competitive B2B niche, yet we consistently lose page-one spots to domains with higher authority. Design an ethical authority-building and digital PR outreach plan—target linkable assets, prospect criteria, and outreach email templates."
+  },
+  {
+    "id": "seo-10",
+    "category": "seo",
+    "query": "這份網站體檢匯出報告顯示有大量重複標題、失效外部連結、圖片缺少 alt 屬性以及核心網頁指標（Core Web Vitals）過慢的問題。請幫我把這些問題依對抓取與排名的實際影響力分級，產出一份跨工程與編輯團隊的執行清單。"
+  },
+  {
+    "id": "seo-11",
+    "category": "seo",
+    "query": "Audit our documentation hub and marketing pages for structured content quality—headings hierarchy, FAQ markup, comparison tables, and entity clarity—so both traditional search crawlers and generative answer engines can parse our product capabilities accurately."
+  },
+  {
+    "id": "seo-12",
+    "category": "seo",
+    "query": "我們想為即將發布的大型產業年度報告設計一套完整的上線策略：一方面要最大化網站搜尋排名與自然外部連結取得，另一方面也想順便拆成適合社群平台連載的精簡觀點。請產出以 SEO 權威與結構化頁面為核心的發布藍圖。"
+  },
+  {
+    "id": "seo-13",
+    "category": "seo",
+    "query": "Our multi-language site (English, Traditional Chinese, and Japanese) is suffering from wrong-region pages ranking in local search results. Review our URL and hreflang setup and produce a corrected hreflang mapping specification plus validation checklist."
+  },
+  {
+    "id": "seo-14",
+    "category": "seo",
+    "query": "檢視我們這五個主打產品落地頁（Landing Pages）的現有文案與 HTML 標記，為什麼明明針對高轉換關鍵字卻一直卡在第二頁？請從搜尋意圖匹配、頁面結構化元素、內部錨點文字與頁面體驗給出具體修改稿。"
+  },
+  {
+    "id": "seo-15",
+    "category": "seo",
+    "query": "We're launching a programmatic glossary of 300 technical terms and want to avoid thin-content penalties. Define the minimum content standard, internal cross-linking rules, schema template, and indexation gating criteria before we publish."
+  },
+  {
+    "id": "smp-01",
+    "category": "social-media-publishing",
+    "query": "We have a product launch announcement, a 45-second vertical demo video, and four high-res screenshots ready in a folder. Prepare and schedule a coordinated multi-platform rollout across our short-text feed, visual carousel network, and professional network—adapting copy length, aspect ratios, and alt text—and define how we verify every post actually went live."
+  },
+  {
+    "id": "smp-02",
+    "category": "social-media-publishing",
+    "query": "我寫好了一篇 2,500 字的深度技術長文（Markdown 格式，附三張架構圖），想同時發到專業長文專欄平台，並拆成五則串文發到即時短訊社群平台。請幫我處理各平台的格式限制、圖片附件規格與排程佇列設定，並列出發布後的確認檢查步驟。"
+  },
+  {
+    "id": "smp-03",
+    "category": "social-media-publishing",
+    "query": "Our last automated release thread silently failed halfway through because an account session expired and one image exceeded the platform's file-size cap. Design a resilient publishing queue workflow with pre-flight media/character validation, session health checks, and post-publish URL verification."
+  },
+  {
+    "id": "smp-04",
+    "category": "social-media-publishing",
+    "query": "我們團隊管理三個品牌帳號（主品牌、開發者帳號、創辦人個人帳號），常發生發錯帳號或誤把內部測試貼文設成公開的窘境。請設計一套發文前帳號切換與可見度（公開／僅限追蹤者／草稿）防呆流程與發布確認單。"
+  },
+  {
+    "id": "smp-05",
+    "category": "social-media-publishing",
+    "query": "Schedule next week's batch of 12 educational tips (mix of single-image cards, short clips, and link posts) into optimal time slots across two time zones without colliding with our major webinar announcement. Output the structured publishing calendar payload and collision-check rules."
+  },
+  {
+    "id": "smp-06",
+    "category": "social-media-publishing",
+    "query": "我們要在一支短影音社群平台上傳一支 90 秒的產品教學影片，需要符合直式比例、封面縮圖、字幕檔、主題標籤數量上限與版權音樂檢查，並在正式公開前先發為「不公開／僅限連結」給內部審核。請產出完整的上架設定與驗收清單。"
+  },
+  {
+    "id": "smp-07",
+    "category": "social-media-publishing",
+    "query": "We need to publish a sensitive security advisory simultaneously across our status channel and two social feeds, first as staged drafts for legal sign-off and then flipped to public within 60 seconds of approval. Specify the draft-to-publish state workflow and live-confirmation checks."
+  },
+  {
+    "id": "smp-08",
+    "category": "social-media-publishing",
+    "query": "這組活動海報原圖是 16:9 的橫式設計，但我們要發到三個不同社群平台，有的要求 4:5 垂直裁切、有的支援多圖輪播、有的會自動壓縮透明背景 PNG。請幫我整理各平台的媒體附件轉檔規格與對應貼文組裝草稿。"
+  },
+  {
+    "id": "smp-09",
+    "category": "social-media-publishing",
+    "query": "Our editorial calendar lives in a CSV with draft copy, target channels, and media paths, and we want a repeatable scriptable pipeline that queues posts via platform APIs, handles rate-limit backoff, and logs the published permalink and timestamp as proof."
+  },
+  {
+    "id": "smp-10",
+    "category": "social-media-publishing",
+    "query": "每次辦完線上研討會，我們都要手動把長影片剪成精華片段、配上引文圖卡再逐一排程到多個社群頻道，非常容易漏發或重複發。請設計一套自動化發文佇列與去重規則，確保每支片段都附上正確回放連結並驗證上線狀態。"
+  },
+  {
+    "id": "smp-11",
+    "category": "social-media-publishing",
+    "query": "Convert this engineering changelog into tailored social announcements for three distinct audiences (developer community, enterprise buyers, and visual showcase feed), respecting each platform's character limits, link-preview behavior, and hashtag conventions, ready for immediate queuing."
+  },
+  {
+    "id": "smp-12",
+    "category": "social-media-publishing",
+    "query": "我們想把剛優化完 SEO 的幾篇主力文章重新推廣到各大社群平台，但需要避開演算法對純外部連結貼文的降觸及問題（例如改用原生長文摘要、圖片或留言區補連結），同時確保每篇貼文排程不重疊並確認成功露出。"
+  },
+  {
+    "id": "smp-13",
+    "category": "social-media-publishing",
+    "query": "We're running a 48-hour live hackathon and need an on-the-fly publishing runbook for posting winner announcements with multiple co-tagged media attachments, handling expired OAuth tokens mid-event, and confirming each post's public visibility."
+  },
+  {
+    "id": "smp-14",
+    "category": "social-media-publishing",
+    "query": "請針對我們跨四個社群平台的每週排程佇列，建立一套異常處理與補發機制：當某個平台因為登入憑證過期或圖片格式錯誤而卡在待發送狀態時，能自動通知負責人、保留媒體附件且不影響其他平台正常準時發布。"
+  },
+  {
+    "id": "smp-15",
+    "category": "social-media-publishing",
+    "query": "Prepare a unified release-day social bundle from these release notes: generate platform-compliant post variants (text-only thread, 4-image carousel with alt text, and long-form article draft), attach scheduling metadata, and define the post-flight verification checklist."
+  },
+  {
+    "id": "ta-01",
+    "category": "test-automation",
+    "query": "Our end-to-end checkout suite passes locally but fails randomly about 20% of the time in CI with element-detached and timeout errors after payment redirects. Diagnose the root causes of flakiness in these test files and rewrite them using deterministic waits, isolated test data, and resilient locators."
+  },
+  {
+    "id": "ta-02",
+    "category": "test-automation",
+    "query": "我們目前只有少數後端單元測試，前端關鍵流程（註冊、登入、購物車結帳）完全沒有自動化保護。請幫我們評估並設計一套兼顧執行速度與穩定度的測試金字塔架構，包含目錄結構、Fixture 管理與首批 10 個端對端測試規格。"
+  },
+  {
+    "id": "ta-03",
+    "category": "test-automation",
+    "query": "We're migrating 180 legacy browser tests built on an outdated synchronous WebDriver wrapper to a modern auto-waiting browser automation framework. Create a phased migration guide, locator translation patterns, and convert these three representative test specs."
+  },
+  {
+    "id": "ta-04",
+    "category": "test-automation",
+    "query": "我們剛開發完一個跨平台的行動應用（同時支援兩大主流手機作業系統），需要在本機模擬器與雲端真機裝置農場上執行關鍵流程測試。請設計一套可切換本機與雲端執行的測試組態與並行跑測策略，避免測試時間超過 15 分鐘。"
+  },
+  {
+    "id": "ta-05",
+    "category": "test-automation",
+    "query": "Review our unit test suite for this TypeScript pricing engine—coverage looks high on paper (88%), but edge-case bugs in currency rounding and discount stacking keep slipping into production. Rewrite the weak assertions and add property/boundary test cases."
+  },
+  {
+    "id": "ta-06",
+    "category": "test-automation",
+    "query": "我們的網頁應用在某個桌面瀏覽器上發生過版面跑版與表單無法送出的問題，但 CI 目前只跑單一無頭瀏覽器。請幫我設計跨瀏覽器與行動視口（Viewport）測試矩陣，並規劃哪些高風險案例該納入每次 PR、哪些放夜間回歸。"
+  },
+  {
+    "id": "ta-07",
+    "category": "test-automation",
+    "query": "We're choosing between two browser testing frameworks and a separate component-testing runner for a new monorepo web app that relies heavily on iframes, multi-tab OAuth popups, and file downloads. Produce a criteria-weighted framework selection matrix and proof-of-concept test plan."
+  },
+  {
+    "id": "ta-08",
+    "category": "test-automation",
+    "query": "我們剛依照設計團隊的新規格重構了結帳頁面的元件與無障礙屬性，現在需要替這些元件補上完整的自動化瀏覽器測試與鍵盤導覽斷言（包含焦點順序、錯誤訊息宣告與暗黑模式截圖比對），請產出測試實作指南與範例。"
+  },
+  {
+    "id": "ta-09",
+    "category": "test-automation",
+    "query": "Our test codebase has grown into a 400-file mess of duplicated login steps, hardcoded sleep calls, and brittle CSS nth-child selectors. Propose a clean project architecture (page objects or composable fixtures, shared auth state, and lint rules) and refactor the attached sample module."
+  },
+  {
+    "id": "ta-10",
+    "category": "test-automation",
+    "query": "在測試我們新的 REST API 速率限制與非同步背景任務時，測試常因為共用同一個資料庫狀態或時間相依（Time-dependent）而互相干擾。請設計隔離的整合測試架構與時間/網路模擬策略，讓所有測試可以安全並行執行。"
+  },
+  {
+    "id": "ta-11",
+    "category": "test-automation",
+    "query": "One of our mobile banking flows relies on biometric prompt mocking, deep links, and offline-to-online sync recovery. Design an automated mobile test suite blueprint covering device capability setup, network throttling hooks, and clear failure artifacts (screenshots, logs, video)."
+  },
+  {
+    "id": "ta-12",
+    "category": "test-automation",
+    "query": "我們想把原本在開發者電腦本機手動執行的回歸測試清單，轉成可在雲端執行器上自動分片（Sharding）並於失敗時自動收集 Trace 與截圖的 CI 流程，請產出分片設定、重試上限規範與測試報告整併架構。"
+  },
+  {
+    "id": "ta-13",
+    "category": "test-automation",
+    "query": "Repair these six failing integration tests after a recent API response wrapper change—they currently swallow HTTP errors and assert only on array length rather than schema and business invariants. Provide fixed test code with clear, diagnostic failure messages."
+  },
+  {
+    "id": "ta-14",
+    "category": "test-automation",
+    "query": "針對一個即時協作畫布應用，傳統 DOM 斷言很難驗證拖曳與圖形重疊結果。請幫我設計結合狀態層單元測試、瀏覽器操作模擬與視覺回歸截圖容錯閾值的混合測試策略與結構建議。"
+  },
+  {
+    "id": "ta-15",
+    "category": "test-automation",
+    "query": "Set up a clean test-automation starter structure for a full-stack web service: separate fast unit tests, contract tests, and browser E2E suites with clear naming conventions, test-data factories, and a CI execution script that fails fast on broken smoke checks."
+  }
+]

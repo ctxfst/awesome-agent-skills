@@ -1,0 +1,82 @@
+[
+  {
+    "id": "vq-01",
+    "answer": "We need both a clean OpenAPI 3.1 YAML spec and readable partner documentation with request and response examples."
+  },
+  {
+    "id": "vq-02",
+    "answer": "Unclear endpoint design consistency first, plus planning versioning and deprecation so we can roll out v2 cleanly."
+  },
+  {
+    "id": "vq-03",
+    "answer": "最想先處理版本與向下相容策略，並希望有本地模擬測試設定方便客戶端驗證。"
+  },
+  {
+    "id": "vq-04",
+    "answer": "優先給前端模擬資料來開發，同時幫維運定好標準化的健康檢查與監控契約。"
+  },
+  {
+    "id": "vq-05",
+    "answer": "A fuller screen redesign of our analytics dashboard with updated HTML/CSS and cleaner spacing hierarchy."
+  },
+  {
+    "id": "vq-06",
+    "answer": "It's a cross-platform web product, and we mainly need shared visual foundations like typography, color tokens, and states."
+  },
+  {
+    "id": "vq-07",
+    "answer": null
+  },
+  {
+    "id": "vq-08",
+    "answer": "想優先處理整體版面與導覽架構，並讓元件符合原生規範且支援鍵盤操作。"
+  },
+  {
+    "id": "vq-09",
+    "answer": null
+  },
+  {
+    "id": "vq-10",
+    "answer": null
+  },
+  {
+    "id": "vq-11",
+    "answer": null
+  },
+  {
+    "id": "vq-12",
+    "answer": "想先從分析競爭對手搜尋缺口開始，再規劃主題群的站內連結與既有文章翻新。"
+  },
+  {
+    "id": "vq-13",
+    "answer": null
+  },
+  {
+    "id": "vq-14",
+    "answer": "We post to X, LinkedIn, Bluesky, and YouTube, and need a full workflow with pre-flight checks and confirmation."
+  },
+  {
+    "id": "vq-15",
+    "answer": null
+  },
+  {
+    "id": "vq-16",
+    "answer": "主要發圖文與短片到 IG、X、FB 和 LinkedIn，最想先處理發文前帳號權限檢查。"
+  },
+  {
+    "id": "vq-17",
+    "answer": "We're running Playwright for our checkout E2E tests, and we have the CI failure logs ready to share."
+  },
+  {
+    "id": "vq-18",
+    "answer": "We need coverage for both mobile browsers and a React Native app, with no fixed framework preference yet."
+  },
+  {
+    "id": "vq-19",
+    "answer": "舊測試是用同步式的 Robot Framework 寫的，關鍵流程主要是網頁的登入跟結帳。"
+  },
+  {
+    "id": "vq-20",
+    "answer": "目前主要是用 Playwright 測網頁流程，想重構測試裝置並加上平行分片與錯誤蒐集。"
+  }
+]

@@ -1,0 +1,284 @@
+[
+ {
+  "id": "vq-01",
+  "category": "api-development",
+  "query": "Convert an exported internal API endpoint collection into a clean OpenAPI 3.1 YAML specification and partner-facing developer guide with request/response examples.",
+  "expected": [
+   "api-development/lambdatest-agent-skills--openapi-spec-generator",
+   "api-development/lambdatest-agent-skills--api-documentation"
+  ],
+  "near_misses": [
+   "api-development/lambdatest-agent-skills--api-analyzer",
+   "api-development/lambdatest-agent-skills--api-designer",
+   "api-development/lambdatest-agent-skills--api-inferrer-from-files"
+  ]
+ },
+ {
+  "id": "vq-02",
+  "category": "api-development",
+  "query": "Audit existing endpoint definitions for naming, pagination, error-schema, and versioning inconsistencies, and produce an API style-lint report plus a v2 deprecation plan.",
+  "expected": [
+   "api-development/lambdatest-agent-skills--openapi-spec-generator",
+   "api-development/lambdatest-agent-skills--api-versioning-helper"
+  ],
+  "near_misses": [
+   "api-development/lambdatest-agent-skills--api-designer",
+   "api-development/lambdatest-agent-skills--api-documentation",
+   "api-development/lambdatest-agent-skills--api-analyzer"
+  ]
+ },
+ {
+  "id": "vq-03",
+  "category": "api-development",
+  "query": "Design a backwards-compatible v1-to-v2 API versioning and Sunset header migration specification along with a local mock server config for client testing.",
+  "expected": [
+   "api-development/lambdatest-agent-skills--api-versioning-helper",
+   "api-development/lambdatest-agent-skills--api-mock-helper"
+  ],
+  "near_misses": [
+   "api-development/lambdatest-agent-skills--api-documentation",
+   "api-development/lambdatest-agent-skills--api-designer"
+  ]
+ },
+ {
+  "id": "vq-04",
+  "category": "api-development",
+  "query": "Generate realistic mock fixture payloads for blocked frontend screens and a standardized `/health` and `/ready` monitoring contract from the draft OpenAPI file.",
+  "expected": [
+   "api-development/lambdatest-agent-skills--api-mock-helper",
+   "api-development/lambdatest-agent-skills--api-health-monitoring"
+  ],
+  "near_misses": [
+   "api-development/lambdatest-agent-skills--openapi-spec-generator",
+   "api-development/lambdatest-agent-skills--api-documentation"
+  ]
+ },
+ {
+  "id": "vq-05",
+  "category": "frontend-design",
+  "query": "Redesign the main analytics dashboard layout from existing screenshots and output updated HTML/CSS with a clear visual hierarchy and spacing tokens.",
+  "expected": [
+   "frontend-design/mobbin-skills--redesign-screen",
+   "frontend-design/ibelick-ui-skills--baseline-ui"
+  ],
+  "near_misses": [
+   "frontend-design/ibelick-ui-skills--improve-ui",
+   "frontend-design/raintree-hig-doctor--hig-components-layout",
+   "frontend-design/raintree-hig-doctor--hig-foundations"
+  ]
+ },
+ {
+  "id": "vq-06",
+  "category": "frontend-design",
+  "query": "Consolidate existing UI components into a unified design-system specification with typography scale, semantic light/dark color tokens, and interactive state rules.",
+  "expected": [
+   "frontend-design/ibelick-ui-skills--create-design-md",
+   "frontend-design/raintree-hig-doctor--hig-foundations"
+  ],
+  "near_misses": [
+   "frontend-design/ibelick-ui-skills--baseline-ui",
+   "frontend-design/ibelick-ui-skills--improve-ui",
+   "frontend-design/raintree-hig-doctor--hig-components-menus"
+  ]
+ },
+ {
+  "id": "vq-07",
+  "category": "frontend-design",
+  "query": "Audit the responsive mobile layout and dark-mode contrast from provided code and screenshots, delivering patched CSS variables and accessible component fixes.",
+  "expected": [
+   "frontend-design/raintree-hig-doctor--hig-foundations",
+   "frontend-design/ibelick-ui-skills--fixing-accessibility",
+   "frontend-design/raintree-hig-doctor--hig-doctor-audit"
+  ],
+  "near_misses": [
+   "frontend-design/ibelick-ui-skills--create-design-md",
+   "frontend-design/ibelick-ui-skills--baseline-ui",
+   "frontend-design/ibelick-ui-skills--improve-ui"
+  ]
+ },
+ {
+  "id": "vq-08",
+  "category": "frontend-design",
+  "query": "Produce a platform-native desktop UI layout specification and accessible keyboard-navigable component structure following native human interface guidelines.",
+  "expected": [
+   "frontend-design/raintree-hig-doctor--hig-platforms",
+   "frontend-design/raintree-hig-doctor--hig-foundations",
+   "frontend-design/raintree-hig-doctor--hig-components-layout"
+  ],
+  "near_misses": [
+   "frontend-design/raintree-hig-doctor--hig-components-controls",
+   "frontend-design/raintree-hig-doctor--hig-inputs",
+   "frontend-design/raintree-hig-doctor--hig-doctor-audit"
+  ]
+ },
+ {
+  "id": "vq-09",
+  "category": "seo",
+  "query": "Analyze the site's crawl export and ranking CSV to produce a prioritized technical SEO fix plan addressing unindexed key pages, canonical issues, and parameterized URLs.",
+  "expected": [
+   "seo/illyism-seo-skills--seo-roast",
+   "seo/illyism-seo-skills--seo-autopilot"
+  ],
+  "near_misses": [
+   "seo/illyism-seo-skills--internal-linking",
+   "seo/illyism-seo-skills--block-ai-scrapers",
+   "seo/illyism-seo-skills--seo-title-optimization"
+  ]
+ },
+ {
+  "id": "vq-10",
+  "category": "seo",
+  "query": "Build a revenue-oriented SEO roadmap that rewrites underperforming landing-page title tags/meta descriptions and adds structured Schema.org markup for search and AI answers.",
+  "expected": [
+   "seo/illyism-seo-skills--seo-roast",
+   "seo/illyism-seo-skills--seo-title-optimization",
+   "seo/illyism-seo-skills--seo-autopilot"
+  ],
+  "near_misses": [
+   "seo/illyism-seo-skills--dataforseo-serp",
+   "seo/illyism-seo-skills--blog-refresher",
+   "seo/illyism-seo-skills--vs-and-alternatives"
+  ]
+ },
+ {
+  "id": "vq-11",
+  "category": "seo",
+  "query": "Create a zero-traffic-loss domain and URL migration checklist with 301 redirect mapping rules and post-launch indexation monitoring steps.",
+  "expected": [
+   "seo/illyism-seo-skills--domain-migration"
+  ],
+  "near_misses": [
+   "seo/illyism-seo-skills--seo-roast",
+   "seo/illyism-seo-skills--seo-autopilot"
+  ]
+ },
+ {
+  "id": "vq-12",
+  "category": "seo",
+  "query": "Design a topic-cluster internal linking blueprint and content-refresh template based on competitor SERP gaps to lift bottom-of-funnel pages to page one.",
+  "expected": [
+   "seo/illyism-seo-skills--dataforseo-serp",
+   "seo/illyism-seo-skills--internal-linking",
+   "seo/illyism-seo-skills--blog-refresher",
+   "seo/illyism-seo-skills--ahrefs-research",
+   "seo/illyism-seo-skills--blitz-seo"
+  ],
+  "near_misses": [
+   "seo/illyism-seo-skills--proof-kb",
+   "seo/illyism-seo-skills--seo-title-optimization"
+  ]
+ },
+ {
+  "id": "vq-13",
+  "category": "social-media-publishing",
+  "query": "Adapt launch copy and media attachments into platform-specific post variants across three channels, generate a scheduled publishing queue payload, and verify live post URLs.",
+  "expected": [
+   "social-media-publishing/gitroomhq-postiz-agent--postiz",
+   "social-media-publishing/upload-post-upload-post-skill--upload-post"
+  ],
+  "near_misses": [
+   "social-media-publishing/dreammis-social-auto-upload--social-auto-upload",
+   "social-media-publishing/dreammis-social-auto-upload--instagram-upload"
+  ]
+ },
+ {
+  "id": "vq-14",
+  "category": "social-media-publishing",
+  "query": "Design an automated multi-platform publishing queue workflow with pre-flight media/character checks, account-session validation, and post-publish visibility confirmation.",
+  "expected": [
+   "social-media-publishing/upload-post-upload-post-skill--upload-post",
+   "social-media-publishing/gitroomhq-postiz-agent--postiz",
+   "social-media-publishing/dreammis-social-auto-upload--social-auto-upload"
+  ],
+  "near_misses": [
+   "social-media-publishing/dreammis-social-auto-upload--youtube-upload",
+   "social-media-publishing/dreammis-social-auto-upload--bilibili-upload"
+  ]
+ },
+ {
+  "id": "vq-15",
+  "category": "social-media-publishing",
+  "query": "Format a long-form article and short-form video assets to meet each target platform's media ratios and character limits, schedule them as drafts, and confirm publication.",
+  "expected": [
+   "social-media-publishing/gitroomhq-postiz-agent--postiz",
+   "social-media-publishing/upload-post-upload-post-skill--upload-post"
+  ],
+  "near_misses": [
+   "social-media-publishing/dreammis-social-auto-upload--zhihu-upload",
+   "social-media-publishing/dreammis-social-auto-upload--youtube-upload",
+   "social-media-publishing/dreammis-social-auto-upload--social-auto-upload"
+  ]
+ },
+ {
+  "id": "vq-16",
+  "category": "social-media-publishing",
+  "query": "Build a pre-publish account-selection and visibility guardrail checklist plus an exception-recovery workflow for expired sessions or failed media uploads.",
+  "expected": [
+   "social-media-publishing/dreammis-social-auto-upload--social-auto-upload",
+   "social-media-publishing/gitroomhq-postiz-agent--postiz",
+   "social-media-publishing/upload-post-upload-post-skill--upload-post"
+  ],
+  "near_misses": [
+   "social-media-publishing/dreammis-social-auto-upload--meta-upload",
+   "social-media-publishing/dreammis-social-auto-upload--tencent-upload",
+   "social-media-publishing/dreammis-social-auto-upload--dayu-upload"
+  ]
+ },
+ {
+  "id": "vq-17",
+  "category": "test-automation",
+  "query": "Diagnose flaky end-to-end checkout tests failing on timeouts and detached elements, and rewrite them using deterministic waits, isolated fixtures, and resilient locators.",
+  "expected": [
+   "test-automation/lambdatest-agent-skills--playwright-skill",
+   "test-automation/lambdatest-agent-skills--cypress-skill",
+   "test-automation/lambdatest-agent-skills--selenium-skill"
+  ],
+  "near_misses": [
+   "test-automation/lambdatest-agent-skills--webdriverio-skill",
+   "test-automation/lambdatest-agent-skills--appium-skill"
+  ]
+ },
+ {
+  "id": "vq-18",
+  "category": "test-automation",
+  "query": "Evaluate and recommend a test-automation framework stack, project directory structure, and local-vs-cloud cross-browser and mobile execution matrix.",
+  "expected": [
+   "test-automation/lambdatest-agent-skills--playwright-skill",
+   "test-automation/lambdatest-agent-skills--selenium-skill",
+   "test-automation/lambdatest-agent-skills--appium-skill",
+   "test-automation/lambdatest-agent-skills--cypress-skill"
+  ],
+  "near_misses": [
+   "test-automation/lambdatest-agent-skills--webdriverio-skill",
+   "test-automation/lambdatest-agent-skills--testng-skill",
+   "test-automation/lambdatest-agent-skills--karma-skill"
+  ]
+ },
+ {
+  "id": "vq-19",
+  "category": "test-automation",
+  "query": "Produce a phased migration guide from legacy synchronous browser tests to a modern auto-waiting suite and convert core login and checkout flows.",
+  "expected": [
+   "test-automation/lambdatest-agent-skills--playwright-skill",
+   "test-automation/lambdatest-agent-skills--selenium-skill"
+  ],
+  "near_misses": [
+   "test-automation/lambdatest-agent-skills--webdriverio-skill",
+   "test-automation/lambdatest-agent-skills--cypress-skill"
+  ]
+ },
+ {
+  "id": "vq-20",
+  "category": "test-automation",
+  "query": "Refactor duplicated test helpers and hardcoded sleeps into composable fixtures, parallel CI sharding configuration, and diagnostic failure artifact collection.",
+  "expected": [
+   "test-automation/lambdatest-agent-skills--playwright-skill",
+   "test-automation/lambdatest-agent-skills--cypress-skill",
+   "test-automation/lambdatest-agent-skills--selenium-skill"
+  ],
+  "near_misses": [
+   "test-automation/lambdatest-agent-skills--webdriverio-skill",
+   "test-automation/lambdatest-agent-skills--testng-skill"
+  ]
+ }
+]
