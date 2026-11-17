@@ -13,14 +13,30 @@ def main():
     groups = defaultdict(list)
     for record in records:
         groups[record["source"]].append(record)
-    lines = []
-    for source in sorted(groups, key=str.lower):
-        lines.extend([f"### {source}", ""])
-        for record in sorted(groups[source], key=lambda item: item["id"].lower()):
-            description = " ".join(record["description"].splitlines()).strip()
-            lines.append(f"- **{record['name']}** — {description} ([source]({record['url']}))")
-        lines.append("")
     for readme in (ROOT / "README.md", ROOT / "README.zh-TW.md"):
+        chinese = readme.name == "README.zh-TW.md"
+        if chinese:
+            lines = [
+                f"完整目錄共 **{len(records)} 個 Skill，來自 {len(groups)} 個來源**。",
+                "每筆包含名稱、description、固定 commit、安裝來源連結與原文連結；完整資料見 "
+                "[catalog/skills.json](catalog/skills.json)。",
+                "",
+            ]
+        else:
+            lines = [
+                f"The full catalog contains **{len(records)} Skills from {len(groups)} sources**.",
+                "Each entry includes its name, description, pinned commit, source URL, and raw URL. "
+                "See [catalog/skills.json](catalog/skills.json) for the complete data.",
+                "",
+            ]
+        for source in sorted(groups, key=str.lower):
+            count = len(groups[source])
+            if chinese:
+                label = f"{count} 個 Skill"
+            else:
+                label = f"{count} Skill" if count == 1 else f"{count} Skills"
+            lines.append(f"- [{source}](https://github.com/{source}) — {label}")
+        lines.append("")
         text = readme.read_text(encoding="utf-8")
         if START not in text or END not in text:
             raise ValueError(f"{readme.name}: catalog markers are missing")

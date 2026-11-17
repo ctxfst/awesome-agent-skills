@@ -8,6 +8,7 @@ import json
 import os
 import re
 import sys
+import tempfile
 import time
 import urllib.error
 import urllib.request
@@ -21,11 +22,12 @@ except ImportError:
 
 DEFAULT_EMBED_URL = "https://api.voyageai.com/v1/embeddings"
 DEFAULT_EMBED_MODEL = "voyage-3.5"
-REPO_ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_CATALOG = REPO_ROOT / "catalog" / "skills.json"
-DEFAULT_INDEX = REPO_ROOT / "index"
-BATCH = 32
-FORMAT_VERSION = 2
+BATCH = 128
+FORMAT_VERSION = 4
+INSTALL_HELP = (
+    "Clone the full awesome-agent-skills repository and install find-skill with a symlink, "
+    "or set SKILL_FINDER_ROOT to the repository root."
+)
 
 
 def sha(*parts):
@@ -40,9 +42,38 @@ def jload(path, default=None):
 def jsave(path, value):
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
-    temporary = path.with_suffix(path.suffix + ".tmp")
-    temporary.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    os.replace(temporary, path)
+    temporary = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            mode="w", encoding="utf-8", dir=path.parent,
+            prefix=path.name + ".", suffix=".tmp", delete=False,
+        ) as stream:
+            temporary = Path(stream.name)
+            json.dump(value, stream, ensure_ascii=False, indent=2)
+            stream.write("\n")
+        os.replace(temporary, path)
+    finally:
+        if temporary is not None and temporary.exists():
+            temporary.unlink()
+
+
+def repository_root():
+    configured = os.environ.get("SKILL_FINDER_ROOT")
+    if configured:
+        return Path(configured).expanduser().resolve()
+    return Path(__file__).resolve().parents[2]
+
+
+def default_catalog():
+    return repository_root() / "catalog" / "skills.json"
+
+
+def default_index():
+    return repository_root() / "index"
+
+
+def query_cache_path():
+    return Path.home() / ".cache" / "awesome-agent-skills" / "query-cache.json"
 
 
 def load_env(path):
@@ -118,7 +149,7 @@ def load_catalog(path):
     records = jload(path)
     if not isinstance(records, list) or not records:
         raise ValueError(f"Catalog must be a non-empty JSON list: {path}")
-    required = ("id", "name", "description", "source", "path", "commit", "url", "kind", "has_scripts")
+    required = ("id", "name", "description", "source", "path", "commit", "url", "raw_url", "kind", "has_scripts")
     ids = set()
     for number, record in enumerate(records, 1):
         if not isinstance(record, dict):
@@ -139,18 +170,26 @@ def embedded_text(record):
 
 
 def cmd_build(args):
-    records = load_catalog(Path(args.catalog).expanduser().resolve())
-    out = Path(args.out).expanduser().resolve()
+    catalog = Path(args.catalog).expanduser().resolve() if args.catalog else default_catalog()
+    if not catalog.is_file():
+        raise ValueError(f"Catalog not found: {catalog}. {INSTALL_HELP}")
+    records = load_catalog(catalog)
+    out = Path(args.out).expanduser().resolve() if args.out else default_index()
     config = embedding_config(args)
     texts = [embedded_text(record) for record in records]
     vectors = embed(texts, out / "cache" / "embeddings.json", config, "document")
     matrix = np.stack([vectors[text] for text in texts])
-    np.savez_compressed(out / "vectors.npz", ids=np.array([record["id"] for record in records]), raw=matrix)
+    np.savez_compressed(
+        out / "vectors.npz",
+        ids=np.array([record["id"] for record in records]),
+        raw=matrix.astype(np.float16),
+    )
     jsave(out / "skills.json", records)
     jsave(out / "meta.json", {
         "format_version": FORMAT_VERSION,
         **config,
         "dimension": int(matrix.shape[1]),
+        "dtype": "float16",
         "created_at": dt.datetime.now(dt.timezone.utc).isoformat(),
         "skill_count": len(records),
         "text_source": "name+description",
@@ -162,10 +201,10 @@ def cmd_build(args):
 class Index:
     def __init__(self, directory, config=None):
         self.dir = Path(directory).expanduser().resolve()
+        if not all((self.dir / name).is_file() for name in ("skills.json", "meta.json", "vectors.npz")):
+            sys.exit(f"Error: index not found or incomplete at {self.dir}. {INSTALL_HELP}")
         self.skills = jload(self.dir / "skills.json")
         self.meta = jload(self.dir / "meta.json")
-        if self.skills is None or self.meta is None:
-            sys.exit(f"Error: {self.dir} is not an index; run build first")
         if self.meta.get("format_version") != FORMAT_VERSION:
             sys.exit(f"Error: unsupported index format in {self.dir}")
         if config and (
@@ -176,11 +215,11 @@ class Index:
                 "Error: query embedding endpoint/model differs from the index. "
                 f"Index: {self.meta.get('embed_url')} / {self.meta.get('embed_model')}; "
                 f"query: {config['embed_url']} / {config['embed_model']}. "
-                "Rebuild with build CATALOG --out LOCAL_INDEX and search --index LOCAL_INDEX."
+                "Rebuild with build --out LOCAL_INDEX and search --index LOCAL_INDEX."
             )
         with np.load(self.dir / "vectors.npz", allow_pickle=False) as data:
             self.ids = [str(item) for item in data["ids"]]
-            self.raw = data["raw"]
+            self.raw = data["raw"].astype(np.float32)
         if self.ids != [record["id"] for record in self.skills] or len(self.ids) != len(self.raw):
             sys.exit(f"Error: inconsistent index files in {self.dir}")
         if self.raw.shape[1] != self.meta.get("dimension"):
@@ -189,7 +228,7 @@ class Index:
 
 def search(index, query, top):
     query_vector = embed(
-        [query], index.dir / "cache" / "embeddings.json",
+        [query], query_cache_path(),
         {"embed_url": index.meta["embed_url"], "embed_model": index.meta["embed_model"]}, "query",
     )[query]
     scores = index.raw @ query_vector
@@ -201,6 +240,7 @@ def search(index, query, top):
             "name": record["name"],
             "description": record["description"],
             "url": record["url"],
+            "raw_url": record["raw_url"],
             "commit": record["commit"],
             "kind": record["kind"],
             "has_scripts": record["has_scripts"],
@@ -214,7 +254,8 @@ def cmd_search(args):
         sys.exit("Error: --top must be positive")
     if not args.query.strip():
         sys.exit("Error: query must not be empty")
-    index = Index(args.index, embedding_config(args))
+    index_path = Path(args.index).expanduser().resolve() if args.index else default_index()
+    index = Index(index_path, embedding_config(args))
     output = {"query": args.query, **search(index, args.query, args.top)}
     if args.json:
         print(json.dumps(output, ensure_ascii=False, indent=2))
@@ -223,6 +264,7 @@ def cmd_search(args):
         print(f"{rank}. {result['name']} ({result['id']}) score={result['score']:.3f}")
         print(result["description"])
         print(f"URL: {result['url']}")
+        print(f"Raw URL: {result['raw_url']}")
 
 
 def main():
@@ -231,15 +273,15 @@ def main():
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     build = subparsers.add_parser("build", help="embed catalog names and descriptions")
-    build.add_argument("catalog", nargs="?", default=str(DEFAULT_CATALOG))
-    build.add_argument("--out", default=str(DEFAULT_INDEX))
+    build.add_argument("catalog", nargs="?")
+    build.add_argument("--out")
     build.add_argument("--embed-url")
     build.add_argument("--embed-model")
     build.set_defaults(func=cmd_build)
 
     search_parser = subparsers.add_parser("search", help="retrieve Skills for the agent to judge")
     search_parser.add_argument("query")
-    search_parser.add_argument("--index", default=str(DEFAULT_INDEX))
+    search_parser.add_argument("--index")
     search_parser.add_argument("--top", type=int, default=8)
     search_parser.add_argument("--embed-url")
     search_parser.add_argument("--embed-model")

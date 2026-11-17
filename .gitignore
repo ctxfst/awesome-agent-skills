@@ -3,6 +3,7 @@ __pycache__/
 .pytest_cache/
 .env
 .review/
+docs/review-6cc4a8e.md
 
 # Upstream Skill clones: not ours to redistribute; recreate with harvest.py or the experiment scripts
 experiment/sources/
