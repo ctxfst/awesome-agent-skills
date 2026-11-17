@@ -64,7 +64,9 @@ Being listed does not mean a Skill is safe. Neither official nor community sourc
 ### Suggested check before you install
 
 1. **Look at the whole Skill folder, not just `SKILL.md`.** Bundled scripts, hooks, and files that `SKILL.md` tells the agent to read all run with your permissions.
-2. **Run a scanner such as [NVIDIA/SkillSpector](https://github.com/NVIDIA/SkillSpector).** It statically checks a Skill for prompt injection, data exfiltration, credential access, and similar risks. Run it in a throwaway container or VM with no API keys and no host folders mounted.
+2. **Run a scanner.** Run it in a throwaway container or VM with no API keys and no host folders mounted. Tools we checked on 2026-11-17:
+   - [NVIDIA/SkillSpector](https://github.com/NVIDIA/SkillSpector) (Apache-2.0, actively maintained): statically checks a Skill for prompt injection, data exfiltration, credential access, and similar risks, with an optional LLM pass.
+   - [Teycir/SkillsGuard](https://github.com/Teycir/SkillsGuard) (MIT per its README; the repo has no LICENSE file): a static scanner for `SKILL.md` files and bundled scripts. It is a small project, so check it yourself before relying on it.
 3. **Read the findings, not the score.** One public run of SkillSpector on popular Skill repos found that a single coverage gap (a referenced file the scanner did not finish reading) or a quoted attack string in a warning was enough to push a Skill to the maximum score. The findings that matched what the files actually do were:
    - access to agent config directories, such as `~/.claude/settings.json`
    - reading credential files, such as tokens or `client_secrets.json`

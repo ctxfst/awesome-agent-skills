@@ -64,7 +64,9 @@ python3 find-skill/scripts/find.py build
 ### 安裝前的建議檢查
 
 1. **看整個 Skill 資料夾，不只看 `SKILL.md`。**附帶的腳本、hook，以及 `SKILL.md` 要 agent 去讀的檔案，都會以你的權限執行或讀取。
-2. **用掃描工具檢查，例如 [NVIDIA/SkillSpector](https://github.com/NVIDIA/SkillSpector)。**它會靜態檢查 Skill 是否有 prompt injection、資料外洩、讀取憑證等風險。請在沒有 API key、沒有掛載主機資料夾的拋棄式容器或虛擬機裡執行。
+2. **用掃描工具檢查。**請在沒有 API key、沒有掛載主機資料夾的拋棄式容器或虛擬機裡執行。以下是 2026-11-17 確認過的工具：
+   - [NVIDIA/SkillSpector](https://github.com/NVIDIA/SkillSpector)（Apache-2.0，持續維護）：靜態檢查 Skill 是否有 prompt injection、資料外洩、讀取憑證等風險，可選擇再加一輪 LLM 分析。
+   - [Teycir/SkillsGuard](https://github.com/Teycir/SkillsGuard)（README 標示 MIT，但 repo 沒有 LICENSE 檔）：靜態掃描 `SKILL.md` 與附帶腳本。這是小型專案，使用前請自己確認。
 3. **看具體發現，不要只看分數。**有人公開用 SkillSpector 掃過幾個熱門 Skill repo，發現只要一個覆蓋缺口（掃描器沒讀完被引用的檔案），或警告文字裡引用了攻擊字串，就足以讓分數衝到最高。真正對得上檔案實際行為的，是這三類發現：
    - 存取 agent 設定目錄，例如 `~/.claude/settings.json`
    - 讀取憑證檔，例如 token 或 `client_secrets.json`
