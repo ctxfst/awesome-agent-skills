@@ -8,7 +8,7 @@
 
 `find-skill` 不是只回傳排名：AI 會讀前八個候選的 description；只有一個明顯合適時才直接推薦，否則只問一題，把回答接回原需求後再搜一次。第二次仍無法判斷時，列出最接近的兩到三個與差別，不再追問。
 
-實驗中，20 條模糊需求直接搜尋的第一名命中率為 0.45，看候選後反問一次為 0.70；只看原始 description 和看工作線卡的反問結果相同。數字、對照與限制見 [experiment/RESULTS.md](experiment/RESULTS.md)。
+實驗中，20 條模糊需求直接搜尋的第一名命中率為 0.45，看候選後反問一次為 0.70；只看原始 description 和看工作線卡的反問結果相同。數字、對照與限制見 [experiment/RESULTS.zh-TW.md](experiment/RESULTS.zh-TW.md)。
 
 ## 安裝與使用
 
