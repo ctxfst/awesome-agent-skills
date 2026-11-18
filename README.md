@@ -8,7 +8,7 @@ A catalog of Agent Skills pinned to source commits, plus `find-skill`, a Skill t
 
 `find-skill` does more than return a ranking. The agent reads the descriptions of the top eight candidates. It recommends one directly only when one candidate clearly fits. Otherwise it asks the user one question, appends the answer to the original request, and searches again. If that still does not settle it, the agent lists the two or three closest Skills and how they differ, and stops asking.
 
-In our experiment, 20 vague requests found the right Skill in first place 0.45 of the time when searched directly, and 0.70 after one clarifying question asked from the candidates. Questions written from the raw descriptions did as well as questions written from hand-made job-line cards. Numbers, controls, and limitations are in [experiment/RESULTS.md](experiment/RESULTS.md).
+In our experiment, with the same name-and-description index the product uses, 20 vague requests found the right Skill in first place 0.50 of the time when searched directly, and 0.75 after one clarifying question asked from the candidates. Questions written from the raw descriptions did as well as questions written from job-line cards. Numbers, controls, and limitations are in [experiment/RESULTS.md](experiment/RESULTS.md).
 
 ## Install and use
 

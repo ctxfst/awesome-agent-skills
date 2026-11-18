@@ -2,6 +2,12 @@
 
 English | [繁體中文](RESULTS.zh-TW.md)
 
+## Key findings
+
+1. **Asking one question after seeing the candidates helps.** With the product's index (name + description), the top-1 hit rate on 20 vague requests rose from 0.50 to 0.75.
+2. **How the question is written matters little.** Questions written from the raw descriptions (0.75) did as well as questions written from job-line cards (0.75). Even the fixed question "Could you tell me more?" reached 0.80, though the simulated user probably answered it more fully than a real person would.
+3. **Job-line cards did not beat plain descriptions.** For retrieval, cards reached a top-1 of 0.49 against 0.45 for descriptions, but a lower Recall@5 (0.77 against 0.83). Six-slot description rewrites did not improve selection either (0.87 against 0.88). The cards were extracted by fixed rules, so carefully written cards remain untested.
+
 This file summarizes three rounds of experiments: retrieval, asking a question after seeing candidates, and rewriting descriptions on the author side. The numbers come from `experiment/report.json`, `experiment/ask/report-*.json`, and the picks in `experiment/desc/` as scored by `score.py`. The rounds used separate samples, so hit rates from different rounds should not be compared as if they came from the same queries.
 
 ## 1. Retrieval: description, full document, job-line card, BM25
@@ -32,6 +38,25 @@ Limitations: only 75 queries; the near-miss rate only checks whether the first r
 ## 2. Asking: direct search versus a question after seeing candidates
 
 20 vague requests. `direct` is the original vague request. `targeted` adds the user's answer to a question written after reading the job-line cards. `raw_targeted` adds the answer to a question written from the original descriptions only. `generic` adds the answer to a fixed generic question. `full_intent` gives the complete request directly, as a reference upper bound.
+
+Product index (A: name + description), top-1 hit rate:
+
+| Arm | Top-1 hit rate |
+|---|---:|
+| direct: no question | 0.50 |
+| generic: "Could you tell me more?" | 0.80 |
+| targeted: question written from job-line cards | 0.75 |
+| raw_targeted: question written from descriptions | 0.75 |
+
+```mermaid
+xychart-beta
+    title "Top-1 hit rate, product index (20 vague requests)"
+    x-axis ["no question", "generic", "from cards", "from descriptions"]
+    y-axis "top-1 hit rate" 0 --> 1
+    bar [0.50, 0.80, 0.75, 0.75]
+```
+
+Full results for all four indexes:
 
 | Condition | Arm | Recall@5 | Top-1 hit rate | Near-miss rate |
 |---|---|---:|---:|---:|
